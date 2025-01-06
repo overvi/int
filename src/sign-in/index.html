@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/input.css" />
+    <script src="../assets/js/login.js"></script>
+  </head>
+  <body class="login-bg bg-cover">
+    <main>
+      <div class="flex ps-[36px] 2xl:justify-center gap-[41px]">
+        <div
+          class="bg-orange-500/35 text-gray-600 mb-[69px] self-end backdrop-blur-[3px] rounded-b-4xl rounded-tl-4xl p-6 bottom-[69px] left-[36px]"
+        >
+          <p class="mb-[37px] text-xl leading-[18px]">
+            you Have not sign up before?
+          </p>
+          <div>
+            <a href="/sign-up" class="flex items-center gap-1">
+              <p class="text-3xl font-bold leading-[27px] mt-1">SIGN UP</p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+              >
+                <path
+                  opacity="0.4"
+                  d="M16.0003 29.3337C23.3641 29.3337 29.3337 23.3641 29.3337 16.0003C29.3337 8.63653 23.3641 2.66699 16.0003 2.66699C8.63653 2.66699 2.66699 8.63653 2.66699 16.0003C2.66699 23.3641 8.63653 29.3337 16.0003 29.3337Z"
+                  fill="#3E3E3E"
+                />
+                <path
+                  d="M21.373 15.2929L17.373 11.2929C16.9863 10.9063 16.3463 10.9063 15.9597 11.2929C15.573 11.6796 15.573 12.3196 15.9597 12.7063L18.253 14.9996H11.333C10.7863 14.9996 10.333 15.4529 10.333 15.9996C10.333 16.5463 10.7863 16.9996 11.333 16.9996H18.253L15.9597 19.2929C15.573 19.6796 15.573 20.3196 15.9597 20.7063C16.1597 20.9063 16.413 20.9996 16.6663 20.9996C16.9197 20.9996 17.173 20.9063 17.373 20.7063L21.373 16.7063C21.7597 16.3196 21.7597 15.6796 21.373 15.2929Z"
+                  fill="#3E3E3E"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="flex justify-center items-end h-screen">
+          <div
+            class="bg-gray-100/80 py-[86px] w-[45.625rem] rounded-t-[40px] backdrop-blur-[5px] p-6"
+          >
+            <img class="w-fit m-auto" src="../assets/images/logo.webp" alt="" />
+            <form action="" class="mt-10 space-y-6 max-w-[33.25rem] m-auto">
+              <div class="flex items-center gap-6">
+                <div class="w-full">
+                  <label class="block mb-1" for="name">Username</label>
+                  <input
+                    required
+                    autocomplete="username"
+                    placeholder="test@mangotravel.com.tr"
+                    name="username"
+                    class="min-h-[40px] outline-none leading-[15px] w-full placeholder:text-gray-700 px-3.5 rounded-full"
+                    id="username"
+                    type="text"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label class="block mb-1" for="name">Password</label>
+                <div
+                  class="flex bg-white rounded-full items-center justify-between"
+                >
+                  <input
+                    required
+                    autocomplete="current-password"
+                    placeholder="***************"
+                    name="password"
+                    class="leading-[15px] h-[40px] relative placeholder:bottom-0 top-0 placeholder:-translate-y-1/2 placeholder:absolute outline-none w-full placeholder:block placeholder:text-gray-700 px-3.5 rounded-full"
+                    id="password"
+                    type="password"
+                  />
+                  <button type="button" id="show-password" class="m-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="25"
+                      viewBox="0 0 24 25"
+                      fill="none"
+                    >
+                      <path
+                        opacity="0.4"
+                        d="M21.2496 9.5724C20.7596 8.7924 20.1996 8.0924 19.6196 7.4624L15.8496 11.2324C15.9696 11.6024 16.0396 12.0024 16.0396 12.4224C16.0396 14.6624 14.2296 16.4624 11.9996 16.4624C11.5796 16.4624 11.1796 16.3924 10.8096 16.2724L7.34961 19.7324C8.80961 20.5524 10.3896 20.9824 11.9996 20.9824C13.7796 20.9824 15.5096 20.4624 17.0896 19.4924C18.6696 18.5124 20.0896 17.0824 21.2496 15.2624C22.2496 13.7024 22.2496 11.1424 21.2496 9.5724Z"
+                        fill="#B0B0B0"
+                      />
+                      <path
+                        d="M14.0196 10.4025L9.97965 14.4425C9.46965 13.9225 9.13965 13.2025 9.13965 12.4225C9.13965 10.8525 10.4196 9.5625 11.9996 9.5625C12.7796 9.5625 13.4996 9.8925 14.0196 10.4025Z"
+                        fill="#B0B0B0"
+                      />
+                      <path
+                        opacity="0.4"
+                        d="M18.25 6.17254L14.86 9.56254C14.13 8.82254 13.12 8.38254 12 8.38254C9.76 8.38254 7.96 10.1925 7.96 12.4225C7.96 13.5425 8.41 14.5525 9.14 15.2825L5.76 18.6725H5.75C4.64 17.7725 3.62 16.6225 2.75 15.2625C1.75 13.6925 1.75 11.1425 2.75 9.57254C3.91 7.75254 5.33 6.32254 6.91 5.34254C8.49 4.38254 10.22 3.85254 12 3.85254C14.23 3.85254 16.39 4.67254 18.25 6.17254Z"
+                        fill="#B0B0B0"
+                      />
+                      <path
+                        d="M14.8601 12.4224C14.8601 13.9924 13.5801 15.2824 12.0001 15.2824C11.9401 15.2824 11.8901 15.2824 11.8301 15.2624L14.8401 12.2524C14.8601 12.3124 14.8601 12.3624 14.8601 12.4224Z"
+                        fill="#B0B0B0"
+                      />
+                      <path
+                        d="M21.7699 2.65225C21.4699 2.35225 20.9799 2.35225 20.6799 2.65225L2.22988 21.1122C1.92988 21.4122 1.92988 21.9022 2.22988 22.2022C2.37988 22.3422 2.56988 22.4222 2.76988 22.4222C2.96988 22.4222 3.15988 22.3422 3.30988 22.1922L21.7699 3.73225C22.0799 3.43225 22.0799 2.95225 21.7699 2.65225Z"
+                        fill="#B0B0B0"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <a href="#" class="text-xs block">forgot password?</a>
+              </div>
+
+              <div>
+                <button
+                  class="bg-green-500 tracking-wider leading-[18px] w-full text-xl font-bold min-h-10 rounded-full text-white"
+                >
+                  Sign In
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script defer>
+      const showPassword = document.getElementById("show-password");
+      const password = document.getElementById("password");
+
+      showPassword.addEventListener("click", () => {
+        password.type = password.type == "text" ? "password" : "text";
+      });
+    </script>
+  </body>
+</html>

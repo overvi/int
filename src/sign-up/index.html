@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/input.css" />
+    <script src="../assets/js/login.js"></script>
+  </head>
+  <body class="login-bg bg-cover">
+    <main>
+      <div class="flex ps-[36px] min-[1400px]:justify-center gap-[41px]">
+        <div
+          class="bg-orange-500/35 text-gray-600 mb-[69px] self-end backdrop-blur-[3px] rounded-b-4xl rounded-tl-4xl p-6 bottom-[69px] left-[36px]"
+        >
+          <p class="mb-[37px] text-xl leading-[18px]">
+            Have you Already Sign Up?
+          </p>
+          <div>
+            <a href="/sign-in/" class="flex items-center gap-1">
+              <p class="text-3xl font-bold leading-[27px] mt-1">SIGN IN</p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+              >
+                <path
+                  opacity="0.4"
+                  d="M16.0003 29.3337C23.3641 29.3337 29.3337 23.3641 29.3337 16.0003C29.3337 8.63653 23.3641 2.66699 16.0003 2.66699C8.63653 2.66699 2.66699 8.63653 2.66699 16.0003C2.66699 23.3641 8.63653 29.3337 16.0003 29.3337Z"
+                  fill="#3E3E3E"
+                />
+                <path
+                  d="M21.373 15.2929L17.373 11.2929C16.9863 10.9063 16.3463 10.9063 15.9597 11.2929C15.573 11.6796 15.573 12.3196 15.9597 12.7063L18.253 14.9996H11.333C10.7863 14.9996 10.333 15.4529 10.333 15.9996C10.333 16.5463 10.7863 16.9996 11.333 16.9996H18.253L15.9597 19.2929C15.573 19.6796 15.573 20.3196 15.9597 20.7063C16.1597 20.9063 16.413 20.9996 16.6663 20.9996C16.9197 20.9996 17.173 20.9063 17.373 20.7063L21.373 16.7063C21.7597 16.3196 21.7597 15.6796 21.373 15.2929Z"
+                  fill="#3E3E3E"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="flex justify-center items-end h-screen">
+          <div
+            class="bg-gray-100/80 py-[50px] w-[45.625rem] rounded-t-[40px] backdrop-blur-[5px] p-6"
+          >
+            <img class="w-fit m-auto" src="../assets/images/logo.webp" alt="" />
+            <form action="" class="mt-10 space-y-6 max-w-[33.25rem] m-auto">
+              <div class="flex items-center gap-6">
+                <div class="w-full">
+                  <label class="block mb-2" for="name">Your Name</label>
+                  <input
+                    required
+                    placeholder="John Doe"
+                    name="name"
+                    class="min-h-[40px] leading-[15px] outline-none w-full placeholder:text-gray-700 px-3.5 rounded-full"
+                    id="name"
+                    type="text"
+                  />
+                </div>
+                <div class="w-full">
+                  <label class="block mb-2" for="name">Company Name</label>
+                  <input
+                    required
+                    placeholder="John Doe’s Company"
+                    name="company"
+                    class="min-h-[40px] leading-[15px] w-full placeholder:text-gray-700 px-3.5 rounded-full"
+                    id="company"
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div>
+                <label class="block mb-2" for="name">Email</label>
+                <input
+                  required
+                  placeholder="Johndoe@example.com"
+                  name="email"
+                  class="min-h-[40px] leading-[15px] w-full placeholder:text-gray-700 px-3.5 rounded-full"
+                  id="email"
+                  type="email"
+                />
+              </div>
+              <div>
+                <label class="block mb-2" for="name">Phone Number</label>
+                <input
+                  required
+                  placeholder="+1(555) 5555 555"
+                  name="phone"
+                  class="min-h-[40px] leading-[15px] w-full placeholder:text-gray-700 px-3.5 rounded-full"
+                  id="phone"
+                  type="tel"
+                />
+              </div>
+              <div>
+                <button
+                  class="bg-green-500 tracking-wider leading-[18px] w-full text-xl font-bold py-[11px] rounded-full text-white"
+                >
+                  Sign Up
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
