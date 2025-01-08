@@ -8,16 +8,21 @@
     font-family: "League Spartan";
     font-style: normal;
     font-weight: 400;
-    src: url("../fonts/spartan/LeagueSpartan-Regular.ttf")
-      format("truetype");
+    src: url("../fonts/spartan/LeagueSpartan-Regular.ttf") format("truetype");
+  }
+  @font-face {
+    font-display: "swap";
+    font-family: "League Spartan";
+    font-style: normal;
+    font-weight: 300;
+    src: url("../fonts/spartan/LeagueSpartan-Light.ttf") format("truetype");
   }
   @font-face {
     font-display: "swap";
     font-family: "League Spartan";
     font-style: normal;
     font-weight: 700;
-    src: url("../fonts/spartan/LeagueSpartan-Bold.ttf")
-      format("truetype");
+    src: url("../fonts/spartan/LeagueSpartan-Bold.ttf") format("truetype");
   }
 
   body {
@@ -45,5 +50,20 @@
     background: url("/src/assets/images/login-bg.webp") no-repeat center center
       fixed;
     background-size: cover;
+  }
+
+  .h1 {
+    font-size: 1.5rem;
+  }
+
+  .select::after {
+    display: block;
+    position: absolute;
+    height: fit-content;
+    top: 0;
+    bottom: 0;
+    right: 10px;
+    margin: auto;
+    content: url(/src/assets/images/arrow-down.svg);
   }
 }

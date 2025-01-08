@@ -7,12 +7,14 @@ module.exports = {
   entry: {
     login: "./src/assets/js/login.js",
     main: "./src/assets/js/main.js",
+    "drag-drop": "./src/assets/js/drag-drop.js",
   },
   plugins: [
     new HtmlBundlerPlugin({
       entry: {
         "sign-in/index": "./src/sign-in/index.html",
         "sign-up/index": "./src/sign-up/index.html",
+        "supplier/settings/index": "./src/supplier/settings/index.html",
       },
       js: {
         // output filename of extracted JS from source script loaded in HTML via `<script>` tag
