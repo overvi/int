@@ -66,4 +66,9 @@
     margin: auto;
     content: url(/src/assets/images/arrow-down.svg);
   }
+
+  .dashed {
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='15' ry='15' stroke='%23F9B233FF' stroke-width='3' stroke-dasharray='5%2c 7%2c 5%2c 7' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+    border-radius: 15px;
+  }
 }
