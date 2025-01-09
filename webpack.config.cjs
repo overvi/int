@@ -8,6 +8,7 @@ module.exports = {
     login: "./src/assets/js/login.js",
     main: "./src/assets/js/main.js",
     "drag-drop": "./src/assets/js/drag-drop.js",
+    modal: "./src/assets/js/modal.js",
   },
   plugins: [
     new HtmlBundlerPlugin({
@@ -15,6 +16,7 @@ module.exports = {
         "sign-in/index": "./src/sign-in/index.html",
         "sign-up/index": "./src/sign-up/index.html",
         "supplier/settings/index": "./src/supplier/settings/index.html",
+        "supplier/list/index": "./src/supplier/list/index.html",
       },
       js: {
         // output filename of extracted JS from source script loaded in HTML via `<script>` tag
@@ -58,6 +60,10 @@ module.exports = {
 
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
+
+    alias: {
+      "@assets": path.join(__dirname, "./src/assets"),
+    },
   },
   output: {
     filename: "js/[name].js",

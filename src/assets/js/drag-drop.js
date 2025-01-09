@@ -1,5 +1,7 @@
 const dropArea = document.getElementById("drop-area");
 const fileInput = document.getElementById("file-input");
+const cancelUpload = document.getElementById("cancel-upload");
+const previewContainer = document.getElementById("preview-container");
 
 // Utility function to prevent default browser behavior
 function preventDefaults(e) {
@@ -49,7 +51,7 @@ function handleFiles(files) {
 
       // Apply styling
       preview.classList.add("preview-image");
-      const previewContainer = document.getElementById("preview-container");
+
       previewContainer.innerHTML = "";
       previewContainer.appendChild(preview);
     };
@@ -72,3 +74,9 @@ function isValidFileType(file) {
   const allowedTypes = ["image/jpeg", "image/png", "image/gif"];
   return allowedTypes.includes(file.type);
 }
+
+cancelUpload.addEventListener("click", () => {
+  if (previewContainer.innerHTML) {
+    previewContainer.innerText = "";
+  }
+});
