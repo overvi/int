@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  .litepicker {
+    --litepicker-is-end-color-bg: #f9b233;
+  }
+
   @font-face {
     font-display: "swap";
     font-family: "League Spartan";
@@ -85,24 +89,22 @@
   }
 
   .table tbody tr:not(:last-child) {
-    @apply border-b border-b-gray-50 
+    @apply border-b border-b-gray-100;
   }
 
-  .thead-round-child  th:first-child  {
-    @apply rounded-tl-4xl
+  .thead-round-child th:first-child {
+    @apply rounded-tl-4xl;
   }
   .thead-round-child th:last-child {
-    @apply rounded-tr-4xl
+    @apply rounded-tr-4xl;
   }
   .thead-border-child *:not(:last-child) div {
-    @apply border-r border-r-gray-50
+    @apply border-r border-r-gray-100 h-[47px] flex  items-center;
   }
-
 
   .radio {
     @apply after:transition-all content-none after:-translate-x-1/2 after:-translate-y-1/2 after:opacity-0 after:top-[50%] after:left-[50%]  after:size-[14px] after:rounded-[50%] after:border-4 after:border-orange-600 size-4 rounded-[50%] border relative inline-block after:absolute mr-2;
   }
-
 
   .radio-hidden:checked + .radio::after {
     @apply opacity-100;
@@ -111,7 +113,6 @@
     @apply border-0;
   }
 
-  
   .hide-scroll::-webkit-scrollbar {
     display: none;
   }
@@ -119,7 +120,6 @@
     scrollbar-width: none;
   }
 
-  
   .modal {
     display: none;
     position: fixed;
@@ -139,10 +139,16 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
   }
   .backdrop.open {
     display: block;
   }
-}
 
+  .active::after {
+    display: block !important;
+  }
+  .active-segment {
+    @apply bg-orange-500/10 py-[18px] after:content-[''] after:-right-[5px] after:rounded-[15px] overflow-hidden after:top-0 after:bottom-0 after:m-auto after:w-[10px] after:h-[32px] after:bg-orange-500 after:absolute relative;
+  }
+}

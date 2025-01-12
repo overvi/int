@@ -25,5 +25,8 @@
     "build": "npx webpack",
     "production": "npx webpack --mode=production",
     "start": "webpack serve "
+  },
+  "dependencies": {
+    "litepicker": "^2.0.12"
   }
 }
