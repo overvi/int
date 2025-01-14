@@ -35,6 +35,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      spacing: {
+        11.5: "46px",
+      },
       fontSize: {
         xxs: "0.625rem",
       },
@@ -46,6 +49,7 @@ module.exports = {
       },
       boxShadow: {
         tbody: `inset 0 0 0 1px ${colors.gray[100]}`,
+        "tbody-offset": ` 0 0 0 1px ${colors.gray[100]}`,
       },
       colors: {
         ...colors,
