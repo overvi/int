@@ -50,6 +50,8 @@ module.exports = {
       boxShadow: {
         tbody: `inset 0 0 0 1px ${colors.gray[100]}`,
         "tbody-offset": ` 0 0 0 1px ${colors.gray[100]}`,
+        "tbody-dark": `inset 0 0 0 1px ${colors.gray[800]}`,
+        "tbody-dark-offset": ` 0 0 0 1px ${colors.gray[800]}`,
       },
       colors: {
         ...colors,

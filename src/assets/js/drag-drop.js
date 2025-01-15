@@ -75,8 +75,10 @@ function isValidFileType(file) {
   return allowedTypes.includes(file.type);
 }
 
-cancelUpload.addEventListener("click", () => {
-  if (previewContainer.innerHTML) {
-    previewContainer.innerText = "";
-  }
-});
+if (cancelUpload) {
+  cancelUpload.addEventListener("click", () => {
+    if (previewContainer.innerHTML) {
+      previewContainer.innerText = "";
+    }
+  });
+}

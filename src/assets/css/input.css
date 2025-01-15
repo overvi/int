@@ -34,12 +34,17 @@
     font-style: normal;
     font-weight: 700;
     src: url("../fonts/spartan/LeagueSpartan-Bold.ttf") format("truetype");
+  } 
+   
+  * {
+    @apply dark:!border-gray-800 
   }
 
   body {
     font-family: "League Spartan", "serif";
     min-height: 100vh;
     line-height: 14.72px;
+    @apply dark:text-white
   }
 
   input::-webkit-input-placeholder {
@@ -92,11 +97,11 @@
   }
 
   .table th {
-    @apply font-normal bg-[#FBFBFB];
+    @apply theme-neutral font-normal;
   }
 
   .table tbody tr:not(:last-child) {
-    @apply border-b border-b-gray-100;
+    @apply border-b border-b-gray-100 dark:border-b-gray-800;
   }
 
   .thead-round-child th:first-child {
@@ -106,11 +111,11 @@
     @apply rounded-tr-4xl;
   }
   .thead-border-child *:not(:last-child , .except) div {
-    @apply border-r border-r-gray-100 h-[47px] flex  items-center;
+    @apply border-r border-r-gray-100 dark:border-r-gray-800 h-[47px] flex  items-center;
   }
 
   .tbody-horizontal-border-child td:not(:last-child) {
-    @apply border-r border-r-gray-100
+    @apply border-r border-r-gray-100 dark:border-r-gray-800
   }
   .radio {
     @apply after:transition-all content-none after:-translate-x-1/2 after:-translate-y-1/2 after:opacity-0 after:top-[50%] after:left-[50%]  after:size-[14px] after:rounded-[50%] after:border-4 after:border-orange-600 size-4 rounded-[50%] border relative inline-block after:absolute mr-2;
@@ -148,8 +153,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: white;
     z-index: 555;
+    @apply theme-secondary;
   }
   .modal.open {
     display: block;
@@ -172,5 +177,20 @@
   }
   .active-segment {
     @apply bg-orange-500/10 py-[18px] after:content-[''] after:-right-[5px] after:rounded-[15px] overflow-hidden after:top-0 after:bottom-0 after:m-auto after:w-[10px] after:h-[32px] after:bg-orange-500 after:absolute relative;
+  }
+
+  .theme-primary { 
+    @apply bg-gray-50 dark:bg-gray-950
+  }
+
+  .theme-secondary { 
+    @apply bg-white dark:bg-gray-900
+  }
+
+  .theme-neutral {
+    @apply bg-[#FBFBFB] dark:bg-gray-950
+  }
+  .theme-svg-primary {
+    @apply fill-black dark:fill-white
   }
 }
