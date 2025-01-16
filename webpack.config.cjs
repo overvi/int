@@ -23,6 +23,7 @@ module.exports = {
         "reservations/hotel/1/index": "./src/reservations/hotel/1/index.html",
         "reservations/transfer/1/index":
           "./src/reservations/transfer/1/index.html",
+        "hotels/index": "./src/hotels/index.html",
       },
       js: {
         // output filename of extracted JS from source script loaded in HTML via `<script>` tag
