@@ -174,7 +174,7 @@
     display: block !important;
   }
   .active-segment {
-    @apply bg-orange-500/10 py-[18px] after:content-[''] after:-right-[5px] after:rounded-[15px] overflow-hidden after:top-0 after:bottom-0 after:m-auto after:w-[10px] after:h-[32px] after:bg-orange-500 after:absolute relative;
+    @apply bg-orange-500/10 py-[18px] !mt-[22px] after:content-[''] after:-right-[5px] after:rounded-[15px] overflow-hidden after:top-0 after:bottom-0 after:m-auto after:w-[10px] after:h-[32px] after:bg-orange-500 after:absolute relative;
   }
 
   .theme-primary {
