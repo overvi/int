@@ -76,11 +76,12 @@
     font-size: 1.5rem;
   }
 
-  .select::after {
+  .select::after,
+  .datePicker::after {
     display: block;
     position: absolute;
     height: fit-content;
-    top: 0;
+    top: 2px;
     bottom: 0;
     right: 10px;
     margin: auto;
@@ -175,6 +176,10 @@
   }
   .active-segment {
     @apply bg-orange-500/10 py-[18px] !mt-[22px] after:content-[''] after:-right-[5px] after:rounded-[15px] overflow-hidden after:top-0 after:bottom-0 after:m-auto after:w-[10px] after:h-[32px] after:bg-orange-500 after:absolute relative;
+  }
+
+  .active-segment + li {
+    @apply !mt-[22px];
   }
 
   .theme-primary {
