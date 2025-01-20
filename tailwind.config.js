@@ -37,6 +37,7 @@ module.exports = {
     extend: {
       spacing: {
         11.5: "46px",
+        8.5: "33px",
       },
       fontSize: {
         xxs: "0.625rem",
