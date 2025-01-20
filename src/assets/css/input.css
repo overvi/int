@@ -3,10 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  .litepicker {
-    --litepicker-is-end-color-bg: #f9b233;
-  }
-
   @font-face {
     font-display: "swap";
     font-family: "League Spartan";
@@ -53,6 +49,11 @@
 
   select {
     box-shadow: none;
+    line-height: 1;
+  }
+
+  .litepicker {
+    --litepicker-is-end-color-bg: #f9b233;
   }
 }
 
