@@ -30,6 +30,7 @@ module.exports = {
         "reports/index": "./src/reports/index.html",
         "transfer/zones/index": "./src/transfer/zones/index.html",
         "transfer/cars/index": "./src/transfer/cars/index.html",
+        "transfer/airports/index": "./src/transfer/airports/index.html",
       },
       js: {
         // output filename of extracted JS from source script loaded in HTML via `<script>` tag
