@@ -1,0 +1,862 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="@assets/css/input.css" />
+
+    <script>
+      const mode = localStorage.getItem("mode");
+
+      if (mode) {
+        document.documentElement.classList.add(mode);
+      }
+    </script>
+  </head>
+  <body class="theme-primary">
+    <div
+      class="backdrop fixed bg-black/45 inset-0 z-50"
+      id="modal-backdrop"
+    ></div>
+    <div
+      class="modal rounded-4xl h-[35rem] hide-scroll overflow-y-scroll hide-scroll p-10 min-w-[31.25rem]"
+      id="add-car"
+      role="dialog"
+      aria-labelledby="car-title"
+    >
+      <div
+        class="flex items-center border-b border-b-gray-100 pb-6 justify-between"
+      >
+        <h2 id="car-title" class="text-2xl">Add New Car</h2>
+        <button aria-label="Close Modal" data-modal-close="#add-car">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path
+              opacity="0.4"
+              d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+              fill="#DC2626"
+            />
+            <path
+              d="M13.0604 11.9999L15.3604 9.69986C15.6504 9.40986 15.6504 8.92986 15.3604 8.63986C15.0704 8.34986 14.5904 8.34986 14.3004 8.63986L12.0004 10.9399L9.70035 8.63986C9.41035 8.34986 8.93035 8.34986 8.64035 8.63986C8.35035 8.92986 8.35035 9.40986 8.64035 9.69986L10.9404 11.9999L8.64035 14.2999C8.35035 14.5899 8.35035 15.0699 8.64035 15.3599C8.79035 15.5099 8.98035 15.5799 9.17035 15.5799C9.36035 15.5799 9.55035 15.5099 9.70035 15.3599L12.0004 13.0599L14.3004 15.3599C14.4504 15.5099 14.6404 15.5799 14.8304 15.5799C15.0204 15.5799 15.2104 15.5099 15.3604 15.3599C15.6504 15.0699 15.6504 14.5899 15.3604 14.2999L13.0604 11.9999Z"
+              fill="#DC2626"
+            />
+          </svg>
+        </button>
+      </div>
+      <form action="" class="mt-6">
+        <div class="flex gap-6 pb-6">
+          <div class="flex flex-col basis-full h-fit gap-[24px_21px]">
+            <div>
+              <p class="block mb-2">
+                Car Type<span class="text-red-500">*</span>
+              </p>
+              <div class="select relative border overflow-hidden rounded-full">
+                <select
+                  name="car-type"
+                  id="car-type"
+                  aria-label="Car Type"
+                  class="appearance-none theme-secondary rounded-full [&:has(option:disabled:checked)]:text-gray-200 w-full min-h-10 ps-[14px] outline-none"
+                >
+                  <option disabled selected value="">Select...</option>
+                  <option class="text-black" value="1">1</option>
+                  <option class="text-black" value="2">2</option>
+                  <option class="text-black" value="3">3</option>
+                </select>
+              </div>
+            </div>
+            <div class="w-full">
+              <label class="block mb-2" for="address"
+                >Car Name<span class="text-red-500">*</span></label
+              >
+              <input
+                placeholder="Type..."
+                name="car-name"
+                class="min-h-[40px] theme-secondary placeholder:text-sm border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
+                id="car-name"
+                type="text"
+              />
+            </div>
+            <div class="flex items-center gap-6">
+              <div class="w-full">
+                <label class="block mb-2" for="pax-capacity"
+                  >Pax Capacity<span class="text-red-500">*</span>
+                </label>
+                <input
+                  placeholder="Type..."
+                  name="pax-capacity"
+                  class="min-h-[40px] theme-secondary placeholder:text-sm border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
+                  id="pax-capacity"
+                  type="text"
+                />
+              </div>
+              <div class="w-full">
+                <label class="block mb-2" for="bag-capacity"
+                  >Bag Capacity<span class="text-red-500">*</span></label
+                >
+                <input
+                  placeholder="Type..."
+                  name="bag-capacity"
+                  class="min-h-[40px] theme-secondary placeholder:text-sm border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
+                  id="bag-capacity"
+                  type="text"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          id="drop-area"
+          class="theme-primary min-h-[10.25rem] flex justify-center items-center flex-col relative dashed py-[25px] rounded-[15px]"
+        >
+          <input
+            id="file-input"
+            class="absolute cursor-pointer opacity-0 inset-0"
+            type="file"
+          />
+
+          <div class="w-fit m-auto">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="54"
+              height="46"
+              viewBox="0 0 54 46"
+              fill="none"
+            >
+              <path
+                d="M28.1337 11.3149L28.2263 11.3425L28.2313 11.3367C28.5767 11.3891 28.915 11.1796 29.0165 10.8368C29.9084 7.83998 32.7185 5.7462 35.8492 5.7462C36.2411 5.7462 36.559 5.42831 36.559 5.03638C36.559 4.64443 36.2411 4.32656 35.8492 4.32656C31.9664 4.32656 28.7037 6.91173 27.6561 10.4322C27.544 10.808 27.7582 11.2029 28.1337 11.3149Z"
+                fill="#F9B233"
+                stroke="#F9FFF9"
+                stroke-width="0.3"
+              />
+              <path
+                d="M43.6858 32.4675H40.327C40.0179 32.4675 39.7672 32.2168 39.7672 31.9077C39.7672 31.5986 40.0179 31.3479 40.327 31.3479H43.6858C48.3158 31.3479 52.083 27.5807 52.083 22.9507C52.083 18.3207 48.3158 14.5536 43.6858 14.5536H43.605C43.4427 14.5536 43.2883 14.4832 43.182 14.3604C43.0756 14.2377 43.0276 14.0749 43.0508 13.9142C43.1008 13.5655 43.126 13.2152 43.126 12.8741C43.126 8.86152 39.8611 5.59657 35.8484 5.59657C34.2874 5.59657 32.7987 6.08441 31.5431 7.00768C31.2671 7.21042 30.8753 7.12045 30.7157 6.81695C27.1598 0.0456729 17.8719 -0.86364 13.0567 5.02678C11.0282 7.50832 10.2312 10.7364 10.8698 13.8826C10.9402 14.2301 10.6743 14.554 10.3212 14.554H10.0969C5.4669 14.554 1.69975 18.3211 1.69975 22.9511C1.69975 27.5811 5.4669 31.3483 10.0969 31.3483H13.4557C13.7648 31.3483 14.0155 31.599 14.0155 31.9081C14.0155 32.2172 13.7648 32.4679 13.4557 32.4679H10.0969C4.84944 32.4679 0.580078 28.1986 0.580078 22.9511C0.580078 17.8508 4.61307 13.6746 9.65744 13.4443C9.1836 10.1802 10.0897 6.8877 12.1898 4.31822C17.3452 -1.98882 27.2252 -1.28189 31.4017 5.75093C32.7341 4.91561 34.2587 4.4774 35.8483 4.4774C40.7098 4.4774 44.5621 8.61522 44.225 13.4495C49.2229 13.7298 53.2024 17.884 53.2024 22.9507C53.2024 28.1986 48.933 32.4675 43.6856 32.4675L43.6858 32.4675Z"
+                fill="#F9B233"
+              />
+              <path
+                d="M12.6713 31.5916C12.6713 39.3916 19.0168 45.737 26.8167 45.737C34.6167 45.737 40.9621 39.3915 40.9621 31.5916C40.9621 23.7916 34.6167 17.4462 26.8167 17.4462C19.0167 17.4462 12.6713 23.7917 12.6713 31.5916ZM14.0912 31.5916C14.0912 24.575 19.8 18.8661 26.8167 18.8661C33.8333 18.8661 39.5422 24.5749 39.5422 31.5916C39.5422 38.6082 33.8333 44.3171 26.8167 44.3171C19.8001 44.3171 14.0912 38.6083 14.0912 31.5916Z"
+                fill="#F9B233"
+                stroke="#F9FFF9"
+                stroke-width="0.3"
+              />
+              <path
+                d="M26.5131 37.227C26.5131 37.5362 26.7638 37.7869 27.0729 37.7869C27.382 37.7869 27.6328 37.5365 27.6328 37.227V26.571C27.6328 26.2618 27.3821 26.0111 27.0729 26.0111C26.7638 26.0111 26.5131 26.2618 26.5131 26.571V37.227Z"
+                fill="#F9B233"
+                stroke="#F9B233"
+                stroke-width="0.3"
+              />
+              <path
+                d="M27.0724 27.3628L24.1897 30.2456L24.1896 30.2457L27.0724 27.3628ZM27.0724 27.3628L29.9553 30.2457C30.0645 30.3548 30.2082 30.4096 30.3512 30.4096L27.0724 27.3628ZM27.4683 26.1752C27.2497 25.9565 26.895 25.9564 26.6765 26.1752L30.3512 30.4096C30.4939 30.4096 30.6378 30.3553 30.7472 30.2455C30.9657 30.0267 30.9657 29.6725 30.747 29.4539L27.4683 26.1752Z"
+                fill="#F9B233"
+                stroke="#F9B233"
+                stroke-width="0.3"
+              />
+            </svg>
+          </div>
+          <div class="text-xs w-fit m-auto text-center">
+            <p class="font-bold mt-1">Drag & drop file</p>
+            <p class="text-gray-700 leading-[15px]">
+              Supported formates: <br />
+              JPEG, PNG
+            </p>
+          </div>
+        </div>
+        <div id="preview-container" class="my-3"></div>
+        <button
+          type="button"
+          id="cancel-upload"
+          class="uppercase leading-[18px] flex items-center justify-center mt-2 w-full bg-orange-500 min-h-10 text-white font-bold rounded-full"
+        >
+          CANCEL
+        </button>
+
+        <div class="flex gap-4 mt-6 font-bold" dir="rtl">
+          <button
+            class="border leading-[14px] text-white rounded-full bg-green-500 min-h-[40px] min-w-[7.3125rem]"
+          >
+            Save
+          </button>
+          <button
+            aria-label="Close Modal"
+            data-modal-close="#add-car"
+            type="button"
+            class="border leading-[14px] border-gray-400 text-gray-400 rounded-full min-h-[40px] min-w-[7.3125rem]"
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+    <main class="py-12 max-w-[80rem] 2xl:max-w-full px-4 m-auto flex gap-6">
+      <nav class="basis-[19.875rem]">
+        <div
+          class="overflow-y-scroll theme-secondary h-[90vh] hide-scroll justify-between top-12 bottom-12 w-[19.44rem] rounded-4xl sticky"
+        >
+          <div class="flex flex-col justify-between h-[150vh]">
+            <div>
+              <div class="w-fit m-auto mt-7">
+                <img src="@assets/images/logo-hor.webp" alt="" />
+              </div>
+              <ul
+                class="px-[30px] *:rounded-[15px] space-y-10 *:*:block *:*:mx-[30px] mt-[84px]"
+              >
+                <li>
+                  <a class="block">
+                    <div class="flex items-center gap-2">
+                      <svg
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          opacity="0.4"
+                          d="M22 7.81V8.5H9V2H16.19C19.83 2 22 4.17 22 7.81Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          opacity="0.4"
+                          d="M22 15.5V16.19C22 19.83 19.83 22 16.19 22H9V15.5H22Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          d="M9 2V22H7.81C4.17 22 2 19.83 2 16.19V7.81C2 4.17 4.17 2 7.81 2H9Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          opacity="0.6"
+                          d="M22 8.5H9V15.5H22V8.5Z"
+                          fill="#F9B233"
+                        />
+                      </svg>
+                      <p>Reservations</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <div class="flex items-center gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M21 5.25H3C2.59 5.25 2.25 4.91 2.25 4.5C2.25 4.09 2.59 3.75 3 3.75H21C21.41 3.75 21.75 4.09 21.75 4.5C21.75 4.91 21.41 5.25 21 5.25Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          opacity="0.4"
+                          d="M21 10.25H3C2.59 10.25 2.25 9.91 2.25 9.5C2.25 9.09 2.59 8.75 3 8.75H21C21.41 8.75 21.75 9.09 21.75 9.5C21.75 9.91 21.41 10.25 21 10.25Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          d="M21 15.25H3C2.59 15.25 2.25 14.91 2.25 14.5C2.25 14.09 2.59 13.75 3 13.75H21C21.41 13.75 21.75 14.09 21.75 14.5C21.75 14.91 21.41 15.25 21 15.25Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          opacity="0.4"
+                          d="M21 20.25H3C2.59 20.25 2.25 19.91 2.25 19.5C2.25 19.09 2.59 18.75 3 18.75H21C21.41 18.75 21.75 19.09 21.75 19.5C21.75 19.91 21.41 20.25 21 20.25Z"
+                          fill="#F9B233"
+                        />
+                      </svg>
+                      <p>Hotel List</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <div class="flex items-center gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          opacity="0.4"
+                          d="M20.5 10.19H17.61C15.24 10.19 13.31 8.26 13.31 5.89V3C13.31 2.45 12.86 2 12.31 2H8.07C4.99 2 2.5 4 2.5 7.57V16.43C2.5 20 4.99 22 8.07 22H15.93C19.01 22 21.5 20 21.5 16.43V11.19C21.5 10.64 21.05 10.19 20.5 10.19Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          d="M15.7997 2.20999C15.3897 1.79999 14.6797 2.07999 14.6797 2.64999V6.13999C14.6797 7.59999 15.9197 8.80999 17.4297 8.80999C18.3797 8.81999 19.6997 8.81999 20.8297 8.81999C21.3997 8.81999 21.6997 8.14999 21.2997 7.74999C19.8597 6.29999 17.2797 3.68999 15.7997 2.20999Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          d="M13.5 13.75H7.5C7.09 13.75 6.75 13.41 6.75 13C6.75 12.59 7.09 12.25 7.5 12.25H13.5C13.91 12.25 14.25 12.59 14.25 13C14.25 13.41 13.91 13.75 13.5 13.75Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          d="M11.5 17.75H7.5C7.09 17.75 6.75 17.41 6.75 17C6.75 16.59 7.09 16.25 7.5 16.25H11.5C11.91 16.25 12.25 16.59 12.25 17C12.25 17.41 11.91 17.75 11.5 17.75Z"
+                          fill="#F9B233"
+                        />
+                      </svg>
+                      <p>Invoices</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <div class="flex items-center gap-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          opacity="0.4"
+                          d="M16.24 3.6499H7.76004C5.29004 3.6499 3.29004 5.6599 3.29004 8.1199V17.5299C3.29004 19.9899 5.30004 21.9999 7.76004 21.9999H16.23C18.7 21.9999 20.7 19.9899 20.7 17.5299V8.1199C20.71 5.6499 18.7 3.6499 16.24 3.6499Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          d="M14.3498 2H9.64977C8.60977 2 7.75977 2.84 7.75977 3.88V4.82C7.75977 5.86 8.59977 6.7 9.63977 6.7H14.3498C15.3898 6.7 16.2298 5.86 16.2298 4.82V3.88C16.2398 2.84 15.3898 2 14.3498 2Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          d="M15 12.9502H8C7.59 12.9502 7.25 12.6102 7.25 12.2002C7.25 11.7902 7.59 11.4502 8 11.4502H15C15.41 11.4502 15.75 11.7902 15.75 12.2002C15.75 12.6102 15.41 12.9502 15 12.9502Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          d="M12.38 16.9502H8C7.59 16.9502 7.25 16.6102 7.25 16.2002C7.25 15.7902 7.59 15.4502 8 15.4502H12.38C12.79 15.4502 13.13 15.7902 13.13 16.2002C13.13 16.6102 12.79 16.9502 12.38 16.9502Z"
+                          fill="#F9B233"
+                        />
+                      </svg>
+                      <p>Reports</p>
+                    </div>
+                  </a>
+                </li>
+                <li
+                  class="active-segment expanded group after:!top-4 after:!bottom-auto"
+                >
+                  <div class="accordion">
+                    <button
+                      id="accordion-header-transfer"
+                      aria-expanded="true"
+                      aria-controls="accordion-panel-transfer"
+                      class="accordion-header group w-full !m-0 items-center !flex justify-between"
+                    >
+                      <div class="flex items-center gap-2">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M12 18.75C11.59 18.75 11.25 18.41 11.25 18V17C11.25 16.59 11.59 16.25 12 16.25C12.41 16.25 12.75 16.59 12.75 17V18C12.75 18.41 12.41 18.75 12 18.75Z"
+                            fill="#F9B233"
+                          />
+                          <path
+                            d="M12 22.75C11.59 22.75 11.25 22.41 11.25 22V21C11.25 20.59 11.59 20.25 12 20.25C12.41 20.25 12.75 20.59 12.75 21V22C12.75 22.41 12.41 22.75 12 22.75Z"
+                            fill="#F9B233"
+                          />
+                          <path
+                            d="M2.00009 22.7501C1.94009 22.7501 1.8801 22.7401 1.8201 22.7301C1.4201 22.6301 1.1701 22.2201 1.2701 21.8201L2.2701 17.8201C2.3701 17.4201 2.77009 17.1701 3.18009 17.2701C3.58009 17.3701 3.83009 17.7801 3.73009 18.1801L2.73009 22.1801C2.64009 22.5201 2.34009 22.7501 2.00009 22.7501Z"
+                            fill="#F9B233"
+                          />
+                          <path
+                            d="M21.9997 22.7502C21.6597 22.7502 21.3597 22.5202 21.2697 22.1802L20.2697 18.1802C20.1697 17.7802 20.4097 17.3702 20.8197 17.2702C21.2197 17.1702 21.6297 17.4102 21.7297 17.8202L22.7297 21.8202C22.8297 22.2202 22.5897 22.6302 22.1797 22.7302C22.1197 22.7402 22.0597 22.7502 21.9997 22.7502Z"
+                            fill="#F9B233"
+                          />
+                          <path
+                            opacity="0.4"
+                            d="M19.2602 9.51984C19.1502 8.33984 18.8402 7.08984 16.5502 7.08984H7.45024C5.16024 7.08984 4.85024 8.34984 4.74024 9.51984L4.34024 13.8598C4.29024 14.3998 4.47024 14.9398 4.84024 15.3498C5.22024 15.7598 5.76025 15.9998 6.32025 15.9998H7.66024C8.81024 15.9998 9.03023 15.3398 9.18023 14.8998L9.32025 14.4698C9.48025 13.9798 9.52024 13.8598 10.1702 13.8598H13.8202C14.4602 13.8598 14.4802 13.9298 14.6702 14.4698L14.8102 14.8998C14.9602 15.3398 15.1802 15.9998 16.3302 15.9998H17.6702C18.2302 15.9998 18.7702 15.7598 19.1502 15.3498C19.5202 14.9498 19.7002 14.3998 19.6502 13.8598L19.2602 9.51984Z"
+                            fill="#F9B233"
+                          />
+                          <path
+                            d="M18.4198 4.94H17.7098C17.6998 4.94 17.6998 4.94 17.6998 4.94L17.4298 3.65002C17.1698 2.40002 16.6398 1.25 14.5098 1.25H12.5398H11.4698H9.4998C7.3698 1.25 6.8398 2.40002 6.5798 3.65002L6.3098 4.94C6.2998 4.94 6.2998 4.94 6.2998 4.94H5.5898C5.2898 4.94 5.0498 5.17998 5.0498 5.47998C5.0498 5.77998 5.2898 6.02002 5.5898 6.02002H6.09981L5.7998 7.45001C6.1898 7.23001 6.71981 7.09003 7.45981 7.09003H16.5598C17.2998 7.09003 17.8398 7.23001 18.2198 7.45001L17.9198 6.02002H18.4298C18.7298 6.02002 18.9698 5.77998 18.9698 5.47998C18.9598 5.17998 18.7198 4.94 18.4198 4.94Z"
+                            fill="#F9B233"
+                          />
+                          <path
+                            d="M9.86067 11.0102H7.72067C7.42067 11.0102 7.18066 10.7702 7.18066 10.4702C7.18066 10.1702 7.42067 9.93018 7.72067 9.93018H9.86067C10.1607 9.93018 10.4007 10.1702 10.4007 10.4702C10.3907 10.7702 10.1507 11.0102 9.86067 11.0102Z"
+                            fill="#F9B233"
+                          />
+                          <path
+                            d="M16.2806 11.0102H14.1406C13.8406 11.0102 13.6006 10.7702 13.6006 10.4702C13.6006 10.1702 13.8406 9.93018 14.1406 9.93018H16.2806C16.5806 9.93018 16.8206 10.1702 16.8206 10.4702C16.8206 10.7702 16.5806 11.0102 16.2806 11.0102Z"
+                            fill="#F9B233"
+                          />
+                        </svg>
+
+                        <p>Transfer</p>
+                      </div>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="18"
+                        height="18"
+                        class="group-[.expanded]:rotate-180"
+                        viewBox="0 0 18 18"
+                        fill="none"
+                      >
+                        <path
+                          d="M14.9396 6.71289L10.0496 11.6029C9.47207 12.1804 8.52707 12.1804 7.94957 11.6029L3.05957 6.71289"
+                          stroke="#F9B233"
+                          stroke-width="1.5"
+                          class="group-[.expanded]:stroke-black group-[.expanded]:dark:stroke-white"
+                          stroke-miterlimit="10"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                    <ul
+                      id="accordion-panel-transfer"
+                      role="region"
+                      aria-labelledby="accordion-header-transfer"
+                      class="font-light mt-5 border-t pt-5 accordion-panel"
+                    >
+                      <li>
+                        <a
+                          class="px-8.5 block w-full rounded-[10px] py-2"
+                          href=""
+                          >Zones</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="px-8.5 text-white bg-orange-500 block w-full rounded-[10px] py-2"
+                          href=""
+                          >Cars</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="px-8.5 block w-full rounded-[10px] py-2"
+                          href=""
+                          >Rates</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="px-8.5 block w-full rounded-[10px] py-2"
+                          href=""
+                          >Airports</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="theme-primary m-6 p-[10px] items-center mt-4 gap-4 flex rounded-[15px]"
+            >
+              <div class="p-2 theme-secondary rounded-[10px]">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M17.62 10.7501C17.19 10.7501 16.85 10.4001 16.85 9.9801C16.85 9.6101 16.48 8.8401 15.86 8.1701C15.25 7.5201 14.58 7.1401 14.02 7.1401C13.59 7.1401 13.25 6.7901 13.25 6.3701C13.25 5.9501 13.6 5.6001 14.02 5.6001C15.02 5.6001 16.07 6.1401 16.99 7.1101C17.85 8.0201 18.4 9.1501 18.4 9.9701C18.4 10.4001 18.05 10.7501 17.62 10.7501Z"
+                    fill="#F9B233"
+                  />
+                  <path
+                    d="M21.2298 10.75C20.7998 10.75 20.4598 10.4 20.4598 9.98C20.4598 6.43 17.5698 3.55 14.0298 3.55C13.5998 3.55 13.2598 3.2 13.2598 2.78C13.2598 2.36 13.5998 2 14.0198 2C18.4198 2 21.9998 5.58 21.9998 9.98C21.9998 10.4 21.6498 10.75 21.2298 10.75Z"
+                    fill="#F9B233"
+                  />
+                  <path
+                    opacity="0.4"
+                    d="M11.79 14.21L8.52 17.48C8.16 17.16 7.81 16.83 7.47 16.49C6.44 15.45 5.51 14.36 4.68 13.22C3.86 12.08 3.2 10.94 2.72 9.81C2.24 8.67 2 7.58 2 6.54C2 5.86 2.12 5.21 2.36 4.61C2.6 4 2.98 3.44 3.51 2.94C4.15 2.31 4.85 2 5.59 2C5.87 2 6.15 2.06 6.4 2.18C6.66 2.3 6.89 2.48 7.07 2.74L9.39 6.01C9.57 6.26 9.7 6.49 9.79 6.71C9.88 6.92 9.93 7.13 9.93 7.32C9.93 7.56 9.86 7.8 9.72 8.03C9.59 8.26 9.4 8.5 9.16 8.74L8.4 9.53C8.29 9.64 8.24 9.77 8.24 9.93C8.24 10.01 8.25 10.08 8.27 10.16C8.3 10.24 8.33 10.3 8.35 10.36C8.53 10.69 8.84 11.12 9.28 11.64C9.73 12.16 10.21 12.69 10.73 13.22C11.09 13.57 11.44 13.91 11.79 14.21Z"
+                    fill="#F9B233"
+                  />
+                  <path
+                    d="M21.9696 18.33C21.9696 18.61 21.9196 18.9 21.8196 19.18C21.7896 19.26 21.7596 19.34 21.7196 19.42C21.5496 19.78 21.3296 20.12 21.0396 20.44C20.5496 20.98 20.0096 21.37 19.3996 21.62C19.3896 21.62 19.3796 21.63 19.3696 21.63C18.7796 21.87 18.1396 22 17.4496 22C16.4296 22 15.3396 21.76 14.1896 21.27C13.0396 20.78 11.8896 20.12 10.7496 19.29C10.3596 19 9.96961 18.71 9.59961 18.4L12.8696 15.13C13.1496 15.34 13.3996 15.5 13.6096 15.61C13.6596 15.63 13.7196 15.66 13.7896 15.69C13.8696 15.72 13.9496 15.73 14.0396 15.73C14.2096 15.73 14.3396 15.67 14.4496 15.56L15.2096 14.81C15.4596 14.56 15.6996 14.37 15.9296 14.25C16.1596 14.11 16.3896 14.04 16.6396 14.04C16.8296 14.04 17.0296 14.08 17.2496 14.17C17.4696 14.26 17.6996 14.39 17.9496 14.56L21.2596 16.91C21.5196 17.09 21.6996 17.3 21.8096 17.55C21.9096 17.8 21.9696 18.05 21.9696 18.33Z"
+                    fill="#F9B233"
+                  />
+                </svg>
+              </div>
+              <div>
+                <p>Supporting Phone</p>
+                <p class="text-[.625rem] mt-0.5">+90 (539) 376 57 00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="basis-[calc(100%-19.875rem)] h-fit">
+        <header class="flex w-full h-fit justify-between gap-1">
+          <div>
+            <h1 class="h1 leading-[22px]">Transfer</h1>
+            <p class="mt-2 font-light">
+              Lorem ipsum dolor sit amet consectetur. Feugiat arcu arcu euismod
+              tortor at adipiscing.
+            </p>
+          </div>
+          <div
+            class="flex items-center gap-5 p-0.5 border border-[#A1A1A1]/[63.14%] rounded-full"
+          >
+            <button
+              id="toggle-color-dark"
+              class="bg-orange-500 dark:bg-transparent rounded-full"
+            >
+              <div class="rounded-full p-2 w-fit">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    opacity="0.4"
+                    d="M12 19C15.866 19 19 15.866 19 12C19 8.13401 15.866 5 12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19Z"
+                    class="theme-svg-primary"
+                  />
+                  <path
+                    d="M12 22.96C11.45 22.96 11 22.55 11 22V21.92C11 21.37 11.45 20.92 12 20.92C12.55 20.92 13 21.37 13 21.92C13 22.47 12.55 22.96 12 22.96ZM19.14 20.14C18.88 20.14 18.63 20.04 18.43 19.85L18.3 19.72C17.91 19.33 17.91 18.7 18.3 18.31C18.69 17.92 19.32 17.92 19.71 18.31L19.84 18.44C20.23 18.83 20.23 19.46 19.84 19.85C19.65 20.04 19.4 20.14 19.14 20.14ZM4.86 20.14C4.6 20.14 4.35 20.04 4.15 19.85C3.76 19.46 3.76 18.83 4.15 18.44L4.28 18.31C4.67 17.92 5.3 17.92 5.69 18.31C6.08 18.7 6.08 19.33 5.69 19.72L5.56 19.85C5.37 20.04 5.11 20.14 4.86 20.14ZM22 13H21.92C21.37 13 20.92 12.55 20.92 12C20.92 11.45 21.37 11 21.92 11C22.47 11 22.96 11.45 22.96 12C22.96 12.55 22.55 13 22 13ZM2.08 13H2C1.45 13 1 12.55 1 12C1 11.45 1.45 11 2 11C2.55 11 3.04 11.45 3.04 12C3.04 12.55 2.63 13 2.08 13ZM19.01 5.99C18.75 5.99 18.5 5.89 18.3 5.7C17.91 5.31 17.91 4.68 18.3 4.29L18.43 4.16C18.82 3.77 19.45 3.77 19.84 4.16C20.23 4.55 20.23 5.18 19.84 5.57L19.71 5.7C19.52 5.89 19.27 5.99 19.01 5.99ZM4.99 5.99C4.73 5.99 4.48 5.89 4.28 5.7L4.15 5.56C3.76 5.17 3.76 4.54 4.15 4.15C4.54 3.76 5.17 3.76 5.56 4.15L5.69 4.28C6.08 4.67 6.08 5.3 5.69 5.69C5.5 5.89 5.24 5.99 4.99 5.99ZM12 3.04C11.45 3.04 11 2.63 11 2.08V2C11 1.45 11.45 1 12 1C12.55 1 13 1.45 13 2C13 2.55 12.55 3.04 12 3.04Z"
+                    class="theme-svg-primary"
+                  />
+                </svg>
+              </div>
+            </button>
+            <button
+              id="toggle-color-light"
+              class="rounded-full dark:bg-orange-500 bg-transparent"
+            >
+              <div class="rounded-full p-2 w-fit">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M8.99971 19.0004C8.99971 19.8404 9.12971 20.6604 9.36971 21.4204C5.52971 20.0904 2.62971 16.5604 2.32971 12.4304C2.02971 8.04036 4.55971 3.94036 8.64971 2.22036C9.70971 1.78036 10.2497 2.10036 10.4797 2.33036C10.6997 2.55036 11.0097 3.08036 10.5697 4.09036C10.1197 5.13036 9.89971 6.23036 9.89971 7.37036C9.90971 9.41036 10.7097 11.3004 12.0097 12.7504C10.1797 14.2104 8.99971 16.4704 8.99971 19.0004Z"
+                    fill="#888888"
+                  />
+                  <path
+                    opacity="0.4"
+                    d="M21.21 17.72C19.23 20.41 16.09 21.99 12.74 21.99C12.58 21.99 12.42 21.98 12.26 21.97C11.26 21.93 10.29 21.74 9.37 21.42C9.13 20.66 9 19.84 9 19C9 16.47 10.18 14.21 12.01 12.75C13.48 14.4 15.59 15.47 17.92 15.57C18.55 15.6 19.18 15.55 19.8 15.44C20.92 15.24 21.37 15.66 21.53 15.93C21.7 16.2 21.88 16.79 21.21 17.72Z"
+                    fill="#888888"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+          <div
+            class="theme-secondary rounded-full flex items-center min-w-[13.187rem] gap-[10px] p-[6px]"
+          >
+            <div>
+              <img src="@assets/images/your-logo.webp" alt="" />
+            </div>
+            <p class="font-semibold">Batis</p>
+          </div>
+        </header>
+        <div
+          class="mt-[25px] h-[calc(100%-4.4375rem)] theme-secondary p-6 rounded-4xl"
+        >
+          <div class="flex justify-end mb-6">
+            <button
+              data-modal-target="#add-car"
+              class="flex items-center gap-2.5 bg-orange-500 rounded-full min-h-[40px] px-[15px] text-white font-bold"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  opacity="0.4"
+                  d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  fill="white"
+                />
+                <path
+                  d="M16 11.25H12.75V8C12.75 7.59 12.41 7.25 12 7.25C11.59 7.25 11.25 7.59 11.25 8V11.25H8C7.59 11.25 7.25 11.59 7.25 12C7.25 12.41 7.59 12.75 8 12.75H11.25V16C11.25 16.41 11.59 16.75 12 16.75C12.41 16.75 12.75 16.41 12.75 16V12.75H16C16.41 12.75 16.75 12.41 16.75 12C16.75 11.59 16.41 11.25 16 11.25Z"
+                  fill="white"
+                />
+              </svg>
+              <p>Add New Car</p>
+            </button>
+          </div>
+          <table class="table">
+            <thead>
+              <tr
+                class="*:*:py-4 *:py-4 *:text-start thead-round-child thead-border-child"
+              >
+                <th>
+                  <div class="text-center w-full h-full ps-8.5">Car Image</div>
+                </th>
+                <th>
+                  <div class="w-full ps-4">Car Type</div>
+                </th>
+                <th>
+                  <div class="px-4">Car Name</div>
+                </th>
+                <th>
+                  <div class="ps-4">Pax Capacity</div>
+                </th>
+                <th>
+                  <div class="ps-4">Bag Capacity</div>
+                </th>
+                <th>
+                  <div class="ps-4">Action</div>
+                </th>
+              </tr>
+            </thead>
+            <tbody
+              class="shadow-tbody dark:shadow-tbody-dark text-sm rounded-b-4xl"
+            >
+              <tr class="h-[3.5rem] *:py-3">
+                <td class="ps-8.5">
+                  <img src="@assets/images/car-img.webp" alt="" />
+                </td>
+                <td class="ps-4">
+                  <p class="w-28">lorem ipsum</p>
+                </td>
+                <td class="ps-4">
+                  <p class="w-36">lorem ipsum</p>
+                </td>
+                <td class="ps-4">
+                  <p>4</p>
+                </td>
+                <td class="ps-4">
+                  <p>4</p>
+                </td>
+                <td class="ps-4">
+                  <div class="flex w-20 items-center gap-6">
+                    <button data-modal-target="#add-car" aria-label="Edit Car">
+                      <svg
+                        role="img"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          opacity="0.4"
+                          d="M21 22H3C2.59 22 2.25 21.66 2.25 21.25C2.25 20.84 2.59 20.5 3 20.5H21C21.41 20.5 21.75 20.84 21.75 21.25C21.75 21.66 21.41 22 21 22Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          opacity="0.4"
+                          d="M19.0201 3.47967C17.0801 1.53967 15.1801 1.48967 13.1901 3.47967L11.9801 4.68967C11.8801 4.78967 11.8401 4.94967 11.8801 5.08967C12.6401 7.73967 14.7601 9.85967 17.4101 10.6197C17.4501 10.6297 17.4901 10.6397 17.5301 10.6397C17.6401 10.6397 17.7401 10.5997 17.8201 10.5197L19.0201 9.30967C20.0101 8.32967 20.4901 7.37967 20.4901 6.41967C20.5001 5.42967 20.0201 4.46967 19.0201 3.47967Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          d="M15.6098 11.5298C15.3198 11.3898 15.0398 11.2498 14.7698 11.0898C14.5498 10.9598 14.3398 10.8198 14.1298 10.6698C13.9598 10.5598 13.7598 10.3998 13.5698 10.2398C13.5498 10.2298 13.4798 10.1698 13.3998 10.0898C13.0698 9.8098 12.6998 9.4498 12.3698 9.0498C12.3398 9.0298 12.2898 8.9598 12.2198 8.8698C12.1198 8.7498 11.9498 8.5498 11.7998 8.3198C11.6798 8.1698 11.5398 7.9498 11.4098 7.7298C11.2498 7.4598 11.1098 7.1898 10.9698 6.9098C10.8298 6.6098 10.7198 6.3198 10.6198 6.0498L4.33983 12.3298C4.20983 12.4598 4.08983 12.7098 4.05983 12.8798L3.51983 16.7098C3.41983 17.3898 3.60983 18.0298 4.02983 18.4598C4.38983 18.8098 4.88983 18.9998 5.42983 18.9998C5.54983 18.9998 5.66983 18.9898 5.78983 18.9698L9.62983 18.4298C9.80983 18.3998 10.0598 18.2798 10.1798 18.1498L16.4598 11.8698C16.1798 11.7698 15.9098 11.6598 15.6098 11.5298Z"
+                          fill="#F9B233"
+                        />
+                      </svg>
+                    </button>
+                    <button aria-label="Delete Car">
+                      <svg
+                        role="img"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M21.0702 5.23C19.4602 5.07 17.8502 4.95 16.2302 4.86V4.85L16.0102 3.55C15.8602 2.63 15.6402 1.25 13.3002 1.25H10.6802C8.35016 1.25 8.13016 2.57 7.97016 3.54L7.76016 4.82C6.83016 4.88 5.90016 4.94 4.97016 5.03L2.93016 5.23C2.51016 5.27 2.21016 5.64 2.25016 6.05C2.29016 6.46 2.65016 6.76 3.07016 6.72L5.11016 6.52C10.3502 6 15.6302 6.2 20.9302 6.73C20.9602 6.73 20.9802 6.73 21.0102 6.73C21.3902 6.73 21.7202 6.44 21.7602 6.05C21.7902 5.64 21.4902 5.27 21.0702 5.23Z"
+                          fill="#DC2626"
+                        />
+                        <path
+                          opacity="0.3991"
+                          d="M19.2302 8.14C18.9902 7.89 18.6602 7.75 18.3202 7.75H5.68024C5.34024 7.75 5.00024 7.89 4.77024 8.14C4.54024 8.39 4.41024 8.73 4.43024 9.08L5.05024 19.34C5.16024 20.86 5.30024 22.76 8.79024 22.76H15.2102C18.7002 22.76 18.8402 20.87 18.9502 19.34L19.5702 9.09C19.5902 8.73 19.4602 8.39 19.2302 8.14Z"
+                          fill="#DC2626"
+                        />
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M9.58008 17C9.58008 16.5858 9.91586 16.25 10.3301 16.25H13.6601C14.0743 16.25 14.4101 16.5858 14.4101 17C14.4101 17.4142 14.0743 17.75 13.6601 17.75H10.3301C9.91586 17.75 9.58008 17.4142 9.58008 17Z"
+                          fill="#DC2626"
+                        />
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M8.75 13C8.75 12.5858 9.08579 12.25 9.5 12.25H14.5C14.9142 12.25 15.25 12.5858 15.25 13C15.25 13.4142 14.9142 13.75 14.5 13.75H9.5C9.08579 13.75 8.75 13.4142 8.75 13Z"
+                          fill="#DC2626"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr class="h-[3.5rem] *:py-3">
+                <td class="ps-8.5">
+                  <img src="@assets/images/car-img.webp" alt="" />
+                </td>
+                <td class="ps-4">
+                  <p class="w-28">lorem ipsum</p>
+                </td>
+                <td class="ps-4">
+                  <p class="w-36">lorem ipsum</p>
+                </td>
+                <td class="ps-4">
+                  <p>4</p>
+                </td>
+                <td class="ps-4">
+                  <p>4</p>
+                </td>
+                <td class="ps-4">
+                  <div class="flex w-20 items-center gap-6">
+                    <button data-modal-target="#add-car" aria-label="Edit Car">
+                      <svg
+                        role="img"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          opacity="0.4"
+                          d="M21 22H3C2.59 22 2.25 21.66 2.25 21.25C2.25 20.84 2.59 20.5 3 20.5H21C21.41 20.5 21.75 20.84 21.75 21.25C21.75 21.66 21.41 22 21 22Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          opacity="0.4"
+                          d="M19.0201 3.47967C17.0801 1.53967 15.1801 1.48967 13.1901 3.47967L11.9801 4.68967C11.8801 4.78967 11.8401 4.94967 11.8801 5.08967C12.6401 7.73967 14.7601 9.85967 17.4101 10.6197C17.4501 10.6297 17.4901 10.6397 17.5301 10.6397C17.6401 10.6397 17.7401 10.5997 17.8201 10.5197L19.0201 9.30967C20.0101 8.32967 20.4901 7.37967 20.4901 6.41967C20.5001 5.42967 20.0201 4.46967 19.0201 3.47967Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          d="M15.6098 11.5298C15.3198 11.3898 15.0398 11.2498 14.7698 11.0898C14.5498 10.9598 14.3398 10.8198 14.1298 10.6698C13.9598 10.5598 13.7598 10.3998 13.5698 10.2398C13.5498 10.2298 13.4798 10.1698 13.3998 10.0898C13.0698 9.8098 12.6998 9.4498 12.3698 9.0498C12.3398 9.0298 12.2898 8.9598 12.2198 8.8698C12.1198 8.7498 11.9498 8.5498 11.7998 8.3198C11.6798 8.1698 11.5398 7.9498 11.4098 7.7298C11.2498 7.4598 11.1098 7.1898 10.9698 6.9098C10.8298 6.6098 10.7198 6.3198 10.6198 6.0498L4.33983 12.3298C4.20983 12.4598 4.08983 12.7098 4.05983 12.8798L3.51983 16.7098C3.41983 17.3898 3.60983 18.0298 4.02983 18.4598C4.38983 18.8098 4.88983 18.9998 5.42983 18.9998C5.54983 18.9998 5.66983 18.9898 5.78983 18.9698L9.62983 18.4298C9.80983 18.3998 10.0598 18.2798 10.1798 18.1498L16.4598 11.8698C16.1798 11.7698 15.9098 11.6598 15.6098 11.5298Z"
+                          fill="#F9B233"
+                        />
+                      </svg>
+                    </button>
+                    <button aria-label="Delete Car">
+                      <svg
+                        role="img"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M21.0702 5.23C19.4602 5.07 17.8502 4.95 16.2302 4.86V4.85L16.0102 3.55C15.8602 2.63 15.6402 1.25 13.3002 1.25H10.6802C8.35016 1.25 8.13016 2.57 7.97016 3.54L7.76016 4.82C6.83016 4.88 5.90016 4.94 4.97016 5.03L2.93016 5.23C2.51016 5.27 2.21016 5.64 2.25016 6.05C2.29016 6.46 2.65016 6.76 3.07016 6.72L5.11016 6.52C10.3502 6 15.6302 6.2 20.9302 6.73C20.9602 6.73 20.9802 6.73 21.0102 6.73C21.3902 6.73 21.7202 6.44 21.7602 6.05C21.7902 5.64 21.4902 5.27 21.0702 5.23Z"
+                          fill="#DC2626"
+                        />
+                        <path
+                          opacity="0.3991"
+                          d="M19.2302 8.14C18.9902 7.89 18.6602 7.75 18.3202 7.75H5.68024C5.34024 7.75 5.00024 7.89 4.77024 8.14C4.54024 8.39 4.41024 8.73 4.43024 9.08L5.05024 19.34C5.16024 20.86 5.30024 22.76 8.79024 22.76H15.2102C18.7002 22.76 18.8402 20.87 18.9502 19.34L19.5702 9.09C19.5902 8.73 19.4602 8.39 19.2302 8.14Z"
+                          fill="#DC2626"
+                        />
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M9.58008 17C9.58008 16.5858 9.91586 16.25 10.3301 16.25H13.6601C14.0743 16.25 14.4101 16.5858 14.4101 17C14.4101 17.4142 14.0743 17.75 13.6601 17.75H10.3301C9.91586 17.75 9.58008 17.4142 9.58008 17Z"
+                          fill="#DC2626"
+                        />
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M8.75 13C8.75 12.5858 9.08579 12.25 9.5 12.25H14.5C14.9142 12.25 15.25 12.5858 15.25 13C15.25 13.4142 14.9142 13.75 14.5 13.75H9.5C9.08579 13.75 8.75 13.4142 8.75 13Z"
+                          fill="#DC2626"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr class="h-[3.5rem] *:py-3">
+                <td class="ps-8.5">
+                  <img src="@assets/images/car-img.webp" alt="" />
+                </td>
+                <td class="ps-4">
+                  <p class="w-28">lorem ipsum</p>
+                </td>
+                <td class="ps-4">
+                  <p class="w-36">lorem ipsum</p>
+                </td>
+                <td class="ps-4">
+                  <p>4</p>
+                </td>
+                <td class="ps-4">
+                  <p>4</p>
+                </td>
+                <td class="ps-4">
+                  <div class="flex w-20 items-center gap-6">
+                    <button data-modal-target="#add-car" aria-label="Edit Car">
+                      <svg
+                        role="img"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          opacity="0.4"
+                          d="M21 22H3C2.59 22 2.25 21.66 2.25 21.25C2.25 20.84 2.59 20.5 3 20.5H21C21.41 20.5 21.75 20.84 21.75 21.25C21.75 21.66 21.41 22 21 22Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          opacity="0.4"
+                          d="M19.0201 3.47967C17.0801 1.53967 15.1801 1.48967 13.1901 3.47967L11.9801 4.68967C11.8801 4.78967 11.8401 4.94967 11.8801 5.08967C12.6401 7.73967 14.7601 9.85967 17.4101 10.6197C17.4501 10.6297 17.4901 10.6397 17.5301 10.6397C17.6401 10.6397 17.7401 10.5997 17.8201 10.5197L19.0201 9.30967C20.0101 8.32967 20.4901 7.37967 20.4901 6.41967C20.5001 5.42967 20.0201 4.46967 19.0201 3.47967Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          d="M15.6098 11.5298C15.3198 11.3898 15.0398 11.2498 14.7698 11.0898C14.5498 10.9598 14.3398 10.8198 14.1298 10.6698C13.9598 10.5598 13.7598 10.3998 13.5698 10.2398C13.5498 10.2298 13.4798 10.1698 13.3998 10.0898C13.0698 9.8098 12.6998 9.4498 12.3698 9.0498C12.3398 9.0298 12.2898 8.9598 12.2198 8.8698C12.1198 8.7498 11.9498 8.5498 11.7998 8.3198C11.6798 8.1698 11.5398 7.9498 11.4098 7.7298C11.2498 7.4598 11.1098 7.1898 10.9698 6.9098C10.8298 6.6098 10.7198 6.3198 10.6198 6.0498L4.33983 12.3298C4.20983 12.4598 4.08983 12.7098 4.05983 12.8798L3.51983 16.7098C3.41983 17.3898 3.60983 18.0298 4.02983 18.4598C4.38983 18.8098 4.88983 18.9998 5.42983 18.9998C5.54983 18.9998 5.66983 18.9898 5.78983 18.9698L9.62983 18.4298C9.80983 18.3998 10.0598 18.2798 10.1798 18.1498L16.4598 11.8698C16.1798 11.7698 15.9098 11.6598 15.6098 11.5298Z"
+                          fill="#F9B233"
+                        />
+                      </svg>
+                    </button>
+                    <button aria-label="Delete Car">
+                      <svg
+                        role="img"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M21.0702 5.23C19.4602 5.07 17.8502 4.95 16.2302 4.86V4.85L16.0102 3.55C15.8602 2.63 15.6402 1.25 13.3002 1.25H10.6802C8.35016 1.25 8.13016 2.57 7.97016 3.54L7.76016 4.82C6.83016 4.88 5.90016 4.94 4.97016 5.03L2.93016 5.23C2.51016 5.27 2.21016 5.64 2.25016 6.05C2.29016 6.46 2.65016 6.76 3.07016 6.72L5.11016 6.52C10.3502 6 15.6302 6.2 20.9302 6.73C20.9602 6.73 20.9802 6.73 21.0102 6.73C21.3902 6.73 21.7202 6.44 21.7602 6.05C21.7902 5.64 21.4902 5.27 21.0702 5.23Z"
+                          fill="#DC2626"
+                        />
+                        <path
+                          opacity="0.3991"
+                          d="M19.2302 8.14C18.9902 7.89 18.6602 7.75 18.3202 7.75H5.68024C5.34024 7.75 5.00024 7.89 4.77024 8.14C4.54024 8.39 4.41024 8.73 4.43024 9.08L5.05024 19.34C5.16024 20.86 5.30024 22.76 8.79024 22.76H15.2102C18.7002 22.76 18.8402 20.87 18.9502 19.34L19.5702 9.09C19.5902 8.73 19.4602 8.39 19.2302 8.14Z"
+                          fill="#DC2626"
+                        />
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M9.58008 17C9.58008 16.5858 9.91586 16.25 10.3301 16.25H13.6601C14.0743 16.25 14.4101 16.5858 14.4101 17C14.4101 17.4142 14.0743 17.75 13.6601 17.75H10.3301C9.91586 17.75 9.58008 17.4142 9.58008 17Z"
+                          fill="#DC2626"
+                        />
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M8.75 13C8.75 12.5858 9.08579 12.25 9.5 12.25H14.5C14.9142 12.25 15.25 12.5858 15.25 13C15.25 13.4142 14.9142 13.75 14.5 13.75H9.5C9.08579 13.75 8.75 13.4142 8.75 13Z"
+                          fill="#DC2626"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <script defer src="@assets/js/main.js"></script>
+    <script defer src="@assets/js/accordion.js"></script>
+    <script defer src="@assets/js/modal.js"></script>
+    <script defer src="@assets/js/drag-drop.js"></script>
+  </body>
+</html>
