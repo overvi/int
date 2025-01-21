@@ -31,6 +31,8 @@ module.exports = {
         "transfer/zones/index": "./src/transfer/zones/index.html",
         "transfer/cars/index": "./src/transfer/cars/index.html",
         "transfer/airports/index": "./src/transfer/airports/index.html",
+        "transfer/rates/index": "./src/transfer/rates/index.html",
+        "transfer/rates/empty": "./src/transfer/rates/empty-rate.html",
       },
       js: {
         // output filename of extracted JS from source script loaded in HTML via `<script>` tag

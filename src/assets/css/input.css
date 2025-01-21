@@ -147,6 +147,10 @@
     width: 12px;
   }
 
+  .remark-scroll--contrast::-webkit-scrollbar-track {
+    @apply !bg-gray-50
+  }
+
   .modal {
     display: none;
     position: fixed;
