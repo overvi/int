@@ -24,3 +24,12 @@ export var map = L.map("map", {
 }).setView([43.64701, -79.39425], 15);
 
 var marker = L.marker([43.64701, -79.39425]).addTo(map);
+
+const deactive = document.getElementById("deactive");
+
+const modalToggle = document.getElementById("hotel-deactive");
+
+modalToggle.addEventListener("click", () => {
+  active.checked = false;
+  deactive.checked = true;
+});
