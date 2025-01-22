@@ -4,6 +4,13 @@ const tabsArr = Array.from(tabs);
 
 tabs.forEach((tab) => {
   tab.addEventListener("click", function () {
+    if (tab.classList.contains("has-map")) {
+      import("./general-info").then((map) => {
+        setTimeout(() => {
+          map.map.invalidateSize();
+        }, 1000);
+      });
+    }
     const parentTab = tab.closest(".tab-content");
     tabs.forEach((tab2) => {
       if (!parentTab || parentTab.id !== tab2.getAttribute("data-tab")) {

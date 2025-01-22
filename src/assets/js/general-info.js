@@ -16,15 +16,11 @@ const titleLayer = L.tileLayer(
   }
 );
 
-var map = L.map("map", {
+export var map = L.map("map", {
   zoomControl: false,
   layers: [titleLayer],
   maxZoom: 18,
   minZoom: 6,
 }).setView([43.64701, -79.39425], 15);
-
-setTimeout(function () {
-  map.invalidateSize();
-}, 500);
 
 var marker = L.marker([43.64701, -79.39425]).addTo(map);
