@@ -1,0 +1,1115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="@assets/css/input.css" />
+
+    <script>
+      const mode = localStorage.getItem("mode");
+
+      if (mode) {
+        document.documentElement.classList.add(mode);
+      }
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+  </head>
+  <body class="theme-primary">
+    <main class="py-12 max-w-[80rem] 2xl:max-w-full px-4 m-auto flex gap-6">
+      <nav class="basis-[19.875rem]">
+        <div
+          class="overflow-y-scroll theme-secondary h-[110vh] hide-scroll justify-between top-12 bottom-12 w-[19.44rem] rounded-4xl sticky"
+        >
+          <div class="flex flex-col justify-between h-[160vh]">
+            <div>
+              <div class="w-fit m-auto mt-7">
+                <img src="@assets/images/logo-hor.webp" alt="" />
+              </div>
+              <ul
+                class="px-[30px] *:rounded-[15px] space-y-10 *:*:block *:*:mx-[30px] mt-[84px]"
+              >
+                <li>
+                  <a class="block">
+                    <div class="flex items-center gap-2">
+                      <svg
+                        width="24"
+                        height="24"
+                        aria-hidden="true"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M7.24 2H5.34C3.15 2 2 3.15 2 5.33V7.23C2 9.41 3.15 10.56 5.33 10.56H7.23C9.41 10.56 10.56 9.41 10.56 7.23V5.33C10.57 3.15 9.42 2 7.24 2Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          opacity="0.4"
+                          d="M18.6699 2H16.7699C14.5899 2 13.4399 3.15 13.4399 5.33V7.23C13.4399 9.41 14.5899 10.56 16.7699 10.56H18.6699C20.8499 10.56 21.9999 9.41 21.9999 7.23V5.33C21.9999 3.15 20.8499 2 18.6699 2Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          d="M18.6699 13.4297H16.7699C14.5899 13.4297 13.4399 14.5797 13.4399 16.7597V18.6597C13.4399 20.8397 14.5899 21.9897 16.7699 21.9897H18.6699C20.8499 21.9897 21.9999 20.8397 21.9999 18.6597V16.7597C21.9999 14.5797 20.8499 13.4297 18.6699 13.4297Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          opacity="0.4"
+                          d="M7.24 13.4297H5.34C3.15 13.4297 2 14.5797 2 16.7597V18.6597C2 20.8497 3.15 21.9997 5.33 21.9997H7.23C9.41 21.9997 10.56 20.8497 10.56 18.6697V16.7697C10.57 14.5797 9.42 13.4297 7.24 13.4297Z"
+                          fill="#F9B233"
+                        />
+                      </svg>
+
+                      <p>Home</p>
+                    </div>
+                  </a>
+                </li>
+                <li
+                  class="active-segment expanded group after:!top-4 after:!bottom-auto"
+                >
+                  <div class="accordion">
+                    <button
+                      id="accordion-header-info"
+                      aria-expanded="true"
+                      aria-controls="accordion-panel-info"
+                      class="accordion-header group w-full !m-0 items-center !flex justify-between"
+                    >
+                      <div class="flex items-center gap-2">
+                        <svg
+                          width="24"
+                          aria-hidden="true"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            opacity="0.4"
+                            d="M2.1001 21.9978V6.02783C2.1001 4.01783 3.10015 3.00781 5.09015 3.00781H11.3201C13.3101 3.00781 14.3001 4.01783 14.3001 6.02783V21.9978"
+                            fill="#F9B233"
+                          />
+                          <path
+                            d="M10.7498 9H5.7998C5.3898 9 5.0498 8.66 5.0498 8.25C5.0498 7.84 5.3898 7.5 5.7998 7.5H10.7498C11.1598 7.5 11.4998 7.84 11.4998 8.25C11.4998 8.66 11.1598 9 10.7498 9Z"
+                            fill="#F9B233"
+                          />
+                          <path
+                            d="M10.7498 12.75H5.7998C5.3898 12.75 5.0498 12.41 5.0498 12C5.0498 11.59 5.3898 11.25 5.7998 11.25H10.7498C11.1598 11.25 11.4998 11.59 11.4998 12C11.4998 12.41 11.1598 12.75 10.7498 12.75Z"
+                            fill="#F9B233"
+                          />
+                          <path
+                            d="M8.25 22.75C7.84 22.75 7.5 22.41 7.5 22V18.25C7.5 17.84 7.84 17.5 8.25 17.5C8.66 17.5 9 17.84 9 18.25V22C9 22.41 8.66 22.75 8.25 22.75Z"
+                            fill="#F9B233"
+                          />
+                          <path
+                            d="M23 21.2472H20.73V18.2472C21.68 17.9372 22.37 17.0472 22.37 15.9972V13.9972C22.37 12.6872 21.3 11.6172 19.99 11.6172C18.68 11.6172 17.61 12.6872 17.61 13.9972V15.9972C17.61 17.0372 18.29 17.9172 19.22 18.2372V21.2472H1C0.59 21.2472 0.25 21.5872 0.25 21.9972C0.25 22.4072 0.59 22.7472 1 22.7472H19.93C19.95 22.7472 19.96 22.7572 19.98 22.7572C20 22.7572 20.01 22.7472 20.03 22.7472H23C23.41 22.7472 23.75 22.4072 23.75 21.9972C23.75 21.5872 23.41 21.2472 23 21.2472Z"
+                            fill="#F9B233"
+                          />
+                        </svg>
+
+                        <p class="mt-2">Hotel Info</p>
+                      </div>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="18"
+                        height="18"
+                        class="group-[.expanded]:rotate-180"
+                        viewBox="0 0 18 18"
+                        fill="none"
+                      >
+                        <path
+                          d="M14.9396 6.71289L10.0496 11.6029C9.47207 12.1804 8.52707 12.1804 7.94957 11.6029L3.05957 6.71289"
+                          stroke="#F9B233"
+                          stroke-width="1.5"
+                          class="group-[.expanded]:stroke-black group-[.expanded]:dark:stroke-white"
+                          stroke-miterlimit="10"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                    <ul
+                      id="accordion-panel-info"
+                      role="region"
+                      aria-labelledby="accordion-header-info"
+                      class="font-light mt-5 border-t pt-5 accordion-panel"
+                    >
+                      <li>
+                        <a
+                          class="px-8.5 text-white bg-orange-500 block w-full rounded-[10px] py-2"
+                          href=""
+                          >General</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="px-8.5 block w-full rounded-[10px] py-2"
+                          href=""
+                          >Facilities</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="px-8.5 block w-full rounded-[10px] py-2"
+                          href=""
+                          >Images</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="px-8.5 block w-full rounded-[10px] py-2"
+                          href=""
+                          >Rooms</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="px-8.5 block w-full rounded-[10px] py-2"
+                          href=""
+                          >Boards</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <a>
+                    <div class="flex items-center gap-2">
+                      <svg
+                        width="24"
+                        height="24"
+                        aria-hidden="true"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          opacity="0.4"
+                          d="M16.24 3.65039H7.76004C5.29004 3.65039 3.29004 5.66039 3.29004 8.12039V17.5304C3.29004 19.9904 5.30004 22.0004 7.76004 22.0004H16.23C18.7 22.0004 20.7 19.9904 20.7 17.5304V8.12039C20.71 5.65039 18.7 3.65039 16.24 3.65039Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          d="M14.3498 2H9.64977C8.60977 2 7.75977 2.84 7.75977 3.88V4.82C7.75977 5.86 8.59977 6.7 9.63977 6.7H14.3498C15.3898 6.7 16.2298 5.86 16.2298 4.82V3.88C16.2398 2.84 15.3898 2 14.3498 2Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          d="M15 12.9502H8C7.59 12.9502 7.25 12.6102 7.25 12.2002C7.25 11.7902 7.59 11.4502 8 11.4502H15C15.41 11.4502 15.75 11.7902 15.75 12.2002C15.75 12.6102 15.41 12.9502 15 12.9502Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          d="M12.38 16.9502H8C7.59 16.9502 7.25 16.6102 7.25 16.2002C7.25 15.7902 7.59 15.4502 8 15.4502H12.38C12.79 15.4502 13.13 15.7902 13.13 16.2002C13.13 16.6102 12.79 16.9502 12.38 16.9502Z"
+                          fill="#F9B233"
+                        />
+                      </svg>
+
+                      <p class="mt-2">Contracts</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <div class="flex items-center gap-2">
+                      <svg
+                        aria-hidden="true"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          opacity="0.4"
+                          d="M16.19 2H7.81C4.17 2 2 4.17 2 7.81V16.19C2 19.83 4.17 22 7.81 22H16.19C19.83 22 22 19.83 22 16.19V7.81C22 4.17 19.83 2 16.19 2Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          d="M18.3101 8.87012C18.3101 9.28012 17.9801 9.62012 17.5601 9.62012H12.3101C11.9001 9.62012 11.5601 9.28012 11.5601 8.87012C11.5601 8.46012 11.9001 8.12012 12.3101 8.12012H17.5601C17.9801 8.12012 18.3101 8.46012 18.3101 8.87012Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          d="M9.97006 7.89957L7.72006 10.1496C7.57006 10.2996 7.38006 10.3696 7.19006 10.3696C7.00006 10.3696 6.80006 10.2996 6.66006 10.1496L5.91006 9.39957C5.61006 9.10957 5.61006 8.62957 5.91006 8.33957C6.20006 8.04957 6.67006 8.04957 6.97006 8.33957L7.19006 8.55957L8.91006 6.83957C9.20006 6.54957 9.67006 6.54957 9.97006 6.83957C10.2601 7.12957 10.2601 7.60957 9.97006 7.89957Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          d="M18.3101 15.8701C18.3101 16.2801 17.9801 16.6201 17.5601 16.6201H12.3101C11.9001 16.6201 11.5601 16.2801 11.5601 15.8701C11.5601 15.4601 11.9001 15.1201 12.3101 15.1201H17.5601C17.9801 15.1201 18.3101 15.4601 18.3101 15.8701Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          d="M9.97006 14.8996L7.72006 17.1496C7.57006 17.2996 7.38006 17.3696 7.19006 17.3696C7.00006 17.3696 6.80006 17.2996 6.66006 17.1496L5.91006 16.3996C5.61006 16.1096 5.61006 15.6296 5.91006 15.3396C6.20006 15.0496 6.67006 15.0496 6.97006 15.3396L7.19006 15.5596L8.91006 13.8396C9.20006 13.5496 9.67006 13.5496 9.97006 13.8396C10.2601 14.1296 10.2601 14.6096 9.97006 14.8996Z"
+                          fill="#F9B233"
+                        />
+                      </svg>
+
+                      <p class="mt-2">Availability</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <div class="flex items-center gap-2">
+                      <svg
+                        aria-hidden="true"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          opacity="0.4"
+                          d="M4.16989 15.2998L8.69989 19.8298C10.5599 21.6898 13.5799 21.6898 15.4499 19.8298L19.8399 15.4398C21.6999 13.5798 21.6999 10.5598 19.8399 8.6898L15.2999 4.1698C14.3499 3.2198 13.0399 2.7098 11.6999 2.7798L6.69989 3.0198C4.69989 3.1098 3.10989 4.6998 3.00989 6.6898L2.76989 11.6898C2.70989 13.0398 3.21989 14.3498 4.16989 15.2998Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          d="M9.50012 12.3801C11.0907 12.3801 12.3801 11.0907 12.3801 9.50012C12.3801 7.90954 11.0907 6.62012 9.50012 6.62012C7.90954 6.62012 6.62012 7.90954 6.62012 9.50012C6.62012 11.0907 7.90954 12.3801 9.50012 12.3801Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          d="M12.9999 17.7504C12.8099 17.7504 12.6199 17.6804 12.4699 17.5304C12.1799 17.2404 12.1799 16.7604 12.4699 16.4704L16.4699 12.4704C16.7599 12.1804 17.2399 12.1804 17.5299 12.4704C17.8199 12.7604 17.8199 13.2404 17.5299 13.5304L13.5299 17.5304C13.3799 17.6804 13.1899 17.7504 12.9999 17.7504Z"
+                          fill="#F9B233"
+                        />
+                      </svg>
+
+                      <p class="mt-2">Rates</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <div class="flex items-center gap-2">
+                      <svg
+                        aria-hidden="true"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          opacity="0.4"
+                          d="M19 9C19 10.45 18.57 11.78 17.83 12.89C16.75 14.49 15.04 15.62 13.05 15.91C12.71 15.97 12.36 16 12 16C11.64 16 11.29 15.97 10.95 15.91C8.96 15.62 7.25 14.49 6.17 12.89C5.43 11.78 5 10.45 5 9C5 5.13 8.13 2 12 2C15.87 2 19 5.13 19 9Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          d="M21.2501 18.4704L19.6001 18.8604C19.2301 18.9504 18.9401 19.2304 18.8601 19.6004L18.5101 21.0704C18.3201 21.8704 17.3001 22.1104 16.7701 21.4804L12.0001 16.0004L7.23008 21.4904C6.70008 22.1204 5.68008 21.8804 5.49008 21.0804L5.14008 19.6104C5.05008 19.2404 4.76008 18.9504 4.40008 18.8704L2.75008 18.4804C1.99008 18.3004 1.72008 17.3504 2.27008 16.8004L6.17008 12.9004C7.25008 14.5004 8.96008 15.6304 10.9501 15.9204C11.2901 15.9804 11.6401 16.0104 12.0001 16.0104C12.3601 16.0104 12.7101 15.9804 13.0501 15.9204C15.0401 15.6304 16.7501 14.5004 17.8301 12.9004L21.7301 16.8004C22.2801 17.3404 22.0101 18.2904 21.2501 18.4704Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          d="M12.58 5.98L13.17 7.15999C13.25 7.31999 13.46 7.48 13.65 7.51L14.72 7.68999C15.4 7.79999 15.56 8.3 15.07 8.79L14.24 9.61998C14.1 9.75998 14.02 10.03 14.07 10.23L14.31 11.26C14.5 12.07 14.07 12.39 13.35 11.96L12.35 11.37C12.17 11.26 11.87 11.26 11.69 11.37L10.69 11.96C9.96997 12.38 9.53997 12.07 9.72997 11.26L9.96997 10.23C10.01 10.04 9.93997 9.75998 9.79997 9.61998L8.96997 8.79C8.47997 8.3 8.63997 7.80999 9.31997 7.68999L10.39 7.51C10.57 7.48 10.78 7.31999 10.86 7.15999L11.45 5.98C11.74 5.34 12.26 5.34 12.58 5.98Z"
+                          fill="#F9B233"
+                        />
+                      </svg>
+
+                      <p class="mt-2">Special Offers</p>
+                    </div>
+                  </a>
+                </li>
+                <li class="group after:!top-4 after:!bottom-auto">
+                  <div class="accordion">
+                    <button
+                      id="accordion-header-policies"
+                      aria-expanded="false"
+                      aria-controls="accordion-panel-policies"
+                      class="accordion-header group w-full !m-0 items-center !flex justify-between"
+                    >
+                      <div class="flex items-center gap-2">
+                        <svg
+                          aria-hidden="true"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            opacity="0.4"
+                            d="M10.9598 2.11037L5.4598 4.17037C4.4098 4.57037 3.5498 5.81037 3.5498 6.94037V15.0404C3.5498 15.8504 4.0798 16.9204 4.7298 17.4004L10.2298 21.5104C11.1998 22.2404 12.7898 22.2404 13.7598 21.5104L19.2598 17.4004C19.9098 16.9104 20.4398 15.8504 20.4398 15.0404V6.94037C20.4398 5.82037 19.5798 4.57037 18.5298 4.18037L13.0298 2.12037C12.4698 1.90037 11.5298 1.90037 10.9598 2.11037Z"
+                            fill="#F9B233"
+                          />
+                          <path
+                            d="M14.5 10.5C14.5 9.12 13.38 8 12 8C10.62 8 9.5 9.12 9.5 10.5C9.5 11.62 10.24 12.55 11.25 12.87V15.5C11.25 15.91 11.59 16.25 12 16.25C12.41 16.25 12.75 15.91 12.75 15.5V12.87C13.76 12.55 14.5 11.62 14.5 10.5Z"
+                            fill="#F9B233"
+                          />
+                        </svg>
+
+                        <p class="mt-2">Policies</p>
+                      </div>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="18"
+                        height="18"
+                        class="group-[.expanded]:rotate-180"
+                        viewBox="0 0 18 18"
+                        fill="none"
+                      >
+                        <path
+                          d="M14.9396 6.71289L10.0496 11.6029C9.47207 12.1804 8.52707 12.1804 7.94957 11.6029L3.05957 6.71289"
+                          stroke="#F9B233"
+                          stroke-width="1.5"
+                          class="group-[.expanded]:stroke-black group-[.expanded]:dark:stroke-white"
+                          stroke-miterlimit="10"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                    <ul
+                      id="accordion-panel-policies"
+                      role="region"
+                      hidden
+                      aria-labelledby="accordion-header-policies"
+                      class="font-light mt-5 border-t pt-5 accordion-panel"
+                    >
+                      <li>
+                        <a
+                          class="px-8.5 text-white bg-orange-500 block w-full rounded-[10px] py-2"
+                          href=""
+                          >General</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="px-8.5 block w-full rounded-[10px] py-2"
+                          href=""
+                          >Facilities</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="px-8.5 block w-full rounded-[10px] py-2"
+                          href=""
+                          >Images</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="px-8.5 block w-full rounded-[10px] py-2"
+                          href=""
+                          >Rooms</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="px-8.5 block w-full rounded-[10px] py-2"
+                          href=""
+                          >Boards</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <a>
+                    <div class="flex items-center gap-2">
+                      <svg
+                        aria-hidden="true"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          opacity="0.4"
+                          d="M22 7.81V8.5H9V2H16.19C19.83 2 22 4.17 22 7.81Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          opacity="0.4"
+                          d="M22 15.5V16.19C22 19.83 19.83 22 16.19 22H9V15.5H22Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          d="M9 2V22H7.81C4.17 22 2 19.83 2 16.19V7.81C2 4.17 4.17 2 7.81 2H9Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          opacity="0.6"
+                          d="M22 8.5H9V15.5H22V8.5Z"
+                          fill="#F9B233"
+                        />
+                      </svg>
+
+                      <p class="mt-2">Reservations</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <div class="flex items-center gap-2">
+                      <svg
+                        aria-hidden="true"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          opacity="0.4"
+                          d="M20.5 10.19H17.61C15.24 10.19 13.31 8.26 13.31 5.89V3C13.31 2.45 12.86 2 12.31 2H8.07C4.99 2 2.5 4 2.5 7.57V16.43C2.5 20 4.99 22 8.07 22H15.93C19.01 22 21.5 20 21.5 16.43V11.19C21.5 10.64 21.05 10.19 20.5 10.19Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          d="M15.8002 2.21048C15.3902 1.80048 14.6802 2.08048 14.6802 2.65048V6.14048C14.6802 7.60048 15.9202 8.81048 17.4302 8.81048C18.3802 8.82048 19.7002 8.82048 20.8302 8.82048C21.4002 8.82048 21.7002 8.15048 21.3002 7.75048C19.8602 6.30048 17.2802 3.69048 15.8002 2.21048Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          d="M13.5 13.75H7.5C7.09 13.75 6.75 13.41 6.75 13C6.75 12.59 7.09 12.25 7.5 12.25H13.5C13.91 12.25 14.25 12.59 14.25 13C14.25 13.41 13.91 13.75 13.5 13.75Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          d="M11.5 17.75H7.5C7.09 17.75 6.75 17.41 6.75 17C6.75 16.59 7.09 16.25 7.5 16.25H11.5C11.91 16.25 12.25 16.59 12.25 17C12.25 17.41 11.91 17.75 11.5 17.75Z"
+                          fill="#F9B233"
+                        />
+                      </svg>
+
+                      <p class="mt-2">Invoices</p>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="basis-[calc(100%-19.875rem)] h-fit">
+        <header class="flex w-full h-fit justify-between gap-1">
+          <div>
+            <h1 class="h1 leading-[22px]">General</h1>
+            <p class="mt-2 font-light">
+              Lorem ipsum dolor sit amet consectetur. Feugiat arcu arcu euismod
+              tortor at adipiscing.
+            </p>
+          </div>
+          <div
+            class="flex items-center gap-5 p-0.5 border border-[#A1A1A1]/[63.14%] rounded-full"
+          >
+            <button
+              id="toggle-color-dark"
+              class="bg-orange-500 dark:bg-transparent rounded-full"
+            >
+              <div class="rounded-full p-2 w-fit">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    opacity="0.4"
+                    d="M12 19C15.866 19 19 15.866 19 12C19 8.13401 15.866 5 12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19Z"
+                    class="theme-svg-primary"
+                  />
+                  <path
+                    d="M12 22.96C11.45 22.96 11 22.55 11 22V21.92C11 21.37 11.45 20.92 12 20.92C12.55 20.92 13 21.37 13 21.92C13 22.47 12.55 22.96 12 22.96ZM19.14 20.14C18.88 20.14 18.63 20.04 18.43 19.85L18.3 19.72C17.91 19.33 17.91 18.7 18.3 18.31C18.69 17.92 19.32 17.92 19.71 18.31L19.84 18.44C20.23 18.83 20.23 19.46 19.84 19.85C19.65 20.04 19.4 20.14 19.14 20.14ZM4.86 20.14C4.6 20.14 4.35 20.04 4.15 19.85C3.76 19.46 3.76 18.83 4.15 18.44L4.28 18.31C4.67 17.92 5.3 17.92 5.69 18.31C6.08 18.7 6.08 19.33 5.69 19.72L5.56 19.85C5.37 20.04 5.11 20.14 4.86 20.14ZM22 13H21.92C21.37 13 20.92 12.55 20.92 12C20.92 11.45 21.37 11 21.92 11C22.47 11 22.96 11.45 22.96 12C22.96 12.55 22.55 13 22 13ZM2.08 13H2C1.45 13 1 12.55 1 12C1 11.45 1.45 11 2 11C2.55 11 3.04 11.45 3.04 12C3.04 12.55 2.63 13 2.08 13ZM19.01 5.99C18.75 5.99 18.5 5.89 18.3 5.7C17.91 5.31 17.91 4.68 18.3 4.29L18.43 4.16C18.82 3.77 19.45 3.77 19.84 4.16C20.23 4.55 20.23 5.18 19.84 5.57L19.71 5.7C19.52 5.89 19.27 5.99 19.01 5.99ZM4.99 5.99C4.73 5.99 4.48 5.89 4.28 5.7L4.15 5.56C3.76 5.17 3.76 4.54 4.15 4.15C4.54 3.76 5.17 3.76 5.56 4.15L5.69 4.28C6.08 4.67 6.08 5.3 5.69 5.69C5.5 5.89 5.24 5.99 4.99 5.99ZM12 3.04C11.45 3.04 11 2.63 11 2.08V2C11 1.45 11.45 1 12 1C12.55 1 13 1.45 13 2C13 2.55 12.55 3.04 12 3.04Z"
+                    class="theme-svg-primary"
+                  />
+                </svg>
+              </div>
+            </button>
+            <button
+              id="toggle-color-light"
+              class="rounded-full dark:bg-orange-500 bg-transparent"
+            >
+              <div class="rounded-full p-2 w-fit">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M8.99971 19.0004C8.99971 19.8404 9.12971 20.6604 9.36971 21.4204C5.52971 20.0904 2.62971 16.5604 2.32971 12.4304C2.02971 8.04036 4.55971 3.94036 8.64971 2.22036C9.70971 1.78036 10.2497 2.10036 10.4797 2.33036C10.6997 2.55036 11.0097 3.08036 10.5697 4.09036C10.1197 5.13036 9.89971 6.23036 9.89971 7.37036C9.90971 9.41036 10.7097 11.3004 12.0097 12.7504C10.1797 14.2104 8.99971 16.4704 8.99971 19.0004Z"
+                    fill="#888888"
+                  />
+                  <path
+                    opacity="0.4"
+                    d="M21.21 17.72C19.23 20.41 16.09 21.99 12.74 21.99C12.58 21.99 12.42 21.98 12.26 21.97C11.26 21.93 10.29 21.74 9.37 21.42C9.13 20.66 9 19.84 9 19C9 16.47 10.18 14.21 12.01 12.75C13.48 14.4 15.59 15.47 17.92 15.57C18.55 15.6 19.18 15.55 19.8 15.44C20.92 15.24 21.37 15.66 21.53 15.93C21.7 16.2 21.88 16.79 21.21 17.72Z"
+                    fill="#888888"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+          <div
+            class="theme-secondary rounded-full flex items-center min-w-[13.187rem] gap-[10px] p-[6px]"
+          >
+            <div>
+              <img src="@assets/images/your-logo.webp" alt="" />
+            </div>
+            <p class="font-semibold">Batis</p>
+          </div>
+        </header>
+        <div
+          class="mt-[75px] z-0 relative h-[calc(100%-7.4375rem)] theme-secondary p-6 rounded-4xl"
+        >
+          <div
+            class="theme-secondary -z-[1] absolute left-[73px] right-[73px] m-auto top-0 -translate-y-1/2 p-[18px] rounded-4xl h-28"
+          >
+            <ul
+              class="border-b *:cursor-pointer flex items-center gap-[70px] *:pb-2"
+            >
+              <li
+                data-tab="price-details"
+                class="ms-[45px] tab active after:hidden group theme-secondary after:-z-[60] after:bottom-0 after:rounded-full relative after:translate-y-[60%] after:absolute after:left-0 after:right-0 after:m-auto after:w-full after:h-[10px] after:bg-orange-500"
+              >
+                <button class="flex items-center gap-[7px]">
+                  <svg
+                    width="24"
+                    height="24"
+                    class="group-[.active]:*:!fill-orange-500"
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      opacity="0.4"
+                      d="M20 8.25V18C20 21 18.21 22 16 22H8C5.79 22 4 21 4 18V8.25C4 5 5.79 4.25 8 4.25C8 4.87 8.24997 5.43 8.65997 5.84C9.06997 6.25 9.63 6.5 10.25 6.5H13.75C14.99 6.5 16 5.49 16 4.25C18.21 4.25 20 5 20 8.25Z"
+                      class="theme-svg-primary"
+                    />
+                    <path
+                      d="M16 4.25C16 5.49 14.99 6.5 13.75 6.5H10.25C9.63 6.5 9.06997 6.25 8.65997 5.84C8.24997 5.43 8 4.87 8 4.25C8 3.01 9.01 2 10.25 2H13.75C14.37 2 14.93 2.25 15.34 2.66C15.75 3.07 16 3.63 16 4.25Z"
+                      class="theme-svg-primary"
+                    />
+                    <path
+                      d="M12 13.75H8C7.59 13.75 7.25 13.41 7.25 13C7.25 12.59 7.59 12.25 8 12.25H12C12.41 12.25 12.75 12.59 12.75 13C12.75 13.41 12.41 13.75 12 13.75Z"
+                      class="theme-svg-primary"
+                    />
+                    <path
+                      d="M16 17.75H8C7.59 17.75 7.25 17.41 7.25 17C7.25 16.59 7.59 16.25 8 16.25H16C16.41 16.25 16.75 16.59 16.75 17C16.75 17.41 16.41 17.75 16 17.75Z"
+                      class="theme-svg-primary"
+                    />
+                  </svg>
+
+                  <p
+                    class="group-[.active]:text-orange-500 group-[.active]:font-bold"
+                  >
+                    Hotel Details
+                  </p>
+                </button>
+              </li>
+              <li
+                data-tab="passenger-details"
+                class="ms-[45px] tab after:hidden group theme-secondary after:-z-[60] after:bottom-0 after:rounded-full relative after:translate-y-[60%] after:absolute after:left-0 after:right-0 after:m-auto after:w-full after:h-[10px] after:bg-orange-500"
+              >
+                <button class="flex items-center gap-[7px]">
+                  <svg
+                    width="24"
+                    class="group-[.active]:*:!fill-orange-500"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      opacity="0.4"
+                      d="M20.6201 8.45C19.5701 3.83 15.5401 1.75 12.0001 1.75C12.0001 1.75 12.0001 1.75 11.9901 1.75C8.4601 1.75 4.4201 3.82 3.3701 8.44C2.2001 13.6 5.3601 17.97 8.2201 20.72C9.2801 21.74 10.6401 22.25 12.0001 22.25C13.3601 22.25 14.7201 21.74 15.7701 20.72C18.6301 17.97 21.7901 13.61 20.6201 8.45Z"
+                      class="theme-svg-primary"
+                    />
+                    <path
+                      d="M12.0001 13.4602C13.7398 13.4602 15.1501 12.0499 15.1501 10.3102C15.1501 8.57046 13.7398 7.16016 12.0001 7.16016C10.2604 7.16016 8.8501 8.57046 8.8501 10.3102C8.8501 12.0499 10.2604 13.4602 12.0001 13.4602Z"
+                      class="theme-svg-primary"
+                    />
+                  </svg>
+
+                  <p
+                    class="group-[.active]:text-orange-500 group-[.active]:font-bold"
+                  >
+                    Address
+                  </p>
+                </button>
+              </li>
+              <li
+                data-tab="reservation-history"
+                class="ms-[45px] tab after:hidden group theme-secondary after:-z-[60] after:bottom-0 after:rounded-full relative after:translate-y-[60%] after:absolute after:left-0 after:right-0 after:m-auto after:w-full after:h-[10px] after:bg-orange-500"
+              >
+                <button class="flex items-center gap-[7px]">
+                  <svg
+                    width="24"
+                    aria-hidden="true"
+                    class="group-[.active]:*:!fill-orange-500"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17.62 10.7496C17.19 10.7496 16.85 10.3996 16.85 9.97961C16.85 9.60961 16.48 8.83961 15.86 8.16961C15.25 7.51961 14.58 7.13961 14.02 7.13961C13.59 7.13961 13.25 6.78961 13.25 6.36961C13.25 5.94961 13.6 5.59961 14.02 5.59961C15.02 5.59961 16.07 6.13961 16.99 7.10961C17.85 8.01961 18.4 9.14961 18.4 9.96961C18.4 10.3996 18.05 10.7496 17.62 10.7496Z"
+                      class="theme-svg-primary"
+                    />
+                    <path
+                      d="M21.2298 10.75C20.7998 10.75 20.4598 10.4 20.4598 9.98C20.4598 6.43 17.5698 3.55 14.0298 3.55C13.5998 3.55 13.2598 3.2 13.2598 2.78C13.2598 2.36 13.5998 2 14.0198 2C18.4198 2 21.9998 5.58 21.9998 9.98C21.9998 10.4 21.6498 10.75 21.2298 10.75Z"
+                      class="theme-svg-primary"
+                    />
+                    <path
+                      opacity="0.4"
+                      d="M11.79 14.21L8.52 17.48C8.16 17.16 7.81 16.83 7.47 16.49C6.44 15.45 5.51 14.36 4.68 13.22C3.86 12.08 3.2 10.94 2.72 9.81C2.24 8.67 2 7.58 2 6.54C2 5.86 2.12 5.21 2.36 4.61C2.6 4 2.98 3.44 3.51 2.94C4.15 2.31 4.85 2 5.59 2C5.87 2 6.15 2.06 6.4 2.18C6.66 2.3 6.89 2.48 7.07 2.74L9.39 6.01C9.57 6.26 9.7 6.49 9.79 6.71C9.88 6.92 9.93 7.13 9.93 7.32C9.93 7.56 9.86 7.8 9.72 8.03C9.59 8.26 9.4 8.5 9.16 8.74L8.4 9.53C8.29 9.64 8.24 9.77 8.24 9.93C8.24 10.01 8.25 10.08 8.27 10.16C8.3 10.24 8.33 10.3 8.35 10.36C8.53 10.69 8.84 11.12 9.28 11.64C9.73 12.16 10.21 12.69 10.73 13.22C11.09 13.57 11.44 13.91 11.79 14.21Z"
+                      class="theme-svg-primary"
+                    />
+                    <path
+                      d="M21.9701 18.33C21.9701 18.61 21.9201 18.9 21.8201 19.18C21.7901 19.26 21.7601 19.34 21.7201 19.42C21.5501 19.78 21.3301 20.12 21.0401 20.44C20.5501 20.98 20.0101 21.37 19.4001 21.62C19.3901 21.62 19.3801 21.63 19.3701 21.63C18.7801 21.87 18.1401 22 17.4501 22C16.4301 22 15.3401 21.76 14.1901 21.27C13.0401 20.78 11.8901 20.12 10.7501 19.29C10.3601 19 9.9701 18.71 9.6001 18.4L12.8701 15.13C13.1501 15.34 13.4001 15.5 13.6101 15.61C13.6601 15.63 13.7201 15.66 13.7901 15.69C13.8701 15.72 13.9501 15.73 14.0401 15.73C14.2101 15.73 14.3401 15.67 14.4501 15.56L15.2101 14.81C15.4601 14.56 15.7001 14.37 15.9301 14.25C16.1601 14.11 16.3901 14.04 16.6401 14.04C16.8301 14.04 17.0301 14.08 17.2501 14.17C17.4701 14.26 17.7001 14.39 17.9501 14.56L21.2601 16.91C21.5201 17.09 21.7001 17.3 21.8101 17.55C21.9101 17.8 21.9701 18.05 21.9701 18.33Z"
+                      class="theme-svg-primary"
+                    />
+                  </svg>
+
+                  <p
+                    class="group-[.active]:text-orange-500 group-[.active]:font-bold"
+                  >
+                    Contact
+                  </p>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div class="tab-content" id="price-details">
+            <div
+              class="border hotel-state group border-green-500 flex items-center rounded-2.5xl min-h-[4.25rem] bg-green-500/15"
+            >
+              <div class="flex items-center px-6 gap-[1.875rem]">
+                <p
+                  id="hotel-describe"
+                  class="font-bold group-[.active]:bg-red-500 text-green-500"
+                >
+                  This hotel is <span id="is-active">active.</span>
+                  <span id="is-deactive" class="hidden">deactive.</span>
+                </p>
+                <div
+                  class="text-sm bg-gray-50 dark:bg-gray-800 p-1 flex items-center rounded-2xl"
+                >
+                  <div>
+                    <input
+                      type="radio"
+                      id="deactive"
+                      name="hotel-state"
+                      class="peer hidden"
+                    />
+                    <label
+                      for="deactive"
+                      class="peer-checked:bg-red-500 peer-checked:font-bold text-[#B8B8B8] flex items-center rounded-xl text-center min-h-8 px-4 peer-checked:text-white"
+                      >Deactive</label
+                    >
+                  </div>
+                  <div>
+                    <input
+                      type="radio"
+                      id="active"
+                      name="hotel-state"
+                      checked
+                      class="peer hidden"
+                    />
+                    <label
+                      for="active"
+                      class="peer-checked:bg-green-500 peer-checked:font-bold flex items-center rounded-xl text-center min-h-8 px-4 peer-checked:text-white"
+                      >Active</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <form action="" class="mt-5">
+              <div class="grid grid-cols-4 gap-6">
+                <div class="w-full">
+                  <label class="block mb-2" for="code">Code</label>
+                  <input
+                    placeholder="Type..."
+                    name="code"
+                    class="h-10 theme-secondary placeholder:text-sm border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
+                    id="code"
+                    type="text"
+                  />
+                </div>
+                <div class="w-full">
+                  <label class="block mb-2" for="acc-no">Account No</label>
+                  <input
+                    placeholder="Type..."
+                    name="acc-no"
+                    class="h-10 theme-secondary placeholder:text-sm border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
+                    id="acc-no"
+                    type="text"
+                  />
+                </div>
+                <div class="w-full">
+                  <label class="block mb-2" for="year-built">Hotel Name</label>
+                  <input
+                    placeholder="Type..."
+                    name="year-build"
+                    class="h-10 theme-secondary placeholder:text-sm border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
+                    id="year-build"
+                    type="text"
+                  />
+                </div>
+                <div>
+                  <p class="block mb-2">Category</p>
+                  <div
+                    class="select h-10 relative border overflow-hidden rounded-full"
+                  >
+                    <select
+                      name="category"
+                      id="category"
+                      aria-label="Category"
+                      class="appearance-none h-10 theme-secondary rounded-full [&:has(option:disabled:checked)]:text-gray-200 w-full ps-[14px] outline-none"
+                    >
+                      <option disabled selected value="">Select...</option>
+                      <option class="text-black" value="1">1</option>
+                      <option class="text-black" value="2">2</option>
+                      <option class="text-black" value="3">3</option>
+                    </select>
+                  </div>
+                </div>
+                <div>
+                  <p class="block mb-2">Service Type</p>
+                  <div
+                    class="select h-10 relative border overflow-hidden rounded-full"
+                  >
+                    <select
+                      name="service-type"
+                      id="service-type"
+                      aria-label="Service Type"
+                      class="appearance-none h-10 theme-secondary rounded-full [&:has(option:disabled:checked)]:text-gray-200 w-full ps-[14px] outline-none"
+                    >
+                      <option disabled selected value="">Select...</option>
+                      <option class="text-black" value="1">1</option>
+                      <option class="text-black" value="2">2</option>
+                      <option class="text-black" value="3">3</option>
+                    </select>
+                  </div>
+                </div>
+                <div>
+                  <p class="block mb-2">Property Type</p>
+                  <div
+                    class="select relative h-10 border overflow-hidden rounded-full"
+                  >
+                    <select
+                      name="property-type"
+                      id="property-type"
+                      aria-label="Property Type"
+                      class="appearance-none h-10 theme-secondary rounded-full [&:has(option:disabled:checked)]:text-gray-200 w-full ps-[14px] outline-none"
+                    >
+                      <option disabled selected value="">Select...</option>
+                      <option class="text-black" value="1">1</option>
+                      <option class="text-black" value="2">2</option>
+                      <option class="text-black" value="3">3</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="w-full">
+                  <label class="block mb-2" for="hotel-name">Year Built</label>
+                  <input
+                    placeholder="Type..."
+                    name="year-built"
+                    class="h-10 theme-secondary placeholder:text-sm border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
+                    id="year-built"
+                    type="text"
+                  />
+                </div>
+                <div>
+                  <p class="block mb-2">Star Rating</p>
+                  <div
+                    class="select h-10 relative border overflow-hidden rounded-full"
+                  >
+                    <select
+                      name="star-rating"
+                      id="star-rating"
+                      aria-label="Star Rating"
+                      class="appearance-none h-10 theme-secondary rounded-full [&:has(option:disabled:checked)]:text-gray-200 w-full ps-[14px] outline-none"
+                    >
+                      <option disabled selected value="">Select...</option>
+                      <option class="text-black" value="1">1</option>
+                      <option class="text-black" value="2">2</option>
+                      <option class="text-black" value="3">3</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-7">
+                <label for="description" class="mb-2 block">Description</label>
+                <textarea
+                  class="border w-full theme-secondary outline-none p-3 min-h-[9.6875rem] resize-none placeholder:text-gray-500 rounded-2xl"
+                  name="description"
+                  placeholder="description..."
+                  id="description"
+                >
+fdsadfsa</textarea
+                >
+              </div>
+              <div class="flex flex-col w-fit">
+                <div
+                  id="drop-area"
+                  class="theme-primary mt-6 min-w-[10.25rem] w-fit min-h-[10.25rem] flex justify-center items-center flex-col relative dashed py-[25px] rounded-[15px]"
+                >
+                  <input
+                    id="file-input"
+                    class="absolute cursor-pointer opacity-0 inset-0"
+                    type="file"
+                  />
+
+                  <div class="w-fit m-auto">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="54"
+                      height="46"
+                      viewBox="0 0 54 46"
+                      fill="none"
+                    >
+                      <path
+                        d="M28.1337 11.3149L28.2263 11.3425L28.2313 11.3367C28.5767 11.3891 28.915 11.1796 29.0165 10.8368C29.9084 7.83998 32.7185 5.7462 35.8492 5.7462C36.2411 5.7462 36.559 5.42831 36.559 5.03638C36.559 4.64443 36.2411 4.32656 35.8492 4.32656C31.9664 4.32656 28.7037 6.91173 27.6561 10.4322C27.544 10.808 27.7582 11.2029 28.1337 11.3149Z"
+                        fill="#F9B233"
+                        stroke="#F9FFF9"
+                        stroke-width="0.3"
+                      />
+                      <path
+                        d="M43.6858 32.4675H40.327C40.0179 32.4675 39.7672 32.2168 39.7672 31.9077C39.7672 31.5986 40.0179 31.3479 40.327 31.3479H43.6858C48.3158 31.3479 52.083 27.5807 52.083 22.9507C52.083 18.3207 48.3158 14.5536 43.6858 14.5536H43.605C43.4427 14.5536 43.2883 14.4832 43.182 14.3604C43.0756 14.2377 43.0276 14.0749 43.0508 13.9142C43.1008 13.5655 43.126 13.2152 43.126 12.8741C43.126 8.86152 39.8611 5.59657 35.8484 5.59657C34.2874 5.59657 32.7987 6.08441 31.5431 7.00768C31.2671 7.21042 30.8753 7.12045 30.7157 6.81695C27.1598 0.0456729 17.8719 -0.86364 13.0567 5.02678C11.0282 7.50832 10.2312 10.7364 10.8698 13.8826C10.9402 14.2301 10.6743 14.554 10.3212 14.554H10.0969C5.4669 14.554 1.69975 18.3211 1.69975 22.9511C1.69975 27.5811 5.4669 31.3483 10.0969 31.3483H13.4557C13.7648 31.3483 14.0155 31.599 14.0155 31.9081C14.0155 32.2172 13.7648 32.4679 13.4557 32.4679H10.0969C4.84944 32.4679 0.580078 28.1986 0.580078 22.9511C0.580078 17.8508 4.61307 13.6746 9.65744 13.4443C9.1836 10.1802 10.0897 6.8877 12.1898 4.31822C17.3452 -1.98882 27.2252 -1.28189 31.4017 5.75093C32.7341 4.91561 34.2587 4.4774 35.8483 4.4774C40.7098 4.4774 44.5621 8.61522 44.225 13.4495C49.2229 13.7298 53.2024 17.884 53.2024 22.9507C53.2024 28.1986 48.933 32.4675 43.6856 32.4675L43.6858 32.4675Z"
+                        fill="#F9B233"
+                      />
+                      <path
+                        d="M12.6713 31.5916C12.6713 39.3916 19.0168 45.737 26.8167 45.737C34.6167 45.737 40.9621 39.3915 40.9621 31.5916C40.9621 23.7916 34.6167 17.4462 26.8167 17.4462C19.0167 17.4462 12.6713 23.7917 12.6713 31.5916ZM14.0912 31.5916C14.0912 24.575 19.8 18.8661 26.8167 18.8661C33.8333 18.8661 39.5422 24.5749 39.5422 31.5916C39.5422 38.6082 33.8333 44.3171 26.8167 44.3171C19.8001 44.3171 14.0912 38.6083 14.0912 31.5916Z"
+                        fill="#F9B233"
+                        stroke="#F9FFF9"
+                        stroke-width="0.3"
+                      />
+                      <path
+                        d="M26.5131 37.227C26.5131 37.5362 26.7638 37.7869 27.0729 37.7869C27.382 37.7869 27.6328 37.5365 27.6328 37.227V26.571C27.6328 26.2618 27.3821 26.0111 27.0729 26.0111C26.7638 26.0111 26.5131 26.2618 26.5131 26.571V37.227Z"
+                        fill="#F9B233"
+                        stroke="#F9B233"
+                        stroke-width="0.3"
+                      />
+                      <path
+                        d="M27.0724 27.3628L24.1897 30.2456L24.1896 30.2457L27.0724 27.3628ZM27.0724 27.3628L29.9553 30.2457C30.0645 30.3548 30.2082 30.4096 30.3512 30.4096L27.0724 27.3628ZM27.4683 26.1752C27.2497 25.9565 26.895 25.9564 26.6765 26.1752L30.3512 30.4096C30.4939 30.4096 30.6378 30.3553 30.7472 30.2455C30.9657 30.0267 30.9657 29.6725 30.747 29.4539L27.4683 26.1752Z"
+                        fill="#F9B233"
+                        stroke="#F9B233"
+                        stroke-width="0.3"
+                      />
+                    </svg>
+                  </div>
+                  <div class="text-xs w-fit m-auto text-center">
+                    <p class="font-bold mt-1">Drag & drop file</p>
+                    <p class="text-gray-700 leading-[15px]">
+                      Supported formates: <br />
+                      JPEG, PNG
+                    </p>
+                  </div>
+                </div>
+                <div id="preview-container" class="my-2"></div>
+                <label
+                  for="file-input"
+                  class="uppercase cursor-pointer w-full leading-[18px] flex items-center justify-center bg-orange-500 min-h-10 text-white font-bold rounded-full"
+                >
+                  Upload Logo
+                </label>
+              </div>
+              <div class="flex gap-4 mt-6" dir="rtl">
+                <button
+                  class="border leading-[14px] text-white rounded-full bg-green-500 min-h-[40px] min-w-[7.3125rem]"
+                >
+                  Save
+                </button>
+                <button
+                  type="button"
+                  class="border bg-red-500/5 leading-[14px] border-red-500 text-red-500 rounded-full min-h-[40px] min-w-[7.3125rem]"
+                >
+                  Reset
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="tab-content hidden" id="passenger-details">
+            <div class="flex items-center *:basis-full gap-6">
+              <form action="" class="space-y-4">
+                <div class="w-full">
+                  <label class="block mb-2" for="dest">Destination</label>
+                  <input
+                    placeholder="Code"
+                    name="dest"
+                    class="h-10 theme-secondary placeholder:text-sm border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
+                    id="dest"
+                    type="text"
+                  />
+                </div>
+                <div class="w-full">
+                  <label class="block mb-2" for="postal-code"
+                    >Postal Code</label
+                  >
+                  <input
+                    placeholder="Code"
+                    name="postal-code"
+                    class="h-10 theme-secondary placeholder:text-sm border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
+                    id="postal-code"
+                    type="text"
+                  />
+                </div>
+                <div class="w-full">
+                  <label class="block mb-2" for="address">Address</label>
+                  <input
+                    placeholder="Code"
+                    name="address"
+                    class="h-10 theme-secondary placeholder:text-sm border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
+                    id="address"
+                    type="text"
+                  />
+                </div>
+                <div class="w-full">
+                  <label class="block mb-2" for="location">Location</label>
+                  <input
+                    placeholder="Code"
+                    name="location"
+                    class="h-10 theme-secondary placeholder:text-sm border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
+                    id="location"
+                    type="text"
+                  />
+                </div>
+                <div class="flex items-center gap-4">
+                  <div class="w-full">
+                    <label class="block mb-2" for="latitude">Latitude</label>
+                    <input
+                      placeholder="Code"
+                      name="latitude"
+                      class="h-10 theme-secondary placeholder:text-sm border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
+                      id="latitude"
+                      type="text"
+                    />
+                  </div>
+                  <div class="w-full">
+                    <label class="block mb-2" for="longitude">Longitude</label>
+                    <input
+                      placeholder="Code"
+                      name="longitude"
+                      class="h-10 theme-secondary placeholder:text-sm border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
+                      id="longitude"
+                      type="text"
+                    />
+                  </div>
+                </div>
+              </form>
+              <div class="flex flex-col">
+                <div class="rounded-[20px] map-container overflow-hidden"></div>
+                <div class="flex gap-4 mt-6" dir="rtl">
+                  <button
+                    class="border leading-[14px] text-white rounded-full bg-green-500 min-h-[40px] min-w-[7.3125rem]"
+                  >
+                    Save
+                  </button>
+                  <button
+                    type="button"
+                    class="border bg-red-500/5 leading-[14px] border-red-500 text-red-500 rounded-full min-h-[40px] min-w-[7.3125rem]"
+                  >
+                    Reset
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-content hidden" id="reservation-history">
+            <div class="flex items-center *:basis-full gap-6">
+              <div class="bg-gray-50 dark:bg-gray-800/55 py-5 px-6 rounded-4xl">
+                <h2 class="text-xl">Booking Info</h2>
+                <form action="" class="mt-6">
+                  <div class="w-full">
+                    <label class="block mb-2" for="email">Email</label>
+                    <input
+                      placeholder="Type..."
+                      name="email"
+                      class="h-10 bg-transparent placeholder:text-sm border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
+                      id="email"
+                      type="text"
+                    />
+                  </div>
+                  <div class="w-full mt-6">
+                    <label class="block mb-2" for="booking-phone"
+                      >Booking Phone</label
+                    >
+                    <input
+                      placeholder="Type..."
+                      name="booking-phone"
+                      class="h-10 bg-transparent placeholder:text-sm border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
+                      id="booking-phone"
+                      type="text"
+                    />
+                  </div>
+                  <div class="flex items-center mt-6 gap-4">
+                    <p>Offline Booking</p>
+                    <label
+                      for="toggle"
+                      class="switch bg-white dark:bg-gray-950 relative flex items-center justify-end rounded-full w-[3.3125rem] h-[1.25rem]"
+                    >
+                      <input id="toggle" type="checkbox" class="peer hidden" />
+                      <span
+                        class="w-[1.4375rem] left-1 transition-all duration-700 absolute peer-checked:bg-orange-500 peer-checked:left-[calc(100%-25px)] peer-checked:right-1 block h-[1rem] rounded-xl bg-gray-400"
+                      ></span>
+                    </label>
+                  </div>
+                </form>
+              </div>
+              <div>
+                <div class="w-full">
+                  <label class="block mb-2" for="mobile">Mobile</label>
+                  <input
+                    placeholder="Type..."
+                    name="mobile"
+                    class="h-10 bg-transparent placeholder:text-sm border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
+                    id="mobile"
+                    type="text"
+                  />
+                </div>
+                <div class="w-full mt-6">
+                  <label class="block mb-2" for="hotel-phone"
+                    >Hotel Phone</label
+                  >
+                  <input
+                    placeholder="Type..."
+                    name="hotel-phone"
+                    class="h-10 bg-transparent placeholder:text-sm border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
+                    id="hotel-phone"
+                    type="text"
+                  />
+                </div>
+                <div class="w-full mt-6">
+                  <label class="block mb-2" for="website">Website</label>
+                  <input
+                    placeholder="Type..."
+                    name="website"
+                    class="h-10 bg-transparent placeholder:text-sm border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
+                    id="website"
+                    type="text"
+                  />
+                </div>
+                <div class="flex gap-4 mt-6" dir="rtl">
+                  <button
+                    class="border leading-[14px] text-white rounded-full bg-green-500 min-h-[40px] min-w-[7.3125rem]"
+                  >
+                    Save
+                  </button>
+                  <button
+                    type="button"
+                    class="border bg-red-500/5 leading-[14px] border-red-500 text-red-500 rounded-full min-h-[40px] min-w-[7.3125rem]"
+                  >
+                    Reset
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script defer src="@assets/js/main.js"></script>
+    <script defer src="@assets/js/tab.js"></script>
+    <script defer src="@assets/js/accordion.js"></script>
+    <script defer src="@assets/js/drag-drop.js"></script>
+    <script defer src="@assets/js/general-info.js"></script>
+  </body>
+</html>

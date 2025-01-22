@@ -13,6 +13,7 @@ module.exports = {
     tab: "./src/assets/js/tab.js",
     reports: "./src/assets/js/reports.js",
     accordion: "./src/assets/js/accordion.js",
+    "general-info": "./src/assets/js/general-info.js",
   },
   plugins: [
     new HtmlBundlerPlugin({
@@ -33,6 +34,7 @@ module.exports = {
         "transfer/airports/index": "./src/transfer/airports/index.html",
         "transfer/rates/index": "./src/transfer/rates/index.html",
         "transfer/rates/empty": "./src/transfer/rates/empty-rate.html",
+        "general-info/index": "./src/general-info/index.html",
       },
       js: {
         // output filename of extracted JS from source script loaded in HTML via `<script>` tag

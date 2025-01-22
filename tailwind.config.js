@@ -47,6 +47,7 @@ module.exports = {
       },
       borderRadius: {
         "4xl": "30px",
+        "2.5xl": "20px",
       },
       boxShadow: {
         tbody: `inset 0 0 0 1px ${colors.gray[100]}`,

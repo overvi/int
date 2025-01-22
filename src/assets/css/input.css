@@ -148,7 +148,7 @@
   }
 
   .remark-scroll--contrast::-webkit-scrollbar-track {
-    @apply !bg-gray-50
+    @apply !bg-gray-50;
   }
 
   .modal {
@@ -207,5 +207,27 @@
 
   option:not(:disabled) {
     @apply dark:!text-white;
+  }
+
+  .hotel-state:has(#deactive:checked) {
+    @apply bg-red-500/15 border-red-500;
+  }
+  .hotel-state:has(#deactive:checked) #hotel-describe {
+    @apply text-red-500;
+  }
+  .hotel-state:has(#deactive:checked) #is-active {
+    @apply hidden;
+  }
+  .hotel-state:has(#deactive:checked) #is-deactive {
+    @apply !inline;
+  }
+
+  .switch:has(input:checked) {
+    @apply bg-orange-500/[32%];
+  }
+  /*leaflet*/
+
+  .leaflet-top {
+    display: none !important;
   }
 }
