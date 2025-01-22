@@ -26,6 +26,56 @@
     ></script>
   </head>
   <body class="theme-primary">
+    <div
+      class="backdrop fixed bg-black/45 inset-0 z-50"
+      id="modal-backdrop"
+    ></div>
+    <div
+      class="modal rounded-4xl flex items-center text-center justify-center hide-scroll overflow-y-scroll hide-scroll p-10 min-w-[34.25rem]"
+      id="deactive-hotel"
+      role="dialog"
+      aria-labelledby="deactive-title"
+    >
+      <div class="w-fit m-auto">
+        <svg
+          width="124"
+          height="124"
+          viewBox="0 0 124 124"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            opacity="0.4"
+            d="M62.0002 113.667C90.5349 113.667 113.667 90.5349 113.667 62.0002C113.667 33.4655 90.5349 10.3335 62.0002 10.3335C33.4655 10.3335 10.3335 33.4655 10.3335 62.0002C10.3335 90.5349 33.4655 113.667 62.0002 113.667Z"
+            fill="#DC2626"
+          />
+          <path
+            d="M62 71.0418C64.1183 71.0418 65.875 69.2852 65.875 67.1668V41.3335C65.875 39.2152 64.1183 37.4585 62 37.4585C59.8817 37.4585 58.125 39.2152 58.125 41.3335V67.1668C58.125 69.2852 59.8817 71.0418 62 71.0418Z"
+            fill="#DC2626"
+          />
+          <path
+            d="M66.7535 80.7034C66.4952 80.0834 66.1335 79.515 65.6685 78.9984C65.1518 78.5334 64.5835 78.1717 63.9635 77.9134C62.7235 77.3967 61.2768 77.3967 60.0368 77.9134C59.4168 78.1717 58.8485 78.5334 58.3318 78.9984C57.8668 79.515 57.5052 80.0834 57.2468 80.7034C56.9885 81.3234 56.8335 81.995 56.8335 82.6667C56.8335 83.3384 56.9885 84.01 57.2468 84.63C57.5052 85.3017 57.8668 85.8184 58.3318 86.335C58.8485 86.8 59.4168 87.1617 60.0368 87.42C60.6568 87.6784 61.3285 87.8334 62.0002 87.8334C62.6718 87.8334 63.3435 87.6784 63.9635 87.42C64.5835 87.1617 65.1518 86.8 65.6685 86.335C66.1335 85.8184 66.4952 85.3017 66.7535 84.63C67.0118 84.01 67.1668 83.3384 67.1668 82.6667C67.1668 81.995 67.0118 81.3234 66.7535 80.7034Z"
+            fill="#DC2626"
+          />
+        </svg>
+      </div>
+      <p class="text-3xl mt-7 mb-10">Are you sure to deactive this hotel?</p>
+      <div class="flex gap-4 mt-6 font-bold justify-center pb-4" dir="rtl">
+        <button
+          aria-label="Close Modal"
+          data-modal-close="#deactive-hotel"
+          type="button"
+          class="border leading-[14px] border-gray-400 text-gray-400 rounded-full min-h-[40px] min-w-[7.3125rem]"
+        >
+          Cancel
+        </button>
+        <button
+          class="leading-[14px] text-white rounded-full bg-red-500 min-h-[40px] min-w-[7.3125rem]"
+        >
+          Deactive
+        </button>
+      </div>
+    </div>
     <main class="py-12 max-w-[80rem] 2xl:max-w-full px-4 m-auto flex gap-6">
       <nav class="basis-[19.875rem]">
         <div
@@ -699,6 +749,7 @@
                     />
                     <label
                       for="deactive"
+                      data-modal-target="#deactive-hotel"
                       class="peer-checked:bg-red-500 peer-checked:font-bold text-[#B8B8B8] flex items-center rounded-xl text-center min-h-8 px-4 peer-checked:text-white"
                       >Deactive</label
                     >
@@ -1108,6 +1159,7 @@ fdsadfsa</textarea
 
     <script defer src="@assets/js/main.js"></script>
     <script defer src="@assets/js/tab.js"></script>
+    <script defer src="@assets/js/modal.js"></script>
     <script defer src="@assets/js/accordion.js"></script>
     <script defer src="@assets/js/drag-drop.js"></script>
     <script defer src="@assets/js/general-info.js"></script>
