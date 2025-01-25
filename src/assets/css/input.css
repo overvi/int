@@ -68,8 +68,7 @@
   }
 
   .login-bg.bg-loaded {
-    background: url("/src/assets/images/login-bg.webp") no-repeat center center
-      fixed;
+    background: url("/src/assets/images/login-bg.webp") fixed;
     background-size: cover;
   }
 
@@ -84,9 +83,15 @@
     height: fit-content;
     top: 2px;
     bottom: 0;
+    pointer-events: none;
     right: 10px;
     margin: auto;
     content: url(/src/assets/images/arrow-down.svg);
+  }
+
+  select,
+  .select {
+    @apply h-10;
   }
 
   .dashed {
@@ -224,6 +229,27 @@
 
   .switch:has(input:checked) {
     @apply bg-orange-500/[32%];
+  }
+
+  .may-disabled:has(input:disabled) {
+    @apply opacity-50;
+  }
+  .may-disabled:has(select:disabled) {
+    @apply opacity-50;
+  }
+
+  .popover-content::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    transform: translateY(50%);
+    height: 0;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid currentColor;
   }
   /*leaflet*/
 
