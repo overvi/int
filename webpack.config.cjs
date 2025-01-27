@@ -33,7 +33,6 @@ module.exports = {
         "transfer/cars/index": "./src/transfer/cars/index.html",
         "transfer/airports/index": "./src/transfer/airports/index.html",
         "transfer/rates/index": "./src/transfer/rates/index.html",
-        "transfer/rates/empty": "./src/transfer/rates/empty-rate.html",
         "general-info/index": "./src/general-info/index.html",
       },
       js: {

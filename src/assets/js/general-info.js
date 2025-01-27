@@ -3,7 +3,7 @@ const mapContainer = document.querySelector(".map-container");
 const div = document.createElement("div");
 
 div.id = "map";
-div.style.height = "400px";
+div.style.height = "377px";
 
 // Append it to the body
 mapContainer.appendChild(div);
