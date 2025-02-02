@@ -171,14 +171,19 @@
 
   .modal {
     display: none;
-    position: absolute;
-    top: 64%;
- 
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 555;
-    @apply min-[1600px]:top-1/2
-    
+  }
+  .modal--absolute {
+    top: 64%;
+    @apply min-[1600px]:top-1/2;
+    position: absolute;
+  }
+  .modal--fixed {
+    position: fixed;
+    top: 50%;
+    @apply theme-secondary;
   }
   .modal.open {
     display: block;
@@ -266,23 +271,20 @@
   .resize-container {
     display: inline-block;
     position: relative;
-}
+  }
 
-
-.resize-text {
-
+  .resize-text {
     display: inline-block;
     visibility: hidden;
-    
-}
-    
-.resize-input {
+  }
+
+  .resize-input {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-}
+  }
   /*leaflet*/
 
   .leaflet-top {

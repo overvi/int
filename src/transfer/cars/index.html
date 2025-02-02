@@ -16,183 +16,190 @@
   </head>
   <body class="theme-primary">
     <div
-      class="backdrop fixed bg-black/45 inset-0 z-50"
+      class="backdrop fixed h-[130vh] overflow-y-scroll hide-scroll bg-black/45 inset-0 z-50"
       id="modal-backdrop"
-    ></div>
-    <div
-      class="modal rounded-4xl h-[35rem] 2xl:h-auto hide-scroll overflow-y-scroll hide-scroll p-10 min-w-[31.25rem]"
-      id="add-car"
-      role="dialog"
-      aria-labelledby="car-title"
     >
       <div
-        class="flex items-center border-b border-b-gray-100 pb-6 justify-between"
+        class="modal modal--absolute rounded-4xl p-10"
+        id="add-car"
+        role="dialog"
+        aria-labelledby="car-title"
       >
-        <h2 id="car-title" class="text-2xl">Add New Car</h2>
-        <button aria-label="Close Modal" data-modal-close="#add-car">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
+        <div class="theme-secondary rounded-4xl h-fit p-10 min-w-[34.25rem]">
+          <div
+            class="flex items-center border-b border-b-gray-100 pb-6 justify-between"
           >
-            <path
-              opacity="0.4"
-              d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
-              fill="#DC2626"
-            />
-            <path
-              d="M13.0604 11.9999L15.3604 9.69986C15.6504 9.40986 15.6504 8.92986 15.3604 8.63986C15.0704 8.34986 14.5904 8.34986 14.3004 8.63986L12.0004 10.9399L9.70035 8.63986C9.41035 8.34986 8.93035 8.34986 8.64035 8.63986C8.35035 8.92986 8.35035 9.40986 8.64035 9.69986L10.9404 11.9999L8.64035 14.2999C8.35035 14.5899 8.35035 15.0699 8.64035 15.3599C8.79035 15.5099 8.98035 15.5799 9.17035 15.5799C9.36035 15.5799 9.55035 15.5099 9.70035 15.3599L12.0004 13.0599L14.3004 15.3599C14.4504 15.5099 14.6404 15.5799 14.8304 15.5799C15.0204 15.5799 15.2104 15.5099 15.3604 15.3599C15.6504 15.0699 15.6504 14.5899 15.3604 14.2999L13.0604 11.9999Z"
-              fill="#DC2626"
-            />
-          </svg>
-        </button>
-      </div>
-      <form action="" class="mt-6">
-        <div class="flex gap-6 pb-6">
-          <div class="flex flex-col basis-full h-fit gap-[24px_21px]">
-            <div>
-              <p class="block mb-2">
-                Car Type<span class="text-red-500">*</span>
-              </p>
-              <div class="select relative border overflow-hidden rounded-full">
-                <select
-                  name="car-type"
-                  id="car-type"
-                  aria-label="Car Type"
-                  class="appearance-none theme-secondary rounded-full [&:has(option:disabled:checked)]:text-gray-200 w-full min-h-10 ps-[14px] outline-none"
-                >
-                  <option disabled selected value="">Select...</option>
-                  <option class="text-black" value="1">1</option>
-                  <option class="text-black" value="2">2</option>
-                  <option class="text-black" value="3">3</option>
-                </select>
-              </div>
-            </div>
-            <div class="w-full">
-              <label class="block mb-2" for="car-name"
-                >Car Name<span class="text-red-500">*</span></label
+            <h2 id="car-title" class="text-2xl">Add New Car</h2>
+            <button aria-label="Close Modal" data-modal-close="#add-car">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
               >
-              <input
-                placeholder="Type..."
-                name="car-name"
-                class="min-h-[40px] theme-secondary placeholder:text-sm border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
-                id="car-name"
-                type="text"
-              />
-            </div>
-            <div class="flex items-center gap-6">
-              <div class="w-full">
-                <label class="block mb-2" for="pax-capacity"
-                  >Pax Capacity<span class="text-red-500">*</span>
-                </label>
-                <input
-                  placeholder="Type..."
-                  name="pax-capacity"
-                  class="min-h-[40px] theme-secondary placeholder:text-sm border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
-                  id="pax-capacity"
-                  type="text"
+                <path
+                  opacity="0.4"
+                  d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  fill="#DC2626"
                 />
-              </div>
-              <div class="w-full">
-                <label class="block mb-2" for="bag-capacity"
-                  >Bag Capacity<span class="text-red-500">*</span></label
-                >
-                <input
-                  placeholder="Type..."
-                  name="bag-capacity"
-                  class="min-h-[40px] theme-secondary placeholder:text-sm border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
-                  id="bag-capacity"
-                  type="text"
+                <path
+                  d="M13.0604 11.9999L15.3604 9.69986C15.6504 9.40986 15.6504 8.92986 15.3604 8.63986C15.0704 8.34986 14.5904 8.34986 14.3004 8.63986L12.0004 10.9399L9.70035 8.63986C9.41035 8.34986 8.93035 8.34986 8.64035 8.63986C8.35035 8.92986 8.35035 9.40986 8.64035 9.69986L10.9404 11.9999L8.64035 14.2999C8.35035 14.5899 8.35035 15.0699 8.64035 15.3599C8.79035 15.5099 8.98035 15.5799 9.17035 15.5799C9.36035 15.5799 9.55035 15.5099 9.70035 15.3599L12.0004 13.0599L14.3004 15.3599C14.4504 15.5099 14.6404 15.5799 14.8304 15.5799C15.0204 15.5799 15.2104 15.5099 15.3604 15.3599C15.6504 15.0699 15.6504 14.5899 15.3604 14.2999L13.0604 11.9999Z"
+                  fill="#DC2626"
                 />
-              </div>
-            </div>
+              </svg>
+            </button>
           </div>
-        </div>
-        <div
-          id="drop-area"
-          class="theme-primary min-h-[10.25rem] flex justify-center items-center flex-col relative dashed py-[25px] rounded-[15px]"
-        >
-          <input
-            id="file-input"
-            class="absolute cursor-pointer opacity-0 inset-0"
-            type="file"
-          />
-
-          <div class="w-fit m-auto">
-            <svg
-              width="52"
-              height="45"
-              viewBox="0 0 46 40"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+          <form action="" class="mt-6">
+            <div class="flex gap-6 pb-6">
+              <div class="flex flex-col basis-full h-fit gap-[24px_21px]">
+                <div>
+                  <p class="block mb-2">
+                    Car Type<span class="text-red-500">*</span>
+                  </p>
+                  <div
+                    class="select relative border overflow-hidden rounded-full"
+                  >
+                    <select
+                      name="car-type"
+                      id="car-type"
+                      aria-label="Car Type"
+                      class="appearance-none theme-secondary rounded-full [&:has(option:disabled:checked)]:text-gray-200 w-full min-h-10 ps-[14px] outline-none"
+                    >
+                      <option disabled selected value="">Select...</option>
+                      <option class="text-black" value="1">1</option>
+                      <option class="text-black" value="2">2</option>
+                      <option class="text-black" value="3">3</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="w-full">
+                  <label class="block mb-2" for="car-name"
+                    >Car Name<span class="text-red-500">*</span></label
+                  >
+                  <input
+                    placeholder="Type..."
+                    name="car-name"
+                    class="min-h-[40px] theme-secondary placeholder:text-sm border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
+                    id="car-name"
+                    type="text"
+                  />
+                </div>
+                <div class="flex items-center gap-6">
+                  <div class="w-full">
+                    <label class="block mb-2" for="pax-capacity"
+                      >Pax Capacity<span class="text-red-500">*</span>
+                    </label>
+                    <input
+                      placeholder="Type..."
+                      name="pax-capacity"
+                      class="min-h-[40px] theme-secondary placeholder:text-sm border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
+                      id="pax-capacity"
+                      type="text"
+                    />
+                  </div>
+                  <div class="w-full">
+                    <label class="block mb-2" for="bag-capacity"
+                      >Bag Capacity<span class="text-red-500">*</span></label
+                    >
+                    <input
+                      placeholder="Type..."
+                      name="bag-capacity"
+                      class="min-h-[40px] theme-secondary placeholder:text-sm border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
+                      id="bag-capacity"
+                      type="text"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              id="drop-area"
+              class="theme-primary min-h-[10.25rem] flex justify-center items-center flex-col relative dashed py-[25px] rounded-[15px]"
             >
-              <path
-                d="M23.562 8.94166C23.4659 9.26382 23.6494 9.60233 23.9713 9.69833L24.0508 9.72204L24.0551 9.71705C24.3511 9.76188 24.641 9.5823 24.728 9.28854C25.4925 6.71984 27.9012 4.92517 30.5846 4.92517C30.9205 4.92517 31.193 4.6527 31.193 4.31676C31.193 3.9808 30.9205 3.70834 30.5846 3.70834C27.2565 3.70834 24.46 5.92416 23.562 8.94166ZM23.562 8.94166L23.6852 8.97841M23.562 8.94166C23.562 8.94169 23.5619 8.94171 23.5619 8.94174L23.6852 8.97841M23.6852 8.97841C23.6094 9.23239 23.7541 9.49938 24.008 9.57513L23.6852 8.97841Z"
-                fill="#F9B233"
-                stroke="#F9FFF9"
-                stroke-width="0.257143"
+              <input
+                id="file-input"
+                class="absolute cursor-pointer opacity-0 inset-0"
+                type="file"
               />
-              <path
-                d="M37.3023 27.8293H34.4233C34.1584 27.8293 33.9434 27.6144 33.9434 27.3494C33.9434 27.0845 34.1583 26.8696 34.4233 26.8696H37.3023C41.2708 26.8696 44.4998 23.6406 44.4998 19.672C44.4998 15.7035 41.2708 12.4745 37.3023 12.4745H37.233C37.0939 12.4745 36.9616 12.4142 36.8704 12.3089C36.7793 12.2037 36.7381 12.0642 36.758 11.9264C36.8008 11.6276 36.8224 11.3273 36.8224 11.035C36.8224 7.59559 34.0239 4.79706 30.5845 4.79706C29.2465 4.79706 27.9704 5.21521 26.8942 6.00659C26.6577 6.18036 26.3218 6.10324 26.1851 5.8431C23.1371 0.0391482 15.1761 -0.740263 11.0487 4.30867C9.31002 6.4357 8.62686 9.20264 9.17428 11.8994C9.23461 12.1972 9.00668 12.4749 8.70404 12.4749H8.51176C4.5432 12.4749 1.31421 15.7038 1.31421 19.6724C1.31421 23.641 4.5432 26.87 8.51176 26.87H11.3907C11.6557 26.87 11.8706 27.0849 11.8706 27.3498C11.8706 27.6147 11.6557 27.8296 11.3907 27.8296H8.51176C4.01394 27.8296 0.354492 24.1702 0.354492 19.6724C0.354492 15.3007 3.81135 11.7211 8.13509 11.5237C7.72894 8.72587 8.5056 5.90374 10.3056 3.70133C14.7246 -1.7047 23.1932 -1.09876 26.773 4.92937C27.9151 4.21338 29.2219 3.83777 30.5844 3.83777C34.7514 3.83777 38.0534 7.38447 37.7645 11.5282C42.0484 11.7684 45.4593 15.3291 45.4593 19.672C45.4593 24.1702 41.7999 27.8293 37.3021 27.8293L37.3023 27.8293Z"
-                fill="#F9B233"
-              />
-              <path
-                d="M10.7181 27.0781C10.7181 33.7638 16.1571 39.2027 22.8427 39.2027C29.5284 39.2027 34.9674 33.7637 34.9674 27.0781C34.9674 20.3924 29.5284 14.9535 22.8427 14.9535C16.1571 14.9535 10.7181 20.3925 10.7181 27.0781ZM11.9351 27.0781C11.9351 21.0639 16.8284 16.1705 22.8427 16.1705C28.857 16.1705 33.7503 21.0638 33.7503 27.0781C33.7503 33.0923 28.857 37.9857 22.8427 37.9857C16.8285 37.9857 11.9351 33.0924 11.9351 27.0781Z"
-                fill="#F9B233"
-                stroke="#F9FFF9"
-                stroke-width="0.257143"
-              />
-              <path
-                d="M22.5824 31.9089C22.5824 32.1739 22.7973 32.3887 23.0622 32.3887C23.3272 32.3887 23.5421 32.1742 23.5421 31.9089V22.7751C23.5421 22.5101 23.3272 22.2953 23.0622 22.2953C22.7973 22.2953 22.5824 22.5102 22.5824 22.7751V31.9089Z"
-                fill="#F9B233"
-                stroke="#F9B233"
-                stroke-width="0.257143"
-              />
-              <path
-                d="M23.0621 23.4538L20.5912 25.9248L23.0621 23.4538ZM23.0621 23.4538L25.5331 25.9248C25.6267 26.0184 25.7499 26.0654 25.8724 26.0654L23.0621 23.4538ZM19.9124 25.9248C20.0998 26.1122 20.4038 26.1124 20.5911 25.9248L25.8724 26.0654C25.9947 26.0654 26.1181 26.0188 26.2118 25.9248C26.3992 25.7373 26.3992 25.4336 26.2117 25.2462L23.4014 22.4359C23.214 22.2485 22.91 22.2483 22.7228 22.4359C22.7227 22.4359 22.7227 22.4359 22.7227 22.4359L19.9124 25.2462C19.725 25.4337 19.725 25.7374 19.9124 25.9248Z"
-                fill="#F9B233"
-                stroke="#F9B233"
-                stroke-width="0.257143"
-              />
-            </svg>
-          </div>
-          <div class="text-xs w-fit m-auto text-center">
-            <p class="font-bold mt-1">Drag & drop file</p>
-            <p class="text-gray-700 leading-[15px]">
-              Supported formates: <br />
-              JPEG, PNG
-            </p>
-          </div>
-        </div>
-        <div id="preview-container" class="my-3"></div>
-        <button
-          type="button"
-          id="cancel-upload"
-          class="uppercase leading-[18px] flex items-center justify-center mt-2 w-full bg-orange-500 min-h-10 text-white font-bold rounded-full"
-        >
-          CANCEL
-        </button>
 
-        <div class="flex gap-4 mt-6 font-bold" dir="rtl">
-          <button
-            class="leading-[14px] text-white rounded-full bg-green-500 min-h-[40px] min-w-[7.3125rem]"
-          >
-            Save
-          </button>
-          <button
-            aria-label="Close Modal"
-            data-modal-close="#add-car"
-            type="button"
-            class="border leading-[14px] border-gray-400 text-gray-400 rounded-full min-h-[40px] min-w-[7.3125rem]"
-          >
-            Cancel
-          </button>
+              <div class="w-fit m-auto">
+                <svg
+                  width="52"
+                  height="45"
+                  viewBox="0 0 46 40"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M23.562 8.94166C23.4659 9.26382 23.6494 9.60233 23.9713 9.69833L24.0508 9.72204L24.0551 9.71705C24.3511 9.76188 24.641 9.5823 24.728 9.28854C25.4925 6.71984 27.9012 4.92517 30.5846 4.92517C30.9205 4.92517 31.193 4.6527 31.193 4.31676C31.193 3.9808 30.9205 3.70834 30.5846 3.70834C27.2565 3.70834 24.46 5.92416 23.562 8.94166ZM23.562 8.94166L23.6852 8.97841M23.562 8.94166C23.562 8.94169 23.5619 8.94171 23.5619 8.94174L23.6852 8.97841M23.6852 8.97841C23.6094 9.23239 23.7541 9.49938 24.008 9.57513L23.6852 8.97841Z"
+                    fill="#F9B233"
+                    stroke="#F9FFF9"
+                    stroke-width="0.257143"
+                  />
+                  <path
+                    d="M37.3023 27.8293H34.4233C34.1584 27.8293 33.9434 27.6144 33.9434 27.3494C33.9434 27.0845 34.1583 26.8696 34.4233 26.8696H37.3023C41.2708 26.8696 44.4998 23.6406 44.4998 19.672C44.4998 15.7035 41.2708 12.4745 37.3023 12.4745H37.233C37.0939 12.4745 36.9616 12.4142 36.8704 12.3089C36.7793 12.2037 36.7381 12.0642 36.758 11.9264C36.8008 11.6276 36.8224 11.3273 36.8224 11.035C36.8224 7.59559 34.0239 4.79706 30.5845 4.79706C29.2465 4.79706 27.9704 5.21521 26.8942 6.00659C26.6577 6.18036 26.3218 6.10324 26.1851 5.8431C23.1371 0.0391482 15.1761 -0.740263 11.0487 4.30867C9.31002 6.4357 8.62686 9.20264 9.17428 11.8994C9.23461 12.1972 9.00668 12.4749 8.70404 12.4749H8.51176C4.5432 12.4749 1.31421 15.7038 1.31421 19.6724C1.31421 23.641 4.5432 26.87 8.51176 26.87H11.3907C11.6557 26.87 11.8706 27.0849 11.8706 27.3498C11.8706 27.6147 11.6557 27.8296 11.3907 27.8296H8.51176C4.01394 27.8296 0.354492 24.1702 0.354492 19.6724C0.354492 15.3007 3.81135 11.7211 8.13509 11.5237C7.72894 8.72587 8.5056 5.90374 10.3056 3.70133C14.7246 -1.7047 23.1932 -1.09876 26.773 4.92937C27.9151 4.21338 29.2219 3.83777 30.5844 3.83777C34.7514 3.83777 38.0534 7.38447 37.7645 11.5282C42.0484 11.7684 45.4593 15.3291 45.4593 19.672C45.4593 24.1702 41.7999 27.8293 37.3021 27.8293L37.3023 27.8293Z"
+                    fill="#F9B233"
+                  />
+                  <path
+                    d="M10.7181 27.0781C10.7181 33.7638 16.1571 39.2027 22.8427 39.2027C29.5284 39.2027 34.9674 33.7637 34.9674 27.0781C34.9674 20.3924 29.5284 14.9535 22.8427 14.9535C16.1571 14.9535 10.7181 20.3925 10.7181 27.0781ZM11.9351 27.0781C11.9351 21.0639 16.8284 16.1705 22.8427 16.1705C28.857 16.1705 33.7503 21.0638 33.7503 27.0781C33.7503 33.0923 28.857 37.9857 22.8427 37.9857C16.8285 37.9857 11.9351 33.0924 11.9351 27.0781Z"
+                    fill="#F9B233"
+                    stroke="#F9FFF9"
+                    stroke-width="0.257143"
+                  />
+                  <path
+                    d="M22.5824 31.9089C22.5824 32.1739 22.7973 32.3887 23.0622 32.3887C23.3272 32.3887 23.5421 32.1742 23.5421 31.9089V22.7751C23.5421 22.5101 23.3272 22.2953 23.0622 22.2953C22.7973 22.2953 22.5824 22.5102 22.5824 22.7751V31.9089Z"
+                    fill="#F9B233"
+                    stroke="#F9B233"
+                    stroke-width="0.257143"
+                  />
+                  <path
+                    d="M23.0621 23.4538L20.5912 25.9248L23.0621 23.4538ZM23.0621 23.4538L25.5331 25.9248C25.6267 26.0184 25.7499 26.0654 25.8724 26.0654L23.0621 23.4538ZM19.9124 25.9248C20.0998 26.1122 20.4038 26.1124 20.5911 25.9248L25.8724 26.0654C25.9947 26.0654 26.1181 26.0188 26.2118 25.9248C26.3992 25.7373 26.3992 25.4336 26.2117 25.2462L23.4014 22.4359C23.214 22.2485 22.91 22.2483 22.7228 22.4359C22.7227 22.4359 22.7227 22.4359 22.7227 22.4359L19.9124 25.2462C19.725 25.4337 19.725 25.7374 19.9124 25.9248Z"
+                    fill="#F9B233"
+                    stroke="#F9B233"
+                    stroke-width="0.257143"
+                  />
+                </svg>
+              </div>
+              <div class="text-xs w-fit m-auto text-center">
+                <p class="font-bold mt-1">Drag & drop file</p>
+                <p class="text-gray-700 leading-[15px]">
+                  Supported formates: <br />
+                  JPEG, PNG
+                </p>
+              </div>
+            </div>
+            <div id="preview-container" class="my-3"></div>
+            <button
+              type="button"
+              id="cancel-upload"
+              class="uppercase leading-[18px] flex items-center justify-center mt-2 w-full bg-orange-500 min-h-10 text-white font-bold rounded-full"
+            >
+              CANCEL
+            </button>
+
+            <div class="flex gap-4 mt-6 font-bold" dir="rtl">
+              <button
+                class="leading-[14px] text-white rounded-full bg-green-500 min-h-[40px] min-w-[7.3125rem]"
+              >
+                Save
+              </button>
+              <button
+                aria-label="Close Modal"
+                data-modal-close="#add-car"
+                type="button"
+                class="border leading-[14px] border-gray-400 text-gray-400 rounded-full min-h-[40px] min-w-[7.3125rem]"
+              >
+                Cancel
+              </button>
+            </div>
+          </form>
         </div>
-      </form>
+      </div>
     </div>
-    <main class="py-12 max-w-[80rem] full-hd:max-w-[120rem] full-hd:m-auto 2xl:max-w-full 2xl:mx-[43px] px-4 m-auto flex gap-6">
+    <main
+      class="py-12 max-w-[80rem] full-hd:max-w-[120rem] full-hd:m-auto 2xl:max-w-full 2xl:mx-[43px] px-4 m-auto flex gap-6"
+    >
       <nav class="basis-[25.5%]">
         <div
           class="overflow-y-scroll theme-secondary h-[90vh] hide-scroll justify-between top-12 bottom-12 w-full rounded-4xl sticky"

@@ -20,209 +20,213 @@
       id="modal-backdrop"
     ></div>
     <div
-      class="modal rounded-4xl h-[35rem] 2xl:h-[40rem] min-[1600px]:h-auto hide-scroll overflow-y-scroll hide-scroll p-10 min-w-[34.25rem]"
+      class="modal modal--absolute rounded-4xl p-10"
       id="add-hotel"
       role="dialog"
       aria-labelledby="modal-title"
     >
-      <div
-        class="flex items-center border-b border-b-gray-100 pb-6 justify-between"
-      >
-        <h2 id="modal-title" class="text-2xl">Add New Hotel</h2>
-        <button aria-label="Close Modal" data-modal-close="#add-hotel">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
-            <path
-              opacity="0.4"
-              d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
-              fill="#DC2626"
-            />
-            <path
-              d="M13.0604 11.9999L15.3604 9.69986C15.6504 9.40986 15.6504 8.92986 15.3604 8.63986C15.0704 8.34986 14.5904 8.34986 14.3004 8.63986L12.0004 10.9399L9.70035 8.63986C9.41035 8.34986 8.93035 8.34986 8.64035 8.63986C8.35035 8.92986 8.35035 9.40986 8.64035 9.69986L10.9404 11.9999L8.64035 14.2999C8.35035 14.5899 8.35035 15.0699 8.64035 15.3599C8.79035 15.5099 8.98035 15.5799 9.17035 15.5799C9.36035 15.5799 9.55035 15.5099 9.70035 15.3599L12.0004 13.0599L14.3004 15.3599C14.4504 15.5099 14.6404 15.5799 14.8304 15.5799C15.0204 15.5799 15.2104 15.5099 15.3604 15.3599C15.6504 15.0699 15.6504 14.5899 15.3604 14.2999L13.0604 11.9999Z"
-              fill="#DC2626"
-            />
-          </svg>
-        </button>
-      </div>
-      <form action="" class="mt-6">
-        <div class="flex gap-6 pb-6">
-          <div class="grid basis-full h-fit grid-cols-2 gap-[24px_21px]">
-            <div class="w-full">
-              <label class="block mb-2" for="code"
-                >Code <span class="text-red-500">*</span></label
-              >
-              <input
-                name="code"
-                placeholder="Type.."
-                class="min-h-[40px] theme-secondary border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
-                id="code"
-                type="text"
+      <div class="theme-secondary rounded-4xl h-fit p-10 min-w-[34.25rem]">
+        <div
+          class="flex items-center border-b border-b-gray-100 pb-6 justify-between"
+        >
+          <h2 id="modal-title" class="text-2xl">Add New Hotel</h2>
+          <button aria-label="Close Modal" data-modal-close="#add-hotel">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                opacity="0.4"
+                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                fill="#DC2626"
               />
-            </div>
-            <div class="w-full">
-              <label class="block mb-2" for="name"
-                >Name <span class="text-red-500">*</span></label
-              >
-              <input
-                placeholder="Type..."
-                name="name"
-                class="min-h-[40px] theme-secondary placeholder:text-sm border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
-                id="name"
-                type="text"
+              <path
+                d="M13.0604 11.9999L15.3604 9.69986C15.6504 9.40986 15.6504 8.92986 15.3604 8.63986C15.0704 8.34986 14.5904 8.34986 14.3004 8.63986L12.0004 10.9399L9.70035 8.63986C9.41035 8.34986 8.93035 8.34986 8.64035 8.63986C8.35035 8.92986 8.35035 9.40986 8.64035 9.69986L10.9404 11.9999L8.64035 14.2999C8.35035 14.5899 8.35035 15.0699 8.64035 15.3599C8.79035 15.5099 8.98035 15.5799 9.17035 15.5799C9.36035 15.5799 9.55035 15.5099 9.70035 15.3599L12.0004 13.0599L14.3004 15.3599C14.4504 15.5099 14.6404 15.5799 14.8304 15.5799C15.0204 15.5799 15.2104 15.5099 15.3604 15.3599C15.6504 15.0699 15.6504 14.5899 15.3604 14.2999L13.0604 11.9999Z"
+                fill="#DC2626"
               />
-            </div>
-            <div class="w-full">
-              <label class="block mb-2" for="category"
-                >Category <span class="text-red-500">*</span></label
-              >
-              <input
-                placeholder="Type..."
-                name="category"
-                class="min-h-[40px] theme-secondary placeholder:text-sm border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
-                id="category"
-                type="text"
-              />
-            </div>
-            <div>
-              <p class="block mb-2">Star Rating</p>
-              <div
-                class="select h-10 relative border overflow-hidden rounded-full"
-              >
-                <select
-                  name="star-rating"
-                  id="star-rating"
-                  aria-label="Star Rating"
-                  class="appearance-none theme-secondary rounded-full [&:has(option:disabled:checked)]:text-gray-200 w-full min-h-10 ps-[14px] outline-none"
+            </svg>
+          </button>
+        </div>
+        <form action="" class="mt-6">
+          <div class="flex gap-6 pb-6">
+            <div class="grid basis-full h-fit grid-cols-2 gap-[24px_21px]">
+              <div class="w-full">
+                <label class="block mb-2" for="code"
+                  >Code <span class="text-red-500">*</span></label
                 >
-                  <option disabled selected value="">Select...</option>
-                  <option class="text-black" value="1">1</option>
-                  <option class="text-black" value="2">2</option>
-                  <option class="text-black" value="3">3</option>
-                </select>
+                <input
+                  name="code"
+                  placeholder="Type.."
+                  class="min-h-[40px] theme-secondary border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
+                  id="code"
+                  type="text"
+                />
               </div>
-            </div>
-            <div>
-              <p class="block mb-2">Service Type</p>
-              <div
-                class="select h-10 relative border overflow-hidden rounded-full"
-              >
-                <select
-                  name="service-type"
-                  id="service-type"
-                  aria-label="Service Type"
-                  class="appearance-none theme-secondary rounded-full [&:has(option:disabled:checked)]:text-gray-200 w-full min-h-10 ps-[14px] outline-none"
+              <div class="w-full">
+                <label class="block mb-2" for="name"
+                  >Name <span class="text-red-500">*</span></label
                 >
-                  <option disabled selected value="">Select...</option>
-                  <option class="text-black" value="1">1</option>
-                  <option class="text-black" value="2">2</option>
-                  <option class="text-black" value="3">3</option>
-                </select>
+                <input
+                  placeholder="Type..."
+                  name="name"
+                  class="min-h-[40px] theme-secondary placeholder:text-sm border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
+                  id="name"
+                  type="text"
+                />
               </div>
-            </div>
-            <div>
-              <p class="block mb-2">Property Type</p>
-              <div
-                class="select relative h-10 border overflow-hidden rounded-full"
-              >
-                <select
-                  name="property-type"
-                  id="property-type"
-                  aria-label="Property Type"
-                  class="appearance-none theme-secondary rounded-full [&:has(option:disabled:checked)]:text-gray-200 w-full min-h-10 ps-[14px] outline-none"
+              <div class="w-full">
+                <label class="block mb-2" for="category"
+                  >Category <span class="text-red-500">*</span></label
                 >
-                  <option disabled selected value="">Select...</option>
-                  <option class="text-black" value="1">1</option>
-                  <option class="text-black" value="2">2</option>
-                  <option class="text-black" value="3">3</option>
-                </select>
+                <input
+                  placeholder="Type..."
+                  name="category"
+                  class="min-h-[40px] theme-secondary placeholder:text-sm border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
+                  id="category"
+                  type="text"
+                />
               </div>
-            </div>
-            <div class="w-full">
-              <label class="block mb-2" for="email"
-                >Email <span class="text-red-500">*</span></label
-              >
-              <input
-                placeholder="Type..."
-                name="email"
-                class="min-h-[40px] theme-secondary placeholder:text-sm border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
-                id="email"
-                type="text"
-              />
-            </div>
-            <div class="w-full">
-              <label class="block mb-2" for="destination"
-                >Destination <span class="text-red-500">*</span></label
-              >
-              <input
-                placeholder="Type..."
-                name="destination"
-                class="min-h-[40px] theme-secondary placeholder:text-sm border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
-                id="destination"
-                type="text"
-              />
-            </div>
-            <div>
-              <p class="block mb-2">Price Type</p>
-              <div
-                class="select relative h-10 border overflow-hidden rounded-full"
-              >
-                <select
-                  name="price-type"
-                  id="price-type"
-                  aria-label="Price Type"
-                  class="appearance-none theme-secondary rounded-full [&:has(option:disabled:checked)]:text-gray-200 w-full min-h-10 ps-[14px] outline-none"
+              <div>
+                <p class="block mb-2">Star Rating</p>
+                <div
+                  class="select h-10 relative border overflow-hidden rounded-full"
                 >
-                  <option disabled selected value="">Select...</option>
-                  <option class="text-black" value="1">1</option>
-                  <option class="text-black" value="2">2</option>
-                  <option class="text-black" value="3">3</option>
-                </select>
+                  <select
+                    name="star-rating"
+                    id="star-rating"
+                    aria-label="Star Rating"
+                    class="appearance-none theme-secondary rounded-full [&:has(option:disabled:checked)]:text-gray-200 w-full min-h-10 ps-[14px] outline-none"
+                  >
+                    <option disabled selected value="">Select...</option>
+                    <option class="text-black" value="1">1</option>
+                    <option class="text-black" value="2">2</option>
+                    <option class="text-black" value="3">3</option>
+                  </select>
+                </div>
               </div>
-            </div>
-            <div>
-              <p class="block mb-2">Currency</p>
-              <div
-                class="select relative h-10 border overflow-hidden rounded-full"
-              >
-                <select
-                  name="currency"
-                  id="currency"
-                  aria-label="Currency"
-                  class="appearance-none theme-secondary rounded-full [&:has(option:disabled:checked)]:text-gray-200 w-full min-h-10 ps-[14px] outline-none"
+              <div>
+                <p class="block mb-2">Service Type</p>
+                <div
+                  class="select h-10 relative border overflow-hidden rounded-full"
                 >
-                  <option disabled selected value="">Select...</option>
-                  <option class="text-black" value="1">1</option>
-                  <option class="text-black" value="2">2</option>
-                  <option class="text-black" value="3">3</option>
-                </select>
+                  <select
+                    name="service-type"
+                    id="service-type"
+                    aria-label="Service Type"
+                    class="appearance-none theme-secondary rounded-full [&:has(option:disabled:checked)]:text-gray-200 w-full min-h-10 ps-[14px] outline-none"
+                  >
+                    <option disabled selected value="">Select...</option>
+                    <option class="text-black" value="1">1</option>
+                    <option class="text-black" value="2">2</option>
+                    <option class="text-black" value="3">3</option>
+                  </select>
+                </div>
+              </div>
+              <div>
+                <p class="block mb-2">Property Type</p>
+                <div
+                  class="select relative h-10 border overflow-hidden rounded-full"
+                >
+                  <select
+                    name="property-type"
+                    id="property-type"
+                    aria-label="Property Type"
+                    class="appearance-none theme-secondary rounded-full [&:has(option:disabled:checked)]:text-gray-200 w-full min-h-10 ps-[14px] outline-none"
+                  >
+                    <option disabled selected value="">Select...</option>
+                    <option class="text-black" value="1">1</option>
+                    <option class="text-black" value="2">2</option>
+                    <option class="text-black" value="3">3</option>
+                  </select>
+                </div>
+              </div>
+              <div class="w-full">
+                <label class="block mb-2" for="email"
+                  >Email <span class="text-red-500">*</span></label
+                >
+                <input
+                  placeholder="Type..."
+                  name="email"
+                  class="min-h-[40px] theme-secondary placeholder:text-sm border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
+                  id="email"
+                  type="text"
+                />
+              </div>
+              <div class="w-full">
+                <label class="block mb-2" for="destination"
+                  >Destination <span class="text-red-500">*</span></label
+                >
+                <input
+                  placeholder="Type..."
+                  name="destination"
+                  class="min-h-[40px] theme-secondary placeholder:text-sm border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
+                  id="destination"
+                  type="text"
+                />
+              </div>
+              <div>
+                <p class="block mb-2">Price Type</p>
+                <div
+                  class="select relative h-10 border overflow-hidden rounded-full"
+                >
+                  <select
+                    name="price-type"
+                    id="price-type"
+                    aria-label="Price Type"
+                    class="appearance-none theme-secondary rounded-full [&:has(option:disabled:checked)]:text-gray-200 w-full min-h-10 ps-[14px] outline-none"
+                  >
+                    <option disabled selected value="">Select...</option>
+                    <option class="text-black" value="1">1</option>
+                    <option class="text-black" value="2">2</option>
+                    <option class="text-black" value="3">3</option>
+                  </select>
+                </div>
+              </div>
+              <div>
+                <p class="block mb-2">Currency</p>
+                <div
+                  class="select relative h-10 border overflow-hidden rounded-full"
+                >
+                  <select
+                    name="currency"
+                    id="currency"
+                    aria-label="Currency"
+                    class="appearance-none theme-secondary rounded-full [&:has(option:disabled:checked)]:text-gray-200 w-full min-h-10 ps-[14px] outline-none"
+                  >
+                    <option disabled selected value="">Select...</option>
+                    <option class="text-black" value="1">1</option>
+                    <option class="text-black" value="2">2</option>
+                    <option class="text-black" value="3">3</option>
+                  </select>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="flex gap-4 mt-6 font-bold" dir="rtl">
-          <button
-            class="border leading-[14px] text-white rounded-full bg-green-500 min-h-[40px] min-w-[7.3125rem]"
-          >
-            Save
-          </button>
-          <button
-            aria-label="Close Modal"
-            data-modal-close="#add-hotel"
-            type="button"
-            class="border leading-[14px] border-gray-400 text-gray-400 rounded-full min-h-[40px] min-w-[7.3125rem]"
-          >
-            Cancel
-          </button>
-        </div>
-      </form>
+          <div class="flex gap-4 mt-6 font-bold" dir="rtl">
+            <button
+              class="border leading-[14px] text-white rounded-full bg-green-500 min-h-[40px] min-w-[7.3125rem]"
+            >
+              Save
+            </button>
+            <button
+              aria-label="Close Modal"
+              data-modal-close="#add-hotel"
+              type="button"
+              class="border leading-[14px] border-gray-400 text-gray-400 rounded-full min-h-[40px] min-w-[7.3125rem]"
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
-    <main class="py-12 max-w-[80rem] full-hd:max-w-[120rem] full-hd:m-auto 2xl:max-w-full 2xl:mx-[43px] px-4 m-auto flex gap-6">
+    <main
+      class="py-12 max-w-[80rem] full-hd:max-w-[120rem] full-hd:m-auto 2xl:max-w-full 2xl:mx-[43px] px-4 m-auto flex gap-6"
+    >
       <nav class="basis-[25.5%]">
         <div
           class="overflow-y-scroll theme-secondary h-[90vh] hide-scroll justify-between top-12 bottom-12 w-full rounded-4xl sticky"

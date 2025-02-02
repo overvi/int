@@ -16,123 +16,138 @@
   </head>
   <body class="theme-primary">
     <div
-      class="backdrop fixed bg-black/45 inset-0 z-50"
+      class="backdrop fixed h-[130vh] w-full overflow-y-scroll hide-scroll bg-black/45 inset-0 z-50"
       id="modal-backdrop"
-    ></div>
-    <div
-      class="modal rounded-4xl h-[35rem] hide-scroll overflow-y-scroll hide-scroll p-10 min-w-[34.25rem]"
-      id="add-remark"
-      role="dialog"
-      aria-labelledby="remark-title"
     >
       <div
-        class="flex items-center border-b border-b-gray-100 pb-6 justify-between"
+        class="modal modal--absolute rounded-4xl p-10"
+        id="add-remark"
+        role="dialog"
+        aria-labelledby="remark-title"
       >
-        <h2 id="remark-title" class="text-2xl">Add Remark</h2>
-        <button aria-label="Close Modal" data-modal-close="#add-remark">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
+        <div class="theme-secondary rounded-4xl h-fit p-10 min-w-[34.25rem]">
+          <div
+            class="flex items-center border-b border-b-gray-100 pb-6 justify-between"
           >
-            <path
-              opacity="0.4"
-              d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
-              fill="#DC2626"
-            />
-            <path
-              d="M13.0604 11.9999L15.3604 9.69986C15.6504 9.40986 15.6504 8.92986 15.3604 8.63986C15.0704 8.34986 14.5904 8.34986 14.3004 8.63986L12.0004 10.9399L9.70035 8.63986C9.41035 8.34986 8.93035 8.34986 8.64035 8.63986C8.35035 8.92986 8.35035 9.40986 8.64035 9.69986L10.9404 11.9999L8.64035 14.2999C8.35035 14.5899 8.35035 15.0699 8.64035 15.3599C8.79035 15.5099 8.98035 15.5799 9.17035 15.5799C9.36035 15.5799 9.55035 15.5099 9.70035 15.3599L12.0004 13.0599L14.3004 15.3599C14.4504 15.5099 14.6404 15.5799 14.8304 15.5799C15.0204 15.5799 15.2104 15.5099 15.3604 15.3599C15.6504 15.0699 15.6504 14.5899 15.3604 14.2999L13.0604 11.9999Z"
-              fill="#DC2626"
-            />
-          </svg>
-        </button>
+            <h2 id="remark-title" class="text-2xl">Add Remark</h2>
+            <button aria-label="Close Modal" data-modal-close="#add-remark">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  opacity="0.4"
+                  d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  fill="#DC2626"
+                />
+                <path
+                  d="M13.0604 11.9999L15.3604 9.69986C15.6504 9.40986 15.6504 8.92986 15.3604 8.63986C15.0704 8.34986 14.5904 8.34986 14.3004 8.63986L12.0004 10.9399L9.70035 8.63986C9.41035 8.34986 8.93035 8.34986 8.64035 8.63986C8.35035 8.92986 8.35035 9.40986 8.64035 9.69986L10.9404 11.9999L8.64035 14.2999C8.35035 14.5899 8.35035 15.0699 8.64035 15.3599C8.79035 15.5099 8.98035 15.5799 9.17035 15.5799C9.36035 15.5799 9.55035 15.5099 9.70035 15.3599L12.0004 13.0599L14.3004 15.3599C14.4504 15.5099 14.6404 15.5799 14.8304 15.5799C15.0204 15.5799 15.2104 15.5099 15.3604 15.3599C15.6504 15.0699 15.6504 14.5899 15.3604 14.2999L13.0604 11.9999Z"
+                  fill="#DC2626"
+                />
+              </svg>
+            </button>
+          </div>
+          <form action="" class="mt-6">
+            <div>
+              <label class="block" for="remark">Remark</label>
+              <textarea
+                class="border w-full theme-secondary outline-none p-3 min-h-[5.75rem] mt-2 resize-none placeholder:text-gray-500 rounded-2xl"
+                name="remark"
+                placeholder="Type..."
+                id="remark"
+              ></textarea>
+            </div>
+            <div class="flex gap-4 mt-6 font-bold border-b pb-4" dir="rtl">
+              <button
+                class="leading-[14px] text-white rounded-full bg-green-500 min-h-[40px] min-w-[7.3125rem]"
+              >
+                Save
+              </button>
+              <button
+                aria-label="Close Modal"
+                data-modal-close="#add-remark"
+                type="button"
+                class="border leading-[14px] border-gray-400 text-gray-400 rounded-full min-h-[40px] min-w-[7.3125rem]"
+              >
+                Cancel
+              </button>
+            </div>
+            <div class="mt-4 p-3.5 theme-primary rounded-2xl">
+              <p class="">Recent Remarks</p>
+              <ul
+                class="text-xxs remark-scroll *:me-3 mt-3.5 max-h-[10.6875rem] overflow-y-scroll space-y-1.5"
+              >
+                <li class="theme-secondary p-3.5 rounded-[14px]">
+                  <div class="flex items-center gap-0.5">
+                    <p class="text-orange-500 font-semibold !text-xs">
+                      John Doe
+                    </p>
+                    <span class="text-orange-500 font-semibold">-</span>
+                    <p class="font-light text-[#8C8C8C]">2024/02/03</p>
+                  </div>
+                  <p class="mt-1 leading-[.8] font-light">
+                    Lorem ipsum dolor sit amet consectetur. Feugiat arcu arcu
+                    euismod tortor at adipiscing.Lorem ipsum dolor sit amet
+                    consectetur. Feugiat arcu arcu euismod tortor at
+                    adipiscing...
+                  </p>
+                </li>
+                <li class="theme-secondary p-3.5 rounded-[14px]">
+                  <div class="flex items-center gap-0.5">
+                    <p class="text-orange-500 font-semibold !text-xs">
+                      John Doe
+                    </p>
+                    <span class="text-orange-500 font-semibold">-</span>
+                    <p class="font-light text-[#8C8C8C]">2024/02/03</p>
+                  </div>
+                  <p class="mt-1 leading-[.8] font-light">
+                    Lorem ipsum dolor sit amet consectetur. Feugiat arcu arcu
+                    euismod tortor at adipiscing.Lorem ipsum dolor sit amet
+                    consectetur. Feugiat arcu arcu euismod tortor at
+                    adipiscing...
+                  </p>
+                </li>
+                <li class="theme-secondary p-3.5 rounded-[14px]">
+                  <div class="flex items-center gap-0.5">
+                    <p class="text-orange-500 font-semibold !text-xs">
+                      John Doe
+                    </p>
+                    <span class="text-orange-500 font-semibold">-</span>
+                    <p class="font-light text-[#8C8C8C]">2024/02/03</p>
+                  </div>
+                  <p class="mt-1 leading-[.8] font-light">
+                    Lorem ipsum dolor sit amet consectetur. Feugiat arcu arcu
+                    euismod tortor at adipiscing.Lorem ipsum dolor sit amet
+                    consectetur. Feugiat arcu arcu euismod tortor at
+                    adipiscing...
+                  </p>
+                </li>
+                <li class="theme-secondary p-3.5 rounded-[14px]">
+                  <div class="flex items-center gap-0.5">
+                    <p class="text-orange-500 font-semibold !text-xs">
+                      John Doe
+                    </p>
+                    <span class="text-orange-500 font-semibold">-</span>
+                    <p class="font-light text-[#8C8C8C]">2024/02/03</p>
+                  </div>
+                  <p class="mt-1 leading-[.8] font-light">
+                    Lorem ipsum dolor sit amet consectetur. Feugiat arcu arcu
+                    euismod tortor at adipiscing.Lorem ipsum dolor sit amet
+                    consectetur. Feugiat arcu arcu euismod tortor at
+                    adipiscing...
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </form>
+        </div>
       </div>
-      <form action="" class="mt-6">
-        <div>
-          <label class="block" for="remark">Remark</label>
-          <textarea
-            class="border w-full theme-secondary outline-none p-3 min-h-[5.75rem] mt-2 resize-none placeholder:text-gray-500 rounded-2xl"
-            name="remark"
-            placeholder="Type..."
-            id="remark"
-          ></textarea>
-        </div>
-        <div class="flex gap-4 mt-6 font-bold border-b pb-4" dir="rtl">
-          <button
-            class="leading-[14px] text-white rounded-full bg-green-500 min-h-[40px] min-w-[7.3125rem]"
-          >
-            Save
-          </button>
-          <button
-            aria-label="Close Modal"
-            data-modal-close="#add-remark"
-            type="button"
-            class="border leading-[14px] border-gray-400 text-gray-400 rounded-full min-h-[40px] min-w-[7.3125rem]"
-          >
-            Cancel
-          </button>
-        </div>
-        <div class="mt-4 p-3.5 theme-primary rounded-2xl">
-          <p class="">Recent Remarks</p>
-          <ul
-            class="text-xxs remark-scroll *:me-3 mt-3.5 max-h-[10.6875rem] overflow-y-scroll space-y-1.5"
-          >
-            <li class="theme-secondary p-3.5 rounded-[14px]">
-              <div class="flex items-center gap-0.5">
-                <p class="text-orange-500 font-semibold !text-xs">John Doe</p>
-                <span class="text-orange-500 font-semibold">-</span>
-                <p class="font-light text-[#8C8C8C]">2024/02/03</p>
-              </div>
-              <p class="mt-1 leading-[.8] font-light">
-                Lorem ipsum dolor sit amet consectetur. Feugiat arcu arcu
-                euismod tortor at adipiscing.Lorem ipsum dolor sit amet
-                consectetur. Feugiat arcu arcu euismod tortor at adipiscing...
-              </p>
-            </li>
-            <li class="theme-secondary p-3.5 rounded-[14px]">
-              <div class="flex items-center gap-0.5">
-                <p class="text-orange-500 font-semibold !text-xs">John Doe</p>
-                <span class="text-orange-500 font-semibold">-</span>
-                <p class="font-light text-[#8C8C8C]">2024/02/03</p>
-              </div>
-              <p class="mt-1 leading-[.8] font-light">
-                Lorem ipsum dolor sit amet consectetur. Feugiat arcu arcu
-                euismod tortor at adipiscing.Lorem ipsum dolor sit amet
-                consectetur. Feugiat arcu arcu euismod tortor at adipiscing...
-              </p>
-            </li>
-            <li class="theme-secondary p-3.5 rounded-[14px]">
-              <div class="flex items-center gap-0.5">
-                <p class="text-orange-500 font-semibold !text-xs">John Doe</p>
-                <span class="text-orange-500 font-semibold">-</span>
-                <p class="font-light text-[#8C8C8C]">2024/02/03</p>
-              </div>
-              <p class="mt-1 leading-[.8] font-light">
-                Lorem ipsum dolor sit amet consectetur. Feugiat arcu arcu
-                euismod tortor at adipiscing.Lorem ipsum dolor sit amet
-                consectetur. Feugiat arcu arcu euismod tortor at adipiscing...
-              </p>
-            </li>
-            <li class="theme-secondary p-3.5 rounded-[14px]">
-              <div class="flex items-center gap-0.5">
-                <p class="text-orange-500 font-semibold !text-xs">John Doe</p>
-                <span class="text-orange-500 font-semibold">-</span>
-                <p class="font-light text-[#8C8C8C]">2024/02/03</p>
-              </div>
-              <p class="mt-1 leading-[.8] font-light">
-                Lorem ipsum dolor sit amet consectetur. Feugiat arcu arcu
-                euismod tortor at adipiscing.Lorem ipsum dolor sit amet
-                consectetur. Feugiat arcu arcu euismod tortor at adipiscing...
-              </p>
-            </li>
-          </ul>
-        </div>
-      </form>
     </div>
     <div
-      class="modal rounded-4xl hide-scroll overflow-y-scroll hide-scroll p-10 min-w-[31.25rem]"
+      class="modal modal--fixed rounded-4xl hide-scroll overflow-y-scroll hide-scroll p-10 min-w-[31.25rem]"
       id="add-hcn"
       role="dialog"
       aria-labelledby="hcn-title"
@@ -203,7 +218,7 @@
       </form>
     </div>
     <div
-      class="modal rounded-4xl hide-scroll overflow-y-scroll hide-scroll p-10 min-w-[31.25rem]"
+      class="modal modal--fixed rounded-4xl hide-scroll overflow-y-scroll hide-scroll p-10 min-w-[31.25rem]"
       id="cancel"
       role="dialog"
       aria-labelledby="cancel-title"
@@ -264,7 +279,9 @@
         </div>
       </form>
     </div>
-    <main class="py-12 max-w-[80rem] full-hd:max-w-[120rem] full-hd:m-auto 2xl:max-w-full 2xl:mx-[43px] px-4 m-auto flex gap-6">
+    <main
+      class="py-12 max-w-[80rem] full-hd:max-w-[120rem] full-hd:m-auto 2xl:max-w-full 2xl:mx-[43px] px-4 m-auto flex gap-6"
+    >
       <nav class="basis-[25.5%]">
         <div
           class="overflow-y-scroll theme-secondary h-[90vh] hide-scroll justify-between top-12 bottom-12 w-full rounded-4xl sticky"
