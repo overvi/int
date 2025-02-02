@@ -177,6 +177,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 555;
+    @apply min-[1600px]:top-1/2
     
   }
   .modal.open {
