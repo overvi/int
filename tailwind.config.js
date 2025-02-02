@@ -44,6 +44,7 @@ module.exports = {
       },
       screens: {
         "2xl": "1400px",
+        'full-hd' : "1920px"
       },
       borderRadius: {
         "4xl": "30px",
