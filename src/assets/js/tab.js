@@ -21,6 +21,7 @@ tabs.forEach((tab) => {
     // Get the data-tab target
     const target = tab.getAttribute("data-tab");
 
+    console.log(document.getElementById(target))
     tabContents.forEach((tc) => {
       if (!parentTab || parentTab.id !== tc.id) {
         tc.classList.add("hidden");

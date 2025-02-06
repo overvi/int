@@ -35,6 +35,7 @@ module.exports = {
         "transfer/rates/index": "./src/transfer/rates/index.html",
         "general-info/index": "./src/general-info/index.html",
         "images/index": "./src/images/index.html",
+        "facilities/index": "./src/facilities/index.html",
       },
       js: {
         // output filename of extracted JS from source script loaded in HTML via `<script>` tag

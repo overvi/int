@@ -5,7 +5,10 @@ const backdrop = document.getElementById("modal-backdrop");
 openModalButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const modal = document.querySelector(button.dataset.modalTarget);
-    openModal(modal);
+    if (modal) {
+      closeAllModals();
+      openModal(modal);
+    }
   });
 });
 
@@ -16,31 +19,29 @@ closeModalButtons.forEach((button) => {
   });
 });
 
-backdrop.addEventListener("click", () => {
-  const modals = document.querySelectorAll(".modal.open");
-  modals.forEach((modal) => closeModal(modal));
-});
+backdrop.addEventListener("click", closeAllModals);
 
 document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    const modals = document.querySelectorAll(".modal.open");
-    modals.forEach((modal) => closeModal(modal));
-  }
+  if (e.key === "Escape") closeAllModals();
 });
 
 function openModal(modal) {
-  if (modal == null) return;
+  if (!modal) return;
   modal.classList.add("open");
   backdrop.classList.add("open");
   modal.focus();
 }
 
 function closeModal(modal) {
-  if (modal == null) return;
+  if (!modal) return;
   modal.classList.remove("open");
-  backdrop.classList.remove("open");
+  if (!document.querySelector(".modal.open")) backdrop.classList.remove("open");
   const openButton = document.querySelector(
     `[data-modal-target="#${modal.id}"]`
   );
-  openButton.focus();
+  if (openButton) openButton.focus();
+}
+
+function closeAllModals() {
+  document.querySelectorAll(".modal.open").forEach(closeModal);
 }
