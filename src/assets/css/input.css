@@ -184,6 +184,16 @@
     @apply !bg-gray-50;
   }
 
+  .remarks-container:has(.remarks-list li:hover) .overlay-remark {
+   @apply !block
+  }
+
+  .remarks-list li:hover {
+    @apply  absolute shadow-sm  z-[51]
+  }
+  .remarks-list li:hover span {
+    @apply !block
+  }
   .modal {
     display: none;
     left: 50%;
@@ -300,6 +310,8 @@
     right: 0;
     bottom: 0;
   }
+
+
   /*leaflet*/
 
   .leaflet-top {

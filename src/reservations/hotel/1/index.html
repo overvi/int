@@ -75,12 +75,13 @@
                 Cancel
               </button>
             </div>
-            <div class="mt-4 p-3.5 theme-primary rounded-2xl">
+            <div class="mt-4 p-3.5 remarks-container relative theme-primary rounded-2xl">
+              <div class="absolute z-50 overlay-remark hidden  inset-0 w-full h-full backdrop-blur-[1.5px]"></div>
               <p class="">Recent Remarks</p>
               <ul
-                class="text-xxs remark-scroll *:me-3 mt-3.5 max-h-[10.6875rem] overflow-y-scroll space-y-1.5"
+                class="text-xxs relative remarks-list remark-scroll *:me-3 mt-3.5 max-h-[10.6875rem] overflow-y-scroll space-y-1.5"
               >
-                <li class="theme-secondary p-3.5 rounded-[14px]">
+                <li class="theme-secondary  p-3.5 rounded-[14px]">
                   <div class="flex items-center gap-0.5">
                     <p class="text-orange-500 font-semibold !text-xs">
                       John Doe
@@ -92,7 +93,7 @@
                     Lorem ipsum dolor sit amet consectetur. Feugiat arcu arcu
                     euismod tortor at adipiscing.Lorem ipsum dolor sit amet
                     consectetur. Feugiat arcu arcu euismod tortor at
-                    adipiscing...
+                    adipiscing...<span class="hidden">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est, porro ab quibusdam maiores quos voluptatem praesentium? Expedita totam vel quas inventore maxime dolore, error cupiditate.</span>
                   </p>
                 </li>
                 <li class="theme-secondary p-3.5 rounded-[14px]">
