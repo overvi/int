@@ -14,6 +14,7 @@ module.exports = {
     reports: "./src/assets/js/reports.js",
     accordion: "./src/assets/js/accordion.js",
     "general-info": "./src/assets/js/general-info.js",
+    select: "./src/assets/js/select.js",
   },
   plugins: [
     new HtmlBundlerPlugin({
@@ -36,6 +37,7 @@ module.exports = {
         "general-info/index": "./src/general-info/index.html",
         "images/index": "./src/images/index.html",
         "facilities/index": "./src/facilities/index.html",
+        "rooms/index": "./src/rooms/index.html",
       },
       js: {
         // output filename of extracted JS from source script loaded in HTML via `<script>` tag

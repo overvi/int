@@ -224,6 +224,81 @@
         </form>
       </div>
     </div>
+    <div
+      class="modal modal--fixed rounded-4xl flex items-center text-center justify-center hide-scroll overflow-y-scroll hide-scroll p-10 min-w-[34.25rem]"
+      id="delete-sample"
+      role="dialog"
+    >
+      <div class="w-fit m-auto">
+        <svg
+          width="124"
+          height="124"
+          viewBox="0 0 124 124"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            opacity="0.4"
+            d="M62.0002 113.667C90.5349 113.667 113.667 90.5349 113.667 62.0002C113.667 33.4655 90.5349 10.3335 62.0002 10.3335C33.4655 10.3335 10.3335 33.4655 10.3335 62.0002C10.3335 90.5349 33.4655 113.667 62.0002 113.667Z"
+            fill="#DC2626"
+          />
+          <path
+            d="M62 71.0418C64.1183 71.0418 65.875 69.2852 65.875 67.1668V41.3335C65.875 39.2152 64.1183 37.4585 62 37.4585C59.8817 37.4585 58.125 39.2152 58.125 41.3335V67.1668C58.125 69.2852 59.8817 71.0418 62 71.0418Z"
+            fill="#DC2626"
+          />
+          <path
+            d="M66.7535 80.7034C66.4952 80.0834 66.1335 79.515 65.6685 78.9984C65.1518 78.5334 64.5835 78.1717 63.9635 77.9134C62.7235 77.3967 61.2768 77.3967 60.0368 77.9134C59.4168 78.1717 58.8485 78.5334 58.3318 78.9984C57.8668 79.515 57.5052 80.0834 57.2468 80.7034C56.9885 81.3234 56.8335 81.995 56.8335 82.6667C56.8335 83.3384 56.9885 84.01 57.2468 84.63C57.5052 85.3017 57.8668 85.8184 58.3318 86.335C58.8485 86.8 59.4168 87.1617 60.0368 87.42C60.6568 87.6784 61.3285 87.8334 62.0002 87.8334C62.6718 87.8334 63.3435 87.6784 63.9635 87.42C64.5835 87.1617 65.1518 86.8 65.6685 86.335C66.1335 85.8184 66.4952 85.3017 66.7535 84.63C67.0118 84.01 67.1668 83.3384 67.1668 82.6667C67.1668 81.995 67.0118 81.3234 66.7535 80.7034Z"
+            fill="#DC2626"
+          />
+        </svg>
+      </div>
+      <p class="text-3xl mt-7 mb-10">Are you sure to delete this item?</p>
+      <div class="flex gap-6 mt-6 font-bold justify-center pb-4" dir="rtl">
+        <button
+          aria-label="Close Modal"
+          data-modal-close="#delete-facility"
+          type="button"
+          class="border leading-[14px] border-green-500 text-green-500 rounded-full min-h-[40px] min-w-[7.3125rem]"
+        >
+          Cancel
+        </button>
+        <button
+          data-modal-close="#delete-facility"
+          class="leading-[14px] justify-center flex items-center gap-2 text-white rounded-full bg-red-500 min-h-[40px] min-w-[7.3125rem]"
+        >
+          <p class="mt-1">Delete</p>
+          <svg
+            width="25"
+            height="24"
+            viewBox="0 0 25 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M21.57 5.23C19.96 5.07 18.35 4.95 16.73 4.86V4.85L16.51 3.55C16.36 2.63 16.14 1.25 13.8 1.25H11.18C8.85004 1.25 8.63003 2.57 8.47004 3.54L8.26004 4.82C7.33004 4.88 6.40004 4.94 5.47004 5.03L3.43004 5.23C3.01004 5.27 2.71004 5.64 2.75004 6.05C2.79004 6.46 3.15004 6.76 3.57004 6.72L5.61004 6.52C10.85 6 16.13 6.2 21.43 6.73C21.46 6.73 21.48 6.73 21.51 6.73C21.89 6.73 22.22 6.44 22.26 6.05C22.29 5.64 21.99 5.27 21.57 5.23Z"
+              fill="white"
+            />
+            <path
+              opacity="0.3991"
+              d="M19.73 8.14C19.49 7.89 19.16 7.75 18.82 7.75H6.17999C5.83999 7.75 5.49999 7.89 5.26999 8.14C5.03999 8.39 4.90999 8.73 4.92999 9.08L5.54999 19.34C5.65999 20.86 5.79999 22.76 9.28999 22.76H15.71C19.2 22.76 19.34 20.87 19.45 19.34L20.07 9.09C20.09 8.73 19.96 8.39 19.73 8.14Z"
+              fill="white"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M10.08 17C10.08 16.5858 10.4157 16.25 10.83 16.25H14.16C14.5742 16.25 14.91 16.5858 14.91 17C14.91 17.4142 14.5742 17.75 14.16 17.75H10.83C10.4157 17.75 10.08 17.4142 10.08 17Z"
+              fill="white"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M9.25 13C9.25 12.5858 9.58579 12.25 10 12.25H15C15.4142 12.25 15.75 12.5858 15.75 13C15.75 13.4142 15.4142 13.75 15 13.75H10C9.58579 13.75 9.25 13.4142 9.25 13Z"
+              fill="white"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
     <main
       class="py-12 max-w-[80rem] full-hd:max-w-[120rem] full-hd:m-auto 2xl:max-w-full 2xl:mx-[43px] px-4 m-auto flex gap-6"
     >
@@ -885,7 +960,7 @@
               <div>
                 <div class="flex gap-4 mt-6 font-bold" dir="rtl">
                   <button
-                    class="border leading-[14px] text-white rounded-full bg-green-500 min-h-[40px] min-w-[7.3125rem]"
+                    class="leading-[14px] text-white rounded-full bg-green-500 min-h-[40px] min-w-[7.3125rem]"
                   >
                     Apply
                   </button>
@@ -1115,7 +1190,10 @@
                         />
                       </svg>
                     </a>
-                    <button aria-label="Delete Supply">
+                    <button
+                      data-modal-target="#delete-sample"
+                      aria-label="Delete Supply"
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -1275,7 +1353,10 @@
                         />
                       </svg>
                     </a>
-                    <button aria-label="Delete Supply">
+                    <button
+                      data-modal-target="#delete-sample"
+                      aria-label="Delete Supply"
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -1424,5 +1505,6 @@
     <script defer src="@assets/js/modal.js"></script>
     <script defer src="@assets/js/accordion.js"></script>
     <script defer src="@assets/js/dropdown.js"></script>
+    <script defer src="@assets/js/select.js"></script>
   </body>
 </html>

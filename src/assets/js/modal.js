@@ -19,7 +19,11 @@ closeModalButtons.forEach((button) => {
   });
 });
 
-backdrop.addEventListener("click", closeAllModals);
+backdrop.addEventListener("click", (e) => {
+  if (!e.target.closest(".modal")) {
+    closeAllModals();
+  }
+});
 
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeAllModals();
