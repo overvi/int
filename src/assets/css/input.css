@@ -270,7 +270,7 @@
   }
 
   .switch:has(input:checked) {
-    @apply bg-orange-500/[32%];
+    @apply bg-orange-500/[32%] shadow-none;
   }
 
   .may-disabled:has(input:disabled) {
