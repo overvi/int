@@ -91,7 +91,7 @@
   }
 
   .login-bg.bg-loaded {
-    background: url("/src/assets/images/login-bg.png") fixed;
+    background: url("/src/assets/images/login-bg.jpg") fixed;
     background-size: cover;
   }
 
@@ -189,7 +189,7 @@
   }
 
   .remarks-list li:hover {
-    @apply  absolute shadow-sm  z-[51]
+    @apply  absolute shadow-sm  z-[51] text-xs;
   }
   .remarks-list li:hover span {
     @apply !block
