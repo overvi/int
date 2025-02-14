@@ -25,6 +25,7 @@ module.exports = {
         "supplier/list/index": "./src/supplier/list/index.html",
         "reservations/index": "./src/reservations/index.html",
         "reservations-single/index": "./src/reservations-single/index.html",
+        "reservations-single/1/index": "./src/reservations-single/1/index.html",
         "reservations/hotel/1/index": "./src/reservations/hotel/1/index.html",
         "reservations/transfer/1/index":
           "./src/reservations/transfer/1/index.html",
