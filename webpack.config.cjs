@@ -41,7 +41,8 @@ module.exports = {
         "facilities/index": "./src/facilities/index.html",
         "rooms/index": "./src/rooms/index.html",
         "boards/index" : "./src/boards/index.html",
-        "rates-period/index" : "./src/rates-period/index.html"
+        "rates-period/index" : "./src/rates-period/index.html",
+        "invoices-single/index" : "./src/invoices-single/index.html"
       },
       js: {
         // output filename of extracted JS from source script loaded in HTML via `<script>` tag
