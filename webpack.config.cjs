@@ -15,6 +15,7 @@ module.exports = {
     accordion: "./src/assets/js/accordion.js",
     "general-info": "./src/assets/js/general-info.js",
     select: "./src/assets/js/select.js",
+    contracts: "./src/assets/js/contracts.js",
   },
   plugins: [
     new HtmlBundlerPlugin({
@@ -40,9 +41,10 @@ module.exports = {
         "images/index": "./src/images/index.html",
         "facilities/index": "./src/facilities/index.html",
         "rooms/index": "./src/rooms/index.html",
-        "boards/index" : "./src/boards/index.html",
-        "rates-period/index" : "./src/rates-period/index.html",
-        "invoices-single/index" : "./src/invoices-single/index.html"
+        "boards/index": "./src/boards/index.html",
+        "rates-period/index": "./src/rates-period/index.html",
+        "invoices-single/index": "./src/invoices-single/index.html",
+        "contracts/index": "./src/contracts/index.html",
       },
       js: {
         // output filename of extracted JS from source script loaded in HTML via `<script>` tag
