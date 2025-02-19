@@ -16,6 +16,7 @@ module.exports = {
     "general-info": "./src/assets/js/general-info.js",
     select: "./src/assets/js/select.js",
     contracts: "./src/assets/js/contracts.js",
+    contractDetails: "./src/assets/js/contractDetails.js",
   },
   plugins: [
     new HtmlBundlerPlugin({
@@ -45,6 +46,7 @@ module.exports = {
         "rates-period/index": "./src/rates-period/index.html",
         "invoices-single/index": "./src/invoices-single/index.html",
         "contracts/index": "./src/contracts/index.html",
+        "contracts/1/index": "./src/contracts/1/index.html",
       },
       js: {
         // output filename of extracted JS from source script loaded in HTML via `<script>` tag

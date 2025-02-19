@@ -47,6 +47,7 @@ function handleFiles(files) {
 
       if (isValidFileType(file)) {
         preview.src = e.target.result;
+       
       }
 
       // Apply styling
