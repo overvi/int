@@ -624,6 +624,9 @@ video {
 .\!top-\[32rem\] {
   top: 32rem !important;
 }
+.\!top-\[50\%\] {
+  top: 50% !important;
+}
 .-top-7 {
   top: -1.75rem;
 }
@@ -659,15 +662,6 @@ video {
 }
 .top-12 {
   top: 3rem;
-}
-.\!top-\[50\%\] {
-  top: 50% !important;
-}
-.\!top-\[45\%\] {
-  top: 45% !important;
-}
-.\!top-\[55\%\] {
-  top: 55% !important;
 }
 .-z-10 {
   z-index: -10;
@@ -973,6 +967,9 @@ video {
 }
 .min-h-\[9\.6875rem\] {
   min-height: 9.6875rem;
+}
+.min-h-40 {
+  min-height: 10rem;
 }
 .w-10 {
   width: 2.5rem;

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../../css/input.bfb2d603.css" />
+    <link rel="stylesheet" href="../css/input.bfb2d603.css" />
 
     <script>
       const mode = localStorage.getItem("mode");
@@ -16,276 +16,111 @@
   </head>
   <body class="theme-primary">
     <div
-      class="backdrop fixed h-[130vh] w-full overflow-y-scroll hide-scroll bg-black/45 inset-0 z-50"
+      class="backdrop fixed bg-black/45 inset-0 z-50"
       id="modal-backdrop"
+    ></div>
+    <div
+      class="modal modal--fixed rounded-4xl"
+      id="add-offers"
+      role="dialog"
+      aria-labelledby="supplier-title"
     >
-      <div
-        class="modal modal--absolute rounded-4xl p-10"
-        id="add-remark"
-        role="dialog"
-        aria-labelledby="remark-title"
-      >
-        <div class="theme-secondary rounded-4xl h-fit p-10 min-w-[34.25rem]">
-          <div
-            class="flex items-center border-b border-b-gray-100 pb-6 justify-between"
-          >
-            <h2 id="remark-title" class="text-2xl">Add Remark</h2>
-            <button aria-label="Close Modal" data-modal-close="#add-remark">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <path
-                  opacity="0.4"
-                  d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
-                  fill="#DC2626"
+      <div class="theme-secondary rounded-4xl h-fit p-10 min-w-[34.25rem]">
+        <div
+          class="flex items-center border-b border-b-gray-100 pb-6 justify-between"
+        >
+          <h2 id="offers-title" class="text-2xl">Add New Special Offers</h2>
+          <button aria-label="Close Modal" data-modal-close="#add-offers">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                opacity="0.4"
+                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                fill="#DC2626"
+              />
+              <path
+                d="M13.0604 11.9999L15.3604 9.69986C15.6504 9.40986 15.6504 8.92986 15.3604 8.63986C15.0704 8.34986 14.5904 8.34986 14.3004 8.63986L12.0004 10.9399L9.70035 8.63986C9.41035 8.34986 8.93035 8.34986 8.64035 8.63986C8.35035 8.92986 8.35035 9.40986 8.64035 9.69986L10.9404 11.9999L8.64035 14.2999C8.35035 14.5899 8.35035 15.0699 8.64035 15.3599C8.79035 15.5099 8.98035 15.5799 9.17035 15.5799C9.36035 15.5799 9.55035 15.5099 9.70035 15.3599L12.0004 13.0599L14.3004 15.3599C14.4504 15.5099 14.6404 15.5799 14.8304 15.5799C15.0204 15.5799 15.2104 15.5099 15.3604 15.3599C15.6504 15.0699 15.6504 14.5899 15.3604 14.2999L13.0604 11.9999Z"
+                fill="#DC2626"
+              />
+            </svg>
+          </button>
+        </div>
+        <form action="" class="mt-6">
+          <div class="gap-6">
+            <div class="grid basis-full h-fit grid-cols-2 gap-[24px_21px]">
+              <div class="w-full">
+                <p class="block mb-2">
+                  Type<span class="text-red-500">*</span>
+                </p>
+                <div
+                  class="select relative h-10 border overflow-hidden rounded-full"
+                >
+                  <select
+                    name="type"
+                    id="type"
+                    aria-label="Type"
+                    class="appearance-none rounded-full [&:has(option:disabled:checked)]:text-gray-200 theme-secondary w-full h-10 ps-[14px] outline-none"
+                  >
+                    <option disabled selected value="">Select...</option>
+                    <option class="text-black" value="1">1</option>
+                    <option class="text-black" value="2">2</option>
+                    <option class="text-black" value="3">3</option>
+                  </select>
+                </div>
+              </div>
+              <div class="w-full">
+                <label class="block mb-2" for="code"
+                  >Code<span class="text-red-500">*</span></label
+                >
+                <input
+                  placeholder="Type..."
+                  name="code"
+                  class="min-h-[40px] theme-secondary placeholder:text-sm border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
+                  id="code"
+                  type="text"
                 />
-                <path
-                  d="M13.0604 11.9999L15.3604 9.69986C15.6504 9.40986 15.6504 8.92986 15.3604 8.63986C15.0704 8.34986 14.5904 8.34986 14.3004 8.63986L12.0004 10.9399L9.70035 8.63986C9.41035 8.34986 8.93035 8.34986 8.64035 8.63986C8.35035 8.92986 8.35035 9.40986 8.64035 9.69986L10.9404 11.9999L8.64035 14.2999C8.35035 14.5899 8.35035 15.0699 8.64035 15.3599C8.79035 15.5099 8.98035 15.5799 9.17035 15.5799C9.36035 15.5799 9.55035 15.5099 9.70035 15.3599L12.0004 13.0599L14.3004 15.3599C14.4504 15.5099 14.6404 15.5799 14.8304 15.5799C15.0204 15.5799 15.2104 15.5099 15.3604 15.3599C15.6504 15.0699 15.6504 14.5899 15.3604 14.2999L13.0604 11.9999Z"
-                  fill="#DC2626"
-                />
-              </svg>
-            </button>
-          </div>
-          <form action="" class="mt-6">
-            <div>
-              <label class="block" for="remark">Remark</label>
+              </div>
+            </div>
+            <div class="mt-6">
+              <label class="block" for="desc">Description</label>
               <textarea
-                class="border w-full theme-secondary outline-none p-3 min-h-[5.75rem] mt-2 resize-none placeholder:text-gray-500 rounded-2xl"
-                name="remark"
+                class="border w-full theme-secondary outline-none p-3 min-h-40 mt-2 resize-none placeholder:text-gray-500 rounded-2xl"
+                name="desc"
                 placeholder="Type..."
-                id="remark"
+                id="desc"
               ></textarea>
             </div>
-            <div class="flex gap-4 mt-6 font-bold border-b pb-4" dir="rtl">
-              <button
-                class="leading-[14px] text-white rounded-full bg-green-500 min-h-[40px] min-w-[7.3125rem]"
-              >
-                Save
-              </button>
-              <button
-                aria-label="Close Modal"
-                data-modal-close="#add-remark"
-                type="button"
-                class="border leading-[14px] border-gray-400 text-gray-400 rounded-full min-h-[40px] min-w-[7.3125rem]"
-              >
-                Cancel
-              </button>
-            </div>
-            <div class="mt-4 p-3.5 remarks-container relative theme-primary rounded-2xl">
-              <div class="absolute z-50 overlay-remark hidden  inset-0 w-full h-full backdrop-blur-[1.5px]"></div>
-              <p class="">Recent Remarks</p>
-              <ul
-                class="text-xxs relative remarks-list remark-scroll *:me-3 mt-3.5 max-h-[10.6875rem] overflow-y-scroll space-y-1.5"
-              >
-                <li class="theme-secondary  p-3.5 rounded-[14px]">
-                  <div class="flex items-center gap-0.5">
-                    <p class="text-orange-500 font-semibold !text-xs">
-                      John Doe
-                    </p>
-                    <span class="text-orange-500 font-semibold">-</span>
-                    <p class="font-light text-[#8C8C8C]">2024/02/03</p>
-                  </div>
-                  <p class="mt-1 leading-[.8] font-light">
-                    Lorem ipsum dolor sit amet consectetur. Feugiat arcu arcu
-                    euismod tortor at adipiscing.Lorem ipsum dolor sit amet
-                    consectetur. Feugiat arcu arcu euismod tortor at
-                    adipiscing...<span class="hidden">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est, porro ab quibusdam maiores quos voluptatem praesentium? Expedita totam vel quas inventore maxime dolore, error cupiditate.</span>
-                  </p>
-                </li>
-                <li class="theme-secondary p-3.5 rounded-[14px]">
-                  <div class="flex items-center gap-0.5">
-                    <p class="text-orange-500 font-semibold !text-xs">
-                      John Doe
-                    </p>
-                    <span class="text-orange-500 font-semibold">-</span>
-                    <p class="font-light text-[#8C8C8C]">2024/02/03</p>
-                  </div>
-                  <p class="mt-1 leading-[.8] font-light">
-                    Lorem ipsum dolor sit amet consectetur. Feugiat arcu arcu
-                    euismod tortor at adipiscing.Lorem ipsum dolor sit amet
-                    consectetur. Feugiat arcu arcu euismod tortor at
-                    adipiscing...
-                  </p>
-                </li>
-                <li class="theme-secondary p-3.5 rounded-[14px]">
-                  <div class="flex items-center gap-0.5">
-                    <p class="text-orange-500 font-semibold !text-xs">
-                      John Doe
-                    </p>
-                    <span class="text-orange-500 font-semibold">-</span>
-                    <p class="font-light text-[#8C8C8C]">2024/02/03</p>
-                  </div>
-                  <p class="mt-1 leading-[.8] font-light">
-                    Lorem ipsum dolor sit amet consectetur. Feugiat arcu arcu
-                    euismod tortor at adipiscing.Lorem ipsum dolor sit amet
-                    consectetur. Feugiat arcu arcu euismod tortor at
-                    adipiscing...
-                  </p>
-                </li>
-                <li class="theme-secondary p-3.5 rounded-[14px]">
-                  <div class="flex items-center gap-0.5">
-                    <p class="text-orange-500 font-semibold !text-xs">
-                      John Doe
-                    </p>
-                    <span class="text-orange-500 font-semibold">-</span>
-                    <p class="font-light text-[#8C8C8C]">2024/02/03</p>
-                  </div>
-                  <p class="mt-1 leading-[.8] font-light">
-                    Lorem ipsum dolor sit amet consectetur. Feugiat arcu arcu
-                    euismod tortor at adipiscing.Lorem ipsum dolor sit amet
-                    consectetur. Feugiat arcu arcu euismod tortor at
-                    adipiscing...
-                  </p>
-                </li>
-              </ul>
-            </div>
-          </form>
-        </div>
+          </div>
+
+          <div class="flex gap-4 mt-6 font-bold" dir="rtl">
+            <button
+              class="leading-[14px] text-white rounded-full bg-green-500 min-h-[40px] min-w-[7.3125rem]"
+            >
+              Save
+            </button>
+            <button
+              aria-label="Close Modal"
+              data-modal-close="#add-offers"
+              type="button"
+              class="border leading-[14px] border-gray-400 text-gray-400 rounded-full min-h-[40px] min-w-[7.3125rem]"
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
       </div>
-    </div>
-    <div
-      class="modal modal--fixed rounded-4xl hide-scroll overflow-y-scroll hide-scroll p-10 min-w-[31.25rem]"
-      id="add-hcn"
-      role="dialog"
-      aria-labelledby="hcn-title"
-    >
-      <div
-        class="flex items-center border-b border-b-gray-100 pb-6 justify-between"
-      >
-        <h2 id="hcn-title" class="text-2xl">Add Hotel Confirmation Number</h2>
-        <button aria-label="Close Modal" data-modal-close="#add-hcn">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
-            <path
-              opacity="0.4"
-              d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
-              fill="#DC2626"
-            />
-            <path
-              d="M13.0604 11.9999L15.3604 9.69986C15.6504 9.40986 15.6504 8.92986 15.3604 8.63986C15.0704 8.34986 14.5904 8.34986 14.3004 8.63986L12.0004 10.9399L9.70035 8.63986C9.41035 8.34986 8.93035 8.34986 8.64035 8.63986C8.35035 8.92986 8.35035 9.40986 8.64035 9.69986L10.9404 11.9999L8.64035 14.2999C8.35035 14.5899 8.35035 15.0699 8.64035 15.3599C8.79035 15.5099 8.98035 15.5799 9.17035 15.5799C9.36035 15.5799 9.55035 15.5099 9.70035 15.3599L12.0004 13.0599L14.3004 15.3599C14.4504 15.5099 14.6404 15.5799 14.8304 15.5799C15.0204 15.5799 15.2104 15.5099 15.3604 15.3599C15.6504 15.0699 15.6504 14.5899 15.3604 14.2999L13.0604 11.9999Z"
-              fill="#DC2626"
-            />
-          </svg>
-        </button>
-      </div>
-      <p class="mt-6">
-        Are you sure you want to CONFIRM the pending reservation?
-      </p>
-      <form action="" class="mt-6 space-y-5">
-        <div class="w-full">
-          <label class="block mb-2" for="cn">Confirmation Number </label>
-          <input
-            name="cn"
-            placeholder="Type.."
-            class="min-h-[40px] border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
-            id="cn"
-            type="text"
-          />
-        </div>
-        <div class="w-full">
-          <label class="block mb-2" for="cName">Confirmation Name</label>
-          <input
-            name="cName"
-            placeholder="Type.."
-            class="min-h-[40px] border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
-            id="cName"
-            type="text"
-          />
-        </div>
-        <div class="flex gap-4 !mt-10 font-bold pb-4" dir="rtl">
-          <button
-            class="leading-[14px] text-white rounded-full bg-green-500 min-h-[40px] min-w-[7.3125rem]"
-          >
-            Save
-          </button>
-          <button
-            aria-label="Close Modal"
-            data-modal-close="#add-hcn"
-            type="button"
-            class="border leading-[14px] border-gray-400 text-gray-400 rounded-full min-h-[40px] min-w-[7.3125rem]"
-          >
-            Cancel
-          </button>
-        </div>
-      </form>
-    </div>
-    <div
-      class="modal modal--fixed rounded-4xl hide-scroll overflow-y-scroll hide-scroll p-10 min-w-[31.25rem]"
-      id="cancel"
-      role="dialog"
-      aria-labelledby="cancel-title"
-    >
-      <div
-        class="flex items-center border-b border-b-gray-100 pb-6 justify-between"
-      >
-        <h2 id="cancel-title" class="text-2xl">Cancel</h2>
-        <button aria-label="Close Modal" data-modal-close="#cancel">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
-            <path
-              opacity="0.4"
-              d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
-              fill="#DC2626"
-            />
-            <path
-              d="M13.0604 11.9999L15.3604 9.69986C15.6504 9.40986 15.6504 8.92986 15.3604 8.63986C15.0704 8.34986 14.5904 8.34986 14.3004 8.63986L12.0004 10.9399L9.70035 8.63986C9.41035 8.34986 8.93035 8.34986 8.64035 8.63986C8.35035 8.92986 8.35035 9.40986 8.64035 9.69986L10.9404 11.9999L8.64035 14.2999C8.35035 14.5899 8.35035 15.0699 8.64035 15.3599C8.79035 15.5099 8.98035 15.5799 9.17035 15.5799C9.36035 15.5799 9.55035 15.5099 9.70035 15.3599L12.0004 13.0599L14.3004 15.3599C14.4504 15.5099 14.6404 15.5799 14.8304 15.5799C15.0204 15.5799 15.2104 15.5099 15.3604 15.3599C15.6504 15.0699 15.6504 14.5899 15.3604 14.2999L13.0604 11.9999Z"
-              fill="#DC2626"
-            />
-          </svg>
-        </button>
-      </div>
-      <p class="mt-6">
-        Are you sure you want to CANCEL/REJECT the reservation?<br />
-        Please give a reason!
-      </p>
-      <form action="" class="mt-6 space-y-5">
-        <div class="w-full">
-          <label class="block mb-2" for="cr">Cancel Reason</label>
-          <input
-            name="cr"
-            placeholder="Type.."
-            class="min-h-[40px] border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
-            id="cr"
-            type="text"
-          />
-        </div>
-        <div class="flex gap-4 !mt-10 font-bold pb-4" dir="rtl">
-          <button
-            class="leading-[14px] text-white rounded-full bg-green-500 min-h-[40px] min-w-[7.3125rem]"
-          >
-            Save
-          </button>
-          <button
-            aria-label="Close Modal"
-            data-modal-close="#cancel"
-            type="button"
-            class="border leading-[14px] border-gray-400 text-gray-400 rounded-full min-h-[40px] min-w-[7.3125rem]"
-          >
-            Cancel
-          </button>
-        </div>
-      </form>
     </div>
     <main
       class="py-12 max-w-[80rem] full-hd:max-w-[120rem] full-hd:m-auto 2xl:max-w-full 2xl:mx-[43px] px-4 m-auto flex gap-6"
     >
-    <nav class="basis-[25.5%]">
+      <nav class="basis-[25.5%]">
         <div
-          class="overflow-y-scroll  theme-secondary hide-scroll justify-between top-12 bottom-12 w-full rounded-4xl sticky"
+          class="overflow-y-scroll theme-secondary hide-scroll justify-between top-12 bottom-12 w-full rounded-4xl sticky"
         >
           <div class="flex flex-col h-full justify-between pb-14">
             <div>
@@ -396,9 +231,7 @@
                     </div>
                   </a>
                 </li>
-                <li
-                  class="  group after:!top-4 after:!bottom-auto"
-                >
+                <li class="group after:!top-4 after:!bottom-auto">
                   <div class="accordion">
                     <button
                       id="accordion-header-info"
@@ -461,7 +294,8 @@
                     </button>
                     <ul
                       id="accordion-panel-info"
-                      role="region" hidden
+                      role="region"
+                      hidden
                       aria-labelledby="accordion-header-info"
                       class="font-light mt-5 border-t pt-5 accordion-panel"
                     >
@@ -605,7 +439,7 @@
                     </div>
                   </a>
                 </li>
-                <li>
+                <li class="active-segment">
                   <a>
                     <div class="flex items-center gap-2">
                       <svg
@@ -804,11 +638,10 @@
           </div>
         </div>
       </nav>
-
       <div class="basis-[calc(100%-19.875rem)] h-fit">
         <header class="flex w-full h-fit justify-between gap-1">
           <div>
-            <h1 class="h1 leading-[22px]">Reservation Details</h1>
+            <h1 class="h1 leading-[22px]">Special Offers</h1>
             <p class="mt-2 font-light">
               Lorem ipsum dolor sit amet consectetur. Feugiat arcu arcu euismod
               tortor at adipiscing.
@@ -867,7 +700,6 @@
                 </div>
               </button>
             </div>
-
             <div class="relative z-20 inline-block text-left dropdown">
               <button
                 id="dropdown-button"
@@ -996,764 +828,164 @@
             </div>
           </div>
         </header>
+
         <div
-          class="mt-[75px] z-0 relative h-[calc(100%-7.4375rem)] theme-secondary p-6 rounded-4xl"
+          class="mt-[25px] h-[calc(100%-4.4375rem)] theme-secondary p-6 rounded-4xl"
         >
-          <div
-            class="theme-secondary -z-[1] absolute left-[73px] right-[73px] m-auto top-0 -translate-y-1/2 p-[18px] rounded-4xl h-28"
+          <button
+            data-modal-target="#add-offers"
+            class="flex items-center gap-2.5 mb-6 ms-auto bg-orange-500 rounded-full min-h-[40px] px-[15px] text-white font-bold"
           >
-            <ul
-              class="border-b *:cursor-pointer flex items-center gap-[70px] *:pb-2"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
             >
-              <li
-                data-tab="price-details"
-                class="ms-[45px] tab active after:hidden group theme-secondary after:-z-[60] after:bottom-0 after:rounded-full relative after:translate-y-[60%] after:absolute after:left-0 after:right-0 after:m-auto after:w-full after:h-[10px] after:bg-orange-500"
+              <path
+                opacity="0.4"
+                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                fill="white"
+              />
+              <path
+                d="M16 11.25H12.75V8C12.75 7.59 12.41 7.25 12 7.25C11.59 7.25 11.25 7.59 11.25 8V11.25H8C7.59 11.25 7.25 11.59 7.25 12C7.25 12.41 7.59 12.75 8 12.75H11.25V16C11.25 16.41 11.59 16.75 12 16.75C12.41 16.75 12.75 16.41 12.75 16V12.75H16C16.41 12.75 16.75 12.41 16.75 12C16.75 11.59 16.41 11.25 16 11.25Z"
+                fill="white"
+              />
+            </svg>
+            <p>Add Offers</p>
+          </button>
+          <table class="table">
+            <thead>
+              <tr
+                class="*:*:py-4 *:py-4 *:text-start thead-round-child thead-border-child"
               >
-                <button class="flex items-center gap-[7px]">
-                  <svg
-                    class="group-[.active]:*:!fill-orange-500"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <path
-                      opacity="0.4"
-                      d="M9.99 17.98C14.4028 17.98 17.98 14.4028 17.98 9.99C17.98 5.57724 14.4028 2 9.99 2C5.57724 2 2 5.57724 2 9.99C2 14.4028 5.57724 17.98 9.99 17.98Z"
-                      class="theme-svg-primary"
-                    />
-                    <path
-                      d="M21.9701 15.9901C21.9701 19.2901 19.2901 21.9701 15.9901 21.9701C13.9501 21.9701 12.1601 20.9501 11.0801 19.4001C15.4401 18.9101 18.9101 15.4401 19.4001 11.0801C20.9501 12.1601 21.9701 13.9501 21.9701 15.9901Z"
-                      class="theme-svg-primary"
-                    />
-                    <path
-                      d="M11.45 9.71016L9.05 8.87016C8.81 8.79016 8.76 8.77016 8.76 8.42016C8.76 8.16016 8.94 7.95016 9.17 7.95016H10.67C10.99 7.95016 11.25 8.24016 11.25 8.60016C11.25 9.01016 11.59 9.35016 12 9.35016C12.41 9.35016 12.75 9.01016 12.75 8.60016C12.75 7.45016 11.86 6.51016 10.75 6.46016V6.41016C10.75 6.00016 10.41 5.66016 10 5.66016C9.59 5.66016 9.25 5.99016 9.25 6.41016V6.46016H9.16C8.11 6.46016 7.25 7.34016 7.25 8.43016C7.25 9.38016 7.67 9.99016 8.54 10.2902L10.95 11.1302C11.19 11.2102 11.24 11.2302 11.24 11.5802C11.24 11.8402 11.06 12.0502 10.83 12.0502H9.33C9.01 12.0502 8.75 11.7602 8.75 11.4002C8.75 10.9902 8.41 10.6502 8 10.6502C7.59 10.6502 7.25 10.9902 7.25 11.4002C7.25 12.5502 8.14 13.4902 9.25 13.5402V13.6002C9.25 14.0102 9.59 14.3502 10 14.3502C10.41 14.3502 10.75 14.0102 10.75 13.6002V13.5502H10.84C11.89 13.5502 12.75 12.6702 12.75 11.5802C12.75 10.6302 12.32 10.0202 11.45 9.71016Z"
-                      class="theme-svg-primary"
-                    />
-                  </svg>
+                <th>
+                  <div class="text-center w-full h-full ps-6 pe-2">Code</div>
+                </th>
+                <th>
+                  <div class="w-full ps-2">Description</div>
+                </th>
+                <th>
+                  <div class="px-4">Type</div>
+                </th>
+                <th>
+                  <div class="ps-4 w-full">Min Stay</div>
+                </th>
+                <th>
+                  <div class="ps-4">Active</div>
+                </th>
+                <th class="ps-4">
+                  <div>Periods Type</div>
+                </th>
+                <th class="ps-4">
+                  <div>Periods</div>
+                </th>
 
-                  <p
-                    class="group-[.active]:text-orange-500 group-[.active]:font-bold"
-                  >
-                    Price Details
-                  </p>
-                </button>
-              </li>
-              <li
-                data-tab="passenger-details"
-                class="ms-[45px] tab after:hidden group theme-secondary after:-z-[60] after:bottom-0 after:rounded-full relative after:translate-y-[60%] after:absolute after:left-0 after:right-0 after:m-auto after:w-full after:h-[10px] after:bg-orange-500"
-              >
-                <button class="flex items-center gap-[7px]">
-                  <svg
-                    class="group-[.active]:*:!fill-orange-500"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <path
-                      opacity="0.4"
-                      d="M18 18.8597H17.24C16.44 18.8597 15.68 19.1697 15.12 19.7297L13.41 21.4197C12.63 22.1897 11.36 22.1897 10.58 21.4197L8.87 19.7297C8.31 19.1697 7.54 18.8597 6.75 18.8597H6C4.34 18.8597 3 17.5298 3 15.8898V4.97974C3 3.33974 4.34 2.00977 6 2.00977H18C19.66 2.00977 21 3.33974 21 4.97974V15.8898C21 17.5198 19.66 18.8597 18 18.8597Z"
-                      class="theme-svg-primary"
-                    />
-                    <path
-                      d="M11.9999 10.41C13.2868 10.41 14.33 9.36684 14.33 8.08002C14.33 6.79319 13.2868 5.75 11.9999 5.75C10.7131 5.75 9.66992 6.79319 9.66992 8.08002C9.66992 9.36684 10.7131 10.41 11.9999 10.41Z"
-                      class="theme-svg-primary"
-                    />
-                    <path
-                      d="M14.6802 15.0598C15.4902 15.0598 15.9602 14.1598 15.5102 13.4898C14.8302 12.4798 13.5102 11.7998 12.0002 11.7998C10.4902 11.7998 9.17016 12.4798 8.49016 13.4898C8.04016 14.1598 8.51018 15.0598 9.32018 15.0598H14.6802Z"
-                      class="theme-svg-primary"
-                    />
-                  </svg>
+                <th class="ps-4">
+                  <div>Action</div>
+                </th>
+              </tr>
+            </thead>
+            <tbody
+              class="shadow-tbody dark:shadow-tbody-dark text-sm rounded-b-4xl"
+            >
+              <tr class="h-[3.5rem] *:ps-4 *:py-5">
+                <td class="!pl-6 w-28">
+                  <p>RR</p>
+                </td>
+                <td class="w-28 !ps-2">
+                  <p>al bustan</p>
+                </td>
 
-                  <p
-                    class="group-[.active]:text-orange-500 group-[.active]:font-bold"
-                  >
-                    Passenger Details
-                  </p>
-                </button>
-              </li>
-              <li
-                data-tab="reservation-history"
-                class="ms-[45px] tab after:hidden group theme-secondary after:-z-[60] after:bottom-0 after:rounded-full relative after:translate-y-[60%] after:absolute after:left-0 after:right-0 after:m-auto after:w-full after:h-[10px] after:bg-orange-500"
-              >
-                <button class="flex items-center gap-[7px]">
-                  <svg
-                    class="group-[.active]:*:!fill-orange-500"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <path
-                      opacity="0.6"
-                      d="M22 7.81V12H9V2H16.19C19.83 2 22 4.17 22 7.81Z"
-                      class="theme-svg-primary"
-                    />
-                    <path
-                      d="M9 2V22H7.81C4.17 22 2 19.83 2 16.19V7.81C2 4.17 4.17 2 7.81 2H9Z"
-                      class="theme-svg-primary"
-                    />
-                    <path
-                      opacity="0.4"
-                      d="M22 12V16.19C22 19.83 19.83 22 16.19 22H9V12H22Z"
-                      class="theme-svg-primary"
-                    />
-                  </svg>
-
-                  <p
-                    class="group-[.active]:text-orange-500 group-[.active]:font-bold"
-                  >
-                    Reservation History
-                  </p>
-                </button>
-              </li>
-            </ul>
-          </div>
-          <div class="tab-content" id="price-details">
-            <table class="table w-full">
-              <thead>
-                <tr class="thead-round-child thead-border-child">
-                  <th colspan="4">
-                    <div class="flex items-center p-3 px-6 justify-between">
-                      <div class="flex items-center gap-4">
-                        <button
-                          data-modal-target="#add-remark"
-                          class="font-bold leading-[18px] text-white bg-orange-500 rounded-full p-[11px_28.5px]"
-                        >
-                          Add Remark
-                        </button>
-                        <button
-                          data-modal-target="#add-hcn"
-                          class="font-bold leading-[18px] text-orange-500 border border-orange-500 rounded-full p-[11px_12.5px]"
-                        >
-                          Add Hotel Confirmation Number
-                        </button>
-                        <button
-                          data-modal-target="#cancel"
-                          class="font-bold leading-[18px] text-red-500 border border-red-500 rounded-full p-[11px_28px]"
-                        >
-                          Cancel
-                        </button>
-                      </div>
-                      <div
-                        class="bg-green-500/15 leading-[7px] flex py-3 gap-2 items-center text-green-500 border border-green-500 rounded-full px-[14px]"
-                      >
-                        <span
-                          class="block size-4 bg-green-500 rounded-full"
-                        ></span>
-                        <p>Confirmed</p>
-                      </div>
-                    </div>
-                  </th>
-                </tr>
-              </thead>
-              <tbody class="shadow-tbody dark:shadow-tbody-dark rounded-b-4xl">
-                <tr class="tbody-horizontal-border-child *:w-[350px]">
-                  <td>
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Reference</p>
-                      <p class="font-medium">WBE1340585344</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Time Received</p>
-                      <p class="font-medium">2024/03/07-16:23:09</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Hotel</p>
-                      <p class="font-medium">al bustan</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Currency</p>
-                      <p class="font-medium">USD</p>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="tbody-horizontal-border-child">
-                  <td>
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Hotel Confirmation Number</p>
-                      <p class="font-medium">WBE1340585344</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Check-in</p>
-                      <p class="font-medium">2024/03/07</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Destination</p>
-                      <p class="font-medium">Dubai</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Net Price</p>
-                      <p class="font-medium">10.29</p>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="tbody-horizontal-border-child">
-                  <td>
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Lead Name</p>
-                      <p class="font-medium">Morse Nerea</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Check-out</p>
-                      <p class="font-medium">2024/03/09</p>
-                    </div>
-                  </td>
-                  <td colspan="2">
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Country</p>
-                      <p class="font-medium">UNITED ARAB EMIRATES</p>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="tbody-horizontal-border-child">
-                  <td colspan="1">
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Occupancy no.</p>
-                      <p class="font-medium">3</p>
-                    </div>
-                  </td>
-                  <td colspan="1">
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Nights</p>
-                      <p class="font-medium">2</p>
-                    </div>
-                  </td>
-                  <td colspan="2">
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Nationality</p>
-                      <p class="font-medium">RO</p>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <table class="table mt-10">
-              <thead>
-                <tr class="thead-round-child *:py-4 thead-border-child">
-                  <th>
-                    <div class="py-4 ps-12">Room</div>
-                  </th>
-                  <th><div class="ps-4">Date</div></th>
-                  <th>
-                    <div class="ps-4">Allotment Type</div>
-                  </th>
-                  <th>
-                    <div class="ps-4">Availability</div>
-                  </th>
-                  <th><div class="ps-4">Board</div></th>
-                  <th class="text-left ps-4"><div>Price</div></th>
-                </tr>
-              </thead>
-              <tbody
-                class="text-sm border border-b-0 dark:border-gray-800 border-gray-100"
-              >
-                <tr>
-                  <td class="ps-12 py-5 w-[33%]">
-                    <p>DLX - DBL (FIT)</p>
-                  </td>
-                  <td class="ps-4">
-                    <p>2024/03/07</p>
-                  </td>
-                  <td class="ps-4">
-                    <p>Availability</p>
-                  </td>
-                  <td class="ps-4">
-                    <p>Available</p>
-                  </td>
-                  <td class="ps-4">
-                    <p>2024/03/07</p>
-                  </td>
-                  <td class="w-[13%] ps-4">
-                    <p>198.330 USD</p>
-                  </td>
-                </tr>
-              </tbody>
-              <tfoot
-                class="shadow-tbody-offset dark:shadow-tbody-dark-offset rounded-b-4xl"
-              >
-                <tr>
-                  <td class="ps-12 py-[10px]">
-                    <div class="flex items-center gap-1">
-                      <p class="text-sm">Total Price:</p>
-                      <p class="text-green-500 font-bold">198.330 USD</p>
-                    </div>
-                  </td>
-                </tr>
-              </tfoot>
-            </table>
-            <h2 class="mt-10 mb-[27px] font-bold">Rate Plan Details</h2>
-            <table class="table">
-              <thead>
-                <tr class="thead-round-child *:py-4">
-                  <th colspan="4" class="text-xl text-start ps-6">Rate Plan</th>
-                </tr>
-              </thead>
-              <tbody class="shadow-tbody dark:shadow-tbody-dark rounded-b-4xl">
-                <tr class="tbody-horizontal-border-child *:ps-[28px]">
-                  <td class="ps-6 py-3">
-                    <div class="space-y-2">
-                      <p class="text-[#989898]">name</p>
-                      <p class="font-medium">FIT-FIT rate</p>
-                    </div>
-                  </td>
-
-                  <td>
-                    <div class="space-y-2">
-                      <p class="text-[#989898]">type</p>
-                      <p class="font-medium">net</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="space-y-2">
-                      <p class="text-[#989898]">VAT</p>
-                      <p class="font-medium">included in rate</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="space-y-2">
-                      <p class="text-[#989898]">VAT</p>
-                      <p class="font-medium">0.00</p>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <table class="table mt-6">
-              <thead>
-                <tr class="thead-round-child *:py-4">
-                  <th colspan="3" class="text-xl text-start ps-6">
-                    Commission Info
-                  </th>
-                </tr>
-              </thead>
-              <tbody class="shadow-tbody dark:shadow-tbody-dark rounded-b-4xl">
-                <tr class="tbody-horizontal-border-child *:ps-[28px]">
-                  <td class="ps-6 py-3">
-                    <div class="space-y-2">
-                      <p class="text-[#989898]">commission rule</p>
-                      <p class="font-medium">N/A</p>
-                    </div>
-                  </td>
-
-                  <td>
-                    <div class="space-y-2">
-                      <p class="text-[#989898]">commission</p>
-                      <p class="font-medium">N/A</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="space-y-2 w-[210px]">
-                      <p class="text-[#989898]">total commission</p>
-                      <p class="font-medium">N/A</p>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="tab-content hidden" id="passenger-details">
-            <table class="table w-full">
-              <thead>
-                <tr class="thead-round-child thead-border-child">
-                  <th colspan="4">
-                    <div class="flex items-center p-3 px-6 justify-between">
-                      <div class="flex items-center gap-4">
-                        <button
-                          data-modal-target="#add-remark"
-                          class="font-bold leading-[18px] text-white bg-orange-500 rounded-full p-[11px_28.5px]"
-                        >
-                          Add Remark
-                        </button>
-                        <button
-                          data-modal-target="#add-hcn"
-                          class="font-bold leading-[18px] text-orange-500 border border-orange-500 rounded-full p-[11px_12.5px]"
-                        >
-                          Add Hotel Confirmation Number
-                        </button>
-                        <button
-                          data-modal-target="#cancel"
-                          class="font-bold leading-[18px] text-red-500 border border-red-500 rounded-full p-[11px_28px]"
-                        >
-                          Cancel
-                        </button>
-                      </div>
-                      <div
-                        class="bg-green-500/15 leading-[7px] flex py-3 gap-2 items-center text-green-500 border border-green-500 rounded-full px-[14px]"
-                      >
-                        <span
-                          class="block size-4 bg-green-500 rounded-full"
-                        ></span>
-                        <p>Confirmed</p>
-                      </div>
-                    </div>
-                  </th>
-                </tr>
-              </thead>
-              <tbody class="shadow-tbody dark:shadow-tbody-dark rounded-b-4xl">
-                <tr class="tbody-horizontal-border-child *:w-[350px]">
-                  <td>
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Reference</p>
-                      <p class="font-medium">WBE1340585344</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Time Received</p>
-                      <p class="font-medium">2024/03/07-16:23:09</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Hotel</p>
-                      <p class="font-medium">al bustan</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Currency</p>
-                      <p class="font-medium">USD</p>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="tbody-horizontal-border-child">
-                  <td>
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Hotel Confirmation Number</p>
-                      <p class="font-medium">WBE1340585344</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Check-in</p>
-                      <p class="font-medium">2024/03/07</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Destination</p>
-                      <p class="font-medium">Dubai</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Net Price</p>
-                      <p class="font-medium">10.29</p>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="tbody-horizontal-border-child">
-                  <td>
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Lead Name</p>
-                      <p class="font-medium">Morse Nerea</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Check-out</p>
-                      <p class="font-medium">2024/03/09</p>
-                    </div>
-                  </td>
-                  <td colspan="2">
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Country</p>
-                      <p class="font-medium">UNITED ARAB EMIRATES</p>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="tbody-horizontal-border-child">
-                  <td colspan="1">
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Occupancy no.</p>
-                      <p class="font-medium">3</p>
-                    </div>
-                  </td>
-                  <td colspan="1">
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Nights</p>
-                      <p class="font-medium">2</p>
-                    </div>
-                  </td>
-                  <td colspan="2">
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Nationality</p>
-                      <p class="font-medium">RO</p>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <table class="table mt-10">
-              <thead>
-                <tr class="thead-round-child *:py-4 thead-border-child">
-                  <th class="except text-left">
-                    <div class="py-4 ms-[46px]">Room</div>
-                  </th>
-                  <th><div class="ps-4">Gender</div></th>
-                  <th>
-                    <div class="ps-4">First Name</div>
-                  </th>
-                  <th class="text-left ps-4">
-                    <div>Last Name</div>
-                  </th>
-                </tr>
-              </thead>
-              <tbody
-                class="text-sm shadow-tbody dark:shadow-tbody-dark rounded-b-4xl"
-              >
-                <tr>
-                  <th
-                    rowspan="2"
-                    class="text-left shadow-tbody dark:shadow-tbody-dark rounded-bl-4xl py-5 w-[33%]"
-                  >
-                    <p class="ms-[46px]">DLX - DBL (FIT)</p>
-                  </th>
-
-                  <td class="py-5 px-4">
-                    <p>Available</p>
-                  </td>
-                  <td class="ps-4">
-                    <p>2024/03/07</p>
-                  </td>
-                  <td class="ps-4">
-                    <p>198.330 USD</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="py-5 px-4">
-                    <p>Available</p>
-                  </td>
-                  <td class="ps-4">
-                    <p>2024/03/07</p>
-                  </td>
-                  <td class="ps-4">
-                    <p>198.330 USD</p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="tab-content hidden" id="reservation-history">
-            <table class="table w-full">
-              <thead>
-                <tr class="thead-round-child thead-border-child">
-                  <th colspan="4">
-                    <div class="flex items-center p-3 px-6 justify-between">
-                      <div class="flex items-center gap-4">
-                        <button
-                          data-modal-target="#add-remark"
-                          class="font-bold leading-[18px] text-white bg-orange-500 rounded-full p-[11px_28.5px]"
-                        >
-                          Add Remark
-                        </button>
-                        <button
-                          data-modal-target="#add-hcn"
-                          class="font-bold leading-[18px] text-orange-500 border border-orange-500 rounded-full p-[11px_12.5px]"
-                        >
-                          Add Hotel Confirmation Number
-                        </button>
-                        <button
-                          data-modal-target="#cancel"
-                          class="font-bold leading-[18px] text-red-500 border border-red-500 rounded-full p-[11px_28px]"
-                        >
-                          Cancel
-                        </button>
-                      </div>
-                      <div
-                        class="bg-green-500/15 leading-[7px] flex py-3 gap-2 items-center text-green-500 border border-green-500 rounded-full px-[14px]"
-                      >
-                        <span
-                          class="block size-4 bg-green-500 rounded-full"
-                        ></span>
-                        <p>Confirmed</p>
-                      </div>
-                    </div>
-                  </th>
-                </tr>
-              </thead>
-              <tbody class="shadow-tbody dark:shadow-tbody-dark rounded-b-4xl">
-                <tr class="tbody-horizontal-border-child *:w-[350px]">
-                  <td>
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Reference</p>
-                      <p class="font-medium">WBE1340585344</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Time Received</p>
-                      <p class="font-medium">2024/03/07-16:23:09</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Hotel</p>
-                      <p class="font-medium">al bustan</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Currency</p>
-                      <p class="font-medium">USD</p>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="tbody-horizontal-border-child">
-                  <td>
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Hotel Confirmation Number</p>
-                      <p class="font-medium">WBE1340585344</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Check-in</p>
-                      <p class="font-medium">2024/03/07</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Destination</p>
-                      <p class="font-medium">Dubai</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Net Price</p>
-                      <p class="font-medium">10.29</p>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="tbody-horizontal-border-child">
-                  <td>
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Lead Name</p>
-                      <p class="font-medium">Morse Nerea</p>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Check-out</p>
-                      <p class="font-medium">2024/03/09</p>
-                    </div>
-                  </td>
-                  <td colspan="2">
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Country</p>
-                      <p class="font-medium">UNITED ARAB EMIRATES</p>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="tbody-horizontal-border-child">
-                  <td colspan="1">
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Occupancy no.</p>
-                      <p class="font-medium">3</p>
-                    </div>
-                  </td>
-                  <td colspan="1">
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Nights</p>
-                      <p class="font-medium">2</p>
-                    </div>
-                  </td>
-                  <td colspan="2">
-                    <div class="px-6 py-3 space-y-2">
-                      <p class="text-[#989898]">Nationality</p>
-                      <p class="font-medium">RO</p>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <table class="table mt-10">
-              <thead>
-                <tr
-                  class="*:py-4 *:text-start thead-round-child thead-border-child"
-                >
-                  <th>
-                    <div class="w-full ps-11.5">Date</div>
-                  </th>
-                  <th>
-                    <div class="w-full px-4">User</div>
-                  </th>
-                  <th>
-                    <div class="ps-4">Status</div>
-                  </th>
-                  <th>
-                    <div class="w-full ps-4">Checkin</div>
-                  </th>
-                  <th class="ps-4">
-                    <div>Duration</div>
-                  </th>
-                  <th class="ps-4">
-                    <div>Passengers</div>
-                  </th>
-                </tr>
-              </thead>
-              <tbody
-                class="shadow-tbody dark:shadow-tbody-dark text-sm rounded-b-4xl"
-              >
-                <tr class="h-[3.5rem] *:py-4 *:*:ps-4">
-                  <td class="ps-[38px] w-20">
-                    <p>2024/03/07</p>
-                  </td>
-                  <td class="w-24">
-                    <p>lorem ipsum</p>
-                  </td>
-                  <td class="w-28">
-                    <div
-                      class="bg-green-500/15 ms-2 w-fit pe-3 text-xxs/[30px] flex py-2 gap-2 items-center text-green-500 border border-green-500 rounded-full h-[24px] px-1"
+                <td class="ps-4 w-28">
+                  <p>Other</p>
+                </td>
+                <td class="ps-4">
+                  <p class="w-20">2</p>
+                </td>
+                <td class="ps-4">
+                  <p class="w-20">All</p>
+                </td>
+                <td>
+                  <p class="w-28">Stay</p>
+                </td>
+                <td>
+                  <p class="text-nowrap">2024/03/07-2024/03/09</p>
+                </td>
+                <td>
+                  <div class="flex gap-4 items-center pe-4">
+                    <button
+                      data-modal-target="#add-offers"
+                      aria-label="Edit Offer"
                     >
-                      <span
-                        class="block size-2 bg-green-500 rounded-full"
-                      ></span>
-                      <p>Confirmed</p>
-                    </div>
-                  </td>
-
-                  <td class="w-28">
-                    <p>2024/03/07</p>
-                  </td>
-                  <td class="w-28"><p>2</p></td>
-                  <td class="w-44">
-                    <p>
-                      mis anna lorem ipsum <br />
-                      mr john lorem ipsum
-                    </p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          opacity="0.4"
+                          d="M21 22H3C2.59 22 2.25 21.66 2.25 21.25C2.25 20.84 2.59 20.5 3 20.5H21C21.41 20.5 21.75 20.84 21.75 21.25C21.75 21.66 21.41 22 21 22Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          opacity="0.4"
+                          d="M19.0196 3.48016C17.0796 1.54016 15.1796 1.49016 13.1896 3.48016L11.9796 4.69016C11.8796 4.79016 11.8396 4.95016 11.8796 5.09016C12.6396 7.74016 14.7596 9.86016 17.4096 10.6202C17.4496 10.6302 17.4896 10.6402 17.5296 10.6402C17.6396 10.6402 17.7396 10.6002 17.8196 10.5202L19.0196 9.31016C20.0096 8.33016 20.4896 7.38016 20.4896 6.42016C20.4996 5.43016 20.0196 4.47016 19.0196 3.48016Z"
+                          fill="#F9B233"
+                        />
+                        <path
+                          d="M15.6103 11.5298C15.3203 11.3898 15.0403 11.2498 14.7703 11.0898C14.5503 10.9598 14.3403 10.8198 14.1303 10.6698C13.9603 10.5598 13.7603 10.3998 13.5703 10.2398C13.5503 10.2298 13.4803 10.1698 13.4003 10.0898C13.0703 9.8098 12.7003 9.4498 12.3703 9.0498C12.3403 9.0298 12.2903 8.9598 12.2203 8.8698C12.1203 8.7498 11.9503 8.5498 11.8003 8.3198C11.6803 8.1698 11.5403 7.9498 11.4103 7.7298C11.2503 7.4598 11.1103 7.1898 10.9703 6.9098C10.8303 6.6098 10.7203 6.3198 10.6203 6.0498L4.34032 12.3298C4.21032 12.4598 4.09032 12.7098 4.06032 12.8798L3.52032 16.7098C3.42032 17.3898 3.61032 18.0298 4.03032 18.4598C4.39032 18.8098 4.89032 18.9998 5.43032 18.9998C5.55032 18.9998 5.67032 18.9898 5.79032 18.9698L9.63032 18.4298C9.81032 18.3998 10.0603 18.2798 10.1803 18.1498L16.4603 11.8698C16.1803 11.7698 15.9103 11.6598 15.6103 11.5298Z"
+                          fill="#F9B233"
+                        />
+                      </svg>
+                    </button>
+                    <button aria-label="Delete Offer">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
+                        <path
+                          d="M21.0697 5.23C19.4597 5.07 17.8497 4.95 16.2297 4.86V4.85L16.0097 3.55C15.8597 2.63 15.6397 1.25 13.2997 1.25H10.6797C8.34967 1.25 8.12967 2.57 7.96967 3.54L7.75967 4.82C6.82967 4.88 5.89967 4.94 4.96967 5.03L2.92967 5.23C2.50967 5.27 2.20967 5.64 2.24967 6.05C2.28967 6.46 2.64967 6.76 3.06967 6.72L5.10967 6.52C10.3497 6 15.6297 6.2 20.9297 6.73C20.9597 6.73 20.9797 6.73 21.0097 6.73C21.3897 6.73 21.7197 6.44 21.7597 6.05C21.7897 5.64 21.4897 5.27 21.0697 5.23Z"
+                          fill="#DC2626"
+                        />
+                        <path
+                          opacity="0.3991"
+                          d="M19.2297 8.14C18.9897 7.89 18.6597 7.75 18.3197 7.75H5.67975C5.33975 7.75 4.99975 7.89 4.76975 8.14C4.53975 8.39 4.40975 8.73 4.42975 9.08L5.04975 19.34C5.15975 20.86 5.29975 22.76 8.78975 22.76H15.2097C18.6997 22.76 18.8398 20.87 18.9497 19.34L19.5697 9.09C19.5897 8.73 19.4597 8.39 19.2297 8.14Z"
+                          fill="#DC2626"
+                        />
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M9.58008 17C9.58008 16.5858 9.91586 16.25 10.3301 16.25H13.6601C14.0743 16.25 14.4101 16.5858 14.4101 17C14.4101 17.4142 14.0743 17.75 13.6601 17.75H10.3301C9.91586 17.75 9.58008 17.4142 9.58008 17Z"
+                          fill="#DC2626"
+                        />
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M8.75 13C8.75 12.5858 9.08579 12.25 9.5 12.25H14.5C14.9142 12.25 15.25 12.5858 15.25 13C15.25 13.4142 14.9142 13.75 14.5 13.75H9.5C9.08579 13.75 8.75 13.4142 8.75 13Z"
+                          fill="#DC2626"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </main>
-    <script defer src="../../js/runtime.e9688135.js"></script>
-<script defer src="../../js/main.67636b8e.js"></script>
-    <script defer src="../../js/tab.2a15365d.js"></script>
-    <script defer src="../../js/modal.524f256d.js"></script>
-    <script defer src="../../js/accordion.524f692d.js"></script>
-    <script defer src="../../js/dropdown.304cc094.js"></script>
+
+    <script defer src="../js/runtime.e9688135.js"></script>
+<script defer src="../js/main.67636b8e.js"></script>
+    <script defer src="../js/accordion.524f692d.js"></script>
+    <script defer src="../js/dropdown.304cc094.js"></script>
+    <script defer src="../js/modal.524f256d.js"></script>
   </body>
 </html>
