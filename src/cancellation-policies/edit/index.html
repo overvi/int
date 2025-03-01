@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../css/input.25d91992.css" />
+    <link rel="stylesheet" href="@assets/css/input.css" />
 
     <script>
       const mode = localStorage.getItem("mode");
@@ -18,9 +18,9 @@
     <main
       class="py-12 max-w-[80rem] full-hd:max-w-[120rem] full-hd:m-auto 2xl:max-w-full 2xl:mx-[43px] px-4 m-auto flex gap-6"
     >
-    <nav class="basis-[25.5%]">
+      <nav class="basis-[25.5%]">
         <div
-          class="overflow-y-scroll  theme-secondary hide-scroll justify-between top-12 bottom-12 w-full rounded-4xl sticky"
+          class="overflow-y-scroll theme-secondary hide-scroll justify-between top-12 bottom-12 w-full rounded-4xl sticky"
         >
           <div class="flex flex-col h-full justify-between pb-14">
             <div>
@@ -131,9 +131,7 @@
                     </div>
                   </a>
                 </li>
-                <li
-                  class="  group after:!top-4 after:!bottom-auto"
-                >
+                <li class="group after:!top-4 after:!bottom-auto">
                   <div class="accordion">
                     <button
                       id="accordion-header-info"
@@ -196,7 +194,8 @@
                     </button>
                     <ul
                       id="accordion-panel-info"
-                      role="region" hidden
+                      role="region"
+                      hidden
                       aria-labelledby="accordion-header-info"
                       class="font-light mt-5 border-t pt-5 accordion-panel"
                     >
@@ -366,15 +365,17 @@
                         />
                       </svg>
 
-                      <p class="mt-2">Special Offers</p>
+                      <p class="mt-2">Special collection</p>
                     </div>
                   </a>
                 </li>
-                <li class="group after:!top-4 after:!bottom-auto">
+                <li
+                  class="group active-segment after:!top-4 after:!bottom-auto"
+                >
                   <div class="accordion">
                     <button
                       id="accordion-header-policies"
-                      aria-expanded="false"
+                      aria-expanded="true"
                       aria-controls="accordion-panel-policies"
                       class="accordion-header group w-full !m-0 items-center !flex justify-between"
                     >
@@ -422,7 +423,6 @@
                     <ul
                       id="accordion-panel-policies"
                       role="region"
-                      hidden
                       aria-labelledby="accordion-header-policies"
                       class="font-light mt-5 border-t pt-5 accordion-panel"
                     >
@@ -430,41 +430,34 @@
                         <a
                           class="px-8.5 text-white bg-orange-500 block w-full rounded-[10px] py-2"
                           href=""
-                          >General</a
+                          >Cancellation Policy</a
                         >
                       </li>
                       <li>
                         <a
                           class="px-8.5 block w-full rounded-[10px] py-2"
                           href=""
-                          >Facilities</a
+                          >Extrabed Policies</a
                         >
                       </li>
                       <li>
                         <a
                           class="px-8.5 block w-full rounded-[10px] py-2"
                           href=""
-                          >Images</a
+                          >Child Policies</a
                         >
                       </li>
                       <li>
                         <a
                           class="px-8.5 block w-full rounded-[10px] py-2"
                           href=""
-                          >Rooms</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          class="px-8.5 block w-full rounded-[10px] py-2"
-                          href=""
-                          >Boards</a
+                          >Hotel Policies</a
                         >
                       </li>
                     </ul>
                   </div>
                 </li>
-                <li class="active-segment">
+                <li>
                   <a>
                     <div class="flex items-center gap-2">
                       <svg
@@ -539,11 +532,10 @@
           </div>
         </div>
       </nav>
-
       <div class="basis-[calc(100%-19.875rem)] h-fit">
         <header class="flex w-full h-fit justify-between gap-1">
           <div>
-            <h1 class="h1 leading-[22px]">Reservations</h1>
+            <h1 class="h1 leading-[22px]">Cancellation Policies</h1>
             <p class="mt-2 font-light">
               Lorem ipsum dolor sit amet consectetur. Feugiat arcu arcu euismod
               tortor at adipiscing.
@@ -602,7 +594,6 @@
                 </div>
               </button>
             </div>
-
             <div class="relative z-20 inline-block text-left dropdown">
               <button
                 id="dropdown-button"
@@ -731,659 +722,355 @@
             </div>
           </div>
         </header>
+
         <div
-          class="mt-[25px] z-0 relative h-[calc(100%-7.4375rem)] theme-secondary p-6 rounded-4xl"
+          class="mt-[25px] h-[calc(100%-4.4375rem)] theme-secondary p-6 rounded-4xl"
         >
-         
-          <div>
-            <div class="grid grid-cols-3 gap-x-6 gap-y-4">
-              <div class="w-full">
-                <label class="block mb-2" for="received">Received</label>
-                <div
-                  class="flex ps-3.5 datePicker items-center relative gap-3.5 overflow-hidden h-[40px] border rounded-full"
+          <div class="grid grid-cols-3 gap-6">
+            <div>
+              <p class="block mb-2">
+                Room Types<span class="text-red-500">*</span>
+              </p>
+              <div class="select relative border overflow-hidden rounded-full">
+                <select
+                  name="room-types"
+                  id="room-types"
+                  aria-label="Room Types"
+                  class="appearance-none theme-secondary rounded-full [&:has(option:disabled:checked)]:text-gray-200 w-full min-h-10 ps-[14px] outline-none"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <path
-                      d="M16.7502 3.56V2C16.7502 1.59 16.4102 1.25 16.0002 1.25C15.5902 1.25 15.2502 1.59 15.2502 2V3.5H8.75023V2C8.75023 1.59 8.41023 1.25 8.00023 1.25C7.59023 1.25 7.25023 1.59 7.25023 2V3.56C4.55023 3.81 3.24023 5.42 3.04023 7.81C3.02023 8.1 3.26023 8.34 3.54023 8.34H20.4602C20.7502 8.34 20.9902 8.09 20.9602 7.81C20.7602 5.42 19.4502 3.81 16.7502 3.56Z"
-                      fill="#ABABAB"
-                    />
-                    <path
-                      opacity="0.4"
-                      d="M20 9.83997C20.55 9.83997 21 10.29 21 10.84V17C21 20 19.5 22 16 22H8C4.5 22 3 20 3 17V10.84C3 10.29 3.45 9.83997 4 9.83997H20Z"
-                      fill="#ABABAB"
-                    />
-                    <path
-                      d="M8.5 15C8.24 15 7.98 14.89 7.79 14.71C7.61 14.52 7.5 14.26 7.5 14C7.5 13.74 7.61 13.48 7.79 13.29C8.07 13.01 8.51 12.92 8.88 13.08C9.01 13.13 9.12 13.2 9.21 13.29C9.39 13.48 9.5 13.74 9.5 14C9.5 14.26 9.39 14.52 9.21 14.71C9.02 14.89 8.76 15 8.5 15Z"
-                      fill="#ABABAB"
-                    />
-                    <path
-                      d="M12 15C11.74 15 11.48 14.89 11.29 14.71C11.11 14.52 11 14.26 11 14C11 13.74 11.11 13.48 11.29 13.29C11.38 13.2 11.49 13.13 11.62 13.08C11.99 12.92 12.43 13.01 12.71 13.29C12.89 13.48 13 13.74 13 14C13 14.26 12.89 14.52 12.71 14.71C12.66 14.75 12.61 14.79 12.56 14.83C12.5 14.87 12.44 14.9 12.38 14.92C12.32 14.95 12.26 14.97 12.2 14.98C12.13 14.99 12.07 15 12 15Z"
-                      fill="#ABABAB"
-                    />
-                    <path
-                      d="M15.5 15C15.24 15 14.98 14.89 14.79 14.71C14.61 14.52 14.5 14.26 14.5 14C14.5 13.74 14.61 13.48 14.79 13.29C14.89 13.2 14.99 13.13 15.12 13.08C15.3 13 15.5 12.98 15.7 13.02C15.76 13.03 15.82 13.05 15.88 13.08C15.94 13.1 16 13.13 16.06 13.17C16.11 13.21 16.16 13.25 16.21 13.29C16.39 13.48 16.5 13.74 16.5 14C16.5 14.26 16.39 14.52 16.21 14.71C16.16 14.75 16.11 14.79 16.06 14.83C16 14.87 15.94 14.9 15.88 14.92C15.82 14.95 15.76 14.97 15.7 14.98C15.63 14.99 15.56 15 15.5 15Z"
-                      fill="#ABABAB"
-                    />
-                    <path
-                      d="M8.5 18.5C8.37 18.5 8.24 18.47 8.12 18.42C7.99 18.37 7.89 18.3 7.79 18.21C7.61 18.02 7.5 17.76 7.5 17.5C7.5 17.24 7.61 16.98 7.79 16.79C7.89 16.7 7.99 16.63 8.12 16.58C8.3 16.5 8.5 16.48 8.7 16.52C8.76 16.53 8.82 16.55 8.88 16.58C8.94 16.6 9 16.63 9.06 16.67C9.11 16.71 9.16 16.75 9.21 16.79C9.39 16.98 9.5 17.24 9.5 17.5C9.5 17.76 9.39 18.02 9.21 18.21C9.16 18.25 9.11 18.3 9.06 18.33C9 18.37 8.94 18.4 8.88 18.42C8.82 18.45 8.76 18.47 8.7 18.48C8.63 18.49 8.57 18.5 8.5 18.5Z"
-                      fill="#ABABAB"
-                    />
-                    <path
-                      d="M12 18.4999C11.74 18.4999 11.48 18.3899 11.29 18.2099C11.11 18.0199 11 17.7599 11 17.4999C11 17.2399 11.11 16.98 11.29 16.79C11.66 16.42 12.34 16.42 12.71 16.79C12.89 16.98 13 17.2399 13 17.4999C13 17.7599 12.89 18.0199 12.71 18.2099C12.52 18.3899 12.26 18.4999 12 18.4999Z"
-                      fill="#ABABAB"
-                    />
-                    <path
-                      d="M15.5 18.4999C15.24 18.4999 14.98 18.3899 14.79 18.2099C14.61 18.0199 14.5 17.7599 14.5 17.4999C14.5 17.2399 14.61 16.98 14.79 16.79C15.16 16.42 15.84 16.42 16.21 16.79C16.39 16.98 16.5 17.2399 16.5 17.4999C16.5 17.7599 16.39 18.0199 16.21 18.2099C16.02 18.3899 15.76 18.4999 15.5 18.4999Z"
-                      fill="#ABABAB"
-                    />
-                  </svg>
-
-                  <input
-                    placeholder="1403/02/18"
-                    name="received"
-                    class="mt-0.5 min-h-[40px] theme-secondary theme-secondary outline-none w-full placeholder:text-gray-500 rounded-full"
-                    id="received"
-                    readonly
-                    type="text"
-                  />
-                </div>
-              </div>
-              <div class="w-full">
-                <label class="block mb-2" for="checkInDate"
-                  >Check-In Date</label
-                >
-                <div
-                  class="flex datePicker relative items-center overflow-hidden gap-3.5 h-[40px] px-3.5 border rounded-full"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <path
-                      d="M16.7502 3.56V2C16.7502 1.59 16.4102 1.25 16.0002 1.25C15.5902 1.25 15.2502 1.59 15.2502 2V3.5H8.75023V2C8.75023 1.59 8.41023 1.25 8.00023 1.25C7.59023 1.25 7.25023 1.59 7.25023 2V3.56C4.55023 3.81 3.24023 5.42 3.04023 7.81C3.02023 8.1 3.26023 8.34 3.54023 8.34H20.4602C20.7502 8.34 20.9902 8.09 20.9602 7.81C20.7602 5.42 19.4502 3.81 16.7502 3.56Z"
-                      fill="#ABABAB"
-                    />
-                    <path
-                      opacity="0.4"
-                      d="M20 9.83997C20.55 9.83997 21 10.29 21 10.84V17C21 20 19.5 22 16 22H8C4.5 22 3 20 3 17V10.84C3 10.29 3.45 9.83997 4 9.83997H20Z"
-                      fill="#ABABAB"
-                    />
-                    <path
-                      d="M8.5 15C8.24 15 7.98 14.89 7.79 14.71C7.61 14.52 7.5 14.26 7.5 14C7.5 13.74 7.61 13.48 7.79 13.29C8.07 13.01 8.51 12.92 8.88 13.08C9.01 13.13 9.12 13.2 9.21 13.29C9.39 13.48 9.5 13.74 9.5 14C9.5 14.26 9.39 14.52 9.21 14.71C9.02 14.89 8.76 15 8.5 15Z"
-                      fill="#ABABAB"
-                    />
-                    <path
-                      d="M12 15C11.74 15 11.48 14.89 11.29 14.71C11.11 14.52 11 14.26 11 14C11 13.74 11.11 13.48 11.29 13.29C11.38 13.2 11.49 13.13 11.62 13.08C11.99 12.92 12.43 13.01 12.71 13.29C12.89 13.48 13 13.74 13 14C13 14.26 12.89 14.52 12.71 14.71C12.66 14.75 12.61 14.79 12.56 14.83C12.5 14.87 12.44 14.9 12.38 14.92C12.32 14.95 12.26 14.97 12.2 14.98C12.13 14.99 12.07 15 12 15Z"
-                      fill="#ABABAB"
-                    />
-                    <path
-                      d="M15.5 15C15.24 15 14.98 14.89 14.79 14.71C14.61 14.52 14.5 14.26 14.5 14C14.5 13.74 14.61 13.48 14.79 13.29C14.89 13.2 14.99 13.13 15.12 13.08C15.3 13 15.5 12.98 15.7 13.02C15.76 13.03 15.82 13.05 15.88 13.08C15.94 13.1 16 13.13 16.06 13.17C16.11 13.21 16.16 13.25 16.21 13.29C16.39 13.48 16.5 13.74 16.5 14C16.5 14.26 16.39 14.52 16.21 14.71C16.16 14.75 16.11 14.79 16.06 14.83C16 14.87 15.94 14.9 15.88 14.92C15.82 14.95 15.76 14.97 15.7 14.98C15.63 14.99 15.56 15 15.5 15Z"
-                      fill="#ABABAB"
-                    />
-                    <path
-                      d="M8.5 18.5C8.37 18.5 8.24 18.47 8.12 18.42C7.99 18.37 7.89 18.3 7.79 18.21C7.61 18.02 7.5 17.76 7.5 17.5C7.5 17.24 7.61 16.98 7.79 16.79C7.89 16.7 7.99 16.63 8.12 16.58C8.3 16.5 8.5 16.48 8.7 16.52C8.76 16.53 8.82 16.55 8.88 16.58C8.94 16.6 9 16.63 9.06 16.67C9.11 16.71 9.16 16.75 9.21 16.79C9.39 16.98 9.5 17.24 9.5 17.5C9.5 17.76 9.39 18.02 9.21 18.21C9.16 18.25 9.11 18.3 9.06 18.33C9 18.37 8.94 18.4 8.88 18.42C8.82 18.45 8.76 18.47 8.7 18.48C8.63 18.49 8.57 18.5 8.5 18.5Z"
-                      fill="#ABABAB"
-                    />
-                    <path
-                      d="M12 18.4999C11.74 18.4999 11.48 18.3899 11.29 18.2099C11.11 18.0199 11 17.7599 11 17.4999C11 17.2399 11.11 16.98 11.29 16.79C11.66 16.42 12.34 16.42 12.71 16.79C12.89 16.98 13 17.2399 13 17.4999C13 17.7599 12.89 18.0199 12.71 18.2099C12.52 18.3899 12.26 18.4999 12 18.4999Z"
-                      fill="#ABABAB"
-                    />
-                    <path
-                      d="M15.5 18.4999C15.24 18.4999 14.98 18.3899 14.79 18.2099C14.61 18.0199 14.5 17.7599 14.5 17.4999C14.5 17.2399 14.61 16.98 14.79 16.79C15.16 16.42 15.84 16.42 16.21 16.79C16.39 16.98 16.5 17.2399 16.5 17.4999C16.5 17.7599 16.39 18.0199 16.21 18.2099C16.02 18.3899 15.76 18.4999 15.5 18.4999Z"
-                      fill="#ABABAB"
-                    />
-                  </svg>
-
-                  <input
-                    placeholder="1403/02/18"
-                    name="checkInDate"
-                    class="mt-0.5 min-h-[40px] theme-secondary outline-none w-full placeholder:text-gray-500 rounded-full"
-                    id="checkInDate"
-                    readonly
-                    type="text"
-                  />
-                </div>
-              </div>
-              <div class="w-full">
-                <label class="block mb-2" for="checkOutDate"
-                  >Check-Out Date
-                </label>
-                <div
-                  class="flex datePicker relative items-center overflow-hidden gap-3.5 h-[40px] px-3.5 border rounded-full"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <path
-                      d="M16.7502 3.56V2C16.7502 1.59 16.4102 1.25 16.0002 1.25C15.5902 1.25 15.2502 1.59 15.2502 2V3.5H8.75023V2C8.75023 1.59 8.41023 1.25 8.00023 1.25C7.59023 1.25 7.25023 1.59 7.25023 2V3.56C4.55023 3.81 3.24023 5.42 3.04023 7.81C3.02023 8.1 3.26023 8.34 3.54023 8.34H20.4602C20.7502 8.34 20.9902 8.09 20.9602 7.81C20.7602 5.42 19.4502 3.81 16.7502 3.56Z"
-                      fill="#ABABAB"
-                    />
-                    <path
-                      opacity="0.4"
-                      d="M20 9.83997C20.55 9.83997 21 10.29 21 10.84V17C21 20 19.5 22 16 22H8C4.5 22 3 20 3 17V10.84C3 10.29 3.45 9.83997 4 9.83997H20Z"
-                      fill="#ABABAB"
-                    />
-                    <path
-                      d="M8.5 15C8.24 15 7.98 14.89 7.79 14.71C7.61 14.52 7.5 14.26 7.5 14C7.5 13.74 7.61 13.48 7.79 13.29C8.07 13.01 8.51 12.92 8.88 13.08C9.01 13.13 9.12 13.2 9.21 13.29C9.39 13.48 9.5 13.74 9.5 14C9.5 14.26 9.39 14.52 9.21 14.71C9.02 14.89 8.76 15 8.5 15Z"
-                      fill="#ABABAB"
-                    />
-                    <path
-                      d="M12 15C11.74 15 11.48 14.89 11.29 14.71C11.11 14.52 11 14.26 11 14C11 13.74 11.11 13.48 11.29 13.29C11.38 13.2 11.49 13.13 11.62 13.08C11.99 12.92 12.43 13.01 12.71 13.29C12.89 13.48 13 13.74 13 14C13 14.26 12.89 14.52 12.71 14.71C12.66 14.75 12.61 14.79 12.56 14.83C12.5 14.87 12.44 14.9 12.38 14.92C12.32 14.95 12.26 14.97 12.2 14.98C12.13 14.99 12.07 15 12 15Z"
-                      fill="#ABABAB"
-                    />
-                    <path
-                      d="M15.5 15C15.24 15 14.98 14.89 14.79 14.71C14.61 14.52 14.5 14.26 14.5 14C14.5 13.74 14.61 13.48 14.79 13.29C14.89 13.2 14.99 13.13 15.12 13.08C15.3 13 15.5 12.98 15.7 13.02C15.76 13.03 15.82 13.05 15.88 13.08C15.94 13.1 16 13.13 16.06 13.17C16.11 13.21 16.16 13.25 16.21 13.29C16.39 13.48 16.5 13.74 16.5 14C16.5 14.26 16.39 14.52 16.21 14.71C16.16 14.75 16.11 14.79 16.06 14.83C16 14.87 15.94 14.9 15.88 14.92C15.82 14.95 15.76 14.97 15.7 14.98C15.63 14.99 15.56 15 15.5 15Z"
-                      fill="#ABABAB"
-                    />
-                    <path
-                      d="M8.5 18.5C8.37 18.5 8.24 18.47 8.12 18.42C7.99 18.37 7.89 18.3 7.79 18.21C7.61 18.02 7.5 17.76 7.5 17.5C7.5 17.24 7.61 16.98 7.79 16.79C7.89 16.7 7.99 16.63 8.12 16.58C8.3 16.5 8.5 16.48 8.7 16.52C8.76 16.53 8.82 16.55 8.88 16.58C8.94 16.6 9 16.63 9.06 16.67C9.11 16.71 9.16 16.75 9.21 16.79C9.39 16.98 9.5 17.24 9.5 17.5C9.5 17.76 9.39 18.02 9.21 18.21C9.16 18.25 9.11 18.3 9.06 18.33C9 18.37 8.94 18.4 8.88 18.42C8.82 18.45 8.76 18.47 8.7 18.48C8.63 18.49 8.57 18.5 8.5 18.5Z"
-                      fill="#ABABAB"
-                    />
-                    <path
-                      d="M12 18.4999C11.74 18.4999 11.48 18.3899 11.29 18.2099C11.11 18.0199 11 17.7599 11 17.4999C11 17.2399 11.11 16.98 11.29 16.79C11.66 16.42 12.34 16.42 12.71 16.79C12.89 16.98 13 17.2399 13 17.4999C13 17.7599 12.89 18.0199 12.71 18.2099C12.52 18.3899 12.26 18.4999 12 18.4999Z"
-                      fill="#ABABAB"
-                    />
-                    <path
-                      d="M15.5 18.4999C15.24 18.4999 14.98 18.3899 14.79 18.2099C14.61 18.0199 14.5 17.7599 14.5 17.4999C14.5 17.2399 14.61 16.98 14.79 16.79C15.16 16.42 15.84 16.42 16.21 16.79C16.39 16.98 16.5 17.2399 16.5 17.4999C16.5 17.7599 16.39 18.0199 16.21 18.2099C16.02 18.3899 15.76 18.4999 15.5 18.4999Z"
-                      fill="#ABABAB"
-                    />
-                  </svg>
-
-                  <input
-                    placeholder="1403/02/18"
-                    name="checkOutDate"
-                    class="mt-0.5 min-h-[40px] theme-secondary outline-none w-full placeholder:text-gray-500 rounded-full"
-                    id="checkOutDate"
-                    readonly
-                    type="text"
-                  />
-                </div>
-              </div>
-              <div class="w-full">
-                <label class="block mb-2" for="reference">Reference</label>
-                <input
-                  placeholder="Type..."
-                  name="reference"
-                  class="min-h-[40px] theme-secondary placeholder:text-sm border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
-                  id="reference"
-                  type="text"
-                />
-              </div>
-              <div class="w-full">
-                <label class="block mb-2" for="hcn">HCN</label>
-                <input
-                  placeholder="Type..."
-                  name="hcn"
-                  class="min-h-[40px] theme-secondary placeholder:text-sm border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
-                  id="hcn"
-                  type="text"
-                />
-              </div>
-              <div class="w-full">
-                <p class="block mb-2">Status</p>
-                <div
-                  class="select relative h-10 border overflow-hidden rounded-full"
-                >
-                  <select
-                    name="status"
-                    id="status"
-                    aria-label="Status"
-                    class="appearance-none rounded-full [&:has(option:disabled:checked)]:text-gray-200 theme-secondary w-full h-10 ps-[14px] outline-none"
-                  >
-                    <option disabled selected value="">Select...</option>
-                    <option class="text-black" value="1">1</option>
-                    <option class="text-black" value="2">2</option>
-                    <option class="text-black" value="3">3</option>
-                  </select>
-                </div>
-              </div>
-           
-              <div class="w-full">
-                <label class="block mb-2" for="destination">Destination</label>
-                <input
-                  placeholder="Type..."
-                  name="destination"
-                  class="min-h-[40px] theme-secondary placeholder:text-sm border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
-                  id="destination"
-                  type="text"
-                />
-              </div>
-              <div class="w-full">
-                <p class="block mb-2">Email Status</p>
-                <div
-                  class="select relative border h-10 overflow-hidden rounded-full"
-                >
-                  <select
-                    name="es"
-                    id="es"
-                    aria-label="Email Status"
-                    class="appearance-none rounded-full h-full [&:has(option:disabled:checked)]:text-gray-200 theme-secondary w-full ps-[14px] outline-none"
-                  >
-                    <option disabled selected value="">Select...</option>
-                    <option class="text-black" value="1">1</option>
-                    <option class="text-black" value="2">|TTgood</option>
-                    <option class="text-black" value="3">3</option>
-                  </select>
-                </div>
-              </div>
-           
-              <div class="w-full may-disabled">
-                <p class="block mb-2">Suppliers</p>
-                <div
-                  class="select relative border h-10 overflow-hidden rounded-full"
-                >
-                  <select
-                    name="suppliers"
-                    id="suppliers"
-                    disabled
-                    aria-label="Suppliers"
-                    class="appearance-none rounded-full h-full [&:has(option:disabled:checked)]:text-gray-200 theme-secondary w-full ps-[14px] outline-none"
-                  >
-                    <option disabled selected value="">Select...</option>
-                    <option class="text-black" value="1">1</option>
-                    <option class="text-black" value="2">|TTgood</option>
-                    <option class="text-black" value="3">3</option>
-                  </select>
-                </div>
-              </div>
-              <div class="w-full may-disabled">
-                <p class="block mb-2">Hotel</p>
-                <div
-                  class="select relative border h-10 overflow-hidden rounded-full"
-                >
-                  <select
-                    name="hotel"
-                    id="hotel"
-                  
-                    aria-label="Hotel"
-                    class="appearance-none rounded-full h-full [&:has(option:disabled:checked)]:text-gray-200 theme-secondary w-full ps-[14px] outline-none"
-                  >
-                    <option disabled selected value="">Select...</option>
-                    <option class="text-black" value="1">1</option>
-                    <option class="text-black" value="2">|TTgood</option>
-                    <option class="text-black" value="3">3</option>
-                  </select>
-                </div>
-              </div>
-              <div></div>
-              <div class="flex items-center gap-4 mt-6 font-bold" dir="rtl">
-                <button
-                  class="leading-[14px] text-white rounded-full bg-green-500 min-h-[40px] min-w-[7.3125rem]"
-                >
-                  Apply
-                </button>
-                <button
-                  type="button"
-                  class="border leading-[14px] border-gray-400 text-gray-400 rounded-full min-h-[40px] theme-secondary min-w-[7.3125rem]"
-                >
-                  Cancel
-                </button>
+                  <option disabled selected value="">Select...</option>
+                  <option class="text-black" value="1">1</option>
+                  <option class="text-black" value="2">2</option>
+                  <option class="text-black" value="3">3</option>
+                </select>
               </div>
             </div>
-            <table class="table mt-10">
-              <thead>
-                <tr
-                  class="*:py-4 text-sm *:text-start thead-round-child thead-border-child"
+            <div>
+              <p class="block mb-2">
+                Rate Plans<span class="text-red-500">*</span>
+              </p>
+              <div class="select relative border overflow-hidden rounded-full">
+                <select
+                  name="rate-plans"
+                  id="rate-plans"
+                  aria-label="Rate Plans"
+                  class="appearance-none theme-secondary rounded-full [&:has(option:disabled:checked)]:text-gray-200 w-full min-h-10 ps-[14px] outline-none"
                 >
-                  <th>
-                    <div class="text-center w-full h-full"></div>
-                  </th>
-                  <th>
-                    <div class="w-full ps-2">Status</div>
-                  </th>
-                  <th>
-                    <div class="w-full px-2">API ref/HCN</div>
-                  </th>
-                  <th>
-                    <div class="ps-2">Leader</div>
-                  </th>
-                  <th>
-                    <div class="w-full ps-2">Hotel</div>
-                  </th>
-                  <th class="ps-2">
-                    <div>Destination</div>
-                  </th>
-                  <th class="ps-2">
-                    <div>Received</div>
-                  </th>
-                  <th class="ps-2">
-                    <div>CheckIn</div>
-                  </th>
-                  <th class="ps-2">
-                    <div>Checkout</div>
-                  </th>
-                  <th class="ps-2">
-                    <div>TotalPrice</div>
-                  </th>
-                </tr>
-              </thead>
-              <tbody
-                class="shadow-tbody dark:shadow-tbody-dark text-xs rounded-b-4xl"
-              >
-                <tr
-                  onclick="window.location = '/reservations/hotel/1'"
-                  class="h-[3.5rem] cursor-pointer *:ps-2 *:py-4"
+                  <option disabled selected value="">Select...</option>
+                  <option class="text-black" value="1">1</option>
+                  <option class="text-black" value="2">2</option>
+                  <option class="text-black" value="3">3</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <p class="block mb-2">
+                Allotment Type<span class="text-red-500">*</span>
+              </p>
+              <div class="select relative border overflow-hidden rounded-full">
+                <select
+                  name="allotment-type"
+                  id="allotment-type"
+                  aria-label="Allotment Type"
+                  class="appearance-none theme-secondary rounded-full [&:has(option:disabled:checked)]:text-gray-200 w-full min-h-10 ps-[14px] outline-none"
                 >
-                  <td
-                    aria-label="show details"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                    aria-controls="popoverContent"
-                    class="w-20 !ps-4 cursor-pointer group"
-                  >
-                    <div class="popover-container relative w-fit">
-                      <button id="popoverButton" class="popover-trigger">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="20"
-                          height="20"
-                          viewBox="0 0 20 20"
-                          fill="none"
-                        >
-                          <path
-                            opacity="0.4"
-                            d="M1.66699 10.8087V5.82532C1.66699 3.52533 3.53366 1.66699 5.83366 1.66699H14.167C16.467 1.66699 18.3337 3.52533 18.3337 5.82532V11.642C18.3337 13.9337 16.467 15.792 14.167 15.792H12.917C12.6587 15.792 12.4087 15.917 12.2503 16.1253L11.0003 17.7837C10.4503 18.517 9.55032 18.517 9.00032 17.7837L7.75032 16.1253C7.61699 15.942 7.31699 15.792 7.08366 15.792H5.83366C3.53366 15.792 1.66699 13.9337 1.66699 11.642V10.8087Z"
-                            fill="#2FAC66"
-                          />
-                          <path
-                            d="M10.0003 9.99967C9.53366 9.99967 9.16699 9.62467 9.16699 9.16634C9.16699 8.70801 9.54199 8.33301 10.0003 8.33301C10.4587 8.33301 10.8337 8.70801 10.8337 9.16634C10.8337 9.62467 10.467 9.99967 10.0003 9.99967Z"
-                            fill="#2FAC66"
-                          />
-                          <path
-                            d="M13.3333 9.99967C12.8667 9.99967 12.5 9.62467 12.5 9.16634C12.5 8.70801 12.875 8.33301 13.3333 8.33301C13.7917 8.33301 14.1667 8.70801 14.1667 9.16634C14.1667 9.62467 13.8 9.99967 13.3333 9.99967Z"
-                            fill="#2FAC66"
-                          />
-                          <path
-                            d="M6.66634 9.99967C6.19967 9.99967 5.83301 9.62467 5.83301 9.16634C5.83301 8.70801 6.20801 8.33301 6.66634 8.33301C7.12467 8.33301 7.49967 8.70801 7.49967 9.16634C7.49967 9.62467 7.13301 9.99967 6.66634 9.99967Z"
-                            fill="#2FAC66"
-                          />
-                        </svg>
-                      </button>
-                      <div
-                        id="popoverContent"
-                        role="dialog"
-                        aria-labelledby="popoverTitle"
-                        class="popover-content after:border-t-white dark:after:border-t-gray-900 -top-7 -translate-x-[43%] -translate-y-full absolute mx-auto z-10 mt-2 w-max px-4 py-2 theme-secondary shadow-lg rounded-lg hidden group-hover:!block"
-                      >
-                        <p>booking email was sent!</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="w-24">
-                    <div
-                      class="bg-green-500/15 text-xxs/[30px] flex py-2 gap-2 items-center text-green-500 border border-green-500 rounded-full h-[24px] px-1"
-                    >
-                      <span
-                        class="block size-2 bg-green-500 rounded-full"
-                      ></span>
-                      <p>Confirmed</p>
-                    </div>
-                  </td>
-                  <td class="w-28">
-                    <p>WBE0000132669 WBE1340585344</p>
-                  </td>
-                  <td class="ps-4 w-24">
-                    <p>mr robert</p>
-                  </td>
-                  <td class="ps-4 w-32">
-                    <p>Al Bustan Rotana</p>
-                  </td>
-                  <td class="w-32">
-                    <p class="w-20">Dubai, United Arab Emirates</p>
-                  </td>
-                  <td class="w-28">
-                    <p>2024/03/07 16:23:09</p>
-                  </td>
-                  <td class="w-28"><p>2024/03/07</p></td>
-                  <td class="w-28"><p>2024/03/07</p></td>
-                  <td class="w-28">10.330 USD</td>
-                </tr>
-                <tr class="h-[3.5rem[ *:ps-2 *:py-4">
-                  <td class="!pl-4 w-20">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                    >
-                      <path
-                        opacity="0.4"
-                        d="M1.66699 10.8087V5.82532C1.66699 3.52533 3.53366 1.66699 5.83366 1.66699H14.167C16.467 1.66699 18.3337 3.52533 18.3337 5.82532V11.642C18.3337 13.9337 16.467 15.792 14.167 15.792H12.917C12.6587 15.792 12.4087 15.917 12.2503 16.1253L11.0003 17.7837C10.4503 18.517 9.55032 18.517 9.00032 17.7837L7.75032 16.1253C7.61699 15.942 7.31699 15.792 7.08366 15.792H5.83366C3.53366 15.792 1.66699 13.9337 1.66699 11.642V10.8087Z"
-                        fill="#2FAC66"
-                      />
-                      <path
-                        d="M10.0003 9.99967C9.53366 9.99967 9.16699 9.62467 9.16699 9.16634C9.16699 8.70801 9.54199 8.33301 10.0003 8.33301C10.4587 8.33301 10.8337 8.70801 10.8337 9.16634C10.8337 9.62467 10.467 9.99967 10.0003 9.99967Z"
-                        fill="#2FAC66"
-                      />
-                      <path
-                        d="M13.3333 9.99967C12.8667 9.99967 12.5 9.62467 12.5 9.16634C12.5 8.70801 12.875 8.33301 13.3333 8.33301C13.7917 8.33301 14.1667 8.70801 14.1667 9.16634C14.1667 9.62467 13.8 9.99967 13.3333 9.99967Z"
-                        fill="#2FAC66"
-                      />
-                      <path
-                        d="M6.66634 9.99967C6.19967 9.99967 5.83301 9.62467 5.83301 9.16634C5.83301 8.70801 6.20801 8.33301 6.66634 8.33301C7.12467 8.33301 7.49967 8.70801 7.49967 9.16634C7.49967 9.62467 7.13301 9.99967 6.66634 9.99967Z"
-                        fill="#2FAC66"
-                      />
-                    </svg>
-                  </td>
-                  <td class="w-24">
-                    <div
-                      class="bg-orange-500/15 text-xxs/[30px] flex py-2 gap-2 items-center text-orange-500 border border-orange-500 rounded-full h-[24px] px-1"
-                    >
-                      <span
-                        class="block size-2 bg-orange-500 rounded-full"
-                      ></span>
-                      <p>Pending</p>
-                    </div>
-                  </td>
-                  <td class="w-28">
-                    <p>WBE0000132669 WBE1340585344</p>
-                  </td>
-                  <td class="ps-4 w-24">
-                    <p>mr robert</p>
-                  </td>
-                  <td class="ps-4 w-32">
-                    <p>Al Bustan Rotana</p>
-                  </td>
-                  <td class="w-32">
-                    <p class="w-20">Dubai, United Arab Emirates</p>
-                  </td>
-                  <td class="w-28">
-                    <p>2024/03/07 16:23:09</p>
-                  </td>
-                  <td class="w-28"><p>2024/03/07</p></td>
-                  <td class="w-28"><p>2024/03/07</p></td>
-                  <td class="w-28">10.330 USD</td>
-                </tr>
-                <tr class="h-[3.5rem] *:ps-2 *:py-4">
-                  <td class="!ps-4 w-20">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                    >
-                      <path
-                        opacity="0.4"
-                        d="M14.9837 8.99167V12.325C14.9837 12.5417 14.9753 12.75 14.9503 12.95C14.7587 15.2 13.4337 16.3167 10.992 16.3167H10.6587C10.4503 16.3167 10.2503 16.4167 10.1253 16.5833L9.12534 17.9167C8.68367 18.5083 7.96699 18.5083 7.52533 17.9167L6.52531 16.5833C6.41698 16.4417 6.17533 16.3167 5.99199 16.3167H5.65867C3.00033 16.3167 1.66699 15.6583 1.66699 12.325V8.99167C1.66699 6.55001 2.792 5.22501 5.03367 5.03334C5.23367 5.00834 5.442 5 5.65867 5H10.992C13.6503 5 14.9837 6.33334 14.9837 8.99167Z"
-                        fill="#F9B233"
-                      />
-                      <path
-                        d="M8.32454 11.6667C7.85788 11.6667 7.49121 11.2917 7.49121 10.8333C7.49121 10.375 7.86621 10 8.32454 10C8.78288 10 9.15788 10.375 9.15788 10.8333C9.15788 11.2917 8.79121 11.6667 8.32454 11.6667Z"
-                        fill="#F9B233"
-                      />
-                      <path
-                        d="M11.2415 11.6667C10.7749 11.6667 10.4082 11.2917 10.4082 10.8333C10.4082 10.375 10.7832 10 11.2415 10C11.6999 10 12.0749 10.375 12.0749 10.8333C12.0749 11.2917 11.6999 11.6667 11.2415 11.6667Z"
-                        fill="#F9B233"
-                      />
-                      <path
-                        d="M5.41634 11.6667C4.94967 11.6667 4.58301 11.2917 4.58301 10.8333C4.58301 10.375 4.95801 10 5.41634 10C5.87467 10 6.24967 10.375 6.24967 10.8333C6.24967 11.2917 5.87467 11.6667 5.41634 11.6667Z"
-                        fill="#F9B233"
-                      />
-                      <path
-                        d="M18.3165 5.65867V8.992C18.3165 11.442 17.1915 12.7587 14.9499 12.9503C14.9749 12.7503 14.9832 12.542 14.9832 12.3253V8.992C14.9832 6.33367 13.6499 5.00033 10.9915 5.00033H5.6582C5.44154 5.00033 5.2332 5.00867 5.0332 5.03367C5.22487 2.792 6.54987 1.66699 8.99154 1.66699H14.3249C16.9832 1.66699 18.3165 3.00033 18.3165 5.65867Z"
-                        fill="#F9B233"
-                      />
-                    </svg>
-                  </td>
-                  <td class="w-24">
-                    <div
-                      class="bg-red-500/15 text-xxs/[30px] flex py-2 gap-2 items-center text-red-500 border border-red-500 rounded-full h-[24px] px-1"
-                    >
-                      <span class="block size-2 bg-red-500 rounded-full"></span>
-                      <p>Cancelled</p>
-                    </div>
-                  </td>
-                  <td class="w-28">
-                    <p>WBE0000132669 WBE1340585344</p>
-                  </td>
-                  <td class="ps-4 w-24">
-                    <p>mr robert</p>
-                  </td>
-                  <td class="ps-4 w-32">
-                    <p>Al Bustan Rotana</p>
-                  </td>
-                  <td class="w-32">
-                    <p class="w-20">Dubai, United Arab Emirates</p>
-                  </td>
-                  <td class="w-28">
-                    <p>2024/03/07 16:23:09</p>
-                  </td>
-                  <td class="w-28"><p>2024/03/07</p></td>
-                  <td class="w-28"><p>2024/03/07</p></td>
-                  <td class="w-28">10.330 USD</td>
-                </tr>
-              </tbody>
-            </table>
-            <div class="flex gap-[7px] items-center mt-6 justify-center">
-              <div>
-                <button class="prev-table ltr:rotate-180">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="25"
-                    height="24"
-                    class="rotate-180"
-                    viewBox="0 0 25 24"
-                    fill="none"
-                  >
-                    <path
-                      d="M12.8223 22C18.3451 22 22.8223 17.5228 22.8223 12C22.8223 6.47715 18.3451 2 12.8223 2C7.29942 2 2.82227 6.47715 2.82227 12C2.82227 17.5228 7.29942 22 12.8223 22Z"
-                      stroke="#F9B233"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M9.32227 12H15.3223"
-                      stroke="#F9B233"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M13.3223 15L16.3223 12L13.3223 9"
-                      stroke="#F9B233"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </button>
+                  <option disabled selected value="">Select...</option>
+                  <option class="text-black" value="1">1</option>
+                  <option class="text-black" value="2">2</option>
+                  <option class="text-black" value="3">3</option>
+                </select>
               </div>
-              <ul
-                dir="rtl"
-                id="pagination"
-                class="border text-xs pagination p-2 rounded-2xl flex gap-[5.43px]"
+            </div>
+            <div class="w-full">
+              <label class="block mb-2" for="start-date">Start Date</label>
+              <div
+                class="flex datePicker relative items-center overflow-hidden gap-3.5 h-[40px] px-3.5 border rounded-full"
               >
-                <li>
-                  <button
-                    class="py-0 bg-orange-500 size-5 flex rounded-full items-center justify-center button"
-                  >
-                    <p class="mt-1">0</p>
-                  </button>
-                </li>
-                <li>
-                  <button
-                    class="py-0 size-5 border border-gray-400 flex rounded-full items-center justify-center button"
-                  >
-                    <p class="mt-1">1</p>
-                  </button>
-                </li>
-                <li>
-                  <button
-                    class="py-0 size-5 border border-gray-400 flex rounded-full items-center justify-center button"
-                  >
-                    <p class="mt-1">2</p>
-                  </button>
-                </li>
-                <li class="leading-5">...</li>
-                <li>
-                  <button
-                    class="py-0 size-5 border border-gray-400 flex rounded-full items-center justify-center button"
-                  >
-                    <p class="mt-1">10</p>
-                  </button>
-                </li>
-              </ul>
-              <div>
-                <button class="next-table">
-                  <svg
-                    class="rotate-180"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
-                      stroke="#424242"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M15.5 12H9.5"
-                      stroke="#424242"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M11.5 9L8.5 12L11.5 15"
-                      stroke="#424242"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </button>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.7502 3.56V2C16.7502 1.59 16.4102 1.25 16.0002 1.25C15.5902 1.25 15.2502 1.59 15.2502 2V3.5H8.75023V2C8.75023 1.59 8.41023 1.25 8.00023 1.25C7.59023 1.25 7.25023 1.59 7.25023 2V3.56C4.55023 3.81 3.24023 5.42 3.04023 7.81C3.02023 8.1 3.26023 8.34 3.54023 8.34H20.4602C20.7502 8.34 20.9902 8.09 20.9602 7.81C20.7602 5.42 19.4502 3.81 16.7502 3.56Z"
+                    fill="#F9B233"
+                  />
+                  <path
+                    opacity="0.4"
+                    d="M20 9.83984C20.55 9.83984 21 10.2898 21 10.8398V16.9998C21 19.9998 19.5 21.9998 16 21.9998H8C4.5 21.9998 3 19.9998 3 16.9998V10.8398C3 10.2898 3.45 9.83984 4 9.83984H20Z"
+                    fill="#F9B233"
+                  />
+                  <path
+                    d="M8.5 14.9999C8.24 14.9999 7.98 14.8899 7.79 14.7099C7.61 14.5199 7.5 14.2599 7.5 13.9999C7.5 13.7399 7.61 13.4799 7.79 13.2899C8.07 13.0099 8.51 12.9199 8.88 13.0799C9.01 13.1299 9.12 13.1999 9.21 13.2899C9.39 13.4799 9.5 13.7399 9.5 13.9999C9.5 14.2599 9.39 14.5199 9.21 14.7099C9.02 14.8899 8.76 14.9999 8.5 14.9999Z"
+                    fill="#F9B233"
+                  />
+                  <path
+                    d="M12 14.9999C11.74 14.9999 11.48 14.8899 11.29 14.7099C11.11 14.5199 11 14.2599 11 13.9999C11 13.7399 11.11 13.4799 11.29 13.2899C11.38 13.1999 11.49 13.1299 11.62 13.0799C11.99 12.9199 12.43 13.0099 12.71 13.2899C12.89 13.4799 13 13.7399 13 13.9999C13 14.2599 12.89 14.5199 12.71 14.7099C12.66 14.7499 12.61 14.7899 12.56 14.8299C12.5 14.8699 12.44 14.8999 12.38 14.9199C12.32 14.9499 12.26 14.9699 12.2 14.9799C12.13 14.9899 12.07 14.9999 12 14.9999Z"
+                    fill="#F9B233"
+                  />
+                  <path
+                    d="M15.5 15C15.24 15 14.98 14.89 14.79 14.71C14.61 14.52 14.5 14.26 14.5 14C14.5 13.74 14.61 13.48 14.79 13.29C14.89 13.2 14.99 13.13 15.12 13.08C15.3 13 15.5 12.98 15.7 13.02C15.76 13.03 15.82 13.05 15.88 13.08C15.94 13.1 16 13.13 16.06 13.17C16.11 13.21 16.16 13.25 16.21 13.29C16.39 13.48 16.5 13.74 16.5 14C16.5 14.26 16.39 14.52 16.21 14.71C16.16 14.75 16.11 14.79 16.06 14.83C16 14.87 15.94 14.9 15.88 14.92C15.82 14.95 15.76 14.97 15.7 14.98C15.63 14.99 15.56 15 15.5 15Z"
+                    fill="#F9B233"
+                  />
+                  <path
+                    d="M8.5 18.5C8.37 18.5 8.24 18.47 8.12 18.42C7.99 18.37 7.89 18.3 7.79 18.21C7.61 18.02 7.5 17.76 7.5 17.5C7.5 17.24 7.61 16.98 7.79 16.79C7.89 16.7 7.99 16.63 8.12 16.58C8.3 16.5 8.5 16.48 8.7 16.52C8.76 16.53 8.82 16.55 8.88 16.58C8.94 16.6 9 16.63 9.06 16.67C9.11 16.71 9.16 16.75 9.21 16.79C9.39 16.98 9.5 17.24 9.5 17.5C9.5 17.76 9.39 18.02 9.21 18.21C9.16 18.25 9.11 18.3 9.06 18.33C9 18.37 8.94 18.4 8.88 18.42C8.82 18.45 8.76 18.47 8.7 18.48C8.63 18.49 8.57 18.5 8.5 18.5Z"
+                    fill="#F9B233"
+                  />
+                  <path
+                    d="M12 18.5002C11.74 18.5002 11.48 18.3902 11.29 18.2102C11.11 18.0202 11 17.7602 11 17.5002C11 17.2402 11.11 16.9802 11.29 16.7902C11.66 16.4202 12.34 16.4202 12.71 16.7902C12.89 16.9802 13 17.2402 13 17.5002C13 17.7602 12.89 18.0202 12.71 18.2102C12.52 18.3902 12.26 18.5002 12 18.5002Z"
+                    fill="#F9B233"
+                  />
+                  <path
+                    d="M15.5 18.5002C15.24 18.5002 14.98 18.3902 14.79 18.2102C14.61 18.0202 14.5 17.7602 14.5 17.5002C14.5 17.2402 14.61 16.9802 14.79 16.7902C15.16 16.4202 15.84 16.4202 16.21 16.7902C16.39 16.9802 16.5 17.2402 16.5 17.5002C16.5 17.7602 16.39 18.0202 16.21 18.2102C16.02 18.3902 15.76 18.5002 15.5 18.5002Z"
+                    fill="#F9B233"
+                  />
+                </svg>
+
+                <input
+                  placeholder="1403/02/18"
+                  name="start-date"
+                  class="mt-0.5 min-h-[40px] theme-secondary outline-none w-full placeholder:text-gray-500 rounded-full"
+                  id="start-date"
+                  readonly=""
+                  type="text"
+                />
               </div>
+            </div>
+            <div class="w-full">
+              <label class="block mb-2" for="end-date">End Date</label>
+              <div
+                class="flex datePicker relative items-center overflow-hidden gap-3.5 h-[40px] px-3.5 border rounded-full"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.7502 3.56V2C16.7502 1.59 16.4102 1.25 16.0002 1.25C15.5902 1.25 15.2502 1.59 15.2502 2V3.5H8.75023V2C8.75023 1.59 8.41023 1.25 8.00023 1.25C7.59023 1.25 7.25023 1.59 7.25023 2V3.56C4.55023 3.81 3.24023 5.42 3.04023 7.81C3.02023 8.1 3.26023 8.34 3.54023 8.34H20.4602C20.7502 8.34 20.9902 8.09 20.9602 7.81C20.7602 5.42 19.4502 3.81 16.7502 3.56Z"
+                    fill="#F9B233"
+                  />
+                  <path
+                    opacity="0.4"
+                    d="M20 9.83984C20.55 9.83984 21 10.2898 21 10.8398V16.9998C21 19.9998 19.5 21.9998 16 21.9998H8C4.5 21.9998 3 19.9998 3 16.9998V10.8398C3 10.2898 3.45 9.83984 4 9.83984H20Z"
+                    fill="#F9B233"
+                  />
+                  <path
+                    d="M8.5 14.9999C8.24 14.9999 7.98 14.8899 7.79 14.7099C7.61 14.5199 7.5 14.2599 7.5 13.9999C7.5 13.7399 7.61 13.4799 7.79 13.2899C8.07 13.0099 8.51 12.9199 8.88 13.0799C9.01 13.1299 9.12 13.1999 9.21 13.2899C9.39 13.4799 9.5 13.7399 9.5 13.9999C9.5 14.2599 9.39 14.5199 9.21 14.7099C9.02 14.8899 8.76 14.9999 8.5 14.9999Z"
+                    fill="#F9B233"
+                  />
+                  <path
+                    d="M12 14.9999C11.74 14.9999 11.48 14.8899 11.29 14.7099C11.11 14.5199 11 14.2599 11 13.9999C11 13.7399 11.11 13.4799 11.29 13.2899C11.38 13.1999 11.49 13.1299 11.62 13.0799C11.99 12.9199 12.43 13.0099 12.71 13.2899C12.89 13.4799 13 13.7399 13 13.9999C13 14.2599 12.89 14.5199 12.71 14.7099C12.66 14.7499 12.61 14.7899 12.56 14.8299C12.5 14.8699 12.44 14.8999 12.38 14.9199C12.32 14.9499 12.26 14.9699 12.2 14.9799C12.13 14.9899 12.07 14.9999 12 14.9999Z"
+                    fill="#F9B233"
+                  />
+                  <path
+                    d="M15.5 15C15.24 15 14.98 14.89 14.79 14.71C14.61 14.52 14.5 14.26 14.5 14C14.5 13.74 14.61 13.48 14.79 13.29C14.89 13.2 14.99 13.13 15.12 13.08C15.3 13 15.5 12.98 15.7 13.02C15.76 13.03 15.82 13.05 15.88 13.08C15.94 13.1 16 13.13 16.06 13.17C16.11 13.21 16.16 13.25 16.21 13.29C16.39 13.48 16.5 13.74 16.5 14C16.5 14.26 16.39 14.52 16.21 14.71C16.16 14.75 16.11 14.79 16.06 14.83C16 14.87 15.94 14.9 15.88 14.92C15.82 14.95 15.76 14.97 15.7 14.98C15.63 14.99 15.56 15 15.5 15Z"
+                    fill="#F9B233"
+                  />
+                  <path
+                    d="M8.5 18.5C8.37 18.5 8.24 18.47 8.12 18.42C7.99 18.37 7.89 18.3 7.79 18.21C7.61 18.02 7.5 17.76 7.5 17.5C7.5 17.24 7.61 16.98 7.79 16.79C7.89 16.7 7.99 16.63 8.12 16.58C8.3 16.5 8.5 16.48 8.7 16.52C8.76 16.53 8.82 16.55 8.88 16.58C8.94 16.6 9 16.63 9.06 16.67C9.11 16.71 9.16 16.75 9.21 16.79C9.39 16.98 9.5 17.24 9.5 17.5C9.5 17.76 9.39 18.02 9.21 18.21C9.16 18.25 9.11 18.3 9.06 18.33C9 18.37 8.94 18.4 8.88 18.42C8.82 18.45 8.76 18.47 8.7 18.48C8.63 18.49 8.57 18.5 8.5 18.5Z"
+                    fill="#F9B233"
+                  />
+                  <path
+                    d="M12 18.5002C11.74 18.5002 11.48 18.3902 11.29 18.2102C11.11 18.0202 11 17.7602 11 17.5002C11 17.2402 11.11 16.9802 11.29 16.7902C11.66 16.4202 12.34 16.4202 12.71 16.7902C12.89 16.9802 13 17.2402 13 17.5002C13 17.7602 12.89 18.0202 12.71 18.2102C12.52 18.3902 12.26 18.5002 12 18.5002Z"
+                    fill="#F9B233"
+                  />
+                  <path
+                    d="M15.5 18.5002C15.24 18.5002 14.98 18.3902 14.79 18.2102C14.61 18.0202 14.5 17.7602 14.5 17.5002C14.5 17.2402 14.61 16.9802 14.79 16.7902C15.16 16.4202 15.84 16.4202 16.21 16.7902C16.39 16.9802 16.5 17.2402 16.5 17.5002C16.5 17.7602 16.39 18.0202 16.21 18.2102C16.02 18.3902 15.76 18.5002 15.5 18.5002Z"
+                    fill="#F9B233"
+                  />
+                </svg>
+
+                <input
+                  placeholder="1403/02/18"
+                  name="end-date"
+                  class="mt-0.5 min-h-[40px] theme-secondary outline-none w-full placeholder:text-gray-500 rounded-full"
+                  id="end-date"
+                  readonly=""
+                  type="text"
+                />
+              </div>
+            </div>
+            <div></div>
+            <div
+              id="fields"
+              class="flex gap-4 items-center fields w-[84%]"
+              style="grid-column: 1 /4"
+            ></div>
+          </div>
+          <div
+            class="flex w-full border-b border-b-gray-100 dark:border-b-gray-900 pb-6 items-center mt-6 justify-between"
+          >
+            <button
+              id="add-periods"
+              data-modal-target="#add-collection"
+              class="flex items-center gap-2.5 bg-orange-500 rounded-full min-h-[40px] px-[15px] text-white font-bold"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  opacity="0.4"
+                  d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  fill="white"
+                />
+                <path
+                  d="M16 11.25H12.75V8C12.75 7.59 12.41 7.25 12 7.25C11.59 7.25 11.25 7.59 11.25 8V11.25H8C7.59 11.25 7.25 11.59 7.25 12C7.25 12.41 7.59 12.75 8 12.75H11.25V16C11.25 16.41 11.59 16.75 12 16.75C12.41 16.75 12.75 16.41 12.75 16V12.75H16C16.41 12.75 16.75 12.41 16.75 12C16.75 11.59 16.41 11.25 16 11.25Z"
+                  fill="white"
+                />
+              </svg>
+              <p>Add Periods</p>
+            </button>
+            <div class="flex gap-4 font-bold" dir="rtl">
+              <button
+                class="leading-[14px] px-6 text-white rounded-full bg-green-500 min-h-[40px] min-w-[7.3125rem]"
+              >
+                Save Changes
+              </button>
+              <button
+                aria-label="Close Modal"
+                data-modal-close="#add-collection"
+                type="button"
+                class="border leading-[14px] border-gray-400 text-gray-400 rounded-full min-h-[40px] min-w-[7.3125rem]"
+              >
+                Cancel
+              </button>
             </div>
           </div>
-         
+          <div class="w-full items-center flex mt-6 justify-between">
+            <div class="flex items-center gap-10">
+              <p class="text-xl">Refund Status</p>
+              <div
+                class="flex items-center p-1 *:*:cursor-pointer text-sm theme-primary rounded-2xl"
+              >
+                <div>
+                  <input
+                    type="radio"
+                    name="refundable?"
+                    class="hidden peer"
+                    id="refundable"
+                    checked
+                  />
+                  <label
+                    for="refundable"
+                    class="py-1.5 block text-[#9B9B9B] font-semibold peer-checked:font-bold border-transparent peer-checked:text-green-500 px-5 peer-checked:bg-green-500/15 rounded-xl peer-checked:border-green-500 border"
+                  >
+                    <p>Refundable</p>
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    name="refundable?"
+                    class="hidden peer"
+                    id="non-refundable"
+                  />
+                  <label
+                    for="non-refundable"
+                    class="py-1.5 block text-[#9B9B9B] font-semibold peer-checked:font-bold border-transparent peer-checked:text-red-500 px-5 peer-checked:bg-red-500/15 rounded-xl peer-checked:border-red-500 border"
+                  >
+                    <p>Non Refundable</p>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <button
+              data-modal-target="#add-collection"
+              id="add-cancellation-policy"
+              class="flex items-center gap-2.5 = bg-orange-500 rounded-full min-h-10 px-[15px] text-white font-bold"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  opacity="0.4"
+                  d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                  fill="white"
+                />
+                <path
+                  d="M16 11.25H12.75V8C12.75 7.59 12.41 7.25 12 7.25C11.59 7.25 11.25 7.59 11.25 8V11.25H8C7.59 11.25 7.25 11.59 7.25 12C7.25 12.41 7.59 12.75 8 12.75H11.25V16C11.25 16.41 11.59 16.75 12 16.75C12.41 16.75 12.75 16.41 12.75 16V12.75H16C16.41 12.75 16.75 12.41 16.75 12C16.75 11.59 16.41 11.25 16 11.25Z"
+                  fill="white"
+                />
+              </svg>
+              <p>Add Cancellation Policy</p>
+            </button>
+          </div>
+          <table id="cancellation-policy-table" class="table peer mt-10">
+            <thead>
+              <tr
+                class="*:py-4 *:text-start thead-round-child thead-border-child"
+              >
+                <th class="w-48">
+                  <div class="w-full ps-4">Type</div>
+                </th>
+                <th>
+                  <div class="w-full px-4">Charge Type</div>
+                </th>
+                <th>
+                  <div class="ps-4">
+                    Days Before <br />
+                    Check In
+                  </div>
+                </th>
+                <th class="w-48">
+                  <div class="w-full ps-4">Amount</div>
+                </th>
+                <th class="ps-4">
+                  <div>Action</div>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody
+              class="shadow-tbody group empty dark:shadow-tbody-dark text-sm rounded-b-4xl"
+            >
+              <tr class="!border-0 group-[.empty]:!table-row hidden">
+                <td colspan="5">
+                  <p class="text-center p-5 text-base">
+                    no item to show. first add cancellation policy
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="mt-6 peer-[.hidden]:!block hidden">
+            <label class="block" for="free-text">Free Text</label>
+            <textarea
+              class="border w-full theme-secondary outline-none p-3 min-h-[4.75rem] mt-2 resize-none placeholder:text-gray-500 rounded-2xl"
+              name="free-text"
+              placeholder="Type..."
+              id="free-text"
+            ></textarea>
+          </div>
+          <div class="mt-6">
+            <label class="block" for="extra-remarks">Extra Remarks</label>
+            <textarea
+              class="border w-full theme-secondary outline-none p-3 min-h-[4.75rem] mt-2 resize-none placeholder:text-gray-500 rounded-2xl"
+              name="extra-remarks"
+              placeholder="Type..."
+              id="extra-remarks"
+            ></textarea>
+          </div>
         </div>
       </div>
     </main>
-    <script defer src="../js/runtime.e9688135.js"></script>
-<script defer src="../js/main.67636b8e.js"></script>
-    <script defer src="../js/reservations.844b9096.js"></script>
-    <script defer src="../js/accordion.524f692d.js"></script>
-    <script defer src="../js/dropdown.304cc094.js"></script>
-    <script defer src="../js/select.f594a511.js"></script>
+
+    <script defer src="@assets/js/main.js"></script>
+    <script defer src="@assets/js/editCancellationPolicies.js"></script>
+    <script defer src="@assets/js/accordion.js"></script>
+    <script defer src="@assets/js/dropdown.js"></script>
+    <script defer src="@assets/js/select.js"></script>
   </body>
 </html>
