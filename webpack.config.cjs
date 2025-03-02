@@ -19,7 +19,8 @@ module.exports = {
     contractDetails: "./src/assets/js/contractDetails.js",
     specialOffers: "./src/assets/js/specialOffers.js",
     cancellationPolicies: "./src/assets/js/cancellationPolicies.js",
-    cancellationPolicies: "./src/assets/js/editCancellationPolicies.js",
+    cancellationPoliciesEdit: "./src/assets/js/editCancellationPolicies.js",
+    extraBedPolicies: "./src/assets/js/extraBedPolicies.js",
   },
   plugins: [
     new HtmlBundlerPlugin({

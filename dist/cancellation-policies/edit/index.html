@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../../css/input.25d91992.css" />
+    <link rel="stylesheet" href="../../css/input.df3fec55.css" />
 
     <script>
       const mode = localStorage.getItem("mode");
@@ -782,9 +782,7 @@
               </div>
             </div>
             <div class="w-full">
-              <label class="block mb-2" for="start-date"
-                >Start Date<span class="text-red-500">*</span></label
-              >
+              <label class="block mb-2" for="start-date">Start Date</label>
               <div
                 class="flex datePicker relative items-center overflow-hidden gap-3.5 h-[40px] px-3.5 border rounded-full"
               >
@@ -841,9 +839,7 @@
               </div>
             </div>
             <div class="w-full">
-              <label class="block mb-2" for="end-date"
-                >End Date<span class="text-red-500">*</span></label
-              >
+              <label class="block mb-2" for="end-date">End Date</label>
               <div
                 class="flex datePicker relative items-center overflow-hidden gap-3.5 h-[40px] px-3.5 border rounded-full"
               >
@@ -899,11 +895,18 @@
                 />
               </div>
             </div>
+            <div></div>
+            <div
+              id="fields"
+              class="flex gap-4 items-center fields w-[84%]"
+              style="grid-column: 1 /4"
+            ></div>
           </div>
           <div
             class="flex w-full border-b border-b-gray-100 dark:border-b-gray-900 pb-6 items-center mt-6 justify-between"
           >
             <button
+              id="add-periods"
               data-modal-target="#add-collection"
               class="flex items-center gap-2.5 bg-orange-500 rounded-full min-h-[40px] px-[15px] text-white font-bold"
             >
@@ -1009,7 +1012,7 @@
               <tr
                 class="*:py-4 *:text-start thead-round-child thead-border-child"
               >
-                <th>
+                <th class="w-48">
                   <div class="w-full ps-4">Type</div>
                 </th>
                 <th>
@@ -1021,7 +1024,7 @@
                     Check In
                   </div>
                 </th>
-                <th>
+                <th class="w-48">
                   <div class="w-full ps-4">Amount</div>
                 </th>
                 <th class="ps-4">
@@ -1031,9 +1034,9 @@
             </thead>
 
             <tbody
-              class="shadow-tbody empty dark:shadow-tbody-dark text-sm rounded-b-4xl"
+              class="shadow-tbody group empty dark:shadow-tbody-dark text-sm rounded-b-4xl"
             >
-              <tr class="!border-0">
+              <tr class="!border-0 group-[.empty]:!table-row hidden">
                 <td colspan="5">
                   <p class="text-center p-5 text-base">
                     no item to show. first add cancellation policy
@@ -1066,7 +1069,7 @@
 
     <script defer src="../../js/runtime.e9688135.js"></script>
 <script defer src="../../js/main.67636b8e.js"></script>
-    <script defer src="../../js/editCancellationPolicies.15600e7e.js"></script>
+    <script defer src="../../js/editCancellationPolicies.61a24d52.js"></script>
     <script defer src="../../js/accordion.524f692d.js"></script>
     <script defer src="../../js/dropdown.304cc094.js"></script>
     <script defer src="../../js/select.f594a511.js"></script>
