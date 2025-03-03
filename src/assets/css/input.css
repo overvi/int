@@ -139,6 +139,10 @@
     @apply border-b border-b-gray-100 dark:border-b-gray-800;
   }
 
+  .bordered-table tbody td:not(:last-child) {
+    @apply !border-r border-r-gray-100;
+  }
+
   .thead-round-child th:first-child {
     @apply rounded-tl-4xl;
   }

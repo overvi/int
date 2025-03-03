@@ -43,7 +43,6 @@ const updateListeners = () => {
   });
 };
 
-addPeriods.addEventListener("click", () => {});
 
 addCancellationPolicy.addEventListener("click", () => {
   if (rows + 1 > MAX_ROWS) return;
