@@ -22,7 +22,8 @@ module.exports = {
     cancellationPoliciesEdit: "./src/assets/js/editCancellationPolicies.js",
     extraBedPolicies: "./src/assets/js/extraBedPolicies.js",
     extraBedPoliciesEdit: "./src/assets/js/extraBedPoliciesEdit.js",
-    childPolicies : "./src/assets/js/childPolicies.js"
+    childPolicies: "./src/assets/js/childPolicies.js",
+    childPoliciesEdit: "./src/assets/js/childPoliciesEdit.js",
   },
   plugins: [
     new HtmlBundlerPlugin({
@@ -61,7 +62,9 @@ module.exports = {
           "./src/cancellation-policies/edit/index.html",
         "extrabed-policies/edit/index":
           "./src/extrabed-policies/edit/index.html",
-          "child-policies/index" : "./src/child-policies/index.html"
+        "child-policies/index": "./src/child-policies/index.html",
+        "child-policies/edit/index": "./src/child-policies/edit/index.html",
+        "hotel-policies/index": "./src/hotel-policies/index.html",
       },
       js: {
         // output filename of extracted JS from source script loaded in HTML via `<script>` tag
