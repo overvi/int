@@ -68,6 +68,7 @@ module.exports = {
         "availability/index": "./src/availability/index.html",
         "invoice-1/index": "./src/invoice-1/index.html",
         "invoice-2/index": "./src/invoice-2/index.html",
+        "invoice-3/index": "./src/invoice-3/index.html",
       },
       js: {
         // output filename of extracted JS from source script loaded in HTML via `<script>` tag
