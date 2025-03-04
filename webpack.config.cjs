@@ -65,8 +65,9 @@ module.exports = {
         "child-policies/index": "./src/child-policies/index.html",
         "child-policies/edit/index": "./src/child-policies/edit/index.html",
         "hotel-policies/index": "./src/hotel-policies/index.html",
-        "availability/index" : "./src/availability/index.html",
-        "invoice-1/index" : "./src/invoice-1/index.html"
+        "availability/index": "./src/availability/index.html",
+        "invoice-1/index": "./src/invoice-1/index.html",
+        "invoice-2/index": "./src/invoice-2/index.html",
       },
       js: {
         // output filename of extracted JS from source script loaded in HTML via `<script>` tag
