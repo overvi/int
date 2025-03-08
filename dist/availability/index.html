@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../css/input.65620183.css" />
+    <link rel="stylesheet" href="../css/input.bc5d79c8.css" />
 
     <script>
       const mode = localStorage.getItem("mode");
@@ -22,7 +22,7 @@
 
     <div
       class="modal modal--fixed rounded-4xl"
-      id="add-collection"
+      id="set-av-1"
       role="dialog"
       aria-labelledby="supplier-title"
     >
@@ -31,7 +31,136 @@
           class="flex items-center border-b border-b-gray-100 pb-6 justify-between"
         >
           <h2 id="collection-title" class="text-2xl">Set Availability</h2>
-          <button aria-label="Close Modal" data-modal-close="#add-collection">
+          <button aria-label="Close Modal" data-modal-close="#set-av-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                opacity="0.4"
+                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                fill="#DC2626"
+              />
+              <path
+                d="M13.0604 11.9999L15.3604 9.69986C15.6504 9.40986 15.6504 8.92986 15.3604 8.63986C15.0704 8.34986 14.5904 8.34986 14.3004 8.63986L12.0004 10.9399L9.70035 8.63986C9.41035 8.34986 8.93035 8.34986 8.64035 8.63986C8.35035 8.92986 8.35035 9.40986 8.64035 9.69986L10.9404 11.9999L8.64035 14.2999C8.35035 14.5899 8.35035 15.0699 8.64035 15.3599C8.79035 15.5099 8.98035 15.5799 9.17035 15.5799C9.36035 15.5799 9.55035 15.5099 9.70035 15.3599L12.0004 13.0599L14.3004 15.3599C14.4504 15.5099 14.6404 15.5799 14.8304 15.5799C15.0204 15.5799 15.2104 15.5099 15.3604 15.3599C15.6504 15.0699 15.6504 14.5899 15.3604 14.2999L13.0604 11.9999Z"
+                fill="#DC2626"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div
+          class="border rounded-2xl bg-orange-500/10 mt-6 flex items-center gap-1 border-orange-500 p-4"
+        >
+          <div class="flex items-center w-full justify-between">
+            <div class="flex flex-col text-orange-500">
+              <p><span class="font-bold">day:</span> 28 NOV 2024</p>
+              <p class="text-start w-fit font-bold mt-2.5">CR - CLASSIC ROOM</p>
+            </div>
+            <div
+              class="flex items-center p-1 *:*:cursor-pointer text-sm theme-primary rounded-2xl"
+            >
+              <div>
+                <input
+                  type="radio"
+                  name="refundable?"
+                  class="hidden peer"
+                  id="refundable"
+                  checked=""
+                />
+                <label
+                  for="refundable"
+                  class="py-1.5 block text-[#9B9B9B] font-semibold peer-checked:font-bold border-transparent peer-checked:text-green-500 px-5 peer-checked:bg-green-500/15 rounded-xl peer-checked:border-green-500 border"
+                >
+                  <p>Open</p>
+                </label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  name="refundable?"
+                  class="hidden peer"
+                  id="non-refundable"
+                />
+                <label
+                  for="non-refundable"
+                  class="py-1.5 block text-[#9B9B9B] font-semibold peer-checked:font-bold border-transparent peer-checked:text-red-500 px-5 peer-checked:bg-red-500/15 rounded-xl peer-checked:border-red-500 border"
+                >
+                  <p>Block</p>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-fit mt-6">
+          <label class="block mb-2" for="name">Release Dates</label>
+          <div
+            class="theme-secondary flex items-center gap-2 border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                opacity="0.4"
+                d="M20 9.83984C20.55 9.83984 21 10.2898 21 10.8398V16.9998C21 19.9998 19.5 21.9998 16 21.9998H8C4.5 21.9998 3 19.9998 3 16.9998V10.8398C3 10.2898 3.45 9.83984 4 9.83984H20Z"
+                fill="#ABABAB"
+              />
+              <path
+                d="M16.7502 3.56V2C16.7502 1.59 16.4102 1.25 16.0002 1.25C15.5902 1.25 15.2502 1.59 15.2502 2V3.5H8.75024V2C8.75024 1.59 8.41024 1.25 8.00024 1.25C7.59024 1.25 7.25024 1.59 7.25024 2V3.56C4.55024 3.81 3.24023 5.42 3.04023 7.81C3.02023 8.1 3.26023 8.34 3.54023 8.34H20.4602C20.7502 8.34 20.9902 8.09 20.9602 7.81C20.7602 5.42 19.4502 3.81 16.7502 3.56Z"
+                fill="#ABABAB"
+              />
+              <path
+                d="M15.6599 18.47L14.9199 17.73C15.2999 17.15 15.5299 16.45 15.5299 15.7C15.5299 13.66 13.8699 12 11.8299 12C9.78988 12 8.12988 13.66 8.12988 15.7C8.12988 17.74 9.78988 19.4 11.8299 19.4C12.5799 19.4 13.2799 19.17 13.8599 18.79L14.5999 19.53C14.7499 19.68 14.9399 19.75 15.1299 19.75C15.3199 19.75 15.5099 19.68 15.6599 19.53C15.9499 19.24 15.9499 18.76 15.6599 18.47Z"
+                fill="#ABABAB"
+              />
+            </svg>
+
+            <input
+              placeholder="Type..."
+              name="release-date"
+              value="0"
+              class="placeholder:text-sm w-28 min-h-10 outline-none"
+              id="releaste-datee"
+              type="number"
+            />
+          </div>
+        </div>
+        <div class="flex gap-4 mt-6 font-bold" dir="rtl">
+          <button
+            class="leading-[14px] text-white rounded-full bg-green-500 min-h-[40px] min-w-[7.3125rem]"
+          >
+            Save
+          </button>
+          <button
+            aria-label="Close Modal"
+            data-modal-close="#set-av-1"
+            type="button"
+            class="border leading-[14px] border-gray-400 text-gray-400 rounded-full min-h-[40px] min-w-[7.3125rem]"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal modal--fixed rounded-4xl"
+      id="set-av-2"
+      role="dialog"
+      aria-labelledby="supplier-title"
+    >
+      <div class="theme-secondary rounded-4xl h-fit p-10 min-w-[34.25rem]">
+        <div
+          class="flex items-center border-b border-b-gray-100 pb-6 justify-between"
+        >
+          <h2 id="collection-title" class="text-2xl">Set Availability</h2>
+          <button aria-label="Close Modal" data-modal-close="#set-av-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -52,7 +181,7 @@
           </button>
         </div>
         <div
-          class="border rounded-2xl bg-orange-500/10 mt-6 flex items-center gap-1 border-orange-500 p-6"
+          class="border rounded-2xl bg-orange-500/10 mt-6 flex items-center gap-1 border-orange-500 p-4"
         >
           <span class="size-[10px] bg-orange-500 rounded-full"></span>
           <div class="flex flex-col text-orange-500">
@@ -240,7 +369,7 @@
             </button>
             <button
               aria-label="Close Modal"
-              data-modal-close="#add-collection"
+              data-modal-close="#set-av-2"
               type="button"
               class="border leading-[14px] border-gray-400 text-gray-400 rounded-full min-h-[40px] min-w-[7.3125rem]"
             >
@@ -332,7 +461,7 @@
                 class="px-[30px] *:rounded-[15px] space-y-10 *:*:block *:*:mx-[30px] mt-[44.5px]"
               >
                 <li>
-                  <a class="block">
+                  <a class="block" href="/reservations">
                     <div class="flex items-center gap-2">
                       <svg
                         width="24"
@@ -366,11 +495,11 @@
                     </div>
                   </a>
                 </li>
-                <li class="group after:!top-4 after:!bottom-auto">
+                <li class="expanded group after:!top-4 after:!bottom-auto">
                   <div class="accordion">
                     <button
                       id="accordion-header-info"
-                      aria-expanded="false"
+                      aria-expanded="true"
                       aria-controls="accordion-panel-info"
                       class="accordion-header group w-full !m-0 items-center !flex justify-between"
                     >
@@ -430,42 +559,41 @@
                     <ul
                       id="accordion-panel-info"
                       role="region"
-                      hidden
                       aria-labelledby="accordion-header-info"
                       class="font-light mt-5 border-t pt-5 accordion-panel"
                     >
                       <li>
                         <a
                           class="px-8.5 text-white bg-orange-500 block w-full rounded-[10px] py-2"
-                          href=""
+                          href="/general-info"
                           >General</a
                         >
                       </li>
                       <li>
                         <a
                           class="px-8.5 block w-full rounded-[10px] py-2"
-                          href=""
+                          href="/facilities"
                           >Facilities</a
                         >
                       </li>
                       <li>
                         <a
                           class="px-8.5 block w-full rounded-[10px] py-2"
-                          href=""
+                          href="/images"
                           >Images</a
                         >
                       </li>
                       <li>
                         <a
                           class="px-8.5 block w-full rounded-[10px] py-2"
-                          href=""
+                          href="/rooms"
                           >Rooms</a
                         >
                       </li>
                       <li>
                         <a
                           class="px-8.5 block w-full rounded-[10px] py-2"
-                          href=""
+                          href="/boards"
                           >Boards</a
                         >
                       </li>
@@ -473,7 +601,7 @@
                   </div>
                 </li>
                 <li>
-                  <a>
+                  <a href="/contracts">
                     <div class="flex items-center gap-2">
                       <svg
                         width="24"
@@ -507,7 +635,7 @@
                   </a>
                 </li>
                 <li class="active-segment">
-                  <a>
+                  <a href="/availability">
                     <div class="flex items-center gap-2">
                       <svg
                         aria-hidden="true"
@@ -545,7 +673,7 @@
                   </a>
                 </li>
                 <li>
-                  <a>
+                  <a href="/rates-period">
                     <div class="flex items-center gap-2">
                       <svg
                         aria-hidden="true"
@@ -575,7 +703,7 @@
                   </a>
                 </li>
                 <li>
-                  <a>
+                  <a href="/special-offers">
                     <div class="flex items-center gap-2">
                       <svg
                         aria-hidden="true"
@@ -600,7 +728,7 @@
                         />
                       </svg>
 
-                      <p class="mt-2">Special collection</p>
+                      <p class="mt-2">Special Offers</p>
                     </div>
                   </a>
                 </li>
@@ -654,37 +782,37 @@
                       </svg>
                     </button>
                     <ul
-                      hidden
                       id="accordion-panel-policies"
                       role="region"
+                      hidden
                       aria-labelledby="accordion-header-policies"
                       class="font-light mt-5 border-t pt-5 accordion-panel"
                     >
                       <li>
                         <a
-                          class="px-8.5 text-white bg-orange-500 block w-full rounded-[10px] py-2"
-                          href=""
-                          >Cancellation Policy</a
+                          class="px-8.5 text-nowrap block w-full rounded-[10px] py-2"
+                          href="/cancellation-policies"
+                          >Cancellation Policies</a
                         >
                       </li>
                       <li>
                         <a
                           class="px-8.5 block w-full rounded-[10px] py-2"
-                          href=""
-                          >Extrabed Policies</a
+                          href="/extrabed-policies"
+                          >ExtraBed Policies</a
                         >
                       </li>
                       <li>
                         <a
                           class="px-8.5 block w-full rounded-[10px] py-2"
-                          href=""
+                          href="/child-policies"
                           >Child Policies</a
                         >
                       </li>
                       <li>
                         <a
                           class="px-8.5 block w-full rounded-[10px] py-2"
-                          href=""
+                          href="/hotel-policies"
                           >Hotel Policies</a
                         >
                       </li>
@@ -692,7 +820,7 @@
                   </div>
                 </li>
                 <li>
-                  <a>
+                  <a href="/reservations-single">
                     <div class="flex items-center gap-2">
                       <svg
                         aria-hidden="true"
@@ -728,7 +856,7 @@
                   </a>
                 </li>
                 <li>
-                  <a>
+                  <a href="/invoices-single">
                     <div class="flex items-center gap-2">
                       <svg
                         aria-hidden="true"
@@ -777,7 +905,7 @@
           </div>
           <div class="flex items-center gap-6">
             <div
-              class="flex items-center gap-5 p-0.5 border border-[#A1A1A1]/[63.14%] rounded-full"
+              class="flex items-center gap-5 p-0.5 border !border-[#A1A1A1]/[63.14%] rounded-full"
             >
               <button
                 id="toggle-color-dark"
@@ -828,12 +956,13 @@
                 </div>
               </button>
             </div>
+
             <div class="relative z-20 inline-block text-left dropdown">
               <button
                 id="dropdown-button"
                 aria-haspopup="true"
                 aria-expanded="false"
-                class="theme-secondary border-transparent border rounded-full flex items-center min-w-[13.187rem] gap-[10px] p-[6px]"
+                class="theme-secondary rounded-full flex items-center min-w-[13.187rem] gap-[10px] p-[6px]"
               >
                 <div>
                   <svg
@@ -963,7 +1092,7 @@
           <table class="table mt-1 text-left bordered-table">
             <thead>
               <tr
-                class="*:py-4 *:[&amp;:not(:last-child)]:*:!h-[6.1rem] *:ps-2 *:text-start thead-round-child thead-border-child"
+                class="*:py-4 *:ps-4 *:[&:not(:last-child)]:*:!h-[6.1rem] *:text-start thead-round-child thead-border-child"
               >
                 <th class="except w-52 !ps-0">
                   <div class="w-52 ms-4 border-r border-r-gray-100 pr-3">
@@ -1157,7 +1286,7 @@
             </thead>
             <tbody class="shadow-tbody dark:shadow-tbody-dark rounded-b-4xl">
               <tr>
-                <td colspan="11" class="px-[10px] pt-[10px] pb-[5px]">
+                <td colspan="11" class="p-3.5">
                   <table
                     class="w-full *:*:*:border-gray-100 shadow-tbody-offset rounded-2xl shadow-orange-500 overflow-hidden"
                   >
@@ -1181,7 +1310,43 @@
                         <td
                           class="*:border-gray-100 border-r p-4 *:font-semibold *:text-orange-500"
                         >
-                          <p>Single</p>
+                          <button data-modal-target="#set-av-2">Single</button>
+                        </td>
+                        <td class="px-4 py-2 group">
+                          <input
+                            class="hidden peer"
+                            type="checkbox"
+                            checked
+                            id="signel-27th"
+                          />
+                          <button
+                            data-modal-target="#set-av-1"
+                            class="size-[1.875rem] peer bg-red-500 text-white rounded-full leading-[0] peer-checked:!bg-green-500/50 text-center flex justify-center items-center"
+                          >
+                            <p
+                              class="mt-0.5 hidden group-has-[input:checked]:!block"
+                            >
+                              0
+                            </p>
+                            <svg
+                              class="group-has-[input:checked]:!hidden block"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                opacity="0.4"
+                                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                fill="white"
+                              />
+                              <path
+                                d="M13.0604 12.0004L15.3604 9.70035C15.6504 9.41035 15.6504 8.93035 15.3604 8.64035C15.0704 8.35035 14.5904 8.35035 14.3004 8.64035L12.0004 10.9404L9.70035 8.64035C9.41035 8.35035 8.93035 8.35035 8.64035 8.64035C8.35035 8.93035 8.35035 9.41035 8.64035 9.70035L10.9404 12.0004L8.64035 14.3004C8.35035 14.5904 8.35035 15.0704 8.64035 15.3604C8.79035 15.5104 8.98035 15.5804 9.17035 15.5804C9.36035 15.5804 9.55035 15.5104 9.70035 15.3604L12.0004 13.0604L14.3004 15.3604C14.4504 15.5104 14.6404 15.5804 14.8304 15.5804C15.0204 15.5804 15.2104 15.5104 15.3604 15.3604C15.6504 15.0704 15.6504 14.5904 15.3604 14.3004L13.0604 12.0004Z"
+                                fill="white"
+                              />
+                            </svg>
+                          </button>
                         </td>
                         <td class="px-4 py-2 group">
                           <input
@@ -1190,7 +1355,7 @@
                             id="signel-27th"
                           />
                           <button
-                            data-modal-target="#add-collection"
+                            data-modal-target="#set-av-1"
                             class="size-[1.875rem] peer bg-red-500 text-white rounded-full leading-[0] peer-checked:!bg-green-500 text-center flex justify-center items-center"
                           >
                             <p
@@ -1218,128 +1383,999 @@
                             </svg>
                           </button>
                         </td>
-                        <td class="px-4 py-2 border-e">
-                          <div
-                            class="border relative flex items-center gap-1 overflow-hidden outline-none w-[8.75rem] h-8 rounded-full text-sm"
+                        <td class="px-4 py-2 group">
+                          <input
+                            class="hidden peer"
+                            type="checkbox"
+                            id="signel-27th"
+                          />
+                          <button
+                            data-modal-target="#set-av-1"
+                            class="size-[1.875rem] peer bg-red-500 text-white rounded-full leading-[0] peer-checked:!bg-green-500 text-center flex justify-center items-center"
                           >
-                            <div class="resize-container *:max-w-[15ch]">
-                              <span
-                                class="resize-text h-8 ps-4"
-                                aria-hidden="true"
-                                >123.00</span
-                              >
-                              <input
-                                class="resize-input h-8 outline-none ps-4 theme-secondary"
-                                value="123.00"
-                                autofocus=""
+                            <p
+                              class="mt-0.5 hidden group-has-[input:checked]:!block"
+                            >
+                              3
+                            </p>
+                            <svg
+                              class="group-has-[input:checked]:!hidden block"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                opacity="0.4"
+                                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                fill="white"
                               />
-                            </div>
-                            <span>$</span>
-                          </div>
+                              <path
+                                d="M13.0604 12.0004L15.3604 9.70035C15.6504 9.41035 15.6504 8.93035 15.3604 8.64035C15.0704 8.35035 14.5904 8.35035 14.3004 8.64035L12.0004 10.9404L9.70035 8.64035C9.41035 8.35035 8.93035 8.35035 8.64035 8.64035C8.35035 8.93035 8.35035 9.41035 8.64035 9.70035L10.9404 12.0004L8.64035 14.3004C8.35035 14.5904 8.35035 15.0704 8.64035 15.3604C8.79035 15.5104 8.98035 15.5804 9.17035 15.5804C9.36035 15.5804 9.55035 15.5104 9.70035 15.3604L12.0004 13.0604L14.3004 15.3604C14.4504 15.5104 14.6404 15.5804 14.8304 15.5804C15.0204 15.5804 15.2104 15.5104 15.3604 15.3604C15.6504 15.0704 15.6504 14.5904 15.3604 14.3004L13.0604 12.0004Z"
+                                fill="white"
+                              />
+                            </svg>
+                          </button>
                         </td>
-                        <td rowspan="3">
-                          <div class="flex flex-col pe-10 ps-4 text-sm gap-3">
-                            <button
-                              class="text-white bg-green-500 rounded-full p-2"
+                        <td class="px-4 py-2 group">
+                          <input
+                            class="hidden peer"
+                            type="checkbox"
+                            id="signel-27th"
+                          />
+                          <button
+                            data-modal-target="#set-av-1"
+                            class="size-[1.875rem] peer bg-red-500 text-white rounded-full leading-[0] peer-checked:!bg-green-500 text-center flex justify-center items-center"
+                          >
+                            <p
+                              class="mt-0.5 hidden group-has-[input:checked]:!block"
                             >
-                              Save
-                            </button>
-                            <button
-                              class="border text-red-500 border-red-500 bg-red-500/15 p-1.5 rounded-full"
+                              3
+                            </p>
+                            <svg
+                              class="group-has-[input:checked]:!hidden block"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              Delete
-                            </button>
-                          </div>
+                              <path
+                                opacity="0.4"
+                                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                fill="white"
+                              />
+                              <path
+                                d="M13.0604 12.0004L15.3604 9.70035C15.6504 9.41035 15.6504 8.93035 15.3604 8.64035C15.0704 8.35035 14.5904 8.35035 14.3004 8.64035L12.0004 10.9404L9.70035 8.64035C9.41035 8.35035 8.93035 8.35035 8.64035 8.64035C8.35035 8.93035 8.35035 9.41035 8.64035 9.70035L10.9404 12.0004L8.64035 14.3004C8.35035 14.5904 8.35035 15.0704 8.64035 15.3604C8.79035 15.5104 8.98035 15.5804 9.17035 15.5804C9.36035 15.5804 9.55035 15.5104 9.70035 15.3604L12.0004 13.0604L14.3004 15.3604C14.4504 15.5104 14.6404 15.5804 14.8304 15.5804C15.0204 15.5804 15.2104 15.5104 15.3604 15.3604C15.6504 15.0704 15.6504 14.5904 15.3604 14.3004L13.0604 12.0004Z"
+                                fill="white"
+                              />
+                            </svg>
+                          </button>
+                        </td>
+                        <td class="px-4 py-2 group">
+                          <input
+                            class="hidden peer"
+                            type="checkbox"
+                            id="signel-27th"
+                          />
+                          <button
+                            data-modal-target="#set-av-1"
+                            class="size-[1.875rem] peer bg-red-500 text-white rounded-full leading-[0] peer-checked:!bg-green-500 text-center flex justify-center items-center"
+                          >
+                            <p
+                              class="mt-0.5 hidden group-has-[input:checked]:!block"
+                            >
+                              3
+                            </p>
+                            <svg
+                              class="group-has-[input:checked]:!hidden block"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                opacity="0.4"
+                                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                fill="white"
+                              />
+                              <path
+                                d="M13.0604 12.0004L15.3604 9.70035C15.6504 9.41035 15.6504 8.93035 15.3604 8.64035C15.0704 8.35035 14.5904 8.35035 14.3004 8.64035L12.0004 10.9404L9.70035 8.64035C9.41035 8.35035 8.93035 8.35035 8.64035 8.64035C8.35035 8.93035 8.35035 9.41035 8.64035 9.70035L10.9404 12.0004L8.64035 14.3004C8.35035 14.5904 8.35035 15.0704 8.64035 15.3604C8.79035 15.5104 8.98035 15.5804 9.17035 15.5804C9.36035 15.5804 9.55035 15.5104 9.70035 15.3604L12.0004 13.0604L14.3004 15.3604C14.4504 15.5104 14.6404 15.5804 14.8304 15.5804C15.0204 15.5804 15.2104 15.5104 15.3604 15.3604C15.6504 15.0704 15.6504 14.5904 15.3604 14.3004L13.0604 12.0004Z"
+                                fill="white"
+                              />
+                            </svg>
+                          </button>
+                        </td>
+                        <td class="px-4 py-2 group">
+                          <input
+                            class="hidden peer"
+                            type="checkbox"
+                            id="signel-27th"
+                          />
+                          <button
+                            data-modal-target="#set-av-1"
+                            class="size-[1.875rem] peer bg-red-500 text-white rounded-full leading-[0] peer-checked:!bg-green-500 text-center flex justify-center items-center"
+                          >
+                            <p
+                              class="mt-0.5 hidden group-has-[input:checked]:!block"
+                            >
+                              3
+                            </p>
+                            <svg
+                              class="group-has-[input:checked]:!hidden block"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                opacity="0.4"
+                                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                fill="white"
+                              />
+                              <path
+                                d="M13.0604 12.0004L15.3604 9.70035C15.6504 9.41035 15.6504 8.93035 15.3604 8.64035C15.0704 8.35035 14.5904 8.35035 14.3004 8.64035L12.0004 10.9404L9.70035 8.64035C9.41035 8.35035 8.93035 8.35035 8.64035 8.64035C8.35035 8.93035 8.35035 9.41035 8.64035 9.70035L10.9404 12.0004L8.64035 14.3004C8.35035 14.5904 8.35035 15.0704 8.64035 15.3604C8.79035 15.5104 8.98035 15.5804 9.17035 15.5804C9.36035 15.5804 9.55035 15.5104 9.70035 15.3604L12.0004 13.0604L14.3004 15.3604C14.4504 15.5104 14.6404 15.5804 14.8304 15.5804C15.0204 15.5804 15.2104 15.5104 15.3604 15.3604C15.6504 15.0704 15.6504 14.5904 15.3604 14.3004L13.0604 12.0004Z"
+                                fill="white"
+                              />
+                            </svg>
+                          </button>
+                        </td>
+                        <td class="px-4 py-2 group">
+                          <input
+                            class="hidden peer"
+                            type="checkbox"
+                            id="signel-27th"
+                          />
+                          <button
+                            data-modal-target="#set-av-1"
+                            class="size-[1.875rem] peer bg-red-500 text-white rounded-full leading-[0] peer-checked:!bg-green-500 text-center flex justify-center items-center"
+                          >
+                            <p
+                              class="mt-0.5 hidden group-has-[input:checked]:!block"
+                            >
+                              3
+                            </p>
+                            <svg
+                              class="group-has-[input:checked]:!hidden block"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                opacity="0.4"
+                                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                fill="white"
+                              />
+                              <path
+                                d="M13.0604 12.0004L15.3604 9.70035C15.6504 9.41035 15.6504 8.93035 15.3604 8.64035C15.0704 8.35035 14.5904 8.35035 14.3004 8.64035L12.0004 10.9404L9.70035 8.64035C9.41035 8.35035 8.93035 8.35035 8.64035 8.64035C8.35035 8.93035 8.35035 9.41035 8.64035 9.70035L10.9404 12.0004L8.64035 14.3004C8.35035 14.5904 8.35035 15.0704 8.64035 15.3604C8.79035 15.5104 8.98035 15.5804 9.17035 15.5804C9.36035 15.5804 9.55035 15.5104 9.70035 15.3604L12.0004 13.0604L14.3004 15.3604C14.4504 15.5104 14.6404 15.5804 14.8304 15.5804C15.0204 15.5804 15.2104 15.5104 15.3604 15.3604C15.6504 15.0704 15.6504 14.5904 15.3604 14.3004L13.0604 12.0004Z"
+                                fill="white"
+                              />
+                            </svg>
+                          </button>
+                        </td>
+                        <td class="px-4 py-2 group">
+                          <input
+                            class="hidden peer"
+                            type="checkbox"
+                            id="signel-27th"
+                          />
+                          <button
+                            data-modal-target="#set-av-1"
+                            class="size-[1.875rem] peer bg-red-500 text-white rounded-full leading-[0] peer-checked:!bg-green-500 text-center flex justify-center items-center"
+                          >
+                            <p
+                              class="mt-0.5 hidden group-has-[input:checked]:!block"
+                            >
+                              3
+                            </p>
+                            <svg
+                              class="group-has-[input:checked]:!hidden block"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                opacity="0.4"
+                                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                fill="white"
+                              />
+                              <path
+                                d="M13.0604 12.0004L15.3604 9.70035C15.6504 9.41035 15.6504 8.93035 15.3604 8.64035C15.0704 8.35035 14.5904 8.35035 14.3004 8.64035L12.0004 10.9404L9.70035 8.64035C9.41035 8.35035 8.93035 8.35035 8.64035 8.64035C8.35035 8.93035 8.35035 9.41035 8.64035 9.70035L10.9404 12.0004L8.64035 14.3004C8.35035 14.5904 8.35035 15.0704 8.64035 15.3604C8.79035 15.5104 8.98035 15.5804 9.17035 15.5804C9.36035 15.5804 9.55035 15.5104 9.70035 15.3604L12.0004 13.0604L14.3004 15.3604C14.4504 15.5104 14.6404 15.5804 14.8304 15.5804C15.0204 15.5804 15.2104 15.5104 15.3604 15.3604C15.6504 15.0704 15.6504 14.5904 15.3604 14.3004L13.0604 12.0004Z"
+                                fill="white"
+                              />
+                            </svg>
+                          </button>
+                        </td>
+                        <td class="px-4 py-2 group">
+                          <input
+                            class="hidden peer"
+                            type="checkbox"
+                            id="signel-27th"
+                          />
+                          <button
+                            data-modal-target="#set-av-1"
+                            class="size-[1.875rem] peer bg-red-500 text-white rounded-full leading-[0] peer-checked:!bg-green-500 text-center flex justify-center items-center"
+                          >
+                            <p
+                              class="mt-0.5 hidden group-has-[input:checked]:!block"
+                            >
+                              3
+                            </p>
+                            <svg
+                              class="group-has-[input:checked]:!hidden block"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                opacity="0.4"
+                                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                fill="white"
+                              />
+                              <path
+                                d="M13.0604 12.0004L15.3604 9.70035C15.6504 9.41035 15.6504 8.93035 15.3604 8.64035C15.0704 8.35035 14.5904 8.35035 14.3004 8.64035L12.0004 10.9404L9.70035 8.64035C9.41035 8.35035 8.93035 8.35035 8.64035 8.64035C8.35035 8.93035 8.35035 9.41035 8.64035 9.70035L10.9404 12.0004L8.64035 14.3004C8.35035 14.5904 8.35035 15.0704 8.64035 15.3604C8.79035 15.5104 8.98035 15.5804 9.17035 15.5804C9.36035 15.5804 9.55035 15.5104 9.70035 15.3604L12.0004 13.0604L14.3004 15.3604C14.4504 15.5104 14.6404 15.5804 14.8304 15.5804C15.0204 15.5804 15.2104 15.5104 15.3604 15.3604C15.6504 15.0704 15.6504 14.5904 15.3604 14.3004L13.0604 12.0004Z"
+                                fill="white"
+                              />
+                            </svg>
+                          </button>
+                        </td>
+                        <td class="px-4 py-2 group">
+                          <input
+                            class="hidden peer"
+                            type="checkbox"
+                            id="signel-27th"
+                          />
+                          <button
+                            data-modal-target="#set-av-1"
+                            class="size-[1.875rem] peer bg-red-500 text-white rounded-full leading-[0] peer-checked:!bg-green-500 text-center flex justify-center items-center"
+                          >
+                            <p
+                              class="mt-0.5 hidden group-has-[input:checked]:!block"
+                            >
+                              3
+                            </p>
+                            <svg
+                              class="group-has-[input:checked]:!hidden block"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                opacity="0.4"
+                                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                fill="white"
+                              />
+                              <path
+                                d="M13.0604 12.0004L15.3604 9.70035C15.6504 9.41035 15.6504 8.93035 15.3604 8.64035C15.0704 8.35035 14.5904 8.35035 14.3004 8.64035L12.0004 10.9404L9.70035 8.64035C9.41035 8.35035 8.93035 8.35035 8.64035 8.64035C8.35035 8.93035 8.35035 9.41035 8.64035 9.70035L10.9404 12.0004L8.64035 14.3004C8.35035 14.5904 8.35035 15.0704 8.64035 15.3604C8.79035 15.5104 8.98035 15.5804 9.17035 15.5804C9.36035 15.5804 9.55035 15.5104 9.70035 15.3604L12.0004 13.0604L14.3004 15.3604C14.4504 15.5104 14.6404 15.5804 14.8304 15.5804C15.0204 15.5804 15.2104 15.5104 15.3604 15.3604C15.6504 15.0704 15.6504 14.5904 15.3604 14.3004L13.0604 12.0004Z"
+                                fill="white"
+                              />
+                            </svg>
+                          </button>
                         </td>
                       </tr>
                       <tr>
                         <td
                           class="*:border-gray-100 border-r p-4 *:font-semibold *:text-orange-500"
                         >
-                          <p>Double</p>
+                          <button data-modal-target="#set-av-2">Double</button>
                         </td>
-                        <td class="px-4 py-2">
-                          <div
-                            class="border relative flex items-center gap-1 overflow-hidden outline-none w-[8.75rem] h-8 rounded-full text-sm"
+                        <td class="px-4 py-2 group">
+                          <input
+                            class="hidden peer"
+                            type="checkbox"
+                            id="signel-27th"
+                          />
+                          <button
+                            data-modal-target="#set-av-1"
+                            class="size-[1.875rem] peer bg-red-500 text-white rounded-full leading-[0] peer-checked:!bg-green-500 text-center flex justify-center items-center"
                           >
-                            <div class="resize-container *:max-w-[15ch]">
-                              <span
-                                class="resize-text h-8 ps-4"
-                                aria-hidden="true"
-                                >123.00</span
-                              >
-                              <input
-                                class="resize-input h-8 outline-none ps-4 theme-secondary"
-                                value="123.00"
-                                autofocus=""
+                            <p
+                              class="mt-0.5 hidden group-has-[input:checked]:!block"
+                            >
+                              3
+                            </p>
+                            <svg
+                              class="group-has-[input:checked]:!hidden block"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                opacity="0.4"
+                                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                fill="white"
                               />
-                            </div>
-                            <span>$</span>
-                          </div>
+                              <path
+                                d="M13.0604 12.0004L15.3604 9.70035C15.6504 9.41035 15.6504 8.93035 15.3604 8.64035C15.0704 8.35035 14.5904 8.35035 14.3004 8.64035L12.0004 10.9404L9.70035 8.64035C9.41035 8.35035 8.93035 8.35035 8.64035 8.64035C8.35035 8.93035 8.35035 9.41035 8.64035 9.70035L10.9404 12.0004L8.64035 14.3004C8.35035 14.5904 8.35035 15.0704 8.64035 15.3604C8.79035 15.5104 8.98035 15.5804 9.17035 15.5804C9.36035 15.5804 9.55035 15.5104 9.70035 15.3604L12.0004 13.0604L14.3004 15.3604C14.4504 15.5104 14.6404 15.5804 14.8304 15.5804C15.0204 15.5804 15.2104 15.5104 15.3604 15.3604C15.6504 15.0704 15.6504 14.5904 15.3604 14.3004L13.0604 12.0004Z"
+                                fill="white"
+                              />
+                            </svg>
+                          </button>
                         </td>
-                        <td class="px-4 py-2 border-e">
-                          <div
-                            class="border relative flex items-center gap-1 overflow-hidden outline-none w-[8.75rem] h-8 rounded-full text-sm"
+                        <td class="px-4 py-2 group">
+                          <input
+                            class="hidden peer"
+                            type="checkbox"
+                            id="signel-27th"
+                          />
+                          <button
+                            data-modal-target="#set-av-1"
+                            class="size-[1.875rem] peer bg-red-500 text-white rounded-full leading-[0] peer-checked:!bg-green-500 text-center flex justify-center items-center"
                           >
-                            <div class="resize-container *:max-w-[15ch]">
-                              <span
-                                class="resize-text h-8 ps-4"
-                                aria-hidden="true"
-                                >123.00</span
-                              >
-                              <input
-                                class="resize-input h-8 outline-none ps-4 theme-secondary"
-                                value="123.00"
-                                autofocus=""
+                            <p
+                              class="mt-0.5 hidden group-has-[input:checked]:!block"
+                            >
+                              3
+                            </p>
+                            <svg
+                              class="group-has-[input:checked]:!hidden block"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                opacity="0.4"
+                                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                fill="white"
                               />
-                            </div>
-                            <span>$</span>
-                          </div>
+                              <path
+                                d="M13.0604 12.0004L15.3604 9.70035C15.6504 9.41035 15.6504 8.93035 15.3604 8.64035C15.0704 8.35035 14.5904 8.35035 14.3004 8.64035L12.0004 10.9404L9.70035 8.64035C9.41035 8.35035 8.93035 8.35035 8.64035 8.64035C8.35035 8.93035 8.35035 9.41035 8.64035 9.70035L10.9404 12.0004L8.64035 14.3004C8.35035 14.5904 8.35035 15.0704 8.64035 15.3604C8.79035 15.5104 8.98035 15.5804 9.17035 15.5804C9.36035 15.5804 9.55035 15.5104 9.70035 15.3604L12.0004 13.0604L14.3004 15.3604C14.4504 15.5104 14.6404 15.5804 14.8304 15.5804C15.0204 15.5804 15.2104 15.5104 15.3604 15.3604C15.6504 15.0704 15.6504 14.5904 15.3604 14.3004L13.0604 12.0004Z"
+                                fill="white"
+                              />
+                            </svg>
+                          </button>
+                        </td>
+                        <td class="px-4 py-2 group">
+                          <input
+                            class="hidden peer"
+                            type="checkbox"
+                            id="signel-27th"
+                          />
+                          <button
+                            data-modal-target="#set-av-1"
+                            class="size-[1.875rem] peer bg-red-500 text-white rounded-full leading-[0] peer-checked:!bg-green-500 text-center flex justify-center items-center"
+                          >
+                            <p
+                              class="mt-0.5 hidden group-has-[input:checked]:!block"
+                            >
+                              3
+                            </p>
+                            <svg
+                              class="group-has-[input:checked]:!hidden block"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                opacity="0.4"
+                                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                fill="white"
+                              />
+                              <path
+                                d="M13.0604 12.0004L15.3604 9.70035C15.6504 9.41035 15.6504 8.93035 15.3604 8.64035C15.0704 8.35035 14.5904 8.35035 14.3004 8.64035L12.0004 10.9404L9.70035 8.64035C9.41035 8.35035 8.93035 8.35035 8.64035 8.64035C8.35035 8.93035 8.35035 9.41035 8.64035 9.70035L10.9404 12.0004L8.64035 14.3004C8.35035 14.5904 8.35035 15.0704 8.64035 15.3604C8.79035 15.5104 8.98035 15.5804 9.17035 15.5804C9.36035 15.5804 9.55035 15.5104 9.70035 15.3604L12.0004 13.0604L14.3004 15.3604C14.4504 15.5104 14.6404 15.5804 14.8304 15.5804C15.0204 15.5804 15.2104 15.5104 15.3604 15.3604C15.6504 15.0704 15.6504 14.5904 15.3604 14.3004L13.0604 12.0004Z"
+                                fill="white"
+                              />
+                            </svg>
+                          </button>
+                        </td>
+                        <td class="px-4 py-2 group">
+                          <input
+                            class="hidden peer"
+                            type="checkbox"
+                            id="signel-27th"
+                          />
+                          <button
+                            data-modal-target="#set-av-1"
+                            class="size-[1.875rem] peer bg-red-500 text-white rounded-full leading-[0] peer-checked:!bg-green-500 text-center flex justify-center items-center"
+                          >
+                            <p
+                              class="mt-0.5 hidden group-has-[input:checked]:!block"
+                            >
+                              3
+                            </p>
+                            <svg
+                              class="group-has-[input:checked]:!hidden block"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                opacity="0.4"
+                                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                fill="white"
+                              />
+                              <path
+                                d="M13.0604 12.0004L15.3604 9.70035C15.6504 9.41035 15.6504 8.93035 15.3604 8.64035C15.0704 8.35035 14.5904 8.35035 14.3004 8.64035L12.0004 10.9404L9.70035 8.64035C9.41035 8.35035 8.93035 8.35035 8.64035 8.64035C8.35035 8.93035 8.35035 9.41035 8.64035 9.70035L10.9404 12.0004L8.64035 14.3004C8.35035 14.5904 8.35035 15.0704 8.64035 15.3604C8.79035 15.5104 8.98035 15.5804 9.17035 15.5804C9.36035 15.5804 9.55035 15.5104 9.70035 15.3604L12.0004 13.0604L14.3004 15.3604C14.4504 15.5104 14.6404 15.5804 14.8304 15.5804C15.0204 15.5804 15.2104 15.5104 15.3604 15.3604C15.6504 15.0704 15.6504 14.5904 15.3604 14.3004L13.0604 12.0004Z"
+                                fill="white"
+                              />
+                            </svg>
+                          </button>
+                        </td>
+                        <td class="px-4 py-2 group">
+                          <input
+                            class="hidden peer"
+                            type="checkbox"
+                            id="signel-27th"
+                          />
+                          <button
+                            data-modal-target="#set-av-1"
+                            class="size-[1.875rem] peer bg-red-500 text-white rounded-full leading-[0] peer-checked:!bg-green-500 text-center flex justify-center items-center"
+                          >
+                            <p
+                              class="mt-0.5 hidden group-has-[input:checked]:!block"
+                            >
+                              3
+                            </p>
+                            <svg
+                              class="group-has-[input:checked]:!hidden block"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                opacity="0.4"
+                                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                fill="white"
+                              />
+                              <path
+                                d="M13.0604 12.0004L15.3604 9.70035C15.6504 9.41035 15.6504 8.93035 15.3604 8.64035C15.0704 8.35035 14.5904 8.35035 14.3004 8.64035L12.0004 10.9404L9.70035 8.64035C9.41035 8.35035 8.93035 8.35035 8.64035 8.64035C8.35035 8.93035 8.35035 9.41035 8.64035 9.70035L10.9404 12.0004L8.64035 14.3004C8.35035 14.5904 8.35035 15.0704 8.64035 15.3604C8.79035 15.5104 8.98035 15.5804 9.17035 15.5804C9.36035 15.5804 9.55035 15.5104 9.70035 15.3604L12.0004 13.0604L14.3004 15.3604C14.4504 15.5104 14.6404 15.5804 14.8304 15.5804C15.0204 15.5804 15.2104 15.5104 15.3604 15.3604C15.6504 15.0704 15.6504 14.5904 15.3604 14.3004L13.0604 12.0004Z"
+                                fill="white"
+                              />
+                            </svg>
+                          </button>
+                        </td>
+                        <td class="px-4 py-2 group">
+                          <input
+                            class="hidden peer"
+                            type="checkbox"
+                            id="signel-27th"
+                          />
+                          <button
+                            data-modal-target="#set-av-1"
+                            class="size-[1.875rem] peer bg-red-500 text-white rounded-full leading-[0] peer-checked:!bg-green-500 text-center flex justify-center items-center"
+                          >
+                            <p
+                              class="mt-0.5 hidden group-has-[input:checked]:!block"
+                            >
+                              3
+                            </p>
+                            <svg
+                              class="group-has-[input:checked]:!hidden block"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                opacity="0.4"
+                                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                fill="white"
+                              />
+                              <path
+                                d="M13.0604 12.0004L15.3604 9.70035C15.6504 9.41035 15.6504 8.93035 15.3604 8.64035C15.0704 8.35035 14.5904 8.35035 14.3004 8.64035L12.0004 10.9404L9.70035 8.64035C9.41035 8.35035 8.93035 8.35035 8.64035 8.64035C8.35035 8.93035 8.35035 9.41035 8.64035 9.70035L10.9404 12.0004L8.64035 14.3004C8.35035 14.5904 8.35035 15.0704 8.64035 15.3604C8.79035 15.5104 8.98035 15.5804 9.17035 15.5804C9.36035 15.5804 9.55035 15.5104 9.70035 15.3604L12.0004 13.0604L14.3004 15.3604C14.4504 15.5104 14.6404 15.5804 14.8304 15.5804C15.0204 15.5804 15.2104 15.5104 15.3604 15.3604C15.6504 15.0704 15.6504 14.5904 15.3604 14.3004L13.0604 12.0004Z"
+                                fill="white"
+                              />
+                            </svg>
+                          </button>
+                        </td>
+                        <td class="px-4 py-2 group">
+                          <input
+                            class="hidden peer"
+                            type="checkbox"
+                            id="signel-27th"
+                          />
+                          <button
+                            data-modal-target="#set-av-1"
+                            class="size-[1.875rem] peer bg-red-500 text-white rounded-full leading-[0] peer-checked:!bg-green-500 text-center flex justify-center items-center"
+                          >
+                            <p
+                              class="mt-0.5 hidden group-has-[input:checked]:!block"
+                            >
+                              3
+                            </p>
+                            <svg
+                              class="group-has-[input:checked]:!hidden block"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                opacity="0.4"
+                                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                fill="white"
+                              />
+                              <path
+                                d="M13.0604 12.0004L15.3604 9.70035C15.6504 9.41035 15.6504 8.93035 15.3604 8.64035C15.0704 8.35035 14.5904 8.35035 14.3004 8.64035L12.0004 10.9404L9.70035 8.64035C9.41035 8.35035 8.93035 8.35035 8.64035 8.64035C8.35035 8.93035 8.35035 9.41035 8.64035 9.70035L10.9404 12.0004L8.64035 14.3004C8.35035 14.5904 8.35035 15.0704 8.64035 15.3604C8.79035 15.5104 8.98035 15.5804 9.17035 15.5804C9.36035 15.5804 9.55035 15.5104 9.70035 15.3604L12.0004 13.0604L14.3004 15.3604C14.4504 15.5104 14.6404 15.5804 14.8304 15.5804C15.0204 15.5804 15.2104 15.5104 15.3604 15.3604C15.6504 15.0704 15.6504 14.5904 15.3604 14.3004L13.0604 12.0004Z"
+                                fill="white"
+                              />
+                            </svg>
+                          </button>
+                        </td>
+                        <td class="px-4 py-2 group">
+                          <input
+                            class="hidden peer"
+                            type="checkbox"
+                            id="signel-27th"
+                          />
+                          <button
+                            data-modal-target="#set-av-1"
+                            class="size-[1.875rem] peer bg-red-500 text-white rounded-full leading-[0] peer-checked:!bg-green-500 text-center flex justify-center items-center"
+                          >
+                            <p
+                              class="mt-0.5 hidden group-has-[input:checked]:!block"
+                            >
+                              3
+                            </p>
+                            <svg
+                              class="group-has-[input:checked]:!hidden block"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                opacity="0.4"
+                                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                fill="white"
+                              />
+                              <path
+                                d="M13.0604 12.0004L15.3604 9.70035C15.6504 9.41035 15.6504 8.93035 15.3604 8.64035C15.0704 8.35035 14.5904 8.35035 14.3004 8.64035L12.0004 10.9404L9.70035 8.64035C9.41035 8.35035 8.93035 8.35035 8.64035 8.64035C8.35035 8.93035 8.35035 9.41035 8.64035 9.70035L10.9404 12.0004L8.64035 14.3004C8.35035 14.5904 8.35035 15.0704 8.64035 15.3604C8.79035 15.5104 8.98035 15.5804 9.17035 15.5804C9.36035 15.5804 9.55035 15.5104 9.70035 15.3604L12.0004 13.0604L14.3004 15.3604C14.4504 15.5104 14.6404 15.5804 14.8304 15.5804C15.0204 15.5804 15.2104 15.5104 15.3604 15.3604C15.6504 15.0704 15.6504 14.5904 15.3604 14.3004L13.0604 12.0004Z"
+                                fill="white"
+                              />
+                            </svg>
+                          </button>
+                        </td>
+                        <td class="px-4 py-2 group">
+                          <input
+                            class="hidden peer"
+                            type="checkbox"
+                            id="signel-27th"
+                          />
+                          <button
+                            data-modal-target="#set-av-1"
+                            class="size-[1.875rem] peer bg-red-500 text-white rounded-full leading-[0] peer-checked:!bg-green-500 text-center flex justify-center items-center"
+                          >
+                            <p
+                              class="mt-0.5 hidden group-has-[input:checked]:!block"
+                            >
+                              3
+                            </p>
+                            <svg
+                              class="group-has-[input:checked]:!hidden block"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                opacity="0.4"
+                                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                fill="white"
+                              />
+                              <path
+                                d="M13.0604 12.0004L15.3604 9.70035C15.6504 9.41035 15.6504 8.93035 15.3604 8.64035C15.0704 8.35035 14.5904 8.35035 14.3004 8.64035L12.0004 10.9404L9.70035 8.64035C9.41035 8.35035 8.93035 8.35035 8.64035 8.64035C8.35035 8.93035 8.35035 9.41035 8.64035 9.70035L10.9404 12.0004L8.64035 14.3004C8.35035 14.5904 8.35035 15.0704 8.64035 15.3604C8.79035 15.5104 8.98035 15.5804 9.17035 15.5804C9.36035 15.5804 9.55035 15.5104 9.70035 15.3604L12.0004 13.0604L14.3004 15.3604C14.4504 15.5104 14.6404 15.5804 14.8304 15.5804C15.0204 15.5804 15.2104 15.5104 15.3604 15.3604C15.6504 15.0704 15.6504 14.5904 15.3604 14.3004L13.0604 12.0004Z"
+                                fill="white"
+                              />
+                            </svg>
+                          </button>
+                        </td>
+                        <td class="px-4 py-2 group">
+                          <input
+                            class="hidden peer"
+                            type="checkbox"
+                            id="signel-27th"
+                          />
+                          <button
+                            data-modal-target="#set-av-1"
+                            class="size-[1.875rem] peer bg-red-500 text-white rounded-full leading-[0] peer-checked:!bg-green-500 text-center flex justify-center items-center"
+                          >
+                            <p
+                              class="mt-0.5 hidden group-has-[input:checked]:!block"
+                            >
+                              3
+                            </p>
+                            <svg
+                              class="group-has-[input:checked]:!hidden block"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                opacity="0.4"
+                                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                fill="white"
+                              />
+                              <path
+                                d="M13.0604 12.0004L15.3604 9.70035C15.6504 9.41035 15.6504 8.93035 15.3604 8.64035C15.0704 8.35035 14.5904 8.35035 14.3004 8.64035L12.0004 10.9404L9.70035 8.64035C9.41035 8.35035 8.93035 8.35035 8.64035 8.64035C8.35035 8.93035 8.35035 9.41035 8.64035 9.70035L10.9404 12.0004L8.64035 14.3004C8.35035 14.5904 8.35035 15.0704 8.64035 15.3604C8.79035 15.5104 8.98035 15.5804 9.17035 15.5804C9.36035 15.5804 9.55035 15.5104 9.70035 15.3604L12.0004 13.0604L14.3004 15.3604C14.4504 15.5104 14.6404 15.5804 14.8304 15.5804C15.0204 15.5804 15.2104 15.5104 15.3604 15.3604C15.6504 15.0704 15.6504 14.5904 15.3604 14.3004L13.0604 12.0004Z"
+                                fill="white"
+                              />
+                            </svg>
+                          </button>
                         </td>
                       </tr>
                       <tr>
                         <td
                           class="*:border-gray-100 p-4 border-r *:font-semibold *:text-orange-500"
                         >
-                          <p>Triple</p>
+                          <button data-modal-target="#set-av-2">Triple</button>
                         </td>
-                        <td class="px-4 py-2">
-                          <div
-                            class="border relative flex items-center gap-1 overflow-hidden outline-none w-[8.75rem] h-8 rounded-full text-sm"
+                        <td class="px-4 py-2 group">
+                          <input
+                            class="hidden peer"
+                            type="checkbox"
+                            id="signel-27th"
+                          />
+                          <button
+                            data-modal-target="#set-av-1"
+                            class="size-[1.875rem] peer bg-red-500 text-white rounded-full leading-[0] peer-checked:!bg-green-500 text-center flex justify-center items-center"
                           >
-                            <div class="resize-container *:max-w-[15ch]">
-                              <span
-                                class="resize-text h-8 ps-4"
-                                aria-hidden="true"
-                                >123.00</span
-                              >
-                              <input
-                                class="resize-input h-8 outline-none ps-4 theme-secondary"
-                                value="123.00"
-                                autofocus=""
+                            <p
+                              class="mt-0.5 hidden group-has-[input:checked]:!block"
+                            >
+                              3
+                            </p>
+                            <svg
+                              class="group-has-[input:checked]:!hidden block"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                opacity="0.4"
+                                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                fill="white"
                               />
-                            </div>
-                            <span>$</span>
-                          </div>
+                              <path
+                                d="M13.0604 12.0004L15.3604 9.70035C15.6504 9.41035 15.6504 8.93035 15.3604 8.64035C15.0704 8.35035 14.5904 8.35035 14.3004 8.64035L12.0004 10.9404L9.70035 8.64035C9.41035 8.35035 8.93035 8.35035 8.64035 8.64035C8.35035 8.93035 8.35035 9.41035 8.64035 9.70035L10.9404 12.0004L8.64035 14.3004C8.35035 14.5904 8.35035 15.0704 8.64035 15.3604C8.79035 15.5104 8.98035 15.5804 9.17035 15.5804C9.36035 15.5804 9.55035 15.5104 9.70035 15.3604L12.0004 13.0604L14.3004 15.3604C14.4504 15.5104 14.6404 15.5804 14.8304 15.5804C15.0204 15.5804 15.2104 15.5104 15.3604 15.3604C15.6504 15.0704 15.6504 14.5904 15.3604 14.3004L13.0604 12.0004Z"
+                                fill="white"
+                              />
+                            </svg>
+                          </button>
                         </td>
-                        <td class="px-4 border-e py-2">
-                          <div
-                            class="border relative flex items-center gap-1 overflow-hidden outline-none w-[8.75rem] h-8 rounded-full text-sm"
+                        <td class="px-4 py-2 group">
+                          <input
+                            class="hidden peer"
+                            type="checkbox"
+                            id="signel-27th"
+                          />
+                          <button
+                            data-modal-target="#set-av-1"
+                            class="size-[1.875rem] peer bg-red-500 text-white rounded-full leading-[0] peer-checked:!bg-green-500 text-center flex justify-center items-center"
                           >
-                            <div class="resize-container *:max-w-[15ch]">
-                              <span
-                                class="resize-text h-8 ps-4"
-                                aria-hidden="true"
-                                >123.00</span
-                              >
-                              <input
-                                class="resize-input h-8 outline-none ps-4 theme-secondary"
-                                value="123.00"
-                                autofocus=""
+                            <p
+                              class="mt-0.5 hidden group-has-[input:checked]:!block"
+                            >
+                              3
+                            </p>
+                            <svg
+                              class="group-has-[input:checked]:!hidden block"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                opacity="0.4"
+                                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                fill="white"
                               />
-                            </div>
-                            <span>$</span>
-                          </div>
+                              <path
+                                d="M13.0604 12.0004L15.3604 9.70035C15.6504 9.41035 15.6504 8.93035 15.3604 8.64035C15.0704 8.35035 14.5904 8.35035 14.3004 8.64035L12.0004 10.9404L9.70035 8.64035C9.41035 8.35035 8.93035 8.35035 8.64035 8.64035C8.35035 8.93035 8.35035 9.41035 8.64035 9.70035L10.9404 12.0004L8.64035 14.3004C8.35035 14.5904 8.35035 15.0704 8.64035 15.3604C8.79035 15.5104 8.98035 15.5804 9.17035 15.5804C9.36035 15.5804 9.55035 15.5104 9.70035 15.3604L12.0004 13.0604L14.3004 15.3604C14.4504 15.5104 14.6404 15.5804 14.8304 15.5804C15.0204 15.5804 15.2104 15.5104 15.3604 15.3604C15.6504 15.0704 15.6504 14.5904 15.3604 14.3004L13.0604 12.0004Z"
+                                fill="white"
+                              />
+                            </svg>
+                          </button>
+                        </td>
+                        <td class="px-4 py-2 group">
+                          <input
+                            class="hidden peer"
+                            type="checkbox"
+                            id="signel-27th"
+                          />
+                          <button
+                            data-modal-target="#set-av-1"
+                            class="size-[1.875rem] peer bg-red-500 text-white rounded-full leading-[0] peer-checked:!bg-green-500 text-center flex justify-center items-center"
+                          >
+                            <p
+                              class="mt-0.5 hidden group-has-[input:checked]:!block"
+                            >
+                              3
+                            </p>
+                            <svg
+                              class="group-has-[input:checked]:!hidden block"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                opacity="0.4"
+                                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                fill="white"
+                              />
+                              <path
+                                d="M13.0604 12.0004L15.3604 9.70035C15.6504 9.41035 15.6504 8.93035 15.3604 8.64035C15.0704 8.35035 14.5904 8.35035 14.3004 8.64035L12.0004 10.9404L9.70035 8.64035C9.41035 8.35035 8.93035 8.35035 8.64035 8.64035C8.35035 8.93035 8.35035 9.41035 8.64035 9.70035L10.9404 12.0004L8.64035 14.3004C8.35035 14.5904 8.35035 15.0704 8.64035 15.3604C8.79035 15.5104 8.98035 15.5804 9.17035 15.5804C9.36035 15.5804 9.55035 15.5104 9.70035 15.3604L12.0004 13.0604L14.3004 15.3604C14.4504 15.5104 14.6404 15.5804 14.8304 15.5804C15.0204 15.5804 15.2104 15.5104 15.3604 15.3604C15.6504 15.0704 15.6504 14.5904 15.3604 14.3004L13.0604 12.0004Z"
+                                fill="white"
+                              />
+                            </svg>
+                          </button>
+                        </td>
+                        <td class="px-4 py-2 group">
+                          <input
+                            class="hidden peer"
+                            type="checkbox"
+                            id="signel-27th"
+                          />
+                          <button
+                            data-modal-target="#set-av-1"
+                            class="size-[1.875rem] peer bg-red-500 text-white rounded-full leading-[0] peer-checked:!bg-green-500 text-center flex justify-center items-center"
+                          >
+                            <p
+                              class="mt-0.5 hidden group-has-[input:checked]:!block"
+                            >
+                              3
+                            </p>
+                            <svg
+                              class="group-has-[input:checked]:!hidden block"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                opacity="0.4"
+                                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                fill="white"
+                              />
+                              <path
+                                d="M13.0604 12.0004L15.3604 9.70035C15.6504 9.41035 15.6504 8.93035 15.3604 8.64035C15.0704 8.35035 14.5904 8.35035 14.3004 8.64035L12.0004 10.9404L9.70035 8.64035C9.41035 8.35035 8.93035 8.35035 8.64035 8.64035C8.35035 8.93035 8.35035 9.41035 8.64035 9.70035L10.9404 12.0004L8.64035 14.3004C8.35035 14.5904 8.35035 15.0704 8.64035 15.3604C8.79035 15.5104 8.98035 15.5804 9.17035 15.5804C9.36035 15.5804 9.55035 15.5104 9.70035 15.3604L12.0004 13.0604L14.3004 15.3604C14.4504 15.5104 14.6404 15.5804 14.8304 15.5804C15.0204 15.5804 15.2104 15.5104 15.3604 15.3604C15.6504 15.0704 15.6504 14.5904 15.3604 14.3004L13.0604 12.0004Z"
+                                fill="white"
+                              />
+                            </svg>
+                          </button>
+                        </td>
+                        <td class="px-4 py-2 group">
+                          <input
+                            class="hidden peer"
+                            type="checkbox"
+                            id="signel-27th"
+                          />
+                          <button
+                            data-modal-target="#set-av-1"
+                            class="size-[1.875rem] peer bg-red-500 text-white rounded-full leading-[0] peer-checked:!bg-green-500 text-center flex justify-center items-center"
+                          >
+                            <p
+                              class="mt-0.5 hidden group-has-[input:checked]:!block"
+                            >
+                              3
+                            </p>
+                            <svg
+                              class="group-has-[input:checked]:!hidden block"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                opacity="0.4"
+                                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                fill="white"
+                              />
+                              <path
+                                d="M13.0604 12.0004L15.3604 9.70035C15.6504 9.41035 15.6504 8.93035 15.3604 8.64035C15.0704 8.35035 14.5904 8.35035 14.3004 8.64035L12.0004 10.9404L9.70035 8.64035C9.41035 8.35035 8.93035 8.35035 8.64035 8.64035C8.35035 8.93035 8.35035 9.41035 8.64035 9.70035L10.9404 12.0004L8.64035 14.3004C8.35035 14.5904 8.35035 15.0704 8.64035 15.3604C8.79035 15.5104 8.98035 15.5804 9.17035 15.5804C9.36035 15.5804 9.55035 15.5104 9.70035 15.3604L12.0004 13.0604L14.3004 15.3604C14.4504 15.5104 14.6404 15.5804 14.8304 15.5804C15.0204 15.5804 15.2104 15.5104 15.3604 15.3604C15.6504 15.0704 15.6504 14.5904 15.3604 14.3004L13.0604 12.0004Z"
+                                fill="white"
+                              />
+                            </svg>
+                          </button>
+                        </td>
+                        <td class="px-4 py-2 group">
+                          <input
+                            class="hidden peer"
+                            type="checkbox"
+                            id="signel-27th"
+                          />
+                          <button
+                            data-modal-target="#set-av-1"
+                            class="size-[1.875rem] peer bg-red-500 text-white rounded-full leading-[0] peer-checked:!bg-green-500 text-center flex justify-center items-center"
+                          >
+                            <p
+                              class="mt-0.5 hidden group-has-[input:checked]:!block"
+                            >
+                              3
+                            </p>
+                            <svg
+                              class="group-has-[input:checked]:!hidden block"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                opacity="0.4"
+                                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                fill="white"
+                              />
+                              <path
+                                d="M13.0604 12.0004L15.3604 9.70035C15.6504 9.41035 15.6504 8.93035 15.3604 8.64035C15.0704 8.35035 14.5904 8.35035 14.3004 8.64035L12.0004 10.9404L9.70035 8.64035C9.41035 8.35035 8.93035 8.35035 8.64035 8.64035C8.35035 8.93035 8.35035 9.41035 8.64035 9.70035L10.9404 12.0004L8.64035 14.3004C8.35035 14.5904 8.35035 15.0704 8.64035 15.3604C8.79035 15.5104 8.98035 15.5804 9.17035 15.5804C9.36035 15.5804 9.55035 15.5104 9.70035 15.3604L12.0004 13.0604L14.3004 15.3604C14.4504 15.5104 14.6404 15.5804 14.8304 15.5804C15.0204 15.5804 15.2104 15.5104 15.3604 15.3604C15.6504 15.0704 15.6504 14.5904 15.3604 14.3004L13.0604 12.0004Z"
+                                fill="white"
+                              />
+                            </svg>
+                          </button>
+                        </td>
+                        <td class="px-4 py-2 group">
+                          <input
+                            class="hidden peer"
+                            type="checkbox"
+                            id="signel-27th"
+                          />
+                          <button
+                            data-modal-target="#set-av-1"
+                            class="size-[1.875rem] peer bg-red-500 text-white rounded-full leading-[0] peer-checked:!bg-green-500 text-center flex justify-center items-center"
+                          >
+                            <p
+                              class="mt-0.5 hidden group-has-[input:checked]:!block"
+                            >
+                              3
+                            </p>
+                            <svg
+                              class="group-has-[input:checked]:!hidden block"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                opacity="0.4"
+                                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                fill="white"
+                              />
+                              <path
+                                d="M13.0604 12.0004L15.3604 9.70035C15.6504 9.41035 15.6504 8.93035 15.3604 8.64035C15.0704 8.35035 14.5904 8.35035 14.3004 8.64035L12.0004 10.9404L9.70035 8.64035C9.41035 8.35035 8.93035 8.35035 8.64035 8.64035C8.35035 8.93035 8.35035 9.41035 8.64035 9.70035L10.9404 12.0004L8.64035 14.3004C8.35035 14.5904 8.35035 15.0704 8.64035 15.3604C8.79035 15.5104 8.98035 15.5804 9.17035 15.5804C9.36035 15.5804 9.55035 15.5104 9.70035 15.3604L12.0004 13.0604L14.3004 15.3604C14.4504 15.5104 14.6404 15.5804 14.8304 15.5804C15.0204 15.5804 15.2104 15.5104 15.3604 15.3604C15.6504 15.0704 15.6504 14.5904 15.3604 14.3004L13.0604 12.0004Z"
+                                fill="white"
+                              />
+                            </svg>
+                          </button>
+                        </td>
+                        <td class="px-4 py-2 group">
+                          <input
+                            class="hidden peer"
+                            type="checkbox"
+                            id="signel-27th"
+                          />
+                          <button
+                            data-modal-target="#set-av-1"
+                            class="size-[1.875rem] peer bg-red-500 text-white rounded-full leading-[0] peer-checked:!bg-green-500 text-center flex justify-center items-center"
+                          >
+                            <p
+                              class="mt-0.5 hidden group-has-[input:checked]:!block"
+                            >
+                              3
+                            </p>
+                            <svg
+                              class="group-has-[input:checked]:!hidden block"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                opacity="0.4"
+                                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                fill="white"
+                              />
+                              <path
+                                d="M13.0604 12.0004L15.3604 9.70035C15.6504 9.41035 15.6504 8.93035 15.3604 8.64035C15.0704 8.35035 14.5904 8.35035 14.3004 8.64035L12.0004 10.9404L9.70035 8.64035C9.41035 8.35035 8.93035 8.35035 8.64035 8.64035C8.35035 8.93035 8.35035 9.41035 8.64035 9.70035L10.9404 12.0004L8.64035 14.3004C8.35035 14.5904 8.35035 15.0704 8.64035 15.3604C8.79035 15.5104 8.98035 15.5804 9.17035 15.5804C9.36035 15.5804 9.55035 15.5104 9.70035 15.3604L12.0004 13.0604L14.3004 15.3604C14.4504 15.5104 14.6404 15.5804 14.8304 15.5804C15.0204 15.5804 15.2104 15.5104 15.3604 15.3604C15.6504 15.0704 15.6504 14.5904 15.3604 14.3004L13.0604 12.0004Z"
+                                fill="white"
+                              />
+                            </svg>
+                          </button>
+                        </td>
+                        <td class="px-4 py-2 group">
+                          <input
+                            class="hidden peer"
+                            type="checkbox"
+                            id="signel-27th"
+                          />
+                          <button
+                            data-modal-target="#set-av-1"
+                            class="size-[1.875rem] peer bg-red-500 text-white rounded-full leading-[0] peer-checked:!bg-green-500 text-center flex justify-center items-center"
+                          >
+                            <p
+                              class="mt-0.5 hidden group-has-[input:checked]:!block"
+                            >
+                              3
+                            </p>
+                            <svg
+                              class="group-has-[input:checked]:!hidden block"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                opacity="0.4"
+                                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                fill="white"
+                              />
+                              <path
+                                d="M13.0604 12.0004L15.3604 9.70035C15.6504 9.41035 15.6504 8.93035 15.3604 8.64035C15.0704 8.35035 14.5904 8.35035 14.3004 8.64035L12.0004 10.9404L9.70035 8.64035C9.41035 8.35035 8.93035 8.35035 8.64035 8.64035C8.35035 8.93035 8.35035 9.41035 8.64035 9.70035L10.9404 12.0004L8.64035 14.3004C8.35035 14.5904 8.35035 15.0704 8.64035 15.3604C8.79035 15.5104 8.98035 15.5804 9.17035 15.5804C9.36035 15.5804 9.55035 15.5104 9.70035 15.3604L12.0004 13.0604L14.3004 15.3604C14.4504 15.5104 14.6404 15.5804 14.8304 15.5804C15.0204 15.5804 15.2104 15.5104 15.3604 15.3604C15.6504 15.0704 15.6504 14.5904 15.3604 14.3004L13.0604 12.0004Z"
+                                fill="white"
+                              />
+                            </svg>
+                          </button>
+                        </td>
+                        <td class="px-4 py-2 group">
+                          <input
+                            class="hidden peer"
+                            type="checkbox"
+                            id="signel-27th"
+                          />
+                          <button
+                            data-modal-target="#set-av-1"
+                            class="size-[1.875rem] peer bg-red-500 text-white rounded-full leading-[0] peer-checked:!bg-green-500 text-center flex justify-center items-center"
+                          >
+                            <p
+                              class="mt-0.5 hidden group-has-[input:checked]:!block"
+                            >
+                              3
+                            </p>
+                            <svg
+                              class="group-has-[input:checked]:!hidden block"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                opacity="0.4"
+                                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                fill="white"
+                              />
+                              <path
+                                d="M13.0604 12.0004L15.3604 9.70035C15.6504 9.41035 15.6504 8.93035 15.3604 8.64035C15.0704 8.35035 14.5904 8.35035 14.3004 8.64035L12.0004 10.9404L9.70035 8.64035C9.41035 8.35035 8.93035 8.35035 8.64035 8.64035C8.35035 8.93035 8.35035 9.41035 8.64035 9.70035L10.9404 12.0004L8.64035 14.3004C8.35035 14.5904 8.35035 15.0704 8.64035 15.3604C8.79035 15.5104 8.98035 15.5804 9.17035 15.5804C9.36035 15.5804 9.55035 15.5104 9.70035 15.3604L12.0004 13.0604L14.3004 15.3604C14.4504 15.5104 14.6404 15.5804 14.8304 15.5804C15.0204 15.5804 15.2104 15.5104 15.3604 15.3604C15.6504 15.0704 15.6504 14.5904 15.3604 14.3004L13.0604 12.0004Z"
+                                fill="white"
+                              />
+                            </svg>
+                          </button>
                         </td>
                       </tr>
                     </tbody>

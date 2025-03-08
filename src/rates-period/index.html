@@ -216,7 +216,7 @@
     >
       <nav class="basis-[25.5%]">
         <div
-          class="overflow-y-scroll theme-secondary h-fit hide-scroll justify-between top-12 bottom-12 w-full rounded-4xl sticky"
+          class="overflow-y-scroll theme-secondary hide-scroll justify-between top-12 bottom-12 w-full rounded-4xl sticky"
         >
           <div class="flex flex-col h-full justify-between pb-14">
             <div>
@@ -293,7 +293,7 @@
                 class="px-[30px] *:rounded-[15px] space-y-10 *:*:block *:*:mx-[30px] mt-[44.5px]"
               >
                 <li>
-                  <a class="block">
+                  <a class="block" href="/reservations">
                     <div class="flex items-center gap-2">
                       <svg
                         width="24"
@@ -405,28 +405,28 @@
                       <li>
                         <a
                           class="px-8.5 block w-full rounded-[10px] py-2"
-                          href=""
+                          href="/facilities"
                           >Facilities</a
                         >
                       </li>
                       <li>
                         <a
                           class="px-8.5 block w-full rounded-[10px] py-2"
-                          href=""
+                          href="/images"
                           >Images</a
                         >
                       </li>
                       <li>
                         <a
                           class="px-8.5 block w-full rounded-[10px] py-2"
-                          href=""
+                          href="/rooms"
                           >Rooms</a
                         >
                       </li>
                       <li>
                         <a
-                          class="px-8.5 text-white bg-orange-500 block w-full rounded-[10px] py-2"
-                          href=""
+                          class="px-8.5 block w-full rounded-[10px] py-2"
+                          href="/boards"
                           >Boards</a
                         >
                       </li>
@@ -434,7 +434,7 @@
                   </div>
                 </li>
                 <li>
-                  <a>
+                  <a href="/contracts">
                     <div class="flex items-center gap-2">
                       <svg
                         width="24"
@@ -468,7 +468,7 @@
                   </a>
                 </li>
                 <li>
-                  <a>
+                  <a href="/availability">
                     <div class="flex items-center gap-2">
                       <svg
                         aria-hidden="true"
@@ -506,7 +506,7 @@
                   </a>
                 </li>
                 <li class="active-segment">
-                  <a>
+                  <a href="/rates-period">
                     <div class="flex items-center gap-2">
                       <svg
                         aria-hidden="true"
@@ -536,7 +536,7 @@
                   </a>
                 </li>
                 <li>
-                  <a>
+                  <a href="/special-offers">
                     <div class="flex items-center gap-2">
                       <svg
                         aria-hidden="true"
@@ -623,44 +623,37 @@
                     >
                       <li>
                         <a
-                          class="px-8.5 text-white bg-orange-500 block w-full rounded-[10px] py-2"
-                          href=""
-                          >General</a
+                          class="px-8.5 text-nowrap block w-full rounded-[10px] py-2"
+                          href="/cancellation-policies"
+                          >Cancellation Policies</a
                         >
                       </li>
                       <li>
                         <a
                           class="px-8.5 block w-full rounded-[10px] py-2"
-                          href=""
-                          >Facilities</a
+                          href="/extrabed-policies"
+                          >ExtraBed Policies</a
                         >
                       </li>
                       <li>
                         <a
                           class="px-8.5 block w-full rounded-[10px] py-2"
-                          href=""
-                          >Images</a
+                          href="/child-policies"
+                          >Child Policies</a
                         >
                       </li>
                       <li>
                         <a
                           class="px-8.5 block w-full rounded-[10px] py-2"
-                          href=""
-                          >Rooms</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          class="px-8.5 block w-full rounded-[10px] py-2"
-                          href=""
-                          >Boards</a
+                          href="/hotel-policies"
+                          >Hotel Policies</a
                         >
                       </li>
                     </ul>
                   </div>
                 </li>
                 <li>
-                  <a>
+                  <a href="/reservations-single">
                     <div class="flex items-center gap-2">
                       <svg
                         aria-hidden="true"
@@ -696,7 +689,7 @@
                   </a>
                 </li>
                 <li>
-                  <a>
+                  <a href="/invoices-single">
                     <div class="flex items-center gap-2">
                       <svg
                         aria-hidden="true"
@@ -745,7 +738,7 @@
           </div>
           <div class="flex items-center gap-6">
             <div
-              class="flex items-center gap-5 p-0.5 border border-[#A1A1A1]/[63.14%] rounded-full"
+              class="flex items-center gap-5 p-0.5 border !border-[#A1A1A1]/[63.14%] rounded-full"
             >
               <button
                 id="toggle-color-dark"
@@ -802,7 +795,7 @@
                 id="dropdown-button"
                 aria-haspopup="true"
                 aria-expanded="false"
-                class="theme-secondary border-transparent border rounded-full flex items-center min-w-[13.187rem] gap-[10px] p-[6px]"
+                class="theme-secondary rounded-full flex items-center min-w-[13.187rem] gap-[10px] p-[6px]"
               >
                 <div>
                   <svg
@@ -997,7 +990,8 @@
             </div>
           </div>
         </div>
-        <div id="details"
+        <div
+          id="details"
           class="mt-[5.1rem] hidden z-0 relative h-[calc(100%-7.4375rem)] theme-secondary p-6 rounded-4xl"
         >
           <div
@@ -1022,15 +1016,15 @@
                     <path
                       opacity="0.4"
                       d="M20 9.83984C20.55 9.83984 21 10.2898 21 10.8398V16.9998C21 19.9998 19.5 21.9998 16 21.9998H8C4.5 21.9998 3 19.9998 3 16.9998V10.8398C3 10.2898 3.45 9.83984 4 9.83984H20Z"
-                      fill="black"
+                      class="theme-svg-primary"
                     />
                     <path
                       d="M16.7502 3.56V2C16.7502 1.59 16.4102 1.25 16.0002 1.25C15.5902 1.25 15.2502 1.59 15.2502 2V3.5H8.75024V2C8.75024 1.59 8.41024 1.25 8.00024 1.25C7.59024 1.25 7.25024 1.59 7.25024 2V3.56C4.55024 3.81 3.24023 5.42 3.04023 7.81C3.02023 8.1 3.26023 8.34 3.54023 8.34H20.4602C20.7502 8.34 20.9902 8.09 20.9602 7.81C20.7602 5.42 19.4502 3.81 16.7502 3.56Z"
-                      fill="black"
+                      class="theme-svg-primary"
                     />
                     <path
                       d="M15.6599 18.47L14.9199 17.73C15.2999 17.15 15.5299 16.45 15.5299 15.7C15.5299 13.66 13.8699 12 11.8299 12C9.78988 12 8.12988 13.66 8.12988 15.7C8.12988 17.74 9.78988 19.4 11.8299 19.4C12.5799 19.4 13.2799 19.17 13.8599 18.79L14.5999 19.53C14.7499 19.68 14.9399 19.75 15.1299 19.75C15.3199 19.75 15.5099 19.68 15.6599 19.53C15.9499 19.24 15.9499 18.76 15.6599 18.47Z"
-                      fill="black"
+                      class="theme-svg-primary"
                     />
                   </svg>
 
@@ -1056,36 +1050,36 @@
                   >
                     <path
                       d="M16.7502 3.56V2C16.7502 1.59 16.4102 1.25 16.0002 1.25C15.5902 1.25 15.2502 1.59 15.2502 2V3.5H8.75023V2C8.75023 1.59 8.41023 1.25 8.00023 1.25C7.59023 1.25 7.25023 1.59 7.25023 2V3.56C4.55023 3.81 3.24023 5.42 3.04023 7.81C3.02023 8.1 3.26023 8.34 3.54023 8.34H20.4602C20.7502 8.34 20.9902 8.09 20.9602 7.81C20.7602 5.42 19.4502 3.81 16.7502 3.56Z"
-                      fill="black"
+                      class="theme-svg-primary"
                     />
                     <path
                       opacity="0.4"
                       d="M20 9.83984C20.55 9.83984 21 10.2898 21 10.8398V16.9998C21 19.9998 19.5 21.9998 16 21.9998H8C4.5 21.9998 3 19.9998 3 16.9998V10.8398C3 10.2898 3.45 9.83984 4 9.83984H20Z"
-                      fill="black"
+                      class="theme-svg-primary"
                     />
                     <path
                       d="M8.5 14.9999C8.24 14.9999 7.98 14.8899 7.79 14.7099C7.61 14.5199 7.5 14.2599 7.5 13.9999C7.5 13.7399 7.61 13.4799 7.79 13.2899C8.07 13.0099 8.51 12.9199 8.88 13.0799C9.01 13.1299 9.12 13.1999 9.21 13.2899C9.39 13.4799 9.5 13.7399 9.5 13.9999C9.5 14.2599 9.39 14.5199 9.21 14.7099C9.02 14.8899 8.76 14.9999 8.5 14.9999Z"
-                      fill="black"
+                      class="theme-svg-primary"
                     />
                     <path
                       d="M12 14.9999C11.74 14.9999 11.48 14.8899 11.29 14.7099C11.11 14.5199 11 14.2599 11 13.9999C11 13.7399 11.11 13.4799 11.29 13.2899C11.38 13.1999 11.49 13.1299 11.62 13.0799C11.99 12.9199 12.43 13.0099 12.71 13.2899C12.89 13.4799 13 13.7399 13 13.9999C13 14.2599 12.89 14.5199 12.71 14.7099C12.66 14.7499 12.61 14.7899 12.56 14.8299C12.5 14.8699 12.44 14.8999 12.38 14.9199C12.32 14.9499 12.26 14.9699 12.2 14.9799C12.13 14.9899 12.07 14.9999 12 14.9999Z"
-                      fill="black"
+                      class="theme-svg-primary"
                     />
                     <path
                       d="M15.5 15C15.24 15 14.98 14.89 14.79 14.71C14.61 14.52 14.5 14.26 14.5 14C14.5 13.74 14.61 13.48 14.79 13.29C14.89 13.2 14.99 13.13 15.12 13.08C15.3 13 15.5 12.98 15.7 13.02C15.76 13.03 15.82 13.05 15.88 13.08C15.94 13.1 16 13.13 16.06 13.17C16.11 13.21 16.16 13.25 16.21 13.29C16.39 13.48 16.5 13.74 16.5 14C16.5 14.26 16.39 14.52 16.21 14.71C16.16 14.75 16.11 14.79 16.06 14.83C16 14.87 15.94 14.9 15.88 14.92C15.82 14.95 15.76 14.97 15.7 14.98C15.63 14.99 15.56 15 15.5 15Z"
-                      fill="black"
+                      class="theme-svg-primary"
                     />
                     <path
                       d="M8.5 18.5C8.37 18.5 8.24 18.47 8.12 18.42C7.99 18.37 7.89 18.3 7.79 18.21C7.61 18.02 7.5 17.76 7.5 17.5C7.5 17.24 7.61 16.98 7.79 16.79C7.89 16.7 7.99 16.63 8.12 16.58C8.3 16.5 8.5 16.48 8.7 16.52C8.76 16.53 8.82 16.55 8.88 16.58C8.94 16.6 9 16.63 9.06 16.67C9.11 16.71 9.16 16.75 9.21 16.79C9.39 16.98 9.5 17.24 9.5 17.5C9.5 17.76 9.39 18.02 9.21 18.21C9.16 18.25 9.11 18.3 9.06 18.33C9 18.37 8.94 18.4 8.88 18.42C8.82 18.45 8.76 18.47 8.7 18.48C8.63 18.49 8.57 18.5 8.5 18.5Z"
-                      fill="black"
+                      class="theme-svg-primary"
                     />
                     <path
                       d="M12 18.5002C11.74 18.5002 11.48 18.3902 11.29 18.2102C11.11 18.0202 11 17.7602 11 17.5002C11 17.2402 11.11 16.9802 11.29 16.7902C11.66 16.4202 12.34 16.4202 12.71 16.7902C12.89 16.9802 13 17.2402 13 17.5002C13 17.7602 12.89 18.0202 12.71 18.2102C12.52 18.3902 12.26 18.5002 12 18.5002Z"
-                      fill="black"
+                      class="theme-svg-primary"
                     />
                     <path
                       d="M15.5 18.5002C15.24 18.5002 14.98 18.3902 14.79 18.2102C14.61 18.0202 14.5 17.7602 14.5 17.5002C14.5 17.2402 14.61 16.9802 14.79 16.7902C15.16 16.4202 15.84 16.4202 16.21 16.7902C16.39 16.9802 16.5 17.2402 16.5 17.5002C16.5 17.7602 16.39 18.0202 16.21 18.2102C16.02 18.3902 15.76 18.5002 15.5 18.5002Z"
-                      fill="black"
+                      class="theme-svg-primary"
                     />
                   </svg>
 
@@ -1098,7 +1092,7 @@
               </li>
             </ul>
           </div>
-          <div class="tab-content  " id="calendar">
+          <div class="tab-content" id="calendar">
             <table class="table mt-1 text-left">
               <thead>
                 <tr
@@ -1275,13 +1269,12 @@
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                opacity="0.4"
                                 d="M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2Z"
-                                fill="black"
+                                class="dark:fill-white/40"
                               />
                               <path
                                 d="M12.0002 8.99008C11.8102 8.99008 11.6202 9.06008 11.4702 9.21008L7.94016 12.7401C7.65016 13.0301 7.65016 13.5101 7.94016 13.8001C8.23016 14.0901 8.71016 14.0901 9.00016 13.8001L12.0002 10.8001L15.0002 13.8001C15.2902 14.0901 15.7702 14.0901 16.0602 13.8001C16.3502 13.5101 16.3502 13.0301 16.0602 12.7401L12.5302 9.21008C12.3802 9.06008 12.1902 8.99008 12.0002 8.99008Z"
-                                fill="black"
+                                class="dark:fill-white"
                               />
                             </svg>
                           </button>
@@ -1617,115 +1610,206 @@
             <table class="table mt-1 text-left bordered-table">
               <thead>
                 <tr
-                  class="*:py-4  *:[&:not(:last-child)]:*:!h-[6.1rem] *:ps-2 *:text-start thead-round-child thead-border-child"
+                  class="*:py-4 *:[&:not(:last-child)]:*:!h-[6.1rem] *:ps-2 *:text-start thead-round-child thead-border-child"
                 >
                   <th class="except w-52 !ps-0">
-
-                   <div class="w-52 ms-4 border-r border-r-gray-100 pr-3">
-                 <div class="flex items-center gap-4 border except !h-auto !py-2 w-full justify-center !border-orange-500 px-4  rounded-full">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M16.7502 3.56V2C16.7502 1.59 16.4102 1.25 16.0002 1.25C15.5902 1.25 15.2502 1.59 15.2502 2V3.5H8.75023V2C8.75023 1.59 8.41023 1.25 8.00023 1.25C7.59023 1.25 7.25023 1.59 7.25023 2V3.56C4.55023 3.81 3.24023 5.42 3.04023 7.81C3.02023 8.1 3.26023 8.34 3.54023 8.34H20.4602C20.7502 8.34 20.9902 8.09 20.9602 7.81C20.7602 5.42 19.4502 3.81 16.7502 3.56Z" fill="#F9B233"/>
-                    <path opacity="0.4" d="M20 9.83984C20.55 9.83984 21 10.2898 21 10.8398V16.9998C21 19.9998 19.5 21.9998 16 21.9998H8C4.5 21.9998 3 19.9998 3 16.9998V10.8398C3 10.2898 3.45 9.83984 4 9.83984H20Z" fill="#F9B233"/>
-                    <path d="M8.5 14.9999C8.24 14.9999 7.98 14.8899 7.79 14.7099C7.61 14.5199 7.5 14.2599 7.5 13.9999C7.5 13.7399 7.61 13.4799 7.79 13.2899C8.07 13.0099 8.51 12.9199 8.88 13.0799C9.01 13.1299 9.12 13.1999 9.21 13.2899C9.39 13.4799 9.5 13.7399 9.5 13.9999C9.5 14.2599 9.39 14.5199 9.21 14.7099C9.02 14.8899 8.76 14.9999 8.5 14.9999Z" fill="#F9B233"/>
-                    <path d="M12 14.9999C11.74 14.9999 11.48 14.8899 11.29 14.7099C11.11 14.5199 11 14.2599 11 13.9999C11 13.7399 11.11 13.4799 11.29 13.2899C11.38 13.1999 11.49 13.1299 11.62 13.0799C11.99 12.9199 12.43 13.0099 12.71 13.2899C12.89 13.4799 13 13.7399 13 13.9999C13 14.2599 12.89 14.5199 12.71 14.7099C12.66 14.7499 12.61 14.7899 12.56 14.8299C12.5 14.8699 12.44 14.8999 12.38 14.9199C12.32 14.9499 12.26 14.9699 12.2 14.9799C12.13 14.9899 12.07 14.9999 12 14.9999Z" fill="#F9B233"/>
-                    <path d="M15.5 15C15.24 15 14.98 14.89 14.79 14.71C14.61 14.52 14.5 14.26 14.5 14C14.5 13.74 14.61 13.48 14.79 13.29C14.89 13.2 14.99 13.13 15.12 13.08C15.3 13 15.5 12.98 15.7 13.02C15.76 13.03 15.82 13.05 15.88 13.08C15.94 13.1 16 13.13 16.06 13.17C16.11 13.21 16.16 13.25 16.21 13.29C16.39 13.48 16.5 13.74 16.5 14C16.5 14.26 16.39 14.52 16.21 14.71C16.16 14.75 16.11 14.79 16.06 14.83C16 14.87 15.94 14.9 15.88 14.92C15.82 14.95 15.76 14.97 15.7 14.98C15.63 14.99 15.56 15 15.5 15Z" fill="#F9B233"/>
-                    <path d="M8.5 18.5C8.37 18.5 8.24 18.47 8.12 18.42C7.99 18.37 7.89 18.3 7.79 18.21C7.61 18.02 7.5 17.76 7.5 17.5C7.5 17.24 7.61 16.98 7.79 16.79C7.89 16.7 7.99 16.63 8.12 16.58C8.3 16.5 8.5 16.48 8.7 16.52C8.76 16.53 8.82 16.55 8.88 16.58C8.94 16.6 9 16.63 9.06 16.67C9.11 16.71 9.16 16.75 9.21 16.79C9.39 16.98 9.5 17.24 9.5 17.5C9.5 17.76 9.39 18.02 9.21 18.21C9.16 18.25 9.11 18.3 9.06 18.33C9 18.37 8.94 18.4 8.88 18.42C8.82 18.45 8.76 18.47 8.7 18.48C8.63 18.49 8.57 18.5 8.5 18.5Z" fill="#F9B233"/>
-                    <path d="M12 18.5002C11.74 18.5002 11.48 18.3902 11.29 18.2102C11.11 18.0202 11 17.7602 11 17.5002C11 17.2402 11.11 16.9802 11.29 16.7902C11.66 16.4202 12.34 16.4202 12.71 16.7902C12.89 16.9802 13 17.2402 13 17.5002C13 17.7602 12.89 18.0202 12.71 18.2102C12.52 18.3902 12.26 18.5002 12 18.5002Z" fill="#F9B233"/>
-                    <path d="M15.5 18.5002C15.24 18.5002 14.98 18.3902 14.79 18.2102C14.61 18.0202 14.5 17.7602 14.5 17.5002C14.5 17.2402 14.61 16.9802 14.79 16.7902C15.16 16.4202 15.84 16.4202 16.21 16.7902C16.39 16.9802 16.5 17.2402 16.5 17.5002C16.5 17.7602 16.39 18.0202 16.21 18.2102C16.02 18.3902 15.76 18.5002 15.5 18.5002Z" fill="#F9B233"/>
-                    </svg>
-
-                    <p class="text-orange-500 mt-1">NOV 2024</p>
-                 </div>
-                   
-                    <div class="flex px-1 bg-orange-500 mt-4 items-center   except !h-auto py-1 w-full justify-between   rounded-full">
-                    <button>
-                      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path opacity="0.4" d="M16.0003 29.3332C23.3641 29.3332 29.3337 23.3636 29.3337 15.9998C29.3337 8.63604 23.3641 2.6665 16.0003 2.6665C8.63653 2.6665 2.66699 8.63604 2.66699 15.9998C2.66699 23.3636 8.63653 29.3332 16.0003 29.3332Z" fill="white"/>
-                        <path d="M17.6799 21.7069C17.4266 21.7069 17.1732 21.6135 16.9732 21.4135L12.2666 16.7069C11.8799 16.3202 11.8799 15.6802 12.2666 15.2935L16.9732 10.5869C17.3599 10.2002 17.9999 10.2002 18.3866 10.5869C18.7732 10.9735 18.7732 11.6135 18.3866 12.0002L14.3866 16.0002L18.3866 20.0002C18.7732 20.3869 18.7732 21.0269 18.3866 21.4135C18.1999 21.6135 17.9466 21.7069 17.6799 21.7069Z" fill="white"/>
+                    <div class="w-52 ms-4 border-r border-r-gray-100 pr-3">
+                      <div
+                        class="flex items-center gap-4 border except !h-auto !py-2 w-full justify-center !border-orange-500 px-4 rounded-full"
+                      >
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M16.7502 3.56V2C16.7502 1.59 16.4102 1.25 16.0002 1.25C15.5902 1.25 15.2502 1.59 15.2502 2V3.5H8.75023V2C8.75023 1.59 8.41023 1.25 8.00023 1.25C7.59023 1.25 7.25023 1.59 7.25023 2V3.56C4.55023 3.81 3.24023 5.42 3.04023 7.81C3.02023 8.1 3.26023 8.34 3.54023 8.34H20.4602C20.7502 8.34 20.9902 8.09 20.9602 7.81C20.7602 5.42 19.4502 3.81 16.7502 3.56Z"
+                            fill="#F9B233"
+                          />
+                          <path
+                            opacity="0.4"
+                            d="M20 9.83984C20.55 9.83984 21 10.2898 21 10.8398V16.9998C21 19.9998 19.5 21.9998 16 21.9998H8C4.5 21.9998 3 19.9998 3 16.9998V10.8398C3 10.2898 3.45 9.83984 4 9.83984H20Z"
+                            fill="#F9B233"
+                          />
+                          <path
+                            d="M8.5 14.9999C8.24 14.9999 7.98 14.8899 7.79 14.7099C7.61 14.5199 7.5 14.2599 7.5 13.9999C7.5 13.7399 7.61 13.4799 7.79 13.2899C8.07 13.0099 8.51 12.9199 8.88 13.0799C9.01 13.1299 9.12 13.1999 9.21 13.2899C9.39 13.4799 9.5 13.7399 9.5 13.9999C9.5 14.2599 9.39 14.5199 9.21 14.7099C9.02 14.8899 8.76 14.9999 8.5 14.9999Z"
+                            fill="#F9B233"
+                          />
+                          <path
+                            d="M12 14.9999C11.74 14.9999 11.48 14.8899 11.29 14.7099C11.11 14.5199 11 14.2599 11 13.9999C11 13.7399 11.11 13.4799 11.29 13.2899C11.38 13.1999 11.49 13.1299 11.62 13.0799C11.99 12.9199 12.43 13.0099 12.71 13.2899C12.89 13.4799 13 13.7399 13 13.9999C13 14.2599 12.89 14.5199 12.71 14.7099C12.66 14.7499 12.61 14.7899 12.56 14.8299C12.5 14.8699 12.44 14.8999 12.38 14.9199C12.32 14.9499 12.26 14.9699 12.2 14.9799C12.13 14.9899 12.07 14.9999 12 14.9999Z"
+                            fill="#F9B233"
+                          />
+                          <path
+                            d="M15.5 15C15.24 15 14.98 14.89 14.79 14.71C14.61 14.52 14.5 14.26 14.5 14C14.5 13.74 14.61 13.48 14.79 13.29C14.89 13.2 14.99 13.13 15.12 13.08C15.3 13 15.5 12.98 15.7 13.02C15.76 13.03 15.82 13.05 15.88 13.08C15.94 13.1 16 13.13 16.06 13.17C16.11 13.21 16.16 13.25 16.21 13.29C16.39 13.48 16.5 13.74 16.5 14C16.5 14.26 16.39 14.52 16.21 14.71C16.16 14.75 16.11 14.79 16.06 14.83C16 14.87 15.94 14.9 15.88 14.92C15.82 14.95 15.76 14.97 15.7 14.98C15.63 14.99 15.56 15 15.5 15Z"
+                            fill="#F9B233"
+                          />
+                          <path
+                            d="M8.5 18.5C8.37 18.5 8.24 18.47 8.12 18.42C7.99 18.37 7.89 18.3 7.79 18.21C7.61 18.02 7.5 17.76 7.5 17.5C7.5 17.24 7.61 16.98 7.79 16.79C7.89 16.7 7.99 16.63 8.12 16.58C8.3 16.5 8.5 16.48 8.7 16.52C8.76 16.53 8.82 16.55 8.88 16.58C8.94 16.6 9 16.63 9.06 16.67C9.11 16.71 9.16 16.75 9.21 16.79C9.39 16.98 9.5 17.24 9.5 17.5C9.5 17.76 9.39 18.02 9.21 18.21C9.16 18.25 9.11 18.3 9.06 18.33C9 18.37 8.94 18.4 8.88 18.42C8.82 18.45 8.76 18.47 8.7 18.48C8.63 18.49 8.57 18.5 8.5 18.5Z"
+                            fill="#F9B233"
+                          />
+                          <path
+                            d="M12 18.5002C11.74 18.5002 11.48 18.3902 11.29 18.2102C11.11 18.0202 11 17.7602 11 17.5002C11 17.2402 11.11 16.9802 11.29 16.7902C11.66 16.4202 12.34 16.4202 12.71 16.7902C12.89 16.9802 13 17.2402 13 17.5002C13 17.7602 12.89 18.0202 12.71 18.2102C12.52 18.3902 12.26 18.5002 12 18.5002Z"
+                            fill="#F9B233"
+                          />
+                          <path
+                            d="M15.5 18.5002C15.24 18.5002 14.98 18.3902 14.79 18.2102C14.61 18.0202 14.5 17.7602 14.5 17.5002C14.5 17.2402 14.61 16.9802 14.79 16.7902C15.16 16.4202 15.84 16.4202 16.21 16.7902C16.39 16.9802 16.5 17.2402 16.5 17.5002C16.5 17.7602 16.39 18.0202 16.21 18.2102C16.02 18.3902 15.76 18.5002 15.5 18.5002Z"
+                            fill="#F9B233"
+                          />
                         </svg>
-                        
-                    </button>
-                    <p class="text-xs text-white text-nowrap">NOV 27TH-DEC 06TH</p>
-                    <button>
-                      <svg class="rotate-180" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path opacity="0.4" d="M16.0003 29.3332C23.3641 29.3332 29.3337 23.3636 29.3337 15.9998C29.3337 8.63604 23.3641 2.6665 16.0003 2.6665C8.63653 2.6665 2.66699 8.63604 2.66699 15.9998C2.66699 23.3636 8.63653 29.3332 16.0003 29.3332Z" fill="white"/>
-                        <path d="M17.6799 21.7069C17.4266 21.7069 17.1732 21.6135 16.9732 21.4135L12.2666 16.7069C11.8799 16.3202 11.8799 15.6802 12.2666 15.2935L16.9732 10.5869C17.3599 10.2002 17.9999 10.2002 18.3866 10.5869C18.7732 10.9735 18.7732 11.6135 18.3866 12.0002L14.3866 16.0002L18.3866 20.0002C18.7732 20.3869 18.7732 21.0269 18.3866 21.4135C18.1999 21.6135 17.9466 21.7069 17.6799 21.7069Z" fill="white"/>
-                        </svg>
-                        
-                    </button>
-                     </div> </div>
-                  </th>
-                  <th  >
-                    <div  class="min-w-12" >
-                      <p class="text-base">Wed <br>
-                        <span class="text-orange-500 font-bold" >27th</span> <br>
-                        NOV</p>
+
+                        <p class="text-orange-500 mt-1">NOV 2024</p>
+                      </div>
+
+                      <div
+                        class="flex px-1 bg-orange-500 mt-4 items-center except !h-auto py-1 w-full justify-between rounded-full"
+                      >
+                        <button>
+                          <svg
+                            width="32"
+                            height="32"
+                            viewBox="0 0 32 32"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              opacity="0.4"
+                              d="M16.0003 29.3332C23.3641 29.3332 29.3337 23.3636 29.3337 15.9998C29.3337 8.63604 23.3641 2.6665 16.0003 2.6665C8.63653 2.6665 2.66699 8.63604 2.66699 15.9998C2.66699 23.3636 8.63653 29.3332 16.0003 29.3332Z"
+                              fill="white"
+                            />
+                            <path
+                              d="M17.6799 21.7069C17.4266 21.7069 17.1732 21.6135 16.9732 21.4135L12.2666 16.7069C11.8799 16.3202 11.8799 15.6802 12.2666 15.2935L16.9732 10.5869C17.3599 10.2002 17.9999 10.2002 18.3866 10.5869C18.7732 10.9735 18.7732 11.6135 18.3866 12.0002L14.3866 16.0002L18.3866 20.0002C18.7732 20.3869 18.7732 21.0269 18.3866 21.4135C18.1999 21.6135 17.9466 21.7069 17.6799 21.7069Z"
+                              fill="white"
+                            />
+                          </svg>
+                        </button>
+                        <p class="text-xs text-white text-nowrap">
+                          NOV 27TH-DEC 06TH
+                        </p>
+                        <button>
+                          <svg
+                            class="rotate-180"
+                            width="32"
+                            height="32"
+                            viewBox="0 0 32 32"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              opacity="0.4"
+                              d="M16.0003 29.3332C23.3641 29.3332 29.3337 23.3636 29.3337 15.9998C29.3337 8.63604 23.3641 2.6665 16.0003 2.6665C8.63653 2.6665 2.66699 8.63604 2.66699 15.9998C2.66699 23.3636 8.63653 29.3332 16.0003 29.3332Z"
+                              fill="white"
+                            />
+                            <path
+                              d="M17.6799 21.7069C17.4266 21.7069 17.1732 21.6135 16.9732 21.4135L12.2666 16.7069C11.8799 16.3202 11.8799 15.6802 12.2666 15.2935L16.9732 10.5869C17.3599 10.2002 17.9999 10.2002 18.3866 10.5869C18.7732 10.9735 18.7732 11.6135 18.3866 12.0002L14.3866 16.0002L18.3866 20.0002C18.7732 20.3869 18.7732 21.0269 18.3866 21.4135C18.1999 21.6135 17.9466 21.7069 17.6799 21.7069Z"
+                              fill="white"
+                            />
+                          </svg>
+                        </button>
+                      </div>
                     </div>
                   </th>
-                  <th >
-                    <div >
-                      <p class="text-base">Wed <br>
-                        <span class="text-orange-500 font-bold" >27th</span> <br>
-                        NOV</p>
+                  <th>
+                    <div class="min-w-12">
+                      <p class="text-base">
+                        Wed <br />
+                        <span class="text-orange-500 font-bold">27th</span>
+                        <br />
+                        NOV
+                      </p>
                     </div>
                   </th>
-                  <th >
-                    <div >
-                      <p class="text-base">Wed <br>
-                        <span class="text-orange-500 font-bold" >27th</span> <br>
-                        NOV</p>
+                  <th>
+                    <div>
+                      <p class="text-base">
+                        Wed <br />
+                        <span class="text-orange-500 font-bold">27th</span>
+                        <br />
+                        NOV
+                      </p>
                     </div>
                   </th>
-                  <th >
-                    <div >
-                      <p class="text-base">Wed <br>
-                        <span class="text-orange-500 font-bold" >27th</span> <br>
-                        NOV</p>
+                  <th>
+                    <div>
+                      <p class="text-base">
+                        Wed <br />
+                        <span class="text-orange-500 font-bold">27th</span>
+                        <br />
+                        NOV
+                      </p>
                     </div>
                   </th>
-                  <th >
-                    <div >
-                      <p class="text-base">Wed <br>
-                        <span class="text-orange-500 font-bold" >27th</span> <br>
-                        NOV</p>
+                  <th>
+                    <div>
+                      <p class="text-base">
+                        Wed <br />
+                        <span class="text-orange-500 font-bold">27th</span>
+                        <br />
+                        NOV
+                      </p>
                     </div>
                   </th>
-                  <th >
-                    <div >
-                      <p class="text-base">Wed <br>
-                        <span class="text-orange-500 font-bold" >27th</span> <br>
-                        NOV</p>
+                  <th>
+                    <div>
+                      <p class="text-base">
+                        Wed <br />
+                        <span class="text-orange-500 font-bold">27th</span>
+                        <br />
+                        NOV
+                      </p>
                     </div>
                   </th>
-                  <th >
-                    <div >
-                      <p class="text-base">Wed <br>
-                        <span class="text-orange-500 font-bold" >27th</span> <br>
-                        NOV</p>
+                  <th>
+                    <div>
+                      <p class="text-base">
+                        Wed <br />
+                        <span class="text-orange-500 font-bold">27th</span>
+                        <br />
+                        NOV
+                      </p>
                     </div>
                   </th>
-                  <th >
-                    <div >
-                      <p class="text-base">Wed <br>
-                        <span class="text-orange-500 font-bold" >27th</span> <br>
-                        NOV</p>
+                  <th>
+                    <div>
+                      <p class="text-base">
+                        Wed <br />
+                        <span class="text-orange-500 font-bold">27th</span>
+                        <br />
+                        NOV
+                      </p>
                     </div>
                   </th>
-                  <th >
-                    <div >
-                      <p class="text-base">Wed <br>
-                        <span class="text-orange-500 font-bold" >27th</span> <br>
-                        NOV</p>
+                  <th>
+                    <div>
+                      <p class="text-base">
+                        Wed <br />
+                        <span class="text-orange-500 font-bold">27th</span>
+                        <br />
+                        NOV
+                      </p>
                     </div>
                   </th>
-                  <th >
-                    <div  >
-                      <p class="text-base">Wed <br>
-                        <span class="text-orange-500 font-bold" >27th</span> <br>
-                        NOV</p>
+                  <th>
+                    <div>
+                      <p class="text-base">
+                        Wed <br />
+                        <span class="text-orange-500 font-bold">27th</span>
+                        <br />
+                        NOV
+                      </p>
                     </div>
                   </th>
-                 
+                  <th>
+                    <div>
+                      <p class="text-base">
+                        Wed <br />
+                        <span class="text-orange-500 font-bold">27th</span>
+                        <br />
+                        NOV
+                      </p>
+                    </div>
+                  </th>
                 </tr>
               </thead>
               <tbody class="shadow-tbody dark:shadow-tbody-dark rounded-b-4xl">
@@ -1733,271 +1817,230 @@
                   <td colspan="11">
                     <div class="pt-2 px-2">
                       <div
-                        class="flex items-center px-6  bg-orange-500/10 rounded-full border border-orange-500 py-2.5 justify-between"
+                        class="flex items-center px-6 bg-orange-500/10 rounded-full border border-orange-500 py-2.5 justify-between"
                       >
                         <div class="gap-1 flex items-center">
                           <span
                             class="size-[0.625rem] block bg-orange-500 rounded-full"
                           ></span>
-                          <p class="font-bold text-orange-500 mt-0.5">
-                         TRIPLE
-                          </p>
+                          <p class="font-bold text-orange-500 mt-0.5">TRIPLE</p>
                         </div>
-                       
-                      
                       </div>
                     </div>
                   </td>
                 </tr>
                 <tr class="text-sm *:ps-2 *:py-2">
                   <td colspan="2" class="!ps-4">
-                    <div class="flex justify-between   items-center">
+                    <div class="flex justify-between items-center">
                       <p>ROOM PRICE</p>
                       <p>120.00 R </p>
                     </div>
                   </td>
-                  <td >
-                    <div class="flex justify-between   items-center">
-      
+                  <td>
+                    <div class="flex justify-between items-center">
                       <p>120.00 R </p>
-                  
+                    </div>
                   </td>
-                  <td >
-                    <div class="flex justify-between   items-center">
-      
+                  <td>
+                    <div class="flex justify-between items-center">
                       <p>120.00 R </p>
-                  
+                    </div>
                   </td>
-                  <td >
-                    <div class="flex justify-between   items-center">
-      
+                  <td>
+                    <div class="flex justify-between items-center">
                       <p>120.00 R </p>
-                  
+                    </div>
                   </td>
-                  <td >
-                    <div class="flex justify-between   items-center">
-      
+                  <td>
+                    <div class="flex justify-between items-center">
                       <p>120.00 R </p>
-                  
+                    </div>
                   </td>
-                  <td >
-                    <div class="flex justify-between   items-center">
-      
+                  <td>
+                    <div class="flex justify-between items-center">
                       <p>120.00 R </p>
-                  
+                    </div>
                   </td>
-                  <td >
-                    <div class="flex justify-between   items-center">
-      
+                  <td>
+                    <div class="flex justify-between items-center">
                       <p>120.00 R </p>
-                  
+                    </div>
                   </td>
-                  <td >
-                    <div class="flex justify-between   items-center">
-      
+                  <td>
+                    <div class="flex justify-between items-center">
                       <p>120.00 R </p>
-                  
+                    </div>
                   </td>
-                  <td >
-                    <div class="flex justify-between   items-center">
-      
+                  <td>
+                    <div class="flex justify-between items-center">
                       <p>120.00 R </p>
-                  
+                    </div>
                   </td>
-                  <td >
-                    <div class="flex justify-between   items-center">
-      
+                  <td>
+                    <div class="flex justify-between items-center">
                       <p>120.00 R </p>
-                  
+                    </div>
                   </td>
                 </tr>
                 <tr class="text-sm *:ps-2 *:py-2">
                   <td colspan="2" class="!ps-4">
-                    <div class="flex justify-between   items-center">
+                    <div class="flex justify-between items-center">
                       <p>ROOM PRICE</p>
                       <p>120.00 R </p>
                     </div>
                   </td>
-                  <td >
-                    <div class="flex justify-between   items-center">
-      
+                  <td>
+                    <div class="flex justify-between items-center">
                       <p>120.00 R </p>
-                  
+                    </div>
                   </td>
-                  <td >
-                    <div class="flex justify-between   items-center">
-      
+                  <td>
+                    <div class="flex justify-between items-center">
                       <p>120.00 R </p>
-                  
+                    </div>
                   </td>
-                  <td >
-                    <div class="flex justify-between   items-center">
-      
+                  <td>
+                    <div class="flex justify-between items-center">
                       <p>120.00 R </p>
-                  
+                    </div>
                   </td>
-                  <td >
-                    <div class="flex justify-between   items-center">
-      
+                  <td>
+                    <div class="flex justify-between items-center">
                       <p>120.00 R </p>
-                  
+                    </div>
                   </td>
-                  <td >
-                    <div class="flex justify-between   items-center">
-      
+                  <td>
+                    <div class="flex justify-between items-center">
                       <p>120.00 R </p>
-                  
+                    </div>
                   </td>
-                  <td >
-                    <div class="flex justify-between   items-center">
-      
+                  <td>
+                    <div class="flex justify-between items-center">
                       <p>120.00 R </p>
-                  
+                    </div>
                   </td>
-                  <td >
-                    <div class="flex justify-between   items-center">
-      
+                  <td>
+                    <div class="flex justify-between items-center">
                       <p>120.00 R </p>
-                  
+                    </div>
                   </td>
-                  <td >
-                    <div class="flex justify-between   items-center">
-      
+                  <td>
+                    <div class="flex justify-between items-center">
                       <p>120.00 R </p>
-                  
+                    </div>
                   </td>
-                  <td >
-                    <div class="flex justify-between   items-center">
-      
+                  <td>
+                    <div class="flex justify-between items-center">
                       <p>120.00 R </p>
-                  
+                    </div>
                   </td>
                 </tr>
                 <tr class="text-sm *:ps-2 *:py-2">
                   <td colspan="2" class="!ps-4">
-                    <div class="flex justify-between   items-center">
+                    <div class="flex justify-between items-center">
                       <p>ROOM PRICE</p>
                       <p>120.00 R </p>
                     </div>
                   </td>
-                  <td >
-                    <div class="flex justify-between   items-center">
-      
+                  <td>
+                    <div class="flex justify-between items-center">
                       <p>120.00 R </p>
-                  
+                    </div>
                   </td>
-                  <td >
-                    <div class="flex justify-between   items-center">
-      
+                  <td>
+                    <div class="flex justify-between items-center">
                       <p>120.00 R </p>
-                  
+                    </div>
                   </td>
-                  <td >
-                    <div class="flex justify-between   items-center">
-      
+                  <td>
+                    <div class="flex justify-between items-center">
                       <p>120.00 R </p>
-                  
+                    </div>
                   </td>
-                  <td >
-                    <div class="flex justify-between   items-center">
-      
+                  <td>
+                    <div class="flex justify-between items-center">
                       <p>120.00 R </p>
-                  
+                    </div>
                   </td>
-                  <td >
-                    <div class="flex justify-between   items-center">
-      
+                  <td>
+                    <div class="flex justify-between items-center">
                       <p>120.00 R </p>
-                  
+                    </div>
                   </td>
-                  <td >
-                    <div class="flex justify-between   items-center">
-      
+                  <td>
+                    <div class="flex justify-between items-center">
                       <p>120.00 R </p>
-                  
+                    </div>
                   </td>
-                  <td >
-                    <div class="flex justify-between   items-center">
-      
+                  <td>
+                    <div class="flex justify-between items-center">
                       <p>120.00 R </p>
-                  
+                    </div>
                   </td>
-                  <td >
-                    <div class="flex justify-between   items-center">
-      
+                  <td>
+                    <div class="flex justify-between items-center">
                       <p>120.00 R </p>
-                  
+                    </div>
                   </td>
-                  <td >
-                    <div class="flex justify-between   items-center">
-      
+                  <td>
+                    <div class="flex justify-between items-center">
                       <p>120.00 R </p>
-                  
+                    </div>
                   </td>
                 </tr>
                 <tr class="text-sm *:ps-2 *:py-2">
                   <td colspan="2" class="!ps-4">
-                    <div class="flex justify-between   items-center">
+                    <div class="flex justify-between items-center">
                       <p>ROOM PRICE</p>
                       <p>120.00 R </p>
                     </div>
                   </td>
-                  <td >
-                    <div class="flex justify-between   items-center">
-      
+                  <td>
+                    <div class="flex justify-between items-center">
                       <p>120.00 R </p>
-                  
+                    </div>
                   </td>
-                  <td >
-                    <div class="flex justify-between   items-center">
-      
+                  <td>
+                    <div class="flex justify-between items-center">
                       <p>120.00 R </p>
-                  
+                    </div>
                   </td>
-                  <td >
-                    <div class="flex justify-between   items-center">
-      
+                  <td>
+                    <div class="flex justify-between items-center">
                       <p>120.00 R </p>
-                  
+                    </div>
                   </td>
-                  <td >
-                    <div class="flex justify-between   items-center">
-      
+                  <td>
+                    <div class="flex justify-between items-center">
                       <p>120.00 R </p>
-                  
+                    </div>
                   </td>
-                  <td >
-                    <div class="flex justify-between   items-center">
-      
+                  <td>
+                    <div class="flex justify-between items-center">
                       <p>120.00 R </p>
-                  
+                    </div>
                   </td>
-                  <td >
-                    <div class="flex justify-between   items-center">
-      
+                  <td>
+                    <div class="flex justify-between items-center">
                       <p>120.00 R </p>
-                  
+                    </div>
                   </td>
-                  <td >
-                    <div class="flex justify-between   items-center">
-      
+                  <td>
+                    <div class="flex justify-between items-center">
                       <p>120.00 R </p>
-                  
+                    </div>
                   </td>
-                  <td >
-                    <div class="flex justify-between   items-center">
-      
+                  <td>
+                    <div class="flex justify-between items-center">
                       <p>120.00 R </p>
-                  
+                    </div>
                   </td>
-                  <td >
-                    <div class="flex justify-between   items-center">
-      
+                  <td>
+                    <div class="flex justify-between items-center">
                       <p class="pr-2">120.00 R </p>
-                  
+                    </div>
                   </td>
                 </tr>
-            
               </tbody>
             </table>
           </div>
@@ -2006,26 +2049,34 @@
     </main>
 
     <script>
-      let rateFilled = null
-      let roomTypeFilled = null
-      const ratePlan = document.getElementById("room-type")
-      const roomType = document.getElementById("rate-plan")
+      let rateFilled = null;
+      let roomTypeFilled = null;
+      const ratePlan = document.getElementById("room-type");
+      const roomType = document.getElementById("rate-plan");
 
-      const details = document.getElementById("details")
+      const details = document.getElementById("details");
 
       const onFilled = () => {
         if (rateFilled && roomTypeFilled) {
-          details.classList.remove("hidden")
+          details.classList.remove("hidden");
         }
-      }
-      ratePlan.addEventListener("change" , () => {
-rateFilled = true
-onFilled()
-      } , {once : true})
-      roomType.addEventListener("change" , () => {
-roomTypeFilled = true
-onFilled()
-      } , {once : true})
+      };
+      ratePlan.addEventListener(
+        "change",
+        () => {
+          rateFilled = true;
+          onFilled();
+        },
+        { once: true }
+      );
+      roomType.addEventListener(
+        "change",
+        () => {
+          roomTypeFilled = true;
+          onFilled();
+        },
+        { once: true }
+      );
     </script>
 
     <script defer src="@assets/js/main.js"></script>

@@ -10,6 +10,7 @@ module.exports = {
     "drag-drop": "./src/assets/js/drag-drop.js",
     modal: "./src/assets/js/modal.js",
     received: "./src/assets/js/reservations.js",
+    reservationSingle: "./src/assets/js/reservations-single.js",
     tab: "./src/assets/js/tab.js",
     reports: "./src/assets/js/reports.js",
     accordion: "./src/assets/js/accordion.js",

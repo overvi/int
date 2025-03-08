@@ -44,7 +44,7 @@ module.exports = {
       },
       screens: {
         "2xl": "1400px",
-        'full-hd' : "1920px"
+        "full-hd": "1920px",
       },
       borderRadius: {
         "4xl": "30px",
@@ -53,8 +53,8 @@ module.exports = {
       boxShadow: {
         tbody: `inset 0 0 0 1px ${colors.gray[100]}`,
         "tbody-offset": ` 0 0 0 1px ${colors.gray[100]}`,
-        "tbody-dark": `inset 0 0 0 1px ${colors.gray[800]}`,
-        "tbody-dark-offset": ` 0 0 0 1px ${colors.gray[800]}`,
+        "tbody-dark": `inset 0 0 0 1px #707070`,
+        "tbody-dark-offset": ` 0 0 0 1px #707070`,
       },
       colors: {
         ...colors,

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../css/input.80e232b9.css" />
+    <link rel="stylesheet" href="../css/input.bc5d79c8.css" />
 
     <script>
       const mode = localStorage.getItem("mode");
@@ -80,7 +80,11 @@
             <tbody>
               <tr>
                 <td colspan="5">
-                  <div style="backface-visibility: hidden;transform: translate3d(0, 0, 0);"
+                  <div
+                    style="
+                      backface-visibility: hidden;
+                      transform: translate3d(0, 0, 0);
+                    "
                     class="max-h-[36.4375rem] rounded-b-3xl shadow-tbody dark:shadow-tbody-dark overflow-y-scroll remark-scroll remark-scroll--contrast"
                   >
                     <table class="w-full">
@@ -2028,7 +2032,7 @@
     >
       <nav class="basis-[25.5%]">
         <div
-          class="overflow-y-scroll  theme-secondary  hide-scroll justify-between top-12 bottom-12 w-full rounded-4xl sticky"
+          class="overflow-y-scroll theme-secondary hide-scroll justify-between top-12 bottom-12 w-full rounded-4xl sticky"
         >
           <div class="flex flex-col h-full justify-between pb-14">
             <div>
@@ -2105,7 +2109,7 @@
                 class="px-[30px] *:rounded-[15px] space-y-10 *:*:block *:*:mx-[30px] mt-[44.5px]"
               >
                 <li>
-                  <a class="block">
+                  <a class="block" href="/reservations">
                     <div class="flex items-center gap-2">
                       <svg
                         width="24"
@@ -2211,35 +2215,35 @@
                       <li>
                         <a
                           class="px-8.5 block w-full rounded-[10px] py-2"
-                          href=""
+                          href="/general-info"
                           >General</a
                         >
                       </li>
                       <li>
                         <a
                           class="px-8.5 block text-white bg-orange-500 w-full rounded-[10px] py-2"
-                          href=""
+                          href="/facilities"
                           >Facilities</a
                         >
                       </li>
                       <li>
                         <a
                           class="px-8.5 block w-full rounded-[10px] py-2"
-                          href=""
+                          href="/images"
                           >Images</a
                         >
                       </li>
                       <li>
                         <a
                           class="px-8.5 block w-full rounded-[10px] py-2"
-                          href=""
+                          href="/rooms"
                           >Rooms</a
                         >
                       </li>
                       <li>
                         <a
                           class="px-8.5 block w-full rounded-[10px] py-2"
-                          href=""
+                          href="/boards"
                           >Boards</a
                         >
                       </li>
@@ -2247,7 +2251,7 @@
                   </div>
                 </li>
                 <li>
-                  <a>
+                  <a href="/contracts">
                     <div class="flex items-center gap-2">
                       <svg
                         width="24"
@@ -2281,7 +2285,7 @@
                   </a>
                 </li>
                 <li>
-                  <a>
+                  <a href="/availability">
                     <div class="flex items-center gap-2">
                       <svg
                         aria-hidden="true"
@@ -2319,7 +2323,7 @@
                   </a>
                 </li>
                 <li>
-                  <a>
+                  <a href="/rates-period">
                     <div class="flex items-center gap-2">
                       <svg
                         aria-hidden="true"
@@ -2349,7 +2353,7 @@
                   </a>
                 </li>
                 <li>
-                  <a>
+                  <a href="/special-offers">
                     <div class="flex items-center gap-2">
                       <svg
                         aria-hidden="true"
@@ -2436,44 +2440,37 @@
                     >
                       <li>
                         <a
-                          class="px-8.5 text-white bg-orange-500 block w-full rounded-[10px] py-2"
-                          href=""
-                          >General</a
+                          class="px-8.5 text-nowrap block w-full rounded-[10px] py-2"
+                          href="/cancellation-policies"
+                          >Cancellation Policies</a
                         >
                       </li>
                       <li>
                         <a
                           class="px-8.5 block w-full rounded-[10px] py-2"
-                          href=""
-                          >Facilities</a
+                          href="/extrabed-policies"
+                          >ExtraBed Policies</a
                         >
                       </li>
                       <li>
                         <a
                           class="px-8.5 block w-full rounded-[10px] py-2"
-                          href=""
-                          >Images</a
+                          href="/child-policies"
+                          >Child Policies</a
                         >
                       </li>
                       <li>
                         <a
                           class="px-8.5 block w-full rounded-[10px] py-2"
-                          href=""
-                          >Rooms</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          class="px-8.5 block w-full rounded-[10px] py-2"
-                          href=""
-                          >Boards</a
+                          href="/hotel-policies"
+                          >Hotel Policies</a
                         >
                       </li>
                     </ul>
                   </div>
                 </li>
                 <li>
-                  <a>
+                  <a href="/reservations-single">
                     <div class="flex items-center gap-2">
                       <svg
                         aria-hidden="true"
@@ -2509,7 +2506,7 @@
                   </a>
                 </li>
                 <li>
-                  <a>
+                  <a href="/invoices-single">
                     <div class="flex items-center gap-2">
                       <svg
                         aria-hidden="true"
@@ -2558,7 +2555,7 @@
           </div>
           <div class="flex items-center gap-6">
             <div
-              class="flex items-center gap-5 p-0.5 border border-[#A1A1A1]/[63.14%] rounded-full"
+              class="flex items-center gap-5 p-0.5 border !border-[#A1A1A1]/[63.14%] rounded-full"
             >
               <button
                 id="toggle-color-dark"
@@ -2615,7 +2612,7 @@
                 id="dropdown-button"
                 aria-haspopup="true"
                 aria-expanded="false"
-                class="theme-secondary border-transparent border rounded-full flex items-center min-w-[13.187rem] gap-[10px] p-[6px]"
+                class="theme-secondary rounded-full flex items-center min-w-[13.187rem] gap-[10px] p-[6px]"
               >
                 <div>
                   <svg

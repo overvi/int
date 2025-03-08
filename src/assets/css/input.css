@@ -41,7 +41,7 @@
   }
 
   * {
-    @apply dark:!border-gray-800;
+    @apply dark:!border-gray-400 dark:!text-white;
   }
 
   body {
@@ -131,16 +131,20 @@
     width: 100%;
   }
 
+  .table tbody td {
+    @apply dark:!border-e-[#707070];
+  }
+
   .table th {
     @apply theme-neutral font-normal;
   }
 
   .table tbody tr:not(:last-child) {
-    @apply border-b border-b-gray-100 dark:border-b-gray-800;
+    @apply border-b border-b-gray-100 dark:!border-b-[#707070];
   }
 
   .bordered-table tbody td:not(:last-child) {
-    @apply !border-r border-r-gray-100;
+    @apply !border-r dark:!border-r-[#707070];
   }
 
   .thead-round-child th:first-child {
@@ -150,11 +154,11 @@
     @apply rounded-tr-4xl;
   }
   .thead-border-child *:not(:last-child, .except) div {
-    @apply border-r border-r-gray-100 dark:border-r-gray-800 h-[47px] flex  items-center;
+    @apply border-r border-r-gray-100 h-[47px] flex  items-center;
   }
 
   .tbody-horizontal-border-child td:not(:last-child) {
-    @apply border-r border-r-gray-100 dark:border-r-gray-800;
+    @apply border-r border-r-gray-100 dark:!border-r-[#707070];
   }
   .radio {
     @apply after:transition-all content-none after:-translate-x-1/2 after:-translate-y-1/2 after:opacity-0 after:top-[50%] after:left-[50%]  after:size-[14px] after:rounded-[50%] after:border-4 after:border-orange-500 size-4 rounded-[50%] border relative inline-block after:absolute mr-2;
@@ -189,14 +193,14 @@
   }
 
   .remarks-container:has(.remarks-list li:hover) .overlay-remark {
-   @apply !block
+    @apply !block;
   }
 
   .remarks-list li:hover {
-    @apply  absolute shadow-sm  z-[51] text-xs;
+    @apply absolute shadow-sm  z-[51] text-xs;
   }
   .remarks-list li:hover span {
-    @apply !block
+    @apply !block;
   }
   .modal {
     display: none;
@@ -242,15 +246,15 @@
   }
 
   .theme-primary {
-    @apply bg-gray-50 dark:bg-gray-950;
+    @apply bg-gray-50 dark:bg-[#3D3D3D];
   }
 
   .theme-secondary {
-    @apply bg-white dark:bg-gray-900;
+    @apply bg-white dark:bg-[#616161];
   }
 
   .theme-neutral {
-    @apply bg-[#FBFBFB] dark:bg-gray-950;
+    @apply bg-[#FBFBFB] dark:bg-[#6d6d6d];
   }
   .theme-svg-primary {
     @apply fill-black dark:fill-white;
@@ -261,7 +265,7 @@
   }
 
   .hotel-state:has(#deactive:checked) {
-    @apply bg-red-500/15 border-red-500;
+    @apply bg-red-500/15 !border-red-500;
   }
   .hotel-state:has(#deactive:checked) #hotel-describe {
     @apply text-red-500;
@@ -315,6 +319,9 @@
     bottom: 0;
   }
 
+  #drop-area {
+    @apply dark:bg-transparent;
+  }
 
   /*leaflet*/
 
