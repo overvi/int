@@ -41,7 +41,7 @@
   }
 
   * {
-    @apply dark:!border-gray-400 dark:!text-white;
+    @apply dark:!border-gray-400 dark:!border-x-gray-400 dark:!text-white;
   }
 
   body {
@@ -132,7 +132,7 @@
   }
 
   .table tbody td {
-    @apply dark:!border-e-[#707070];
+    @apply dark:!border-x-[#707070];
   }
 
   .table th {
@@ -300,9 +300,12 @@
     left: 0;
     right: 0;
     margin-inline: auto;
+
+    
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-top: 15px solid currentColor;
+    
   }
   .resize-container {
     display: inline-block;
