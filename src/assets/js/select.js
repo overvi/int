@@ -1,16 +1,22 @@
-const selects = document.querySelectorAll("select");
-
-selects.forEach((selectBox) => {
-  const wrapper = selectBox.parentElement;
-
-  selectBox.addEventListener("focus", () => {
-    wrapper.classList.add("open");
+ const init = () => {
+  const selects = document.querySelectorAll("select");
+  
+  selects.forEach((selectBox) => {
+    const wrapper = selectBox.parentElement;
+  
+    selectBox.addEventListener("focus", () => {
+      wrapper.classList.add("open");
+    });
+  
+    selectBox.addEventListener("blur", () => {
+      wrapper.classList.remove("open");
+    });
+    selectBox.addEventListener("change", (ev) => {
+      selectBox.blur();
+    });
   });
+}
 
-  selectBox.addEventListener("blur", () => {
-    wrapper.classList.remove("open");
-  });
-  selectBox.addEventListener("change", (ev) => {
-    selectBox.blur();
-  });
-});
+init()
+
+export default init

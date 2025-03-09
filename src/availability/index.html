@@ -60,8 +60,8 @@
               <p><span class="font-bold">day:</span> 28 NOV 2024</p>
               <p class="text-start w-fit font-bold mt-2.5">CR - CLASSIC ROOM</p>
             </div>
-            <div
-              class="flex items-center p-1 *:*:cursor-pointer text-sm theme-primary rounded-2xl"
+            <div id="close-open-switch"
+              class="flex close-open-switch items-center p-1 *:*:cursor-pointer text-sm theme-secondary rounded-2xl"
             >
               <div>
                 <input
@@ -95,41 +95,44 @@
             </div>
           </div>
         </div>
-        <div class="w-fit mt-6">
-          <label class="block mb-2" for="name">Release Dates</label>
-          <div
-            class="theme-secondary flex items-center gap-2 border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
-          >
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                opacity="0.4"
-                d="M20 9.83984C20.55 9.83984 21 10.2898 21 10.8398V16.9998C21 19.9998 19.5 21.9998 16 21.9998H8C4.5 21.9998 3 19.9998 3 16.9998V10.8398C3 10.2898 3.45 9.83984 4 9.83984H20Z"
-                fill="#ABABAB"
-              />
-              <path
-                d="M16.7502 3.56V2C16.7502 1.59 16.4102 1.25 16.0002 1.25C15.5902 1.25 15.2502 1.59 15.2502 2V3.5H8.75024V2C8.75024 1.59 8.41024 1.25 8.00024 1.25C7.59024 1.25 7.25024 1.59 7.25024 2V3.56C4.55024 3.81 3.24023 5.42 3.04023 7.81C3.02023 8.1 3.26023 8.34 3.54023 8.34H20.4602C20.7502 8.34 20.9902 8.09 20.9602 7.81C20.7602 5.42 19.4502 3.81 16.7502 3.56Z"
-                fill="#ABABAB"
-              />
-              <path
-                d="M15.6599 18.47L14.9199 17.73C15.2999 17.15 15.5299 16.45 15.5299 15.7C15.5299 13.66 13.8699 12 11.8299 12C9.78988 12 8.12988 13.66 8.12988 15.7C8.12988 17.74 9.78988 19.4 11.8299 19.4C12.5799 19.4 13.2799 19.17 13.8599 18.79L14.5999 19.53C14.7499 19.68 14.9399 19.75 15.1299 19.75C15.3199 19.75 15.5099 19.68 15.6599 19.53C15.9499 19.24 15.9499 18.76 15.6599 18.47Z"
-                fill="#ABABAB"
-              />
-            </svg>
+        <div id="release-loc">
 
-            <input
-              placeholder="Type..."
-              name="release-date"
-              value="0"
-              class="placeholder:text-sm w-28 min-h-10 outline-none"
-              id="releaste-datee"
-              type="number"
-            />
+          <div class="w-fit mt-6" id="release-field">
+            <label class="block mb-2" for="name">Release Dates</label>
+            <div
+              class="theme-secondary flex items-center gap-2 border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  opacity="0.4"
+                  d="M20 9.83984C20.55 9.83984 21 10.2898 21 10.8398V16.9998C21 19.9998 19.5 21.9998 16 21.9998H8C4.5 21.9998 3 19.9998 3 16.9998V10.8398C3 10.2898 3.45 9.83984 4 9.83984H20Z"
+                  fill="#ABABAB"
+                />
+                <path
+                  d="M16.7502 3.56V2C16.7502 1.59 16.4102 1.25 16.0002 1.25C15.5902 1.25 15.2502 1.59 15.2502 2V3.5H8.75024V2C8.75024 1.59 8.41024 1.25 8.00024 1.25C7.59024 1.25 7.25024 1.59 7.25024 2V3.56C4.55024 3.81 3.24023 5.42 3.04023 7.81C3.02023 8.1 3.26023 8.34 3.54023 8.34H20.4602C20.7502 8.34 20.9902 8.09 20.9602 7.81C20.7602 5.42 19.4502 3.81 16.7502 3.56Z"
+                  fill="#ABABAB"
+                />
+                <path
+                  d="M15.6599 18.47L14.9199 17.73C15.2999 17.15 15.5299 16.45 15.5299 15.7C15.5299 13.66 13.8699 12 11.8299 12C9.78988 12 8.12988 13.66 8.12988 15.7C8.12988 17.74 9.78988 19.4 11.8299 19.4C12.5799 19.4 13.2799 19.17 13.8599 18.79L14.5999 19.53C14.7499 19.68 14.9399 19.75 15.1299 19.75C15.3199 19.75 15.5099 19.68 15.6599 19.53C15.9499 19.24 15.9499 18.76 15.6599 18.47Z"
+                  fill="#ABABAB"
+                />
+              </svg>
+  
+              <input
+                placeholder="Type..."
+                name="release-date"
+                value="0"
+                class="placeholder:text-sm w-28 min-h-10 outline-none"
+                id="releaste-datee"
+                type="number"
+              />
+            </div>
           </div>
         </div>
         <div class="flex gap-4 mt-6 font-bold" dir="rtl">
@@ -151,7 +154,7 @@
     </div>
     <div
       class="modal modal--fixed rounded-4xl"
-      id="set-av-2"
+      id="set-av-single"
       role="dialog"
       aria-labelledby="supplier-title"
     >
@@ -160,7 +163,7 @@
           class="flex items-center border-b border-b-gray-100 pb-6 justify-between"
         >
           <h2 id="collection-title" class="text-2xl">Set Availability</h2>
-          <button aria-label="Close Modal" data-modal-close="#set-av-2">
+          <button aria-label="Close Modal" data-modal-close="#set-av-single">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -192,20 +195,26 @@
         <form action="" class="mt-6">
           <div class="flex gap-6">
             <div class="grid basis-full h-fit grid-cols-2 gap-[24px_21px]">
-              <div style="grid-column: 1 / 3" class="w-full">
-                <label class="block mb-2" for="rate-plan"
-                  >Rate Plan<span class="text-red-500">*</span></label
+              <div style="grid-column: 1/3;">
+                <p class="block mb-2">Rate Plan<span class="text-red-500">*</span></p>
+                <div
+                  class="select relative border overflow-hidden rounded-full"
                 >
-                <input
-                  name="rate-plan"
-                  placeholder="Type.."
-                  class="min-h-[40px] theme-secondary border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
-                  id="rate-plan"
-                  type="text"
-                />
+                  <select
+                    name="rate-plan"
+                    id="rate-plan"
+                    aria-label="Rate Plan"
+                    class="appearance-none theme-secondary rounded-full [&amp;:has(option:disabled:checked)]:text-gray-200 w-full min-h-10 ps-[14px] outline-none"
+                  >
+                    <option disabled="" selected="" value="">Select...</option>
+                    <option class="text-black" value="1">1</option>
+                    <option class="text-black" value="2">2</option>
+                    <option class="text-black" value="3">3</option>
+                  </select>
+                </div>
               </div>
               <div class="w-full">
-                <label class="block mb-2" for="start-date"
+                <label class="block mb-2" for="start-date-triple"
                   >Start Date<span class="text-red-500">*</span></label
                 >
                 <div
@@ -255,16 +264,16 @@
 
                   <input
                     placeholder="1403/02/18"
-                    name="start-date"
+                    name="start-date-single"
                     class="mt-0.5 min-h-[40px] theme-secondary outline-none w-full placeholder:text-gray-500 rounded-full"
-                    id="start-date"
+                    id="start-date-single"
                     readonly=""
                     type="text"
                   />
                 </div>
               </div>
               <div class="w-full">
-                <label class="block mb-2" for="end-date"
+                <label class="block mb-2" for="end-date-single"
                   >End Date<span class="text-red-500">*</span></label
                 >
                 <div
@@ -314,50 +323,39 @@
 
                   <input
                     placeholder="1403/02/18"
-                    name="end-date"
+                    name="end-date-single"
                     class="mt-0.5 min-h-[40px] theme-secondary outline-none w-full placeholder:text-gray-500 rounded-full"
-                    id="end-date"
+                    id="end-date-single"
                     readonly=""
                     type="text"
                   />
                 </div>
               </div>
-              <div>
-                <p class="block mb-2">Min Nights</p>
-                <div
-                  class="select relative border overflow-hidden rounded-full"
+              <div class="w-full">
+                <label class="block mb-2" for="min-nights"
+                  >Min Nights</label
                 >
-                  <select
-                    name="min-nights"
-                    id="min-nights"
-                    aria-label="Min Nights"
-                    class="appearance-none theme-secondary rounded-full [&amp;:has(option:disabled:checked)]:text-gray-200 w-full min-h-10 ps-[14px] outline-none"
-                  >
-                    <option disabled="" selected="" value="">Select...</option>
-                    <option class="text-black" value="1">1</option>
-                    <option class="text-black" value="2">2</option>
-                    <option class="text-black" value="3">3</option>
-                  </select>
-                </div>
+                <input
+                  name="min-nights"
+                  placeholder="Type.."
+                  class="min-h-[40px] theme-secondary border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
+                  id="min-nights"
+                  type="text"
+                />
               </div>
-              <div>
-                <p class="block mb-2">Quantity</p>
-                <div
-                  class="select relative border overflow-hidden rounded-full"
+              <div class="w-full">
+                <label class="block mb-2" for="quantity"
+                  >Quantity<span class="text-red-500">*</span></label
                 >
-                  <select
-                    name="quantity"
-                    id="quantity"
-                    aria-label="quantity"
-                    class="appearance-none theme-secondary rounded-full [&amp;:has(option:disabled:checked)]:text-gray-200 w-full min-h-10 ps-[14px] outline-none"
-                  >
-                    <option disabled="" selected="" value="">Select...</option>
-                    <option class="text-black" value="1">1</option>
-                    <option class="text-black" value="2">2</option>
-                    <option class="text-black" value="3">3</option>
-                  </select>
-                </div>
+                <input
+                  name="quantity"
+                  placeholder="Type.."
+                  class="min-h-[40px] theme-secondary border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
+                  id="quantity"
+                  type="text"
+                />
               </div>
+             
             </div>
           </div>
 
@@ -369,7 +367,457 @@
             </button>
             <button
               aria-label="Close Modal"
-              data-modal-close="#set-av-2"
+              data-modal-close="#set-av-single"
+              type="button"
+              class="border leading-[14px] border-gray-400 text-gray-400 rounded-full min-h-[40px] min-w-[7.3125rem]"
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div
+      class="modal modal--fixed rounded-4xl"
+      id="set-av-double"
+      role="dialog"
+      aria-labelledby="supplier-title"
+    >
+      <div class="theme-secondary rounded-4xl h-fit p-10 min-w-[34.25rem]">
+        <div
+          class="flex items-center border-b border-b-gray-100 pb-6 justify-between"
+        >
+          <h2 id="collection-title" class="text-2xl">Set Availability</h2>
+          <button aria-label="Close Modal" data-modal-close="#set-av-double">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                opacity="0.4"
+                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                fill="#DC2626"
+              />
+              <path
+                d="M13.0604 11.9999L15.3604 9.69986C15.6504 9.40986 15.6504 8.92986 15.3604 8.63986C15.0704 8.34986 14.5904 8.34986 14.3004 8.63986L12.0004 10.9399L9.70035 8.63986C9.41035 8.34986 8.93035 8.34986 8.64035 8.63986C8.35035 8.92986 8.35035 9.40986 8.64035 9.69986L10.9404 11.9999L8.64035 14.2999C8.35035 14.5899 8.35035 15.0699 8.64035 15.3599C8.79035 15.5099 8.98035 15.5799 9.17035 15.5799C9.36035 15.5799 9.55035 15.5099 9.70035 15.3599L12.0004 13.0599L14.3004 15.3599C14.4504 15.5099 14.6404 15.5799 14.8304 15.5799C15.0204 15.5799 15.2104 15.5099 15.3604 15.3599C15.6504 15.0699 15.6504 14.5899 15.3604 14.2999L13.0604 11.9999Z"
+                fill="#DC2626"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="border rounded-2xl bg-orange-500/10 mt-6 flex items-center gap-1 border-orange-500 p-4"
+        >
+          <span class="size-[10px] bg-orange-500 rounded-full"></span>
+          <div class="flex flex-col text-orange-500">
+            <p>CLASSIC ROOM</p>
+            <p class="text-start w-fit mt-1">single room</p>
+          </div>
+        </div>
+        <form action="" class="mt-6">
+          <div class="flex gap-6">
+            <div class="grid basis-full h-fit grid-cols-2 gap-[24px_21px]">
+              <div style="grid-column: 1/3;">
+                <p class="block mb-2">Rate Plan<span class="text-red-500">*</span></p>
+                <div
+                  class="select relative border overflow-hidden rounded-full"
+                >
+                  <select
+                    name="rate-plan"
+                    id="rate-plan"
+                    aria-label="Rate Plan"
+                    class="appearance-none theme-secondary rounded-full [&amp;:has(option:disabled:checked)]:text-gray-200 w-full min-h-10 ps-[14px] outline-none"
+                  >
+                    <option disabled="" selected="" value="">Select...</option>
+                    <option class="text-black" value="1">1</option>
+                    <option class="text-black" value="2">2</option>
+                    <option class="text-black" value="3">3</option>
+                  </select>
+                </div>
+              </div>
+              <div class="w-full">
+                <label class="block mb-2" for="start-date-single"
+                  >Start Date<span class="text-red-500">*</span></label
+                >
+                <div
+                  class="flex datePicker relative items-center overflow-hidden gap-3.5 h-[40px] px-3.5 border rounded-full"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M16.7502 3.56V2C16.7502 1.59 16.4102 1.25 16.0002 1.25C15.5902 1.25 15.2502 1.59 15.2502 2V3.5H8.75023V2C8.75023 1.59 8.41023 1.25 8.00023 1.25C7.59023 1.25 7.25023 1.59 7.25023 2V3.56C4.55023 3.81 3.24023 5.42 3.04023 7.81C3.02023 8.1 3.26023 8.34 3.54023 8.34H20.4602C20.7502 8.34 20.9902 8.09 20.9602 7.81C20.7602 5.42 19.4502 3.81 16.7502 3.56Z"
+                      fill="#ABABAB"
+                    ></path>
+                    <path
+                      opacity="0.4"
+                      d="M20 9.83997C20.55 9.83997 21 10.29 21 10.84V17C21 20 19.5 22 16 22H8C4.5 22 3 20 3 17V10.84C3 10.29 3.45 9.83997 4 9.83997H20Z"
+                      fill="#ABABAB"
+                    ></path>
+                    <path
+                      d="M8.5 15C8.24 15 7.98 14.89 7.79 14.71C7.61 14.52 7.5 14.26 7.5 14C7.5 13.74 7.61 13.48 7.79 13.29C8.07 13.01 8.51 12.92 8.88 13.08C9.01 13.13 9.12 13.2 9.21 13.29C9.39 13.48 9.5 13.74 9.5 14C9.5 14.26 9.39 14.52 9.21 14.71C9.02 14.89 8.76 15 8.5 15Z"
+                      fill="#ABABAB"
+                    ></path>
+                    <path
+                      d="M12 15C11.74 15 11.48 14.89 11.29 14.71C11.11 14.52 11 14.26 11 14C11 13.74 11.11 13.48 11.29 13.29C11.38 13.2 11.49 13.13 11.62 13.08C11.99 12.92 12.43 13.01 12.71 13.29C12.89 13.48 13 13.74 13 14C13 14.26 12.89 14.52 12.71 14.71C12.66 14.75 12.61 14.79 12.56 14.83C12.5 14.87 12.44 14.9 12.38 14.92C12.32 14.95 12.26 14.97 12.2 14.98C12.13 14.99 12.07 15 12 15Z"
+                      fill="#ABABAB"
+                    ></path>
+                    <path
+                      d="M15.5 15C15.24 15 14.98 14.89 14.79 14.71C14.61 14.52 14.5 14.26 14.5 14C14.5 13.74 14.61 13.48 14.79 13.29C14.89 13.2 14.99 13.13 15.12 13.08C15.3 13 15.5 12.98 15.7 13.02C15.76 13.03 15.82 13.05 15.88 13.08C15.94 13.1 16 13.13 16.06 13.17C16.11 13.21 16.16 13.25 16.21 13.29C16.39 13.48 16.5 13.74 16.5 14C16.5 14.26 16.39 14.52 16.21 14.71C16.16 14.75 16.11 14.79 16.06 14.83C16 14.87 15.94 14.9 15.88 14.92C15.82 14.95 15.76 14.97 15.7 14.98C15.63 14.99 15.56 15 15.5 15Z"
+                      fill="#ABABAB"
+                    ></path>
+                    <path
+                      d="M8.5 18.5C8.37 18.5 8.24 18.47 8.12 18.42C7.99 18.37 7.89 18.3 7.79 18.21C7.61 18.02 7.5 17.76 7.5 17.5C7.5 17.24 7.61 16.98 7.79 16.79C7.89 16.7 7.99 16.63 8.12 16.58C8.3 16.5 8.5 16.48 8.7 16.52C8.76 16.53 8.82 16.55 8.88 16.58C8.94 16.6 9 16.63 9.06 16.67C9.11 16.71 9.16 16.75 9.21 16.79C9.39 16.98 9.5 17.24 9.5 17.5C9.5 17.76 9.39 18.02 9.21 18.21C9.16 18.25 9.11 18.3 9.06 18.33C9 18.37 8.94 18.4 8.88 18.42C8.82 18.45 8.76 18.47 8.7 18.48C8.63 18.49 8.57 18.5 8.5 18.5Z"
+                      fill="#ABABAB"
+                    ></path>
+                    <path
+                      d="M12 18.4999C11.74 18.4999 11.48 18.3899 11.29 18.2099C11.11 18.0199 11 17.7599 11 17.4999C11 17.2399 11.11 16.98 11.29 16.79C11.66 16.42 12.34 16.42 12.71 16.79C12.89 16.98 13 17.2399 13 17.4999C13 17.7599 12.89 18.0199 12.71 18.2099C12.52 18.3899 12.26 18.4999 12 18.4999Z"
+                      fill="#ABABAB"
+                    ></path>
+                    <path
+                      d="M15.5 18.4999C15.24 18.4999 14.98 18.3899 14.79 18.2099C14.61 18.0199 14.5 17.7599 14.5 17.4999C14.5 17.2399 14.61 16.98 14.79 16.79C15.16 16.42 15.84 16.42 16.21 16.79C16.39 16.98 16.5 17.2399 16.5 17.4999C16.5 17.7599 16.39 18.0199 16.21 18.2099C16.02 18.3899 15.76 18.4999 15.5 18.4999Z"
+                      fill="#ABABAB"
+                    ></path>
+                  </svg>
+
+                  <input
+                    placeholder="1403/02/18"
+                    name="start-date-double"
+                    class="mt-0.5 min-h-[40px] theme-secondary outline-none w-full placeholder:text-gray-500 rounded-full"
+                    id="start-date-double"
+                    readonly=""
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div class="w-full">
+                <label class="block mb-2" for="end-date-double"
+                  >End Date<span class="text-red-500">*</span></label
+                >
+                <div
+                  class="flex datePicker relative items-center overflow-hidden gap-3.5 h-[40px] px-3.5 border rounded-full"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M16.7502 3.56V2C16.7502 1.59 16.4102 1.25 16.0002 1.25C15.5902 1.25 15.2502 1.59 15.2502 2V3.5H8.75023V2C8.75023 1.59 8.41023 1.25 8.00023 1.25C7.59023 1.25 7.25023 1.59 7.25023 2V3.56C4.55023 3.81 3.24023 5.42 3.04023 7.81C3.02023 8.1 3.26023 8.34 3.54023 8.34H20.4602C20.7502 8.34 20.9902 8.09 20.9602 7.81C20.7602 5.42 19.4502 3.81 16.7502 3.56Z"
+                      fill="#ABABAB"
+                    ></path>
+                    <path
+                      opacity="0.4"
+                      d="M20 9.83997C20.55 9.83997 21 10.29 21 10.84V17C21 20 19.5 22 16 22H8C4.5 22 3 20 3 17V10.84C3 10.29 3.45 9.83997 4 9.83997H20Z"
+                      fill="#ABABAB"
+                    ></path>
+                    <path
+                      d="M8.5 15C8.24 15 7.98 14.89 7.79 14.71C7.61 14.52 7.5 14.26 7.5 14C7.5 13.74 7.61 13.48 7.79 13.29C8.07 13.01 8.51 12.92 8.88 13.08C9.01 13.13 9.12 13.2 9.21 13.29C9.39 13.48 9.5 13.74 9.5 14C9.5 14.26 9.39 14.52 9.21 14.71C9.02 14.89 8.76 15 8.5 15Z"
+                      fill="#ABABAB"
+                    ></path>
+                    <path
+                      d="M12 15C11.74 15 11.48 14.89 11.29 14.71C11.11 14.52 11 14.26 11 14C11 13.74 11.11 13.48 11.29 13.29C11.38 13.2 11.49 13.13 11.62 13.08C11.99 12.92 12.43 13.01 12.71 13.29C12.89 13.48 13 13.74 13 14C13 14.26 12.89 14.52 12.71 14.71C12.66 14.75 12.61 14.79 12.56 14.83C12.5 14.87 12.44 14.9 12.38 14.92C12.32 14.95 12.26 14.97 12.2 14.98C12.13 14.99 12.07 15 12 15Z"
+                      fill="#ABABAB"
+                    ></path>
+                    <path
+                      d="M15.5 15C15.24 15 14.98 14.89 14.79 14.71C14.61 14.52 14.5 14.26 14.5 14C14.5 13.74 14.61 13.48 14.79 13.29C14.89 13.2 14.99 13.13 15.12 13.08C15.3 13 15.5 12.98 15.7 13.02C15.76 13.03 15.82 13.05 15.88 13.08C15.94 13.1 16 13.13 16.06 13.17C16.11 13.21 16.16 13.25 16.21 13.29C16.39 13.48 16.5 13.74 16.5 14C16.5 14.26 16.39 14.52 16.21 14.71C16.16 14.75 16.11 14.79 16.06 14.83C16 14.87 15.94 14.9 15.88 14.92C15.82 14.95 15.76 14.97 15.7 14.98C15.63 14.99 15.56 15 15.5 15Z"
+                      fill="#ABABAB"
+                    ></path>
+                    <path
+                      d="M8.5 18.5C8.37 18.5 8.24 18.47 8.12 18.42C7.99 18.37 7.89 18.3 7.79 18.21C7.61 18.02 7.5 17.76 7.5 17.5C7.5 17.24 7.61 16.98 7.79 16.79C7.89 16.7 7.99 16.63 8.12 16.58C8.3 16.5 8.5 16.48 8.7 16.52C8.76 16.53 8.82 16.55 8.88 16.58C8.94 16.6 9 16.63 9.06 16.67C9.11 16.71 9.16 16.75 9.21 16.79C9.39 16.98 9.5 17.24 9.5 17.5C9.5 17.76 9.39 18.02 9.21 18.21C9.16 18.25 9.11 18.3 9.06 18.33C9 18.37 8.94 18.4 8.88 18.42C8.82 18.45 8.76 18.47 8.7 18.48C8.63 18.49 8.57 18.5 8.5 18.5Z"
+                      fill="#ABABAB"
+                    ></path>
+                    <path
+                      d="M12 18.4999C11.74 18.4999 11.48 18.3899 11.29 18.2099C11.11 18.0199 11 17.7599 11 17.4999C11 17.2399 11.11 16.98 11.29 16.79C11.66 16.42 12.34 16.42 12.71 16.79C12.89 16.98 13 17.2399 13 17.4999C13 17.7599 12.89 18.0199 12.71 18.2099C12.52 18.3899 12.26 18.4999 12 18.4999Z"
+                      fill="#ABABAB"
+                    ></path>
+                    <path
+                      d="M15.5 18.4999C15.24 18.4999 14.98 18.3899 14.79 18.2099C14.61 18.0199 14.5 17.7599 14.5 17.4999C14.5 17.2399 14.61 16.98 14.79 16.79C15.16 16.42 15.84 16.42 16.21 16.79C16.39 16.98 16.5 17.2399 16.5 17.4999C16.5 17.7599 16.39 18.0199 16.21 18.2099C16.02 18.3899 15.76 18.4999 15.5 18.4999Z"
+                      fill="#ABABAB"
+                    ></path>
+                  </svg>
+
+                  <input
+                    placeholder="1403/02/18"
+                    name="end-date-double"
+                    class="mt-0.5 min-h-[40px] theme-secondary outline-none w-full placeholder:text-gray-500 rounded-full"
+                    id="end-date-double"
+                    readonly=""
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div class="w-full">
+                <label class="block mb-2" for="min-nights"
+                  >Min Nights</label
+                >
+                <input
+                  name="min-nights"
+                  placeholder="Type.."
+                  class="min-h-[40px] theme-secondary border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
+                  id="min-nights"
+                  type="text"
+                />
+              </div>
+              <div class="w-full">
+                <label class="block mb-2" for="quantity"
+                  >Quantity<span class="text-red-500">*</span></label
+                >
+                <input
+                  name="quantity"
+                  placeholder="Type.."
+                  class="min-h-[40px] theme-secondary border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
+                  id="quantity"
+                  type="text"
+                />
+              </div>
+             
+            </div>
+          </div>
+
+          <div class="flex gap-4 mt-10 font-bold" dir="rtl">
+            <button
+              class="leading-[14px] text-white rounded-full bg-green-500 min-h-[40px] min-w-[7.3125rem]"
+            >
+              Save
+            </button>
+            <button
+              aria-label="Close Modal"
+              data-modal-close="#set-av-double"
+              type="button"
+              class="border leading-[14px] border-gray-400 text-gray-400 rounded-full min-h-[40px] min-w-[7.3125rem]"
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div
+      class="modal modal--fixed rounded-4xl"
+      id="set-av-triple"
+      role="dialog"
+      aria-labelledby="supplier-title"
+    >
+      <div class="theme-secondary rounded-4xl h-fit p-10 min-w-[34.25rem]">
+        <div
+          class="flex items-center border-b border-b-gray-100 pb-6 justify-between"
+        >
+          <h2 id="collection-title" class="text-2xl">Set Availability</h2>
+          <button aria-label="Close Modal" data-modal-close="#set-av-double">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                opacity="0.4"
+                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                fill="#DC2626"
+              />
+              <path
+                d="M13.0604 11.9999L15.3604 9.69986C15.6504 9.40986 15.6504 8.92986 15.3604 8.63986C15.0704 8.34986 14.5904 8.34986 14.3004 8.63986L12.0004 10.9399L9.70035 8.63986C9.41035 8.34986 8.93035 8.34986 8.64035 8.63986C8.35035 8.92986 8.35035 9.40986 8.64035 9.69986L10.9404 11.9999L8.64035 14.2999C8.35035 14.5899 8.35035 15.0699 8.64035 15.3599C8.79035 15.5099 8.98035 15.5799 9.17035 15.5799C9.36035 15.5799 9.55035 15.5099 9.70035 15.3599L12.0004 13.0599L14.3004 15.3599C14.4504 15.5099 14.6404 15.5799 14.8304 15.5799C15.0204 15.5799 15.2104 15.5099 15.3604 15.3599C15.6504 15.0699 15.6504 14.5899 15.3604 14.2999L13.0604 11.9999Z"
+                fill="#DC2626"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="border rounded-2xl bg-orange-500/10 mt-6 flex items-center gap-1 border-orange-500 p-4"
+        >
+          <span class="size-[10px] bg-orange-500 rounded-full"></span>
+          <div class="flex flex-col text-orange-500">
+            <p>CLASSIC ROOM</p>
+            <p class="text-start w-fit mt-1">single room</p>
+          </div>
+        </div>
+        <form action="" class="mt-6">
+          <div class="flex gap-6">
+            <div class="grid basis-full h-fit grid-cols-2 gap-[24px_21px]">
+              <div style="grid-column: 1/3;">
+                <p class="block mb-2">Rate Plan<span class="text-red-500">*</span></p>
+                <div
+                  class="select relative border overflow-hidden rounded-full"
+                >
+                  <select
+                    name="rate-plan"
+                    id="rate-plan"
+                    aria-label="Rate Plan"
+                    class="appearance-none theme-secondary rounded-full [&amp;:has(option:disabled:checked)]:text-gray-200 w-full min-h-10 ps-[14px] outline-none"
+                  >
+                    <option disabled="" selected="" value="">Select...</option>
+                    <option class="text-black" value="1">1</option>
+                    <option class="text-black" value="2">2</option>
+                    <option class="text-black" value="3">3</option>
+                  </select>
+                </div>
+              </div>
+              <div class="w-full">
+                <label class="block mb-2" for="start-date-double"
+                  >Start Date<span class="text-red-500">*</span></label
+                >
+                <div
+                  class="flex datePicker relative items-center overflow-hidden gap-3.5 h-[40px] px-3.5 border rounded-full"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M16.7502 3.56V2C16.7502 1.59 16.4102 1.25 16.0002 1.25C15.5902 1.25 15.2502 1.59 15.2502 2V3.5H8.75023V2C8.75023 1.59 8.41023 1.25 8.00023 1.25C7.59023 1.25 7.25023 1.59 7.25023 2V3.56C4.55023 3.81 3.24023 5.42 3.04023 7.81C3.02023 8.1 3.26023 8.34 3.54023 8.34H20.4602C20.7502 8.34 20.9902 8.09 20.9602 7.81C20.7602 5.42 19.4502 3.81 16.7502 3.56Z"
+                      fill="#ABABAB"
+                    ></path>
+                    <path
+                      opacity="0.4"
+                      d="M20 9.83997C20.55 9.83997 21 10.29 21 10.84V17C21 20 19.5 22 16 22H8C4.5 22 3 20 3 17V10.84C3 10.29 3.45 9.83997 4 9.83997H20Z"
+                      fill="#ABABAB"
+                    ></path>
+                    <path
+                      d="M8.5 15C8.24 15 7.98 14.89 7.79 14.71C7.61 14.52 7.5 14.26 7.5 14C7.5 13.74 7.61 13.48 7.79 13.29C8.07 13.01 8.51 12.92 8.88 13.08C9.01 13.13 9.12 13.2 9.21 13.29C9.39 13.48 9.5 13.74 9.5 14C9.5 14.26 9.39 14.52 9.21 14.71C9.02 14.89 8.76 15 8.5 15Z"
+                      fill="#ABABAB"
+                    ></path>
+                    <path
+                      d="M12 15C11.74 15 11.48 14.89 11.29 14.71C11.11 14.52 11 14.26 11 14C11 13.74 11.11 13.48 11.29 13.29C11.38 13.2 11.49 13.13 11.62 13.08C11.99 12.92 12.43 13.01 12.71 13.29C12.89 13.48 13 13.74 13 14C13 14.26 12.89 14.52 12.71 14.71C12.66 14.75 12.61 14.79 12.56 14.83C12.5 14.87 12.44 14.9 12.38 14.92C12.32 14.95 12.26 14.97 12.2 14.98C12.13 14.99 12.07 15 12 15Z"
+                      fill="#ABABAB"
+                    ></path>
+                    <path
+                      d="M15.5 15C15.24 15 14.98 14.89 14.79 14.71C14.61 14.52 14.5 14.26 14.5 14C14.5 13.74 14.61 13.48 14.79 13.29C14.89 13.2 14.99 13.13 15.12 13.08C15.3 13 15.5 12.98 15.7 13.02C15.76 13.03 15.82 13.05 15.88 13.08C15.94 13.1 16 13.13 16.06 13.17C16.11 13.21 16.16 13.25 16.21 13.29C16.39 13.48 16.5 13.74 16.5 14C16.5 14.26 16.39 14.52 16.21 14.71C16.16 14.75 16.11 14.79 16.06 14.83C16 14.87 15.94 14.9 15.88 14.92C15.82 14.95 15.76 14.97 15.7 14.98C15.63 14.99 15.56 15 15.5 15Z"
+                      fill="#ABABAB"
+                    ></path>
+                    <path
+                      d="M8.5 18.5C8.37 18.5 8.24 18.47 8.12 18.42C7.99 18.37 7.89 18.3 7.79 18.21C7.61 18.02 7.5 17.76 7.5 17.5C7.5 17.24 7.61 16.98 7.79 16.79C7.89 16.7 7.99 16.63 8.12 16.58C8.3 16.5 8.5 16.48 8.7 16.52C8.76 16.53 8.82 16.55 8.88 16.58C8.94 16.6 9 16.63 9.06 16.67C9.11 16.71 9.16 16.75 9.21 16.79C9.39 16.98 9.5 17.24 9.5 17.5C9.5 17.76 9.39 18.02 9.21 18.21C9.16 18.25 9.11 18.3 9.06 18.33C9 18.37 8.94 18.4 8.88 18.42C8.82 18.45 8.76 18.47 8.7 18.48C8.63 18.49 8.57 18.5 8.5 18.5Z"
+                      fill="#ABABAB"
+                    ></path>
+                    <path
+                      d="M12 18.4999C11.74 18.4999 11.48 18.3899 11.29 18.2099C11.11 18.0199 11 17.7599 11 17.4999C11 17.2399 11.11 16.98 11.29 16.79C11.66 16.42 12.34 16.42 12.71 16.79C12.89 16.98 13 17.2399 13 17.4999C13 17.7599 12.89 18.0199 12.71 18.2099C12.52 18.3899 12.26 18.4999 12 18.4999Z"
+                      fill="#ABABAB"
+                    ></path>
+                    <path
+                      d="M15.5 18.4999C15.24 18.4999 14.98 18.3899 14.79 18.2099C14.61 18.0199 14.5 17.7599 14.5 17.4999C14.5 17.2399 14.61 16.98 14.79 16.79C15.16 16.42 15.84 16.42 16.21 16.79C16.39 16.98 16.5 17.2399 16.5 17.4999C16.5 17.7599 16.39 18.0199 16.21 18.2099C16.02 18.3899 15.76 18.4999 15.5 18.4999Z"
+                      fill="#ABABAB"
+                    ></path>
+                  </svg>
+
+                  <input
+                    placeholder="1403/02/18"
+                    name="start-date-triple"
+                    class="mt-0.5 min-h-[40px] theme-secondary outline-none w-full placeholder:text-gray-500 rounded-full"
+                    id="start-date-triple"
+                    readonly=""
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div class="w-full">
+                <label class="block mb-2" for="end-date-triple"
+                  >End Date<span class="text-red-500">*</span></label
+                >
+                <div
+                  class="flex datePicker relative items-center overflow-hidden gap-3.5 h-[40px] px-3.5 border rounded-full"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M16.7502 3.56V2C16.7502 1.59 16.4102 1.25 16.0002 1.25C15.5902 1.25 15.2502 1.59 15.2502 2V3.5H8.75023V2C8.75023 1.59 8.41023 1.25 8.00023 1.25C7.59023 1.25 7.25023 1.59 7.25023 2V3.56C4.55023 3.81 3.24023 5.42 3.04023 7.81C3.02023 8.1 3.26023 8.34 3.54023 8.34H20.4602C20.7502 8.34 20.9902 8.09 20.9602 7.81C20.7602 5.42 19.4502 3.81 16.7502 3.56Z"
+                      fill="#ABABAB"
+                    ></path>
+                    <path
+                      opacity="0.4"
+                      d="M20 9.83997C20.55 9.83997 21 10.29 21 10.84V17C21 20 19.5 22 16 22H8C4.5 22 3 20 3 17V10.84C3 10.29 3.45 9.83997 4 9.83997H20Z"
+                      fill="#ABABAB"
+                    ></path>
+                    <path
+                      d="M8.5 15C8.24 15 7.98 14.89 7.79 14.71C7.61 14.52 7.5 14.26 7.5 14C7.5 13.74 7.61 13.48 7.79 13.29C8.07 13.01 8.51 12.92 8.88 13.08C9.01 13.13 9.12 13.2 9.21 13.29C9.39 13.48 9.5 13.74 9.5 14C9.5 14.26 9.39 14.52 9.21 14.71C9.02 14.89 8.76 15 8.5 15Z"
+                      fill="#ABABAB"
+                    ></path>
+                    <path
+                      d="M12 15C11.74 15 11.48 14.89 11.29 14.71C11.11 14.52 11 14.26 11 14C11 13.74 11.11 13.48 11.29 13.29C11.38 13.2 11.49 13.13 11.62 13.08C11.99 12.92 12.43 13.01 12.71 13.29C12.89 13.48 13 13.74 13 14C13 14.26 12.89 14.52 12.71 14.71C12.66 14.75 12.61 14.79 12.56 14.83C12.5 14.87 12.44 14.9 12.38 14.92C12.32 14.95 12.26 14.97 12.2 14.98C12.13 14.99 12.07 15 12 15Z"
+                      fill="#ABABAB"
+                    ></path>
+                    <path
+                      d="M15.5 15C15.24 15 14.98 14.89 14.79 14.71C14.61 14.52 14.5 14.26 14.5 14C14.5 13.74 14.61 13.48 14.79 13.29C14.89 13.2 14.99 13.13 15.12 13.08C15.3 13 15.5 12.98 15.7 13.02C15.76 13.03 15.82 13.05 15.88 13.08C15.94 13.1 16 13.13 16.06 13.17C16.11 13.21 16.16 13.25 16.21 13.29C16.39 13.48 16.5 13.74 16.5 14C16.5 14.26 16.39 14.52 16.21 14.71C16.16 14.75 16.11 14.79 16.06 14.83C16 14.87 15.94 14.9 15.88 14.92C15.82 14.95 15.76 14.97 15.7 14.98C15.63 14.99 15.56 15 15.5 15Z"
+                      fill="#ABABAB"
+                    ></path>
+                    <path
+                      d="M8.5 18.5C8.37 18.5 8.24 18.47 8.12 18.42C7.99 18.37 7.89 18.3 7.79 18.21C7.61 18.02 7.5 17.76 7.5 17.5C7.5 17.24 7.61 16.98 7.79 16.79C7.89 16.7 7.99 16.63 8.12 16.58C8.3 16.5 8.5 16.48 8.7 16.52C8.76 16.53 8.82 16.55 8.88 16.58C8.94 16.6 9 16.63 9.06 16.67C9.11 16.71 9.16 16.75 9.21 16.79C9.39 16.98 9.5 17.24 9.5 17.5C9.5 17.76 9.39 18.02 9.21 18.21C9.16 18.25 9.11 18.3 9.06 18.33C9 18.37 8.94 18.4 8.88 18.42C8.82 18.45 8.76 18.47 8.7 18.48C8.63 18.49 8.57 18.5 8.5 18.5Z"
+                      fill="#ABABAB"
+                    ></path>
+                    <path
+                      d="M12 18.4999C11.74 18.4999 11.48 18.3899 11.29 18.2099C11.11 18.0199 11 17.7599 11 17.4999C11 17.2399 11.11 16.98 11.29 16.79C11.66 16.42 12.34 16.42 12.71 16.79C12.89 16.98 13 17.2399 13 17.4999C13 17.7599 12.89 18.0199 12.71 18.2099C12.52 18.3899 12.26 18.4999 12 18.4999Z"
+                      fill="#ABABAB"
+                    ></path>
+                    <path
+                      d="M15.5 18.4999C15.24 18.4999 14.98 18.3899 14.79 18.2099C14.61 18.0199 14.5 17.7599 14.5 17.4999C14.5 17.2399 14.61 16.98 14.79 16.79C15.16 16.42 15.84 16.42 16.21 16.79C16.39 16.98 16.5 17.2399 16.5 17.4999C16.5 17.7599 16.39 18.0199 16.21 18.2099C16.02 18.3899 15.76 18.4999 15.5 18.4999Z"
+                      fill="#ABABAB"
+                    ></path>
+                  </svg>
+
+                  <input
+                    placeholder="1403/02/18"
+                    name="end-date-triple"
+                    class="mt-0.5 min-h-[40px] theme-secondary outline-none w-full placeholder:text-gray-500 rounded-full"
+                    id="end-date-triple"
+                    readonly=""
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div class="w-full">
+                <label class="block mb-2" for="min-nights"
+                  >Min Nights</label
+                >
+                <input
+                  name="min-nights"
+                  placeholder="Type.."
+                  class="min-h-[40px] theme-secondary border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
+                  id="min-nights"
+                  type="text"
+                />
+              </div>
+              <div class="w-full">
+                <label class="block mb-2" for="quantity"
+                  >Quantity<span class="text-red-500">*</span></label
+                >
+                <input
+                  name="quantity"
+                  placeholder="Type.."
+                  class="min-h-[40px] theme-secondary border outline-none w-full placeholder:text-gray-400 px-3.5 rounded-full"
+                  id="quantity"
+                  type="text"
+                />
+              </div>
+             
+            </div>
+          </div>
+
+          <div class="flex gap-4 mt-10 font-bold" dir="rtl">
+            <button
+              class="leading-[14px] text-white rounded-full bg-green-500 min-h-[40px] min-w-[7.3125rem]"
+            >
+              Save
+            </button>
+            <button
+              aria-label="Close Modal"
+              data-modal-close="#set-av-triple"
               type="button"
               class="border leading-[14px] border-gray-400 text-gray-400 rounded-full min-h-[40px] min-w-[7.3125rem]"
             >
@@ -495,11 +943,11 @@
                     </div>
                   </a>
                 </li>
-                <li class="expanded group after:!top-4 after:!bottom-auto">
+                <li class=" group after:!top-4 after:!bottom-auto">
                   <div class="accordion">
                     <button
                       id="accordion-header-info"
-                      aria-expanded="true"
+                      aria-expanded="false"
                       aria-controls="accordion-panel-info"
                       class="accordion-header group w-full !m-0 items-center !flex justify-between"
                     >
@@ -559,6 +1007,7 @@
                     <ul
                       id="accordion-panel-info"
                       role="region"
+                      hidden
                       aria-labelledby="accordion-header-info"
                       class="font-light mt-5 border-t pt-5 accordion-panel"
                     >
@@ -957,131 +1406,18 @@
               </button>
             </div>
 
-            <div class="relative z-20 inline-block text-left dropdown">
+            <div class="relative z-20 inline-block text-left ">
               <button
-                id="dropdown-button"
-                aria-haspopup="true"
-                aria-expanded="false"
+           
                 class="theme-secondary rounded-full flex items-center min-w-[13.187rem] gap-[10px] p-[6px]"
               >
-                <div>
-                  <svg
-                    width="34"
-                    height="34"
-                    viewBox="0 0 34 34"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect width="34" height="34" rx="17" fill="#F9B233" />
-                  </svg>
+                <div class="size-[2.125rem] rounded-full">
+                  <img src="@assets/images/profile.png" alt="">
                 </div>
-                <p class="font-semibold">Batis</p>
+                <p class="font-semibold text-nowrap text-sm">Villa Sonata Apart Hotel</p>
               </button>
 
-              <ul
-                id="dropdown-menu"
-                class="absolute right-0 flex text-sm p-2 min-h-[14rem] flex-col justify-end top-0 -z-[1] *:rounded-[15px] space-y-2 w-[13.178rem] theme-secondary border-gray-200 rounded-2.5xl shadow-lg hidden focus:outline-none"
-                role="menu"
-                aria-labelledby="dropdown-button"
-              >
-                <li role="none" class="bg-[#F8F8F8] dark:bg-gray-800">
-                  <button
-                    class="w-full flex items-center gap-2.5 text-left p-3"
-                    role="menuitem"
-                    tabindex="-1"
-                  >
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        opacity="0.4"
-                        d="M18.9401 5.41994L13.7701 2.42994C12.7801 1.85994 11.2301 1.85994 10.2401 2.42994L5.02008 5.43994C2.95008 6.83994 2.83008 7.04994 2.83008 9.27994V14.7099C2.83008 16.9399 2.95008 17.1599 5.06008 18.5799L10.2301 21.5699C10.7301 21.8599 11.3701 21.9999 12.0001 21.9999C12.6301 21.9999 13.2701 21.8599 13.7601 21.5699L18.9801 18.5599C21.0501 17.1599 21.1701 16.9499 21.1701 14.7199V9.27994C21.1701 7.04994 21.0501 6.83994 18.9401 5.41994Z"
-                        fill="#F9B233"
-                      />
-                      <path
-                        d="M12 15.25C13.7949 15.25 15.25 13.7949 15.25 12C15.25 10.2051 13.7949 8.75 12 8.75C10.2051 8.75 8.75 10.2051 8.75 12C8.75 13.7949 10.2051 15.25 12 15.25Z"
-                        fill="#F9B233"
-                      />
-                    </svg>
-                    Setting
-                  </button>
-                </li>
-                <li role="none" class="bg-[#F8F8F8] dark:bg-gray-800">
-                  <button
-                    class="w-full flex items-center gap-2.5 text-left p-3"
-                    role="menuitem"
-                    tabindex="-1"
-                  >
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        opacity="0.4"
-                        d="M17.5291 7.77C17.4591 7.76 17.3891 7.76 17.3191 7.77C15.7691 7.72 14.5391 6.45 14.5391 4.89C14.5391 3.3 15.8291 2 17.4291 2C19.0191 2 20.3191 3.29 20.3191 4.89C20.3091 6.45 19.0791 7.72 17.5291 7.77Z"
-                        fill="#F9B233"
-                      />
-                      <path
-                        opacity="0.4"
-                        d="M20.7896 14.6999C19.6696 15.4499 18.0996 15.7299 16.6496 15.5399C17.0296 14.7199 17.2296 13.8099 17.2396 12.8499C17.2396 11.8499 17.0196 10.8999 16.5996 10.0699C18.0796 9.86992 19.6496 10.1499 20.7796 10.8999C22.3596 11.9399 22.3596 13.6499 20.7896 14.6999Z"
-                        fill="#F9B233"
-                      />
-                      <path
-                        opacity="0.4"
-                        d="M6.44039 7.77C6.51039 7.76 6.58039 7.76 6.65039 7.77C8.20039 7.72 9.43039 6.45 9.43039 4.89C9.43039 3.3 8.14039 2 6.54039 2C4.95039 2 3.65039 3.29 3.65039 4.89C3.66039 6.45 4.89039 7.72 6.44039 7.77Z"
-                        fill="#F9B233"
-                      />
-                      <path
-                        opacity="0.4"
-                        d="M6.54914 12.8501C6.54914 13.8201 6.75914 14.7401 7.13914 15.5701C5.72914 15.7201 4.25914 15.4201 3.17914 14.7101C1.59914 13.6601 1.59914 11.9501 3.17914 10.9001C4.24914 10.1801 5.75914 9.8901 7.17914 10.0501C6.76914 10.8901 6.54914 11.8401 6.54914 12.8501Z"
-                        fill="#F9B233"
-                      />
-                      <path
-                        d="M12.1208 15.87C12.0408 15.86 11.9508 15.86 11.8608 15.87C10.0208 15.81 8.55078 14.3 8.55078 12.44C8.55078 10.54 10.0808 9 11.9908 9C13.8908 9 15.4308 10.54 15.4308 12.44C15.4308 14.3 13.9708 15.81 12.1208 15.87Z"
-                        fill="#F9B233"
-                      />
-                      <path
-                        d="M8.87078 17.9401C7.36078 18.9501 7.36078 20.6101 8.87078 21.6101C10.5908 22.7601 13.4108 22.7601 15.1308 21.6101C16.6408 20.6001 16.6408 18.9401 15.1308 17.9401C13.4208 16.7901 10.6008 16.7901 8.87078 17.9401Z"
-                        fill="#F9B233"
-                      />
-                    </svg>
-                    Suppliers
-                  </button>
-                </li>
-                <li role="none">
-                  <button
-                    class="w-full flex items-center gap-2.5 text-left p-3"
-                    role="menuitem"
-                    tabindex="-1"
-                  >
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        opacity="0.4"
-                        d="M9 7.2V16.79C9 20 11 22 14.2 22H16.79C19.99 22 21.99 20 21.99 16.8V7.2C22 4 20 2 16.8 2H14.2C11 2 9 4 9 7.2Z"
-                        fill="#DC2626"
-                      />
-                      <path
-                        d="M5.56945 8.12002L2.21945 11.47C1.92945 11.76 1.92945 12.24 2.21945 12.53L5.56945 15.88C5.85945 16.17 6.33945 16.17 6.62945 15.88C6.91945 15.59 6.91945 15.11 6.62945 14.82L4.55945 12.75H15.2495C15.6595 12.75 15.9995 12.41 15.9995 12C15.9995 11.59 15.6595 11.25 15.2495 11.25H4.55945L6.62945 9.18002C6.77945 9.03002 6.84945 8.84002 6.84945 8.65002C6.84945 8.46002 6.77945 8.26002 6.62945 8.12002C6.33945 7.82002 5.86945 7.82002 5.56945 8.12002Z"
-                        fill="#DC2626"
-                      />
-                    </svg>
-                    Logout
-                  </button>
-                </li>
-              </ul>
+             
             </div>
           </div>
         </header>
@@ -1310,7 +1646,7 @@
                         <td
                           class="*:border-gray-100 border-r p-4 *:font-semibold *:text-orange-500"
                         >
-                          <button data-modal-target="#set-av-2">Single</button>
+                          <button data-modal-target="#set-av-single">Single</button>
                         </td>
                         <td class="px-4 py-2 group">
                           <input
@@ -1668,7 +2004,7 @@
                         <td
                           class="*:border-gray-100 border-r p-4 *:font-semibold *:text-orange-500"
                         >
-                          <button data-modal-target="#set-av-2">Double</button>
+                          <button data-modal-target="#set-av-double">Double</button>
                         </td>
                         <td class="px-4 py-2 group">
                           <input
@@ -2025,7 +2361,7 @@
                         <td
                           class="*:border-gray-100 p-4 border-r *:font-semibold *:text-orange-500"
                         >
-                          <button data-modal-target="#set-av-2">Triple</button>
+                          <button data-modal-target="#set-av-triple">Triple</button>
                         </td>
                         <td class="px-4 py-2 group">
                           <input
@@ -2389,10 +2725,9 @@
     </main>
 
     <script defer src="@assets/js/main.js"></script>
-    <script defer src="@assets/js/cancellationPolicies.js"></script>
     <script defer src="@assets/js/accordion.js"></script>
-    <script defer src="@assets/js/dropdown.js"></script>
     <script defer src="@assets/js/modal.js"></script>
+    <script defer src="@assets/js/availability.js"></script>
     <script defer src="@assets/js/select.js"></script>
   </body>
 </html>

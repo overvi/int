@@ -1,4 +1,5 @@
 import Litepicker from "litepicker";
+import init from "./select";
 
 new Litepicker({
   element: document.getElementById("start-date"),
@@ -77,7 +78,7 @@ addCancellationPolicy.addEventListener("click", () => {
                   name="charge-type-${rows}"
                   id="charge-type-${rows}"
                   aria-label="Charge Type"
-                  class="appearance-none theme-secondary rounded-full [&:has(option:disabled:checked)]:text-gray-200 w-full min-h-10 ps-[14px] outline-none"
+                  class="appearance-none theme-secondary rounded-full [&:has(option:disabled:checked)]:text-gray-200 w-full  ps-[14px] outline-none"
                 >
                   <option disabled selected value="">Select...</option>
                   <option class="text-black" value="1">1</option>
@@ -142,6 +143,7 @@ addCancellationPolicy.addEventListener("click", () => {
               </button>
             </td>
           </tr>`;
+          init()
   updateListeners();
 });
 

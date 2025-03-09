@@ -9,9 +9,9 @@ new Litepicker({
 });
 
 const selects = document.querySelector(".selects");
-const extrabedAllowed = document.getElementById("extra-bed-allowed");
+const babyCots = document.getElementById("baby-cots-allowed");
 
-extrabedAllowed.addEventListener("change", () => {
+babyCots.addEventListener("change", () => {
   selects.querySelectorAll("select").forEach((select) => {
     select.disabled = false;
   });
