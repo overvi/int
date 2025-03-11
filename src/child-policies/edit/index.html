@@ -875,8 +875,8 @@
               </tr>
             </thead>
             <tbody class="shadow-tbody dark:shadow-tbody-dark rounded-b-4xl">
-              <tr class="!border-b-0  row-1 ">
-                <td colspan="3" >
+              <tr class="!border-b-0 row-1">
+                <td colspan="3">
                   <div class="pt-2 px-2">
                     <div
                       class="flex items-center px-3 rounded-2.5xl border border-orange-500 py-3 justify-between"
@@ -900,7 +900,7 @@
                               data-controls="container-one"
                               class="hidden peer type-switch"
                               id="infant"
-                              checked=
+                              checked=""
                             />
                             <label
                               for="infant"
@@ -925,8 +925,12 @@
                             </label>
                           </div>
                         </div>
-                        <button data-delete="row-1" aria-label="Delete Row" class="delete-row">
-                          <svg 
+                        <button
+                          data-delete="row-1"
+                          aria-label="Delete Row"
+                          class="delete-row"
+                        >
+                          <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"
                             height="24"
@@ -962,16 +966,13 @@
                 </td>
               </tr>
               <tr id="container-one" class="row-1">
-                <td class="px-6 align-baseline  pt-4 border-e" rowspan="5">
+                <td class="px-6 align-baseline pt-4 border-e" rowspan="5">
                   <div>
                     <div
                       class="select may-disabled relative border overflow-hidden rounded-full"
                     >
                       <select
-                        name="1"
-                        id="1" 
-                        disabled readonly
-                        aria-label="1"
+                        disabled
                         class="appearance-none theme-secondary rounded-full [&:has(option:disabled:checked)]:text-gray-200 w-full min-h-10 ps-[14px] outline-none"
                       >
                         <option disabled selected value="">Select...</option>
@@ -990,8 +991,9 @@
                       <select
                         name="2"
                         disabled
-                        id="2" readonly
-                        aria-label="2" 
+                        id="2"
+                        readonly
+                        aria-label="2"
                         class="appearance-none theme-secondary rounded-full [&:has(option:disabled:checked)]:text-gray-200 w-full min-h-10 ps-[14px] outline-none"
                       >
                         <option disabled selected value="">Select...</option>
@@ -1467,7 +1469,6 @@
                   </div>
                 </td>
               </tr>
-             
             </tbody>
           </table>
           <div class="flex gap-4 mt-6 font-bold" dir="rtl">

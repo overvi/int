@@ -537,8 +537,10 @@ video {
   }
 
   *:where(.dark, .dark *) {
-  --tw-border-opacity: 1 !important;
   border-color: rgb(209 209 209 / var(--tw-border-opacity, 1)) !important;
+  --tw-border-opacity: 1 !important;
+  border-left-color: rgb(209 209 209 / var(--tw-border-opacity, 1)) !important;
+  border-right-color: rgb(209 209 209 / var(--tw-border-opacity, 1)) !important;
   --tw-text-opacity: 1 !important;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1)) !important;
 }
@@ -2293,6 +2295,9 @@ video {
   --tw-blur: blur(8px);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
 .backdrop-blur-\[1\.5px\] {
   --tw-backdrop-blur: blur(1.5px);
   -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
@@ -2358,7 +2363,8 @@ select,
   }
 .table tbody td:where(.dark, .dark *) {
   --tw-border-opacity: 1 !important;
-  border-inline-end-color: rgb(112 112 112 / var(--tw-border-opacity, 1)) !important;
+  border-left-color: rgb(112 112 112 / var(--tw-border-opacity, 1)) !important;
+  border-right-color: rgb(112 112 112 / var(--tw-border-opacity, 1)) !important;
 }
 .table th {
   font-weight: 400;
@@ -2633,9 +2639,12 @@ option:not(:disabled):where(.dark, .dark *) {
     left: 0;
     right: 0;
     margin-inline: auto;
+
+    
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-top: 15px solid currentColor;
+    
   }
 .resize-container {
     display: inline-block;
@@ -3300,6 +3309,12 @@ option:not(:disabled):where(.dark, .dark *) {
 .dark\:theme-neutral:where(.dark, .dark *):where(.dark, .dark *) {
   --tw-bg-opacity: 1;
   background-color: rgb(109 109 109 / var(--tw-bg-opacity, 1));
+}
+
+.dark\:after\:border-t-\[\#616161\]:where(.dark, .dark *)::after {
+  content: var(--tw-content);
+  --tw-border-opacity: 1;
+  border-top-color: rgb(97 97 97 / var(--tw-border-opacity, 1));
 }
 
 .dark\:after\:border-t-gray-900:where(.dark, .dark *)::after {

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../../css/input.a0259990.css" />
+    <link rel="stylesheet" href="../../css/input.7e332cd2.css" />
 
     <script>
       const mode = localStorage.getItem("mode");
@@ -736,7 +736,7 @@
               </li>
             </ul>
           </div>
-          <div class="tab-content " id="periods">
+          <div class="tab-content" id="periods">
             <table class="table mt-6">
               <thead>
                 <tr class="thead-round-child *:py-4">
@@ -1370,34 +1370,67 @@
               </tbody>
             </table>
             <div class="flex items-center justify-between w-full gap-10 mt-6">
-              <div class="flex items-center gap-10 ">
-
-        
+              <div class="flex items-center gap-10">
                 <p class="text-xl">Refund Status</p>
-                <div class="flex items-center p-1 *:*:cursor-pointer text-sm theme-primary rounded-2xl">
+                <div
+                  class="flex items-center p-1 *:*:cursor-pointer text-sm theme-primary rounded-2xl"
+                >
                   <div>
-                    <input type="radio" name="refundable?" class="hidden peer" id="refundable" checked="">
-                    <label for="refundable" class="py-1.5 block text-[#9B9B9B] font-semibold peer-checked:font-bold border-transparent peer-checked:text-green-500 px-5 peer-checked:bg-green-500/15 rounded-xl peer-checked:border-green-500 border">
+                    <input
+                      type="radio"
+                      name="refundable?"
+                      class="hidden peer"
+                      id="refundable"
+                      checked=""
+                    />
+                    <label
+                      for="refundable"
+                      class="py-1.5 block text-[#9B9B9B] font-semibold peer-checked:font-bold border-transparent peer-checked:text-green-500 px-5 peer-checked:bg-green-500/15 rounded-xl peer-checked:border-green-500 border"
+                    >
                       <p>Refundable</p>
                     </label>
                   </div>
                   <div>
-                    <input type="radio" name="refundable?" class="hidden peer" id="non-refundable">
-                    <label for="non-refundable" class="py-1.5 block text-[#9B9B9B] font-semibold peer-checked:font-bold border-transparent peer-checked:text-red-500 px-5 peer-checked:bg-red-500/15 rounded-xl peer-checked:border-red-500 border">
+                    <input
+                      type="radio"
+                      name="refundable?"
+                      class="hidden peer"
+                      id="non-refundable"
+                    />
+                    <label
+                      for="non-refundable"
+                      class="py-1.5 block text-[#9B9B9B] font-semibold peer-checked:font-bold border-transparent peer-checked:text-red-500 px-5 peer-checked:bg-red-500/15 rounded-xl peer-checked:border-red-500 border"
+                    >
                       <p>Non Refundable</p>
                     </label>
                   </div>
-                </div>     </div>
+                </div>
+              </div>
               <div>
-                <button  id="add-cancellation-policy" class="flex items-center gap-2.5 = bg-orange-500 rounded-full min-h-10 px-[15px] text-white font-bold">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path opacity="0.4" d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="white"></path>
-                    <path d="M16 11.25H12.75V8C12.75 7.59 12.41 7.25 12 7.25C11.59 7.25 11.25 7.59 11.25 8V11.25H8C7.59 11.25 7.25 11.59 7.25 12C7.25 12.41 7.59 12.75 8 12.75H11.25V16C11.25 16.41 11.59 16.75 12 16.75C12.41 16.75 12.75 16.41 12.75 16V12.75H16C16.41 12.75 16.75 12.41 16.75 12C16.75 11.59 16.41 11.25 16 11.25Z" fill="white"></path>
+                <button
+                  id="add-cancellation-policy"
+                  class="flex items-center gap-2.5 = bg-orange-500 rounded-full min-h-10 px-[15px] text-white font-bold"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      opacity="0.4"
+                      d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                      fill="white"
+                    ></path>
+                    <path
+                      d="M16 11.25H12.75V8C12.75 7.59 12.41 7.25 12 7.25C11.59 7.25 11.25 7.59 11.25 8V11.25H8C7.59 11.25 7.25 11.59 7.25 12C7.25 12.41 7.59 12.75 8 12.75H11.25V16C11.25 16.41 11.59 16.75 12 16.75C12.41 16.75 12.75 16.41 12.75 16V12.75H16C16.41 12.75 16.75 12.41 16.75 12C16.75 11.59 16.41 11.25 16 11.25Z"
+                      fill="white"
+                    ></path>
                   </svg>
                   <p>Add Cancellation Policy</p>
                 </button>
               </div>
-              
             </div>
             <table id="cancellation-policy-table" class="table peer mt-10">
               <thead>
@@ -1435,7 +1468,6 @@
                     </p>
                   </td>
                 </tr>
-               
               </tbody>
             </table>
             <div class="mt-6">
@@ -1479,6 +1511,6 @@
     <script defer src="../../js/accordion.524f692d.js"></script>
     <script defer src="../../js/tab.2a15365d.js"></script>
     <script defer src="../../js/select.5c016beb.js"></script>
-    <script defer src="../../js/specialOffers.199ed346.js"></script>
+    <script defer src="../../js/specialOffers.d5ac44e9.js"></script>
   </body>
 </html>

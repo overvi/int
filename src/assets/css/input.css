@@ -301,11 +301,9 @@
     right: 0;
     margin-inline: auto;
 
-    
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-top: 15px solid currentColor;
-    
   }
   .resize-container {
     display: inline-block;
@@ -327,6 +325,13 @@
 
   #drop-area {
     @apply dark:bg-transparent;
+  }
+
+  .last-tr {
+    @apply border-b;
+  }
+  .last-tr:has(+ .end) {
+    @apply !border-b-0;
   }
 
   /*leaflet*/

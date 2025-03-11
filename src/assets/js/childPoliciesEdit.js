@@ -1,4 +1,5 @@
 import Litepicker from "litepicker";
+import init from "./select";
 
 new Litepicker({
   element: document.getElementById("start-date"),
@@ -195,7 +196,7 @@ addPeriods.addEventListener("click", () => {
 
 const MAX_ROWS = 2;
 let rows = 1;
-let rowsId = 1
+let rowsId = 1;
 
 const addRows = document.getElementById("add-rows");
 const childTable = document
@@ -204,8 +205,8 @@ const childTable = document
 
 addRows.addEventListener("click", () => {
   if (rows + 1 > MAX_ROWS) return;
-  rows++
-  rowsId++
+  rows++;
+  rowsId++;
 
   const newRow = `     <tr class="!border-b-0 group row-${rowsId}">
                 <td colspan="3">
@@ -332,7 +333,7 @@ addRows.addEventListener("click", () => {
                       class="select may-disabled relative border overflow-hidden rounded-full"
                     >
                       <select
-                        name="1"
+                    
                         disabled 
                         id="1"
                         aria-label="1"
@@ -833,59 +834,71 @@ addRows.addEventListener("click", () => {
               </tr>`;
 
   childTable.insertAdjacentHTML("beforeend", newRow);
-  updateContent()
+  init();
+  updateContent();
 });
 
 const updateContent = () => {
-  const sameAs = document.querySelectorAll(".same-as")
+  const sameAs = document.querySelectorAll(".same-as");
 
-  sameAs.forEach(same => {
-    same.addEventListener("change" , (event) => {
-      const target =  document.getElementById(event.target.getAttribute("data-enables"))
+  sameAs.forEach((same) => {
+    same.addEventListener("change", (event) => {
+      const target = document.getElementById(
+        event.target.getAttribute("data-enables")
+      );
 
       if (event.target.checked) {
-       target.disabled = false
+        target.disabled = false;
       } else {
-target.disabled = true
+        target.disabled = true;
       }
-    })
-  })
+    });
+  });
 
-  const typeSwitches = document.querySelectorAll(".type-switch")
-  
+  const typeSwitches = document.querySelectorAll(".type-switch");
+
   typeSwitches.forEach((ts) => {
-    ts.addEventListener("change" , (event) => {
-      const selects = document.getElementById(event.target.getAttribute("data-controls"))
-      const innerSelects = selects.querySelectorAll("select")
-      
-   if (event.target.id.includes("child")) {
-  
-    innerSelects.forEach(s => {s.disabled = false , s.classList.remove("[&:has(option:disabled:checked)]:text-gray-200")})
-   
-    innerSelects[0].value = 2
-    innerSelects[0].querySelectorAll("option").forEach(opt => {opt.disabled = true})
-   } else {
-    innerSelects.forEach(s => {s.disabled = true;s.value='', s.classList.add("[&:has(option:disabled:checked)]:text-gray-200")})
-  
-  
-  
-   }
-    })
-  })
-  
-  
-  const deleteRows = document.querySelectorAll(".delete-row")
-  
-  deleteRows.forEach(dr => {
-    dr.addEventListener("click" , (event) => {
-      
-  if (rows - 1 === 0) return
-  const target = document.querySelectorAll(`.${event.target.closest("button").getAttribute("data-delete")}`)
-  if (deleteRows.length === 1) return
-  target.forEach(el => {el.remove()})
-  rows--
-    })
-  })
-}
+    ts.addEventListener("change", (event) => {
+      const selects = document.getElementById(
+        event.target.getAttribute("data-controls")
+      );
+      const innerSelects = selects.querySelectorAll("select");
 
-updateContent()
+      if (event.target.id.includes("child")) {
+        innerSelects[1].classList.remove(
+          "[&:has(option:disabled:checked)]:text-gray-200"
+        );
+        innerSelects[1].disabled = false;
+
+        innerSelects[0].value = 2;
+        innerSelects[0].querySelectorAll("option").forEach((opt) => {
+          opt.disabled = true;
+        });
+      } else {
+        innerSelects.forEach((s) => {
+          s.disabled = true;
+          (s.value = ""),
+            s.classList.add("[&:has(option:disabled:checked)]:text-gray-200");
+        });
+      }
+    });
+  });
+
+  const deleteRows = document.querySelectorAll(".delete-row");
+
+  deleteRows.forEach((dr) => {
+    dr.addEventListener("click", (event) => {
+      if (rows - 1 === 0) return;
+      const target = document.querySelectorAll(
+        `.${event.target.closest("button").getAttribute("data-delete")}`
+      );
+      if (deleteRows.length === 1) return;
+      target.forEach((el) => {
+        el.remove();
+      });
+      rows--;
+    });
+  });
+};
+
+updateContent();

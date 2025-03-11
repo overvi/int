@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../../css/input.a0259990.css" />
+    <link rel="stylesheet" href="../../css/input.7e332cd2.css" />
 
     <script>
       const mode = localStorage.getItem("mode");
@@ -131,9 +131,7 @@
                     </div>
                   </a>
                 </li>
-                <li
-                  class="  group after:!top-4 after:!bottom-auto"
-                >
+                <li class="group after:!top-4 after:!bottom-auto">
                   <div class="accordion">
                     <button
                       id="accordion-header-info"
@@ -196,7 +194,8 @@
                     </button>
                     <ul
                       id="accordion-panel-info"
-                      role="region" hidden
+                      role="region"
+                      hidden
                       aria-labelledby="accordion-header-info"
                       class="font-light mt-5 border-t pt-5 accordion-panel"
                     >
@@ -370,8 +369,10 @@
                     </div>
                   </a>
                 </li>
-                <li class="group expanded active-segment after:!top-4 after:!bottom-auto">
-                  <div class="accordion ">
+                <li
+                  class="group expanded active-segment after:!top-4 after:!bottom-auto"
+                >
+                  <div class="accordion">
                     <button
                       id="accordion-header-policies"
                       aria-expanded="true"
@@ -422,7 +423,6 @@
                     <ul
                       id="accordion-panel-policies"
                       role="region"
-                      
                       aria-labelledby="accordion-header-policies"
                       class="font-light mt-5 border-t pt-5 accordion-panel"
                     >
@@ -594,18 +594,17 @@
                 </div>
               </button>
             </div>
-            <div class="relative z-20 inline-block text-left ">
+            <div class="relative z-20 inline-block text-left">
               <button
-           
                 class="theme-secondary rounded-full flex items-center min-w-[13.187rem] gap-[10px] p-[6px]"
               >
                 <div class="size-[2.125rem] rounded-full">
-                  <img src="../../assets/img/profile.eb4d0eca.png" alt="">
+                  <img src="../../assets/img/profile.eb4d0eca.png" alt="" />
                 </div>
-                <p class="font-semibold text-nowrap text-sm">Villa Sonata Apart Hotel</p>
+                <p class="font-semibold text-nowrap text-sm">
+                  Villa Sonata Apart Hotel
+                </p>
               </button>
-
-             
             </div>
           </div>
         </header>
@@ -939,7 +938,7 @@
               </tr>
             </thead>
             <tbody class="shadow-tbody dark:shadow-tbody-dark rounded-b-4xl">
-              <tr class="!border-b-0">
+              <tr class="!border-b-0" id="row-1-end">
                 <td colspan="3">
                   <div class="pt-2 px-2">
                     <div
@@ -969,7 +968,7 @@
                           <option class="text-black" value="3">3</option>
                         </select>
                       </div>
-                      <div class="flex gap-4 items-center">
+                      <div class="flex gap-4 items-center switch-group">
                         <div class="flex items-center gap-4">
                           <label for="child">For Child</label>
                           <label
@@ -979,7 +978,7 @@
                             <input
                               id="child"
                               type="checkbox"
-                              class="peer hidden"
+                              class="peer hidden child-switch"
                             />
                             <span
                               class="w-[1.4375rem] left-1 transition-all duration-700 absolute peer-checked:bg-orange-500 peer-checked:left-[calc(100%-25px)] peer-checked:right-1 block h-[1rem] rounded-xl bg-gray-400"
@@ -996,7 +995,7 @@
                               id="adult-1"
                               type="checkbox"
                               checked
-                              class="peer hidden"
+                              class="peer hidden adult-switch"
                             />
                             <span
                               class="w-[1.4375rem] left-1 transition-all duration-700 absolute peer-checked:bg-orange-500 peer-checked:left-[calc(100%-25px)] peer-checked:right-1 block h-[1rem] rounded-xl bg-gray-400"
@@ -1008,7 +1007,7 @@
                   </div>
                 </td>
               </tr>
-              <tr>
+              <tr data-group="tr-1-adult">
                 <td class="px-8 pt-4 border-e" rowspan="4">
                   <p class="h-[12.5rem]">Double</p>
                 </td>
@@ -1099,7 +1098,7 @@
                   </div>
                 </td>
               </tr>
-              <tr>
+              <tr data-group="tr-1-adult">
                 <td class="ps-4">
                   <div class="flex items-center gap-4">
                     <div class="flex items-center gap-4">
@@ -1171,7 +1170,7 @@
                   </div>
                 </td>
               </tr>
-              <tr>
+              <tr data-group="tr-1-adult">
                 <td class="ps-4">
                   <div class="flex items-center gap-4">
                     <div class="flex items-center gap-4">
@@ -1243,7 +1242,7 @@
                   </div>
                 </td>
               </tr>
-              <tr class="!border-0">
+              <tr class="!border-0" data-group="tr-1-adult">
                 <td class="ps-4">
                   <div class="flex items-center gap-4">
                     <div class="flex items-center gap-4">
@@ -1315,7 +1314,7 @@
                   </div>
                 </td>
               </tr>
-              <tr class="!border-b-0">
+              <tr class="!border-b-0" id="row-2-end">
                 <td colspan="3">
                   <div class="px-2">
                     <div
@@ -1344,7 +1343,7 @@
                           <option class="text-black" value="3">3</option>
                         </select>
                       </div>
-                      <div class="flex gap-4 items-center">
+                      <div class="flex gap-4 items-center switch-group">
                         <div class="flex items-center gap-4">
                           <label for="child-2">For Child</label>
                           <label
@@ -1355,7 +1354,7 @@
                               id="child-2"
                               checked
                               type="checkbox"
-                              class="peer hidden"
+                              class="peer hidden child-switch"
                             />
                             <span
                               class="w-[1.4375rem] left-1 transition-all duration-700 absolute peer-checked:bg-orange-500 peer-checked:left-[calc(100%-25px)] peer-checked:right-1 block h-[1rem] rounded-xl bg-gray-400"
@@ -1371,7 +1370,7 @@
                             <input
                               id="adult-2"
                               type="checkbox"
-                              class="peer hidden"
+                              class="peer hidden adult-switch"
                             />
                             <span
                               class="w-[1.4375rem] left-1 transition-all duration-700 absolute peer-checked:bg-orange-500 peer-checked:left-[calc(100%-25px)] peer-checked:right-1 block h-[1rem] rounded-xl bg-gray-400"
@@ -1383,8 +1382,8 @@
                   </div>
                 </td>
               </tr>
-              <tr>
-                <td class="px-5  border-e" rowspan="4">
+              <tr data-group="tr-2-child">
+                <td class="px-5 border-e" rowspan="4">
                   <div>
                     <p class="block mb-2 leading-7">
                       Child <br />
@@ -1512,7 +1511,7 @@
                   </div>
                 </td>
               </tr>
-              <tr>
+              <tr data-group="tr-2-child">
                 <td class="ps-4">
                   <div class="flex items-center gap-4">
                     <div class="flex items-center gap-4">
@@ -1584,7 +1583,7 @@
                   </div>
                 </td>
               </tr>
-              <tr>
+              <tr data-group="tr-2-child">
                 <td class="ps-4">
                   <div class="flex items-center gap-4">
                     <div class="flex items-center gap-4">
@@ -1656,7 +1655,7 @@
                   </div>
                 </td>
               </tr>
-              <tr class="!border-b-0">
+              <tr data-group="tr-2-child" class="!border-b-0">
                 <td class="ps-4">
                   <div class="flex items-center gap-4">
                     <div class="flex items-center gap-4">
@@ -1728,7 +1727,7 @@
                   </div>
                 </td>
               </tr>
-              <tr class="!border-b-0">
+              <tr class="!border-b-0" id="row-3-end">
                 <td colspan="3">
                   <div class="px-2">
                     <div
@@ -1757,7 +1756,7 @@
                           <option class="text-black" value="3">3</option>
                         </select>
                       </div>
-                      <div class="flex gap-4 items-center">
+                      <div class="flex gap-4 items-center switch-group">
                         <div class="flex items-center gap-4">
                           <label for="child-3">For Child</label>
                           <label
@@ -1767,7 +1766,7 @@
                             <input
                               id="child-3"
                               type="checkbox"
-                              class="peer hidden"
+                              class="peer hidden child-switch"
                               checked
                             />
                             <span
@@ -1785,7 +1784,7 @@
                               id="adult-3"
                               checked
                               type="checkbox"
-                              class="peer hidden"
+                              class="peer hidden adult-switch"
                             />
                             <span
                               class="w-[1.4375rem] left-1 transition-all duration-700 absolute peer-checked:bg-orange-500 peer-checked:left-[calc(100%-25px)] peer-checked:right-1 block h-[1rem] rounded-xl bg-gray-400"
@@ -1797,9 +1796,9 @@
                   </div>
                 </td>
               </tr>
-              <tr>
+              <tr data-group="tr-3-adult">
                 <td class="px-5 align-baseline pt-4 border-e" rowspan="4">
-                <p class="mt-2">Adult</p>
+                  <p class="mt-2">Adult</p>
                 </td>
                 <td class="px-4 pt-4 border-e" rowspan="4">
                   <div class="h-[13.3rem]">
@@ -1888,7 +1887,7 @@
                   </div>
                 </td>
               </tr>
-              <tr>
+              <tr data-group="tr-3-adult">
                 <td class="ps-4">
                   <div class="flex items-center gap-4">
                     <div class="flex items-center gap-4">
@@ -1960,7 +1959,7 @@
                   </div>
                 </td>
               </tr>
-              <tr>
+              <tr data-group="tr-3-adult">
                 <td class="ps-4">
                   <div class="flex items-center gap-4">
                     <div class="flex items-center gap-4">
@@ -2032,7 +2031,7 @@
                   </div>
                 </td>
               </tr>
-              <tr>
+              <tr data-group="tr-3-adult">
                 <td class="ps-4">
                   <div class="flex items-center gap-4">
                     <div class="flex items-center gap-4">
@@ -2104,8 +2103,8 @@
                   </div>
                 </td>
               </tr>
-              <tr>
-                <td class="px-5  border-e" rowspan="4">
+              <tr data-group="tr-3-child">
+                <td class="px-5 border-e" rowspan="4">
                   <div>
                     <p class="block mb-2 leading-7">
                       Child <br />
@@ -2233,7 +2232,7 @@
                   </div>
                 </td>
               </tr>
-              <tr>
+              <tr data-group="tr-3-child">
                 <td class="ps-4">
                   <div class="flex items-center gap-4">
                     <div class="flex items-center gap-4">
@@ -2305,7 +2304,7 @@
                   </div>
                 </td>
               </tr>
-              <tr>
+              <tr data-group="tr-3-child">
                 <td class="ps-4">
                   <div class="flex items-center gap-4">
                     <div class="flex items-center gap-4">
@@ -2377,7 +2376,7 @@
                   </div>
                 </td>
               </tr>
-              <tr>
+              <tr data-group="tr-3-child">
                 <td class="ps-4">
                   <div class="flex items-center gap-4">
                     <div class="flex items-center gap-4">
@@ -2457,7 +2456,7 @@
 
     <script defer src="../../js/runtime.e9688135.js"></script>
 <script defer src="../../js/main.67636b8e.js"></script>
-    <script defer src="../../js/extraBedPoliciesEdit.a140f72a.js"></script>
+    <script defer src="../../js/extraBedPoliciesEdit.a87eb396.js"></script>
     <script defer src="../../js/accordion.524f692d.js"></script>
     <script defer src="../../js/select.5c016beb.js"></script>
   </body>
