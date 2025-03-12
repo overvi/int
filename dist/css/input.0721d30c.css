@@ -1361,6 +1361,9 @@ video {
 .gap-\[5\.43px\] {
   gap: 5.43px;
 }
+.gap-\[60pt\] {
+  gap: 60pt;
+}
 .gap-\[70px\] {
   gap: 70px;
 }
@@ -1753,6 +1756,10 @@ video {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
 }
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -1926,6 +1933,9 @@ video {
 }
 .pb-14 {
   padding-bottom: 3.5rem;
+}
+.pb-2 {
+  padding-bottom: 0.5rem;
 }
 .pb-2\.5 {
   padding-bottom: 0.625rem;
@@ -2251,9 +2261,6 @@ video {
 }
 .opacity-0 {
   opacity: 0;
-}
-.opacity-30 {
-  opacity: 0.3;
 }
 .opacity-50 {
   opacity: 0.5;
@@ -2640,11 +2647,9 @@ option:not(:disabled):where(.dark, .dark *) {
     right: 0;
     margin-inline: auto;
 
-    
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-top: 15px solid currentColor;
-    
   }
 .resize-container {
     display: inline-block;
@@ -2663,6 +2668,12 @@ option:not(:disabled):where(.dark, .dark *) {
   }
 #drop-area:where(.dark, .dark *) {
   background-color: transparent;
+}
+.last-tr {
+  border-bottom-width: 1px;
+}
+.last-tr:has(+ .end) {
+  border-bottom-width: 0px !important;
 }
 /*leaflet*/
 
@@ -2814,6 +2825,11 @@ option:not(:disabled):where(.dark, .dark *) {
 .\*\:py-5 > * {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
+}
+
+.\*\:py-\[0\.875rem\] > * {
+  padding-top: 0.875rem;
+  padding-bottom: 0.875rem;
 }
 
 .\*\:\*\:ps-4 > * > * {

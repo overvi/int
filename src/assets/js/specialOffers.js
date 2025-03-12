@@ -296,7 +296,7 @@ const initializeTableMechanism = () => {
     trow.innerHTML = ` 
       <td>
         <div class="p-4 ps-8">
-          <div class="select relative border overflow-hidden rounded-full">
+          <div class="select relative border may-disabled overflow-hidden rounded-full">
             <select  disabled name="from-age-${tableRows}" id="from-age-${tableRows}" aria-label="From Age"
               class="age-select appearance-none theme-secondary rounded-full [&:has(option:disabled:checked)]:text-gray-200 w-full min-h-10 ps-[14px] outline-none">
               <option disabled  value="">Select...</option>
@@ -309,7 +309,7 @@ const initializeTableMechanism = () => {
       </td>
       <td>
         <div class="p-4">
-          <div class="select relative border overflow-hidden rounded-full">
+          <div class="select relative may-disabled border overflow-hidden rounded-full">
             <select defaultValue='1' disabled name="to-age-${tableRows}" id="to-age-${tableRows}" aria-label="To Age"
               class="age-select appearance-none theme-secondary rounded-full [&:has(option:disabled:checked)]:text-gray-200 w-full min-h-10 ps-[14px] outline-none">
               <option disabled  value="">Select...</option>
