@@ -48,7 +48,13 @@
     font: inherit;
   }
 
-  *:not(button, .bg-orange-500\/10, .border-transparent, .border-orange-500) {
+  *:not(
+      button,
+      .bg-orange-500\/10,
+      .border-transparent,
+      .border-orange-500,
+      .text-orange-500
+    ) {
     @apply dark:!border-gray-400 dark:!border-x-gray-400 dark:!text-white;
   }
 
