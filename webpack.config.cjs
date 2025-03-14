@@ -25,7 +25,7 @@ module.exports = {
     extraBedPoliciesEdit: "./src/assets/js/extraBedPoliciesEdit.js",
     childPolicies: "./src/assets/js/childPolicies.js",
     childPoliciesEdit: "./src/assets/js/childPoliciesEdit.js",
-    availability : "./src/assets/js/availability.js"
+    availability: "./src/assets/js/availability.js",
   },
   plugins: [
     new HtmlBundlerPlugin({
@@ -130,5 +130,5 @@ module.exports = {
 
     minimizer: [new CssMinimizerPlugin(), new TerserPlugin()],
   },
-  mode: "development",
+  mode: "production",
 };

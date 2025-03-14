@@ -3,14 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  input:-webkit-autofill,
-  input:-webkit-autofill:hover,
-  input:-webkit-autofill:focus,
-  input:-webkit-autofill:active {
-    -webkit-background-clip: text;
-    -webkit-box-shadow: 0 0 0 30px transparent inset !important;
-    font: inherit;
-  }
   @font-face {
     font-display: "swap";
     font-family: "League Spartan";
@@ -39,8 +31,24 @@
     font-weight: 700;
     src: url("../fonts/spartan/LeagueSpartan-Bold.ttf") format("truetype");
   }
+  :root {
+    --base-red: 220 38 38;
+  }
 
-  * {
+  html[class="dark"] {
+    --base-red: 114 0 0;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-background-clip: text;
+    -webkit-box-shadow: 0 0 0 30px transparent inset !important;
+    font: inherit;
+  }
+
+  *:not(button, .bg-orange-500\/10, .border-transparent, .border-orange-500) {
     @apply dark:!border-gray-400 dark:!border-x-gray-400 dark:!text-white;
   }
 
@@ -281,7 +289,10 @@
   }
 
   .switch:has(input:checked) {
-    @apply bg-orange-500/[32%] shadow-none;
+    @apply !bg-orange-500/[32%] shadow-none;
+  }
+  .switch {
+    @apply dark:!bg-[#3d3d3d];
   }
 
   .may-disabled:has(input:disabled) {

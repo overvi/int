@@ -15,7 +15,8 @@ const colors = {
       800: "#3E3E3E",
     },
     red: {
-      500: "#DC2626",
+      500: "rgb(var(--base-red) / <alpha-value>)",
+      // 720000
     },
     green: {
       500: "#2FAC66",

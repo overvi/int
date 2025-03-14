@@ -1,0 +1,1 @@
+(self.webpackChunk=self.webpackChunk||[]).push([[3131],{4144:()=>{document.querySelectorAll(".accordion-header").forEach((e=>{e.addEventListener("click",(()=>{const t="true"===e.getAttribute("aria-expanded");e.setAttribute("aria-expanded",!t);document.getElementById(e.getAttribute("aria-controls")).hidden=t}))}))}},e=>{var t;t=4144,e(e.s=t)}]);
