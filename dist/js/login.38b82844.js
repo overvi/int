@@ -1,1 +1,0 @@
-(self.webpackChunk=self.webpackChunk||[]).push([[6966],{8327:()=>{const s=new Image;s.src="../assets/img/login-bg.e76bc43e.jpg",s.onload=()=>{document.body.classList.add("bg-loaded")}}},s=>{var e;e=8327,s(s.s=e)}]);

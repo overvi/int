@@ -48,14 +48,28 @@
     font: inherit;
   }
 
+  input {
+    background-color: transparent;
+  }
+
   *:not(
       button,
+      label p,
       .bg-orange-500\/10,
+      .bg-orange-500\/10 *,
       .border-transparent,
       .border-orange-500,
-      .text-orange-500
+      .text-orange-500,
+      .bg-green-500\/15 *,
+      .bg-red-500\/15 *,
+      .bg-orange-500\/15 *,
+
     ) {
     @apply dark:!border-gray-400 dark:!border-x-gray-400 dark:!text-white;
+  }
+
+  *[fill="#DC2626"] {
+    @apply dark:fill-red-500;
   }
 
   body {

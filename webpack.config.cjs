@@ -130,5 +130,5 @@ module.exports = {
 
     minimizer: [new CssMinimizerPlugin(), new TerserPlugin()],
   },
-  mode: "production",
+  mode: "development",
 };
