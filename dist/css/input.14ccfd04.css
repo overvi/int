@@ -598,6 +598,18 @@ video {
     line-height: 1;
   }
 
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+    -webkit-appearance: textfield;
+            appearance: textfield;
+  }
+
   .litepicker {
     --litepicker-is-end-color-bg: #f9b233;
   }
@@ -3109,6 +3121,10 @@ option:not(:disabled):where(.dark, .dark *) {
 
 .group:hover .group-hover\:\!block {
   display: block !important;
+}
+
+.group:focus .group-focus\:\*\:fill-orange-500 > * {
+  fill: #F9B233;
 }
 
 .group.has-data .group-\[\.has-data\]\:\!table-row-group {
