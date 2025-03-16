@@ -1,12 +1,3 @@
-import Litepicker from "litepicker";
-
-new Litepicker({
-  element: document.getElementById("start-date"),
-});
-new Litepicker({
-  element: document.getElementById("end-date"),
-});
-
 const selects = document.querySelector(".selects");
 const babyCots = document.getElementById("baby-cots-allowed");
 
@@ -19,8 +10,6 @@ babyCots.addEventListener("change", () => {
 
 const addPeriods = document.getElementById("add-periods");
 
-let startPeriod = null;
-let endPeriod = null;
 addPeriods.addEventListener("click", () => {
   if (!fields.children.length) {
     fields.innerHTML += `
@@ -146,13 +135,6 @@ addPeriods.addEventListener("click", () => {
       >
         Delete
       </button>`;
-
-    startPeriod = new Litepicker({
-      element: document.getElementById("start-date-period"),
-    });
-    endPeriod = new Litepicker({
-      element: document.getElementById("end-date-period"),
-    });
   }
 
   const deletePeriod = document.getElementById("delete-period");

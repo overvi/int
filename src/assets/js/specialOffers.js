@@ -1,15 +1,4 @@
-import Litepicker from "litepicker";
 import init from "./select";
-
-new Litepicker({
-  element: document.getElementById("or-until"),
-});
-new Litepicker({
-  element: document.getElementById("start-date"),
-});
-new Litepicker({
-  element: document.getElementById("end-date"),
-});
 
 let rows = 0;
 
@@ -166,13 +155,6 @@ addPeriods.addEventListener("click", () => {
 
   periods.insertAdjacentHTML("beforeend", newHtml);
 
-  new Litepicker({
-    element: document.getElementById(`checkInDate-${rows == 1 ? 1 : 3}`),
-  });
-  new Litepicker({
-    element: document.getElementById(`checkOut-${rows == 1 ? 2 : rows * 2}`),
-  });
-
   document
     .querySelector(`[data-remove-period="period-${uniqueId}"]`)
     .addEventListener("click", (ev) => {
@@ -322,7 +304,7 @@ const initializeTableMechanism = () => {
       </td>
       <td>
         <div class="p-4">
-          <div class="flex w-fit items-center p-1 *:*:cursor-pointer text-sm theme-primary rounded-2xl">
+          <div class="flex w-fit items-center p-1 *:*:cursor-pointer text-sm theme-primary dark:theme-neutral  rounded-2xl">
             <div>
               <input type="radio" class="hidden peer infant-radio" id="infant-${tableRows}" checked name="t-${tableRows}" />
               <label for="infant-${tableRows}"

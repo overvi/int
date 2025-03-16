@@ -1,12 +1,4 @@
-import Litepicker from "litepicker";
 import init from "./select";
-
-new Litepicker({
-  element: document.getElementById("start-date"),
-});
-new Litepicker({
-  element: document.getElementById("end-date"),
-});
 
 let rows = 0;
 const MAX_ROWS = 2;
@@ -43,7 +35,6 @@ const updateListeners = () => {
     });
   });
 };
-
 
 addCancellationPolicy.addEventListener("click", () => {
   if (rows + 1 > MAX_ROWS) return;
@@ -143,12 +134,10 @@ addCancellationPolicy.addEventListener("click", () => {
               </button>
             </td>
           </tr>`;
-          init()
+  init();
   updateListeners();
 });
 
-let startPeriod = null;
-let endPeriod = null;
 addPeriods.addEventListener("click", () => {
   if (!fields.children.length) {
     fields.innerHTML += `
@@ -274,13 +263,6 @@ addPeriods.addEventListener("click", () => {
       >
         Delete
       </button>`;
-
-    startPeriod = new Litepicker({
-      element: document.getElementById("start-date-period"),
-    });
-    endPeriod = new Litepicker({
-      element: document.getElementById("end-date-period"),
-    });
   }
 
   const deletePeriod = document.getElementById("delete-period");

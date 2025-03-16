@@ -1,12 +1,4 @@
-import Litepicker from "litepicker";
 import init from "./select";
-
-new Litepicker({
-  element: document.getElementById("start-date"),
-});
-new Litepicker({
-  element: document.getElementById("end-date"),
-});
 
 const policiesSelect = document.querySelectorAll(".policies-selects");
 
@@ -49,8 +41,6 @@ policiesSelect.forEach((selects) => {
 
 const addPeriods = document.getElementById("add-periods");
 
-let startPeriod = null;
-let endPeriod = null;
 addPeriods.addEventListener("click", () => {
   if (!fields.children.length) {
     fields.innerHTML += `
@@ -105,7 +95,7 @@ addPeriods.addEventListener("click", () => {
       
           <input
             placeholder="1403/02/18"
-            name="start-date-period"
+        
             class="mt-0.5 min-h-[40px] theme-secondary outline-none w-full placeholder:text-gray-500 rounded-full"
             id="start-date-period"
             readonly=""
@@ -162,7 +152,7 @@ addPeriods.addEventListener("click", () => {
       
           <input
             placeholder="1403/02/18"
-            name="end-date-period"
+  
             class="mt-0.5 min-h-[40px] theme-secondary outline-none w-full placeholder:text-gray-500 rounded-full"
             id="end-date-period"
             readonly=""
@@ -176,20 +166,11 @@ addPeriods.addEventListener("click", () => {
       >
         Delete
       </button>`;
-
-    startPeriod = new Litepicker({
-      element: document.getElementById("start-date-period"),
-    });
-    endPeriod = new Litepicker({
-      element: document.getElementById("end-date-period"),
-    });
   }
 
   const deletePeriod = document.getElementById("delete-period");
 
   deletePeriod.addEventListener("click", () => {
-    startPeriod = null;
-    endPeriod = null;
     fields.innerText = "";
   });
 });
@@ -256,7 +237,7 @@ addRows.addEventListener("click", () => {
                       </div>
                       <div class="flex items-center gap-4">
                         <div
-                          class="flex items-center p-1 *:*:cursor-pointer text-sm theme-primary rounded-2xl"
+                          class="flex items-center p-1 *:*:cursor-pointer text-sm theme-primary  dark:theme-neutral rounded-2xl"
                         >
                           <div>
                             <input

@@ -6,7 +6,7 @@
  * or disable the default devtool with "devtool: false".
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
-(self["webpackChunk"] = self["webpackChunk"] || []).push([["reservations"],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([["datepicker"],{
 
 /***/ "./node_modules/litepicker/dist/litepicker.umd.js":
 /*!********************************************************!*\
@@ -18,20 +18,20 @@ eval("/*!\n * \n * litepicker.umd.js\n * Litepicker v2.0.12 (https://github.com/
 
 /***/ }),
 
-/***/ "./src/assets/js/reservations.js":
-/*!***************************************!*\
-  !*** ./src/assets/js/reservations.js ***!
-  \***************************************/
+/***/ "./src/assets/js/datepicker.js":
+/*!*************************************!*\
+  !*** ./src/assets/js/datepicker.js ***!
+  \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var litepicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! litepicker */ \"./node_modules/litepicker/dist/litepicker.umd.js\");\n/* harmony import */ var litepicker__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(litepicker__WEBPACK_IMPORTED_MODULE_0__);\n\r\n\r\nconst received = new (litepicker__WEBPACK_IMPORTED_MODULE_0___default())({\r\n  element: document.getElementById(\"received\"),\r\n});\r\nconst checkInDate = new (litepicker__WEBPACK_IMPORTED_MODULE_0___default())({\r\n  element: document.getElementById(\"checkInDate\"),\r\n});\r\nconst checkOutDate = new (litepicker__WEBPACK_IMPORTED_MODULE_0___default())({\r\n  element: document.getElementById(\"checkOutDate\"),\r\n});\r\n\r\nconst TransferReceived = new (litepicker__WEBPACK_IMPORTED_MODULE_0___default())({\r\n  element: document.getElementById(\"transfer-received\"),\r\n});\r\nconst arrival = new (litepicker__WEBPACK_IMPORTED_MODULE_0___default())({\r\n  element: document.getElementById(\"arrival\"),\r\n});\r\nconst departure = new (litepicker__WEBPACK_IMPORTED_MODULE_0___default())({\r\n  element: document.getElementById(\"departure\"),\r\n});\r\n\n\n//# sourceURL=webpack:///./src/assets/js/reservations.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ initDatePicker)\n/* harmony export */ });\n/* harmony import */ var litepicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! litepicker */ \"./node_modules/litepicker/dist/litepicker.umd.js\");\n/* harmony import */ var litepicker__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(litepicker__WEBPACK_IMPORTED_MODULE_0__);\n\r\n\r\nlet pickers = []; // Store active Litepicker instances\r\n\r\nfunction initDatePicker() {\r\n  // Destroy previous instances before reinitializing\r\n  pickers.forEach((picker) => picker.destroy());\r\n  pickers = []; // Clear stored instances\r\n\r\n  document.querySelectorAll(\".datePicker input\").forEach((input) => {\r\n    const picker = new (litepicker__WEBPACK_IMPORTED_MODULE_0___default())({\r\n      element: input,\r\n      singleMode: true,\r\n    });\r\n\r\n    picker.on(\"selected\", () => {\r\n      const prevElement = input.previousElementSibling;\r\n      if (prevElement) {\r\n        prevElement.classList.add(\"*:fill-orange-500\");\r\n      }\r\n    });\r\n\r\n    pickers.push(picker); // Store instance\r\n  });\r\n}\r\n\r\n// Initial run\r\ninitDatePicker();\r\n\r\n// Optional: Auto-detect new elements using MutationObserver\r\nconst observer = new MutationObserver(() => {\r\n  initDatePicker();\r\n});\r\n\r\nobserver.observe(document.querySelector(\"main\"), {\r\n  childList: true,\r\n  subtree: true,\r\n});\r\n\n\n//# sourceURL=webpack:///./src/assets/js/datepicker.js?");
 
 /***/ })
 
 },
 /******/ __webpack_require__ => { // webpackRuntimeModules
 /******/ var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-/******/ var __webpack_exports__ = (__webpack_exec__("./src/assets/js/reservations.js"));
+/******/ var __webpack_exports__ = (__webpack_exec__("./src/assets/js/datepicker.js"));
 /******/ }
 ]);
